@@ -110,7 +110,8 @@ class instance extends instance_skel {
 						choices: [
 							{ id: '1', label: 'Mute' },
 							{ id: '0', label: 'Unmute' }
-						]
+						],
+						default: '1'
 					}
 				]
 			},
@@ -136,6 +137,7 @@ class instance extends instance_skel {
 						label: 	 'Fader Level',
 						id: 	 'level',
 						choices: this.FADER_VAL,
+						default: '0.7653'
 					}
 				]
 			}
