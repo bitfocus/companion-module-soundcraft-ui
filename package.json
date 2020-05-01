@@ -1,0 +1,18 @@
+{
+	"name": "soundcraft-ui",
+	"version": "1.0.0",
+    "api_version": "1.0.7548",
+    "support": {"action": true, "feedback": false, "preset": false},
+	"keywords": [
+		"Audio"
+	],
+	"manufacturer": "Soundcraft",
+	"product": "UI12/UI16/UI24",
+	"shortname": "ui",
+	"description": "Module for controling the Soundcraft Ui consoles",
+	"main": "index.js",
+	"scripts": {
+	},
+	"author": "Christian Himmler <christian@himmlers.de>",
+	"license": "MIT"
+}
