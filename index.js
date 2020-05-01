@@ -2,6 +2,15 @@ var instance_skel = require('../../instance_skel');
 var WebSocket     = require('websocket').client;
 
 class instance extends instance_skel {
+
+	/**
+	 * Create an instance of a soundcraft-ui module.
+	 *
+	 * @param {EventEmitter} system - the brains of the operation
+	 * @param {string} id - the instance ID
+	 * @param {Object} config - saved user configuration parameters
+	 * @since 1.0.0
+	 */
 	constructor(system, id, config) {
 		super(system, id, config);
 
@@ -19,6 +28,16 @@ class instance extends instance_skel {
 			{ label: 'White',            id: '10' },
 			{ label: 'Pink',             id: '11' }
 		];
+
+		/*
+		Official Calculation of the db value
+
+		function ValueToDb(a) {
+			var b = 2.676529517952372E-4 * Math.exp(a * (23.90844819639692 + a * (-26.23877598214595 + (12.195249692570245 - .4878099877028098 * a) * a))) * (.055 > a ? Math.sin(28.559933214452666 * a) : 1)
+			.001 > a ? a = "- @ " : (b = (20 * Math.log(b) / Math.log(10) * 10 + .45 | 0) / 10, -20 >= b ? b = "" + (b | 0) : -1 == ("" + b).indexOf(".") && (b += ".0"), a = b + " dB", -120 > b && (this.text = "- @ "));
+			return a
+		}
+		*/
 
 		this.FADER_VAL = [
 			{ label: '- ∞',        id: '0.0' },
@@ -171,6 +190,30 @@ class instance extends instance_skel {
 	}
 
 	/**
+	 * Process an updated configuration array.
+	 *
+	 * @param {Object} config - the new configuration
+	 * @access public
+	 * @since 1.0.0
+	 */
+	updateConfig(config) {
+		var resetConnection = false;
+
+		if (this.config.host != config.host)
+		{
+			resetConnection = true;
+		}
+
+		this.config = config;
+
+		this.actions();
+
+		if (resetConnection === true || this.socket === undefined) {
+			this.reconnect();
+		}
+	}
+
+	/**
 	 * Initialize the websocket connection to the server
 	 * @since 1.0.0
 	 */
@@ -228,7 +271,7 @@ class instance extends instance_skel {
 	 * @param {Boolean} retry_immediately - Immediately try reconnecting, useful if the session may have ended
 	 * @since 1.0.0
 	 */
-	reconnect(retry_immediately = true) {
+	reconnect() {
 		this.log('info', 'Attempting to reconnect to switcher');
 		this.status(this.STATUS_ERROR);
 		this.disconnect();
@@ -263,6 +306,9 @@ class instance extends instance_skel {
 		this.sendCommand(cmd);
 	}
 
+	/**
+	 * Send keep alive to the device to prevent disconnects
+	 */
 	keepAlive() {
 		this.sendCommand(`3:::ALIVE`);
 	}
