@@ -78,7 +78,6 @@ class instance extends instance_skel {
 
 		this.reconnecting = null;
 		this.actions(system);
-		return this;
 	}
 
 	/**
