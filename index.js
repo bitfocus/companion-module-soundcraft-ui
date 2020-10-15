@@ -192,6 +192,21 @@ class instance extends instance_skel {
 					}
 				]
 			},
+			'dim': {
+				label: 'Dim Master',
+				options: [
+					{
+						type:   'dropdown',
+						label:  'Dim',
+						id:     'dim',
+						choices: [
+							{ id: '1', label: 'On' },
+							{ id: '0', label: 'Off' }
+						],
+						default: '1'
+					}
+				]
+			},
 			...this.mediaCommands.actions
 		});
 	}
@@ -207,6 +222,7 @@ class instance extends instance_skel {
 		switch (action.action) {
 			case 'mute': this.mute(opt.type, opt.channel, opt.bustype, opt.bus, opt.mute); break;
 			case 'fade': this.fade(opt.type, opt.channel, opt.bustype, opt.bus, opt.level); break;
+			case 'dim': this.dim(opt.dim); break;
 			case 'mediaswitchtrack': this.mediaCommands.switchTrack(opt.playlist, opt.file); break;
 			case 'mediaswitchplist': this.mediaCommands.switchPlaylist(opt.playlist); break;
 			case 'mediaplay': this.mediaCommands.play(); break;
@@ -379,6 +395,15 @@ class instance extends instance_skel {
 		};
 		const channelId = this.getFullChannelId(channel, bustype, bus);
 		const cmd = `3:::SETD^${type}.${channelId}.${commandNames[bustype]}^${value}`;
+		this.sendCommand(cmd);
+	}
+
+	/**
+	 * Dim the master bus
+	 * @param {any} value 
+	 */
+	dim(value) {
+		const cmd = `3:::SETD^m.dim^${value}`;
 		this.sendCommand(cmd);
 	}
 
