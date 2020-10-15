@@ -9,3 +9,4 @@ Console Function   | What it does
 -------------------|---------------
 Set Mute / Unmulte | Mute or Unmute the selected input, output, player, fx or subgroup channel. Be aware of your device's capabilities.
 Set Fader Levels   | Sets the level of a fader for the selected (in/out/player/fx/sub) channel.
+Media Player       | Play, pause, stop the player, jump to next/previous track and load playlists and tracks
