@@ -72,8 +72,9 @@ class instance extends instance_skel {
 			{ id: 'l', label: 'Line Input' },
 			{ id: 'p', label: 'Player' },
 			{ id: 'f', label: 'FX' },
-			{ id: 's', label: 'Sub Groups' },
+			{ id: 's', label: 'Sub Group' },
 			{ id: 'a', label: 'AUX Output' },
+			{ id: 'v', label: 'VCA' },
 		];
 
 		this.reconnecting = null;
