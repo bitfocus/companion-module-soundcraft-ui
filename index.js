@@ -1,5 +1,6 @@
 var instance_skel = require('../../instance_skel');
 var WebSocket     = require('websocket').client;
+var MediaCommands = require('./media-commands');
 
 class instance extends instance_skel {
 
@@ -76,6 +77,8 @@ class instance extends instance_skel {
 			{ id: 'a', label: 'AUX Output' },
 			{ id: 'v', label: 'VCA' },
 		];
+
+		this.mediaCommands = new MediaCommands(this);
 
 		this.BUS_TYPE = [
 			{ id: 'master', label: 'Master' },
@@ -188,7 +191,8 @@ class instance extends instance_skel {
 						default: '0.7653'
 					}
 				]
-			}
+			},
+			...this.mediaCommands.actions
 		});
 	}
 
@@ -201,12 +205,15 @@ class instance extends instance_skel {
 		var opt = action.options;
 
 		switch (action.action) {
-			case 'mute':
-				this.mute(opt.type, opt.channel, opt.bustype, opt.bus, opt.mute);
-				break;
-			case 'fade':
-				this.fade(opt.type, opt.channel, opt.bustype, opt.bus, opt.level);
-
+			case 'mute': this.mute(opt.type, opt.channel, opt.bustype, opt.bus, opt.mute); break;
+			case 'fade': this.fade(opt.type, opt.channel, opt.bustype, opt.bus, opt.level); break;
+			case 'mediaswitchtrack': this.mediaCommands.switchTrack(opt.playlist, opt.file); break;
+			case 'mediaswitchplist': this.mediaCommands.switchPlaylist(opt.playlist); break;
+			case 'mediaplay': this.mediaCommands.play(); break;
+			case 'mediastop': this.mediaCommands.stop(); break;
+			case 'mediapause': this.mediaCommands.pause(); break;
+			case 'medianext': this.mediaCommands.next(); break;
+			case 'mediaprev': this.mediaCommands.prev(); break;
 		}
 	}
 
