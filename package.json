@@ -13,11 +13,14 @@
 		"UI24"
 	],
 	"shortname": "ui",
-	"description": "Module for controling the Soundcraft Ui consoles",
+	"description": "Module for controlling the Soundcraft Ui consoles",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Christian Himmler <christian@himmlers.de>",
+	"contributors": [
+		"Ferdinand Malcher <ferdinand@malcher.media>"
+	],
 	"license": "MIT"
 }

@@ -72,9 +72,16 @@ class instance extends instance_skel {
 			{ id: 'l', label: 'Line Input' },
 			{ id: 'p', label: 'Player' },
 			{ id: 'f', label: 'FX' },
-			{ id: 's', label: 'Sub Groups' },
+			{ id: 's', label: 'Sub Group' },
 			{ id: 'a', label: 'AUX Output' },
+			{ id: 'v', label: 'VCA' },
 		];
+
+		this.BUS_TYPE = [
+			{ id: 'master', label: 'Master' },
+			{ id: 'aux', label: 'AUX' },
+			{ id: 'fx', label: 'FX Send' },
+		]
 
 		this.reconnecting = null;
 		this.actions(system);
@@ -89,19 +96,40 @@ class instance extends instance_skel {
 		this.setActions({
 			'mute': {
 				label: 'Set Mute',
-				options: [{
+				options: [
+					{
 						type: 	 'dropdown',
-						label: 	 'Type',
+						label: 	 'Channel Type',
 						id: 	 'type',
 						choices: this.FADER_TYPE,
 						default: 'i'
 					},
 					{
-						type:	 'textinput',
-						label:	 'Channel Number of Input, Line Input, Player, FX, Sub Group or AUX Group',
+						type:	 'number',
+						label:	 'Channel Number',
+						tooltip: 'Channel Number of Input, Line Input, Player, FX, Sub Group or AUX Group',
 						id:    	 'channel',
-						regex:	 this.REGEX_NUMBER,
-						default: '1'
+						default: 1,
+						min: 1,
+						max: 24,
+						step: 1,
+						required: true
+					},
+					{
+						type:	 'dropdown',
+						label:	 'Bus Type',
+						id:    	 'bustype',
+						choices: this.BUS_TYPE,
+						default: 'master'
+					},
+					{
+						type:	 'number',
+						label:	 'Bus Number',
+						id:    	 'bus',
+						default: 1,
+						min: 1,
+						max: 24,
+						step: 1
 					},
 					{
 						type:   'dropdown',
@@ -126,11 +154,31 @@ class instance extends instance_skel {
 						default: 'i'
 					},
 					{
-						type:	'textinput',
-						label:	'Channel Number of Input, Line Input, Player, FX, Sub Group or AUX Group',
-						id:    	'channel',
-						regex:	this.REGEX_NUMBER,
-						default: '1'
+						type:	 'number',
+						label:	 'Channel Number',
+						tooltip: 'Channel Number of Input, Line Input, Player, FX, Sub Group or AUX Group',
+						id:    	 'channel',
+						default: 1,
+						min: 1,
+						max: 24,
+						step: 1,
+						required: true
+					},
+					{
+						type:	 'dropdown',
+						label:	 'Bus Type',
+						id:    	 'bustype',
+						choices: this.BUS_TYPE,
+						default: 'master'
+					},
+					{
+						type:	 'number',
+						label:	 'Bus Number',
+						id:    	 'bus',
+						default: 1,
+						min: 1,
+						max: 24,
+						step: 1
 					},
 					{
 						type: 	 'dropdown',
@@ -154,10 +202,10 @@ class instance extends instance_skel {
 
 		switch (action.action) {
 			case 'mute':
-				this.mute(opt.type, opt.channel, opt.mute);
+				this.mute(opt.type, opt.channel, opt.bustype, opt.bus, opt.mute);
 				break;
 			case 'fade':
-				this.fade(opt.type, opt.channel, opt.level);
+				this.fade(opt.type, opt.channel, opt.bustype, opt.bus, opt.level);
 
 		}
 	}
@@ -185,13 +233,13 @@ class instance extends instance_skel {
 	 */
 	init() {
 		this.status(this.STATUS_UNKNOWN);
-		if(this.config.host) {
+		if (this.config.host) {
 			this.connect();
 		}
 	}
 
 	/**
-	 * Process an updated configuration array.
+	 * Process an updated configuration array
 	 *
 	 * @param {Object} config - the new configuration
 	 * @access public
@@ -200,8 +248,7 @@ class instance extends instance_skel {
 	updateConfig(config) {
 		var resetConnection = false;
 
-		if (this.config.host != config.host)
-		{
+		if (this.config.host != config.host) {
 			resetConnection = true;
 		}
 
@@ -220,14 +267,14 @@ class instance extends instance_skel {
 	 */
 	connect() {
 		this.log('info', 'Attempting to connect to switcher');
-		if(this.reconnecting) { // existing reconnect attempt
+		if (this.reconnecting) { // existing reconnect attempt
 			clearTimeout(this.reconnecting);
 			this.reconnecting = null;
 		}
-		if(this.socket && this.socket.connected) {
+		if (this.socket && this.socket.connected) {
 			this.disconnect();
 		}
-		if(!this.config.host) {
+		if (!this.config.host) {
 			return;
 		}
 
@@ -280,30 +327,51 @@ class instance extends instance_skel {
 	}
 
 	/**
+	 * Determine the internal identifier of the channel, according to the given channel, bus number and bus type
+	 * @param {number} channel
+	 * @param {string} bustype 
+	 * @param {number} bus 
+	 */
+	getFullChannelId(channel, bustype, bus = 1) {
+		switch (bustype) {
+			case 'aux': return `${channel - 1}.aux.${bus - 1}`;
+			case 'fx': return `${channel - 1}.fx.${bus - 1}`;
+			case 'master':
+			default:
+				return channel - 1;
+		}
+	}
+
+	/**
 	 * Mute or unmute a defined channel (input/output/fx/aux/etc.)
-	 * @param {char} type 
-	 * @param {int} channel 
+	 * @param {string} type 
+	 * @param {number} channel 
+	 * @param {string} bustype 
+	 * @param {number} bus 
 	 * @param {any} value 
 	 */
-	mute(type, channel, value) {
-		var cmd = "3:::SETD^{type}.{channel}.mute^{flag}"
-			.replace("{type}", type)
-			.replace("{channel}", channel - 1)
-			.replace("{flag}", value);
+	mute(type, channel, bustype, bus, value) {
+		const channelId = this.getFullChannelId(channel, bustype, bus);
+		const cmd = `3:::SETD^${type}.${channelId}.mute^${value}`;
 		this.sendCommand(cmd);
 	}
 
 	/**
 	 * Set the level for a defined channel (input/output/fx/aux/etc.)
-	 * @param {char} type 
-	 * @param {int} channel 
+	 * @param {string} type 
+	 * @param {number} channel
+	 * @param {string} bustype 
+	 * @param {number} bus 
 	 * @param {any} value 
 	 */
-	fade(type, channel, value) {
-		var cmd = "3:::SETD^{type}.{channel}.mix^{flag}"
-			.replace("{type}", type)
-			.replace("{channel}", channel - 1)
-			.replace("{flag}", value);
+	fade(type, channel, bustype, bus, value) {
+		const commandNames = {
+			master: 'mix',
+			aux: 'value',
+			fx: 'value'
+		};
+		const channelId = this.getFullChannelId(channel, bustype, bus);
+		const cmd = `3:::SETD^${type}.${channelId}.${commandNames[bustype]}^${value}`;
 		this.sendCommand(cmd);
 	}
 
@@ -311,7 +379,7 @@ class instance extends instance_skel {
 	 * Send keep alive to the device to prevent disconnects
 	 */
 	keepAlive() {
-		this.sendCommand(`3:::ALIVE`);
+		this.sendCommand('3:::ALIVE');
 	}
 
 	/**
@@ -320,7 +388,7 @@ class instance extends instance_skel {
 	 * @since 1.0.0
 	 */
 	sendCommand(command) {
-		if(!this.socket || !this.socket.connected) {
+		if (!this.socket || !this.socket.connected) {
 			this.log('warning', 'Switcher not connected');
 			this.reconnect.bind(this, true);
 			return;
@@ -330,19 +398,19 @@ class instance extends instance_skel {
 	}
 
 	/**
-	 * Disconccect from device
+	 * Disconnect from device
 	 * @since 1.0.0
 	 */
 	disconnect() {
 		this.log('info', 'Disconnecting from switcher');
 		this.status(this.STATUS_ERROR);
-		if(this.socket && this.socket.connected) {
+		if (this.socket && this.socket.connected) {
 			this.socket.close();
 		}
 	}
 
 	/**
-	 * Ends session if disconnected
+	 * End session if disconnected
 	 * @since 1.0.0
 	 */
 	destroy() {
