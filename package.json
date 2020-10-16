@@ -1,7 +1,7 @@
 {
 	"name": "soundcraft-ui",
-	"version": "1.0.0",
-	"api_version": "1.0.0",
+	"version": "1.1.0",
+	"api_version": "1.1.0",
 	"support": {"action": true, "feedback": false, "preset": false},
 	"keywords": [
 		"Audio"
