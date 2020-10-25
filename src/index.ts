@@ -10,7 +10,6 @@ import { UiFeedbackState } from './state';
  * Companion instance class for the Soundcraft Ui Mixers.
  */
 class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
-
   state = new UiFeedbackState(this);
   conn!: SoundcraftUI;
 
@@ -18,33 +17,37 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
     super(system, id, config);
   }
 
-
   /**
    * Main initialization function called once the module
    * is OK to start doing things.
    */
   public init(): void {
-    this.setActions(GetActionsList(this, this.conn));
-    this.setFeedbackDefinitions(GetFeedbacksList(this, this.state));
-    this.subscribeFeedbacks();
-
     if (this.config.host) {
       this.conn = new SoundcraftUI(this.config.host);
+      this.conn.connect();
+      console.log('CONNECT!!');
+      this.updateCompanionBits();
     }
+  }
+
+  private updateCompanionBits(): void {
+    this.setActions(GetActionsList(this.conn));
+    this.setFeedbackDefinitions(GetFeedbacksList(this, this.state, this.conn));
+    this.subscribeFeedbacks();
   }
 
   /**
    * Process an updated configuration array.
    */
   public updateConfig(config: UiConfig): void {
-    
     // if host has changed, reconnect
     if (this.config.host !== config.host) {
       this.conn.disconnect();
       this.conn = new SoundcraftUI(config.host);
       this.conn.connect();
+      this.updateCompanionBits();
     }
-    
+
     this.config = config;
   }
 
@@ -66,10 +69,6 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
       this.conn.disconnect();
     }
   }
-
- 
-
-
 }
 
-export = SoundcraftUiInstance
+export = SoundcraftUiInstance;

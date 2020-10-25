@@ -32,7 +32,6 @@ export class UiFeedbackState {
   private set(value: any, feedbackId: string, feedbackType?: string) {
     this.state[feedbackId] = value;
     this.instance.checkFeedbacks(feedbackType);
-    console.log({ state: this.state });
   }
 
   /**
@@ -40,7 +39,6 @@ export class UiFeedbackState {
    * @param feedbackId Internal ID of the feedback
    */
   private unset(feedbackId: string) {
-    console.log('UNSET FEEDBACK', feedbackId);
     delete this.state[feedbackId];
   }
 
