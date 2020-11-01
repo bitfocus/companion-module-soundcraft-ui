@@ -62,39 +62,8 @@ export const CHOICES = {
   fxChannelTypes: {
     choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.s],
     default: 'i'
-  },
-
-  faderValues: {
-    choices: [
-      { label: '- ∞', id: 0.0 },
-      { label: '-90 dB', id: 0.0037 },
-      { label: '-80 dB', id: 0.01 },
-      { label: '-70 dB', id: 0.0235 },
-      { label: '-60 dB', id: 0.0562 },
-      { label: '-50 dB', id: 0.114 },
-      { label: '-30 dB', id: 0.2654 },
-      { label: '-20 dB', id: 0.37 },
-      { label: '-18 dB', id: 0.401 },
-      { label: '-15 dB', id: 0.444 },
-      { label: '-12 dB', id: 0.491 },
-      { label: '-9 dB', id: 0.546 },
-      { label: '-6 dB', id: 0.611 },
-      { label: '-3 dB', id: 0.683 },
-      { label: '-2 dB', id: 0.708 },
-      { label: '-1 dB', id: 0.7365 },
-      { label: '0 dB', id: 0.7653 },
-      { label: '+1 dB', id: 0.7905 },
-      { label: '+2 dB', id: 0.8188 },
-      { label: '+3 dB', id: 0.844 },
-      { label: '+4 dB', id: 0.8692 },
-      { label: '+5 dB', id: 0.894 },
-      { label: '+6 dB', id: 0.9156 },
-      { label: '+9 dB', id: 0.98 },
-      { label: '+10 dB', id: 1.0 }
-    ],
-    default: 0.7653
   }
-};
+}
 
 /**
  * Commonly used option fields
@@ -146,11 +115,16 @@ export const OPTIONS: { [key: string]: SomeCompanionInputField } = {
     id: 'solo',
     ...CHOICES.onofftoggleDropdown
   },
-  faderValuesDropdown: {
-    type: 'dropdown',
-    label: 'Value',
+  faderValuesSlider: {
+    type: 'number',
+    label: 'Fader Level dB (-100 = -∞)',
     id: 'value',
-    ...CHOICES.faderValues
+    range: true,
+    required: true,
+    default: 0,
+    step: 0.1,
+    min: -100,
+    max: 10
   },
   prepostDropdown: {
     type: 'dropdown',
