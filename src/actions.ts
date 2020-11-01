@@ -38,10 +38,10 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
      */
     [ActionType.SetMasterValue]: {
       label: 'Master: Set fader value',
-      options: [OPTIONS.faderValuesDropdown],
+      options: [OPTIONS.faderValuesSlider],
       callback: action => {
         const value = Number(action.options.value);
-        return conn.master.setFaderLevel(value);
+        return conn.master.setFaderLevelDB(value);
       }
     },
 
@@ -88,11 +88,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
 
     [ActionType.SetMasterChannelValue]: {
       label: 'Master channels: Set fader value',
-      options: [...OPTION_SETS.masterChannel, OPTIONS.faderValuesDropdown],
+      options: [...OPTION_SETS.masterChannel, OPTIONS.faderValuesSlider],
       callback: action => {
         const c = getMasterChannelFromOptions(action.options, conn);
         const value = Number(action.options.value);
-        return c.setFaderLevel(value);
+        return c.setFaderLevelDB(value);
       }
     },
 
@@ -133,11 +133,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
 
     [ActionType.SetAuxChannelValue]: {
       label: 'AUX channels: Set fader value',
-      options: [...OPTION_SETS.auxChannel, OPTIONS.faderValuesDropdown],
+      options: [...OPTION_SETS.auxChannel, OPTIONS.faderValuesSlider],
       callback: action => {
         const c = getAuxChannelFromOptions(action.options, conn);
         const value = Number(action.options.value);
-        return c.setFaderLevel(value);
+        return c.setFaderLevelDB(value);
       }
     },
 
@@ -194,11 +194,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
 
     [ActionType.SetFxChannelValue]: {
       label: 'FX: Set fader value',
-      options: [...OPTION_SETS.fxChannel, OPTIONS.faderValuesDropdown],
+      options: [...OPTION_SETS.fxChannel, OPTIONS.faderValuesSlider],
       callback: action => {
         const c = getFxChannelFromOptions(action.options, conn);
         const value = Number(action.options.value);
-        return c.setFaderLevel(value);
+        return c.setFaderLevelDB(value);
       }
     },
 
