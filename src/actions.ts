@@ -1,21 +1,24 @@
 import { CompanionAction, CompanionActions } from '../../../instance_skel_types';
 import { SoundcraftUI } from 'soundcraft-ui-connection';
-import { CHOICES, OPTIONS } from './utils/input-utils';
-import { getAuxChannel, getMasterChannel } from './utils/channel-selection';
-import { optionToChannelType } from './utils/utils';
+import { CHOICES, OPTIONS, OPTION_SETS } from './utils/input-utils';
+import {
+  getAuxChannelFromOptions,
+  getFxChannelFromOptions,
+  getMasterChannelFromOptions
+} from './utils/channel-selection';
 
 export enum ActionType {
   MuteMasterChannel = 'mutemasterchannel',
   SoloMasterChannel = 'solomasterchannel',
-  // SetMasterChannelValue = 'setmasterchannelvalue',
+  SetMasterChannelValue = 'setmasterchannelvalue',
   MuteAuxChannel = 'muteauxchannel',
-  // SetAuxChannelValue = 'setauxchannelvalue',
+  SetAuxChannelValue = 'setauxchannelvalue',
   SetAuxChannelPost = 'setauxchannelpost',
   SetAuxChannelPostProc = 'setauxchannelpostproc',
-  // MuteFxChannel = 'mutefxchannel',
-  // SetFxChannelPost = 'setfxchannelpost',
-  // SetFxChannelValue = 'setfxchannelvalue',
-  // SetMasterValue = 'setmastervalue',
+  MuteFxChannel = 'mutefxchannel',
+  SetFxChannelPost = 'setfxchannelpost',
+  SetFxChannelValue = 'setfxchannelvalue',
+  SetMasterValue = 'setmastervalue',
   DimMaster = 'dimmaster'
   // MediaSwitchPlist = 'mediaswitchplist',
   // MediaSwitchTrack = 'mediaswitchtrack',
@@ -33,16 +36,14 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
     /**
      * MASTER
      */
-    /* [ActionType.SetMasterValue]: {
+    [ActionType.SetMasterValue]: {
       label: 'Master: Set fader value',
-      options: [
-        OPTIONS.faderValuesDropdown
-      ],
+      options: [OPTIONS.faderValuesDropdown],
       callback: action => {
-        // TODO
-        console.log('ACTION', action);
+        const value = Number(action.options.value);
+        return conn.master.setFaderLevel(value);
       }
-    }, */
+    },
 
     [ActionType.DimMaster]: {
       label: 'Master: Dim',
@@ -71,11 +72,9 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
      */
     [ActionType.MuteMasterChannel]: {
       label: 'Master channels: Mute',
-      options: [OPTIONS.masterChannelTypeDropdown, OPTIONS.channelNumberField, OPTIONS.muteDropdown],
+      options: [...OPTION_SETS.masterChannel, OPTIONS.muteDropdown],
       callback: action => {
-        const channelType = optionToChannelType(action.options.channelType);
-        const channel = Number(action.options.channel);
-        const c = getMasterChannel(conn.master, channelType, channel);
+        const c = getMasterChannelFromOptions(action.options, conn);
         switch (Number(action.options.mute)) {
           case 0:
             return c.unmute();
@@ -87,21 +86,21 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
       }
     },
 
-    /* [ActionType.SetMasterChannelValue]: {
+    [ActionType.SetMasterChannelValue]: {
       label: 'Master channels: Set fader value',
-      options: [OPTIONS.masterChannelTypeDropdown, OPTIONS.channelNumberField, OPTIONS.faderValuesDropdown],
+      options: [...OPTION_SETS.masterChannel, OPTIONS.faderValuesDropdown],
       callback: action => {
-        console.log(action);
+        const c = getMasterChannelFromOptions(action.options, conn);
+        const value = Number(action.options.value);
+        return c.setFaderLevel(value);
       }
-    }, */
+    },
 
     [ActionType.SoloMasterChannel]: {
       label: 'Master channels: Solo',
-      options: [OPTIONS.masterChannelTypeDropdown, OPTIONS.channelNumberField, OPTIONS.soloDropdown],
+      options: [...OPTION_SETS.masterChannel, OPTIONS.soloDropdown],
       callback: action => {
-        const channelType = optionToChannelType(action.options.channelType);
-        const channel = Number(action.options.channel);
-        const c = getMasterChannel(conn.master, channelType, channel);
+        const c = getMasterChannelFromOptions(action.options, conn);
         switch (Number(action.options.solo)) {
           case 0:
             return c.unsolo();
@@ -117,18 +116,10 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
      * AUX Channels
      */
     [ActionType.MuteAuxChannel]: {
-      label: 'AUX: Mute channel',
-      options: [
-        OPTIONS.busNumberField,
-        OPTIONS.auxChannelTypeDropdown,
-        OPTIONS.channelNumberField,
-        OPTIONS.muteDropdown
-      ],
+      label: 'AUX channels: Mute',
+      options: [...OPTION_SETS.auxChannel, OPTIONS.muteDropdown],
       callback: action => {
-        const bus = Number(action.options.bus);
-        const channel = Number(action.options.channel);
-        const channelType = optionToChannelType(action.options.channelType);
-        const c = getAuxChannel(conn.aux(bus), channelType, channel);
+        const c = getAuxChannelFromOptions(action.options, conn);
         switch (Number(action.options.mute)) {
           case 0:
             return c.unmute();
@@ -140,33 +131,21 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
       }
     },
 
-    /* [ActionType.SetAuxChannelValue]: {
-      label: 'AUX: Set fader value',
-      options: [
-        OPTIONS.busNumberField,
-        OPTIONS.auxChannelTypeDropdown,
-        OPTIONS.channelNumberField,
-        OPTIONS.faderValuesDropdown
-      ],
+    [ActionType.SetAuxChannelValue]: {
+      label: 'AUX channels: Set fader value',
+      options: [...OPTION_SETS.auxChannel, OPTIONS.faderValuesDropdown],
       callback: action => {
-        // TODO
-        console.log('ACTION', action);
+        const c = getAuxChannelFromOptions(action.options, conn);
+        const value = Number(action.options.value);
+        return c.setFaderLevel(value);
       }
-    }, */
+    },
 
     [ActionType.SetAuxChannelPost]: {
-      label: 'AUX: Set PRE/POST',
-      options: [
-        OPTIONS.busNumberField,
-        OPTIONS.auxChannelTypeDropdown,
-        OPTIONS.channelNumberField,
-        OPTIONS.prepostDropdown
-      ],
+      label: 'AUX channels: Set PRE/POST',
+      options: [...OPTION_SETS.auxChannel, OPTIONS.prepostDropdown],
       callback: action => {
-        const bus = Number(action.options.bus);
-        const channel = Number(action.options.channel);
-        const channelType = optionToChannelType(action.options.channelType);
-        const c = getAuxChannel(conn.aux(bus), channelType, channel);
+        const c = getAuxChannelFromOptions(action.options, conn);
         switch (Number(action.options.post)) {
           case 0:
             return c.pre();
@@ -177,73 +156,65 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
     },
 
     [ActionType.SetAuxChannelPostProc]: {
-      label: 'AUX: Set Post proc',
+      label: 'AUX channels: Set POST PROC',
       options: [
-        OPTIONS.busNumberField,
-        OPTIONS.auxChannelTypeDropdown,
-        OPTIONS.channelNumberField,
+        ...OPTION_SETS.auxChannel,
         {
           type: 'dropdown',
-          label: 'Post Proc',
+          label: 'POST PROC',
           id: 'postproc',
           ...CHOICES.onoffDropdown
         }
       ],
       callback: action => {
-        const bus = Number(action.options.bus);
-        const channel = Number(action.options.channel);
-        const channelType = optionToChannelType(action.options.channelType);
-        const c = getAuxChannel(conn.aux(bus), channelType, channel);
-
+        const c = getAuxChannelFromOptions(action.options, conn);
         const value = Number(action.options.postproc);
-        return c.setPostproc(value);
+        return c.setPostProc(value);
       }
-    }
+    },
 
     /**
      * FX channels
      */
-    /* [ActionType.MuteFxChannel]: {
-      label: 'FX: Mute channel',
-      options: [
-        OPTIONS.busNumberField,
-        OPTIONS.fxChannelTypeDropdown,
-        OPTIONS.channelNumberField,
-        OPTIONS.muteDropdown
-      ],
+    [ActionType.MuteFxChannel]: {
+      label: 'FX channels: Mute',
+      options: [...OPTION_SETS.fxChannel, OPTIONS.muteDropdown],
       callback: action => {
-        // TODO
-        console.log('ACTION', action);
+        const c = getFxChannelFromOptions(action.options, conn);
+        switch (Number(action.options.mute)) {
+          case 0:
+            return c.unmute();
+          case 1:
+            return c.mute();
+          case 2:
+            return c.toggleMute();
+        }
       }
-    }, */
+    },
 
-    /* [ActionType.SetFxChannelValue]: {
+    [ActionType.SetFxChannelValue]: {
       label: 'FX: Set fader value',
-      options: [
-        OPTIONS.busNumberField,
-        OPTIONS.fxChannelTypeDropdown,
-        OPTIONS.channelNumberField,
-        OPTIONS.faderValuesDropdown
-      ],
+      options: [...OPTION_SETS.fxChannel, OPTIONS.faderValuesDropdown],
       callback: action => {
-        // TODO
-        console.log('ACTION', action);
+        const c = getFxChannelFromOptions(action.options, conn);
+        const value = Number(action.options.value);
+        return c.setFaderLevel(value);
       }
-    }, */
+    },
 
-    /* [ActionType.SetFxChannelPost]: {
-      label: 'FX: Set PRE/POST',
-      options: [
-        OPTIONS.busNumberField,
-        OPTIONS.auxChannelTypeDropdown,
-        OPTIONS.channelNumberField,
-        OPTIONS.prepostDropdown
-      ],
+    [ActionType.SetFxChannelPost]: {
+      label: 'FX channels: Set PRE/POST',
+      options: [...OPTION_SETS.fxChannel, OPTIONS.prepostDropdown],
       callback: action => {
-        // TODO
-        console.log('ACTION', action);
+        const c = getFxChannelFromOptions(action.options, conn);
+        switch (Number(action.options.post)) {
+          case 0:
+            return c.pre();
+          case 1:
+            return c.post();
+        }
       }
-    }, */
+    }
 
     /**
      * Media Player
