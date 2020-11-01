@@ -31,7 +31,7 @@ export const CHOICES = {
     ],
     default: 2
   },
-  
+
   onofftoggleDropdown: {
     choices: [
       { id: 2, label: 'Toggle' },
@@ -55,12 +55,12 @@ export const CHOICES = {
   },
 
   auxChannelTypes: {
-    choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.s],
+    choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.f],
     default: 'i'
   },
 
   fxChannelTypes: {
-    choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p],
+    choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.s],
     default: 'i'
   },
 
@@ -161,5 +161,15 @@ export const OPTIONS: { [key: string]: SomeCompanionInputField } = {
       { id: 1, label: 'POST' }
     ],
     default: 2
-  },
+  }
+};
+
+/**
+ * Commonly used combinations of option fields
+ */
+
+export const OPTION_SETS: { [key: string]: SomeCompanionInputField[] } = {
+  masterChannel: [OPTIONS.masterChannelTypeDropdown, OPTIONS.channelNumberField],
+  auxChannel: [OPTIONS.busNumberField, OPTIONS.auxChannelTypeDropdown, OPTIONS.channelNumberField],
+  fxChannel: [OPTIONS.busNumberField, OPTIONS.fxChannelTypeDropdown, OPTIONS.channelNumberField]
 };
