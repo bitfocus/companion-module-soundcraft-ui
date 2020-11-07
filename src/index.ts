@@ -71,7 +71,7 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
    * such as actions, feedback and presets.
    */
   private updateCompanionBits(): void {
-    this.setActions(GetActionsList(this.conn));
+    this.setActions(GetActionsList(this, this.conn));
     this.setFeedbackDefinitions(GetFeedbacksList(this, this.state, this.conn));
     this.subscribeFeedbacks();
   }

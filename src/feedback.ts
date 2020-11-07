@@ -5,6 +5,7 @@ import { UiFeedbackState } from './state';
 import {
   getBackgroundPicker,
   getForegroundPicker,
+  getOptColors,
   getOptColorsForBinaryState,
   getStateCheckbox
 } from './utils/feedback-utils';
@@ -14,7 +15,8 @@ import {
   getFxChannelFromOptions,
   getMasterChannelFromOptions
 } from './utils/channel-selection';
-import { SoundcraftUI } from 'soundcraft-ui-connection';
+import { PlayerState, SoundcraftUI } from 'soundcraft-ui-connection';
+import { distinctUntilChanged, map } from 'rxjs/operators';
 
 type CompanionFeedbackWithCallback = CompanionFeedback &
   Required<Pick<CompanionFeedback, 'callback' | 'subscribe' | 'unsubscribe'>>;
@@ -26,7 +28,8 @@ export enum FeedbackType {
   MuteAuxChannel = 'muteauxchannel',
   PostAuxChannel = 'postauxchannel',
   MuteFxChannel = 'mutefxchannel',
-  PostFxChannel = 'postfxchannel'
+  PostFxChannel = 'postfxchannel',
+  MediaPlayerState = 'mediaplayerstate'
 }
 
 export function GetFeedbacksList(
@@ -133,7 +136,43 @@ export function GetFeedbacksList(
         feedback.connect(evt, c.post$);
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
-    }
+    },
+
+    [FeedbackType.MediaPlayerState]: {
+      label: 'Change colors from media player state',
+      description: 'If the media player has the specified state, change color of the bank',
+      options: [
+        getBackgroundPicker(instance.rgb(0, 255, 0)),
+        getForegroundPicker(instance.rgb(255, 255, 255)),
+        {
+          type: 'dropdown',
+          label: 'State',
+          id: 'state',
+          choices: [
+            { id: PlayerState.Stopped, label: 'Stopped' },
+            { id: PlayerState.Playing, label: 'Playing' },
+            { id: PlayerState.Paused, label: 'Paused' }
+          ],
+          default: PlayerState.Playing
+        }
+      ],
+      callback: evt => {
+        if (feedback.get(evt.id)) {
+          return getOptColors(evt);
+        } else {
+          return {};
+        }
+      },
+      subscribe: evt => {
+        const state = Number(evt.options.state);
+        const state$ = conn.player.state$.pipe(
+          map(s => s === state ? 1 : 0),
+          distinctUntilChanged(),
+        );
+        feedback.connect(evt, state$);
+      },
+      unsubscribe: evt => feedback.unsubscribe(evt.id)
+    },
   };
 
   return feedbacks;
