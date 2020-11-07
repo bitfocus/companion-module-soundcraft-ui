@@ -5,6 +5,7 @@ import { GetActionsList } from './actions';
 import { GetConfigFields, UiConfig } from './config';
 import { GetFeedbacksList } from './feedback';
 import { UiFeedbackState } from './state';
+import { upgradeV2x0x0 } from './migrations';
 
 /**
  * Companion instance class for the Soundcraft Ui Mixers.
@@ -15,6 +16,8 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
 
   constructor(system: CompanionSystem, id: string, config: UiConfig) {
     super(system, id, config);
+
+    this.addUpgradeScript(upgradeV2x0x0);
   }
 
   /**
