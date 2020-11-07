@@ -235,6 +235,8 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
             return c.pre();
           case 1:
             return c.post();
+          case 2:
+            return c.togglePost();
         }
       }
     },
@@ -319,6 +321,8 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
             return c.pre();
           case 1:
             return c.post();
+          case 2:
+            return c.togglePost();
         }
       }
     }

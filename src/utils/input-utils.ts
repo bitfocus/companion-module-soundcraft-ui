@@ -128,11 +128,12 @@ export const OPTIONS: { [key: string]: SomeCompanionInputField } = {
   },
   prepostDropdown: {
     type: 'dropdown',
-    label: 'Pre/Post',
+    label: 'PRE/POST',
     id: 'post',
     choices: [
       { id: 0, label: 'PRE' },
-      { id: 1, label: 'POST' }
+      { id: 1, label: 'POST' },
+      { id: 2, label: 'Toggle' },
     ],
     default: 2
   },
