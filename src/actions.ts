@@ -6,6 +6,8 @@ import {
   getFxChannelFromOptions,
   getMasterChannelFromOptions
 } from './utils/channel-selection';
+import InstanceSkel = require('../../../instance_skel');
+import { UiConfig } from './config';
 
 export enum ActionType {
   // Master
@@ -37,18 +39,18 @@ export enum ActionType {
   FadeFxChannel = 'fadefxchannel',
 
   // Media Player
-  // MediaSwitchPlist = 'mediaswitchplist',
-  // MediaSwitchTrack = 'mediaswitchtrack',
-  // MediaPlay = 'mediaplay',
-  // MediaStop = 'mediastop',
-  // MediaPause = 'mediapause',
-  // MediaNext = 'medianext',
-  // MediaPrev = 'mediaprev'
+  MediaPlay = 'mediaplay',
+  MediaStop = 'mediastop',
+  MediaPause = 'mediapause',
+  MediaNext = 'medianext',
+  MediaPrev = 'mediaprev',
+  MediaSwitchPlist = 'mediaswitchplist',
+  MediaSwitchTrack = 'mediaswitchtrack',
 }
 
 type CompanionActionWithCallback = CompanionAction & Required<Pick<CompanionAction, 'callback'>>;
 
-export function GetActionsList(conn: SoundcraftUI): CompanionActions {
+export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: SoundcraftUI): CompanionActions {
   const actions: { [id in ActionType]: CompanionActionWithCallback } = {
     /**
      * MASTER
@@ -325,73 +327,58 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
             return c.togglePost();
         }
       }
-    }
+    },
 
     /**
      * Media Player
      */
-    /* [ActionType.MediaPlay]: {
+    [ActionType.MediaPlay]: {
       label: 'Media Player: Play/Stop',
       options: [],
-      callback: action => {
-        // TODO
-        console.log('ACTION', action);
-      }
-    }, */
+      callback: () => conn.player.play()
+    },
 
-    /* [ActionType.MediaStop]: {
+    [ActionType.MediaStop]: {
       label: 'Media Player: Stop',
       options: [],
-      callback: action => {
-        // TODO
-        console.log('ACTION', action);
-      }
-    }, */
+      callback: () => conn.player.stop()
+    },
 
-    /* [ActionType.MediaPause]: {
+    [ActionType.MediaPause]: {
       label: 'Media Player: Pause',
       options: [],
-      callback: action => {
-        // TODO
-        console.log('ACTION', action);
-      }
-    }, */
+      callback: () => conn.player.pause()
+    },
 
-    /* [ActionType.MediaNext]: {
+    [ActionType.MediaNext]: {
       label: 'Media Player: Next track',
       options: [],
-      callback: action => {
-        // TODO
-        console.log('ACTION', action);
-      }
-    }, */
+      callback: () => conn.player.next()
+    },
 
-    /* [ActionType.MediaPrev]: {
+    [ActionType.MediaPrev]: {
       label: 'Media Player: Previous track',
       options: [],
-      callback: action => {
-        // TODO
-        console.log('ACTION', action);
-      }
-    }, */
+      callback: () => conn.player.prev()
+    },
 
-    /* [ActionType.MediaSwitchPlist]: {
+    [ActionType.MediaSwitchPlist]: {
       label: 'Media Player: Switch Playlist',
       options: [
         {
           type: 'textinput',
           label: 'Playlist',
           id: 'playlist',
-          regex: self.REGEX_SOMETHING
+          default: '~all~',
+          regex: instance.REGEX_SOMETHING
         }
       ],
       callback: action => {
-        // TODO
-        console.log('ACTION', action);
+        conn.player.loadPlaylist(action.options.playlist as string);
       }
-    }, */
+    },
 
-    /* [ActionType.MediaSwitchTrack]: {
+    [ActionType.MediaSwitchTrack]: {
       label: 'Media Player: Switch Track',
       options: [
         {
@@ -399,20 +386,22 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
           label: 'Playlist',
           id: 'playlist',
           default: '~all~',
-          regex: self.REGEX_SOMETHING
+          regex: instance.REGEX_SOMETHING
         },
         {
           type: 'textinput',
-          label: 'File',
-          id: 'file',
-          regex: self.REGEX_SOMETHING
+          label: 'Track/File',
+          id: 'track',
+          regex: instance.REGEX_SOMETHING
         }
       ],
       callback: action => {
-        // TODO
-        console.log('ACTION', action);
+        conn.player.loadTrack(
+          action.options.playlist as string,
+          action.options.track as string
+        );
       }
-    }, */
+    }
   };
 
   return actions;
