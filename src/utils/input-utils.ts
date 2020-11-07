@@ -1,4 +1,4 @@
-import { ChannelType } from 'soundcraft-ui-connection';
+import { ChannelType, Easings } from 'soundcraft-ui-connection';
 import { DropdownChoice, SomeCompanionInputField } from '../../../../instance_skel_types';
 
 /**
@@ -135,7 +135,35 @@ export const OPTIONS: { [key: string]: SomeCompanionInputField } = {
       { id: 1, label: 'POST' }
     ],
     default: 2
-  }
+  },
+  easingsDropdown: {
+    type: 'dropdown',
+    label: 'Easing',
+    id: 'easing',
+    choices: [
+      { id: Easings.Linear, label: 'Linear / None' },
+      { id: Easings.EaseIn, label: 'Ease In' },
+      { id: Easings.EaseOut, label: 'Ease Out' },
+      { id: Easings.EaseInOut, label: 'Ease In Out' },
+    ],
+    default: Easings.Linear
+  },
+  fadeTimeField: {
+    type: 'number',
+    label: 'Fade time (ms)',
+    id: 'fadeTime',
+    min: 100,
+    max: 60000,
+    default: 2000
+  },
+  faderChangeField: {
+    type: 'number',
+    label: 'Change value (dB)',
+    id: 'value',
+    min: -100,
+    max: 100,
+    default: 3
+  },
 };
 
 /**
@@ -145,5 +173,6 @@ export const OPTIONS: { [key: string]: SomeCompanionInputField } = {
 export const OPTION_SETS: { [key: string]: SomeCompanionInputField[] } = {
   masterChannel: [OPTIONS.masterChannelTypeDropdown, OPTIONS.channelNumberField],
   auxChannel: [OPTIONS.busNumberField, OPTIONS.auxChannelTypeDropdown, OPTIONS.channelNumberField],
-  fxChannel: [OPTIONS.busNumberField, OPTIONS.fxChannelTypeDropdown, OPTIONS.channelNumberField]
+  fxChannel: [OPTIONS.busNumberField, OPTIONS.fxChannelTypeDropdown, OPTIONS.channelNumberField],
+  fadeTransition: [OPTIONS.faderValuesSlider, OPTIONS.fadeTimeField, OPTIONS.easingsDropdown]
 };

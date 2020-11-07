@@ -8,18 +8,35 @@ import {
 } from './utils/channel-selection';
 
 export enum ActionType {
+  // Master
+  SetMasterValue = 'setmastervalue',
+  ChangeMasterValue = 'changemastervalue',
+  FadeMaster = 'fademaster',
+  DimMaster = 'dimmaster',
+
+  // Master Channels
   MuteMasterChannel = 'mutemasterchannel',
   SoloMasterChannel = 'solomasterchannel',
   SetMasterChannelValue = 'setmasterchannelvalue',
+  ChangeMasterChannelValue = 'changemasterchannelvalue',
+  FadeMasterChannel = 'fademasterchannel',
+
+  // AUX Channels
   MuteAuxChannel = 'muteauxchannel',
   SetAuxChannelValue = 'setauxchannelvalue',
+  ChangeAuxChannelValue = 'changeauxchannelvalue',
+  FadeAuxChannel = 'fadeauxchannel',
   SetAuxChannelPost = 'setauxchannelpost',
   SetAuxChannelPostProc = 'setauxchannelpostproc',
+
+  // FX Channels
   MuteFxChannel = 'mutefxchannel',
   SetFxChannelPost = 'setfxchannelpost',
   SetFxChannelValue = 'setfxchannelvalue',
-  SetMasterValue = 'setmastervalue',
-  DimMaster = 'dimmaster'
+  ChangeFxChannelValue = 'changefxchannelvalue',
+  FadeFxChannel = 'fadefxchannel',
+
+  // Media Player
   // MediaSwitchPlist = 'mediaswitchplist',
   // MediaSwitchTrack = 'mediaswitchtrack',
   // MediaPlay = 'mediaplay',
@@ -42,6 +59,27 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
       callback: action => {
         const value = Number(action.options.value);
         return conn.master.setFaderLevelDB(value);
+      }
+    },
+
+    [ActionType.FadeMaster]: {
+      label: 'Master: Fade transition',
+      options: [...OPTION_SETS.fadeTransition],
+      callback: action => {
+        return conn.master.fadeToDB(
+          Number(action.options.value),
+          Number(action.options.fadeTime),
+          Number(action.options.easing)
+        );
+      }
+    },
+    
+    [ActionType.ChangeMasterValue]: {
+      label: 'Master: Change fader value (relative)',
+      options: [OPTIONS.faderChangeField],
+      callback: action => {
+        const value = Number(action.options.value);
+        return conn.master.changeFaderLevelDB(value);
       }
     },
 
@@ -96,6 +134,29 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
       }
     },
 
+    [ActionType.FadeMasterChannel]: {
+      label: 'Master channels: Fade transition',
+      options: [...OPTION_SETS.masterChannel, ...OPTION_SETS.fadeTransition],
+      callback: action => {
+        const c = getMasterChannelFromOptions(action.options, conn);
+        return c.fadeToDB(
+          Number(action.options.value),
+          Number(action.options.fadeTime),
+          Number(action.options.easing)
+        );
+      }
+    },
+
+    [ActionType.ChangeMasterChannelValue]: {
+      label: 'Master channels: Change fader value (relative)',
+      options: [...OPTION_SETS.masterChannel, OPTIONS.faderChangeField],
+      callback: action => {
+        const c = getMasterChannelFromOptions(action.options, conn);
+        const value = Number(action.options.value);
+        return c.changeFaderLevelDB(value);
+      }
+    },
+
     [ActionType.SoloMasterChannel]: {
       label: 'Master channels: Solo',
       options: [...OPTION_SETS.masterChannel, OPTIONS.soloDropdown],
@@ -138,6 +199,29 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
         const c = getAuxChannelFromOptions(action.options, conn);
         const value = Number(action.options.value);
         return c.setFaderLevelDB(value);
+      }
+    },
+
+    [ActionType.FadeAuxChannel]: {
+      label: 'AUX channels: Fade transition',
+      options: [...OPTION_SETS.auxChannel, ...OPTION_SETS.fadeTransition],
+      callback: action => {
+        const c = getAuxChannelFromOptions(action.options, conn);
+        return c.fadeToDB(
+          Number(action.options.value),
+          Number(action.options.fadeTime),
+          Number(action.options.easing)
+        );
+      }
+    },
+
+    [ActionType.ChangeAuxChannelValue]: {
+      label: 'AUX channels: Change fader value (relative)',
+      options: [...OPTION_SETS.auxChannel, OPTIONS.faderChangeField],
+      callback: action => {
+        const c = getAuxChannelFromOptions(action.options, conn);
+        const value = Number(action.options.value);
+        return c.changeFaderLevelDB(value);
       }
     },
 
@@ -193,12 +277,35 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActions {
     },
 
     [ActionType.SetFxChannelValue]: {
-      label: 'FX: Set fader value',
+      label: 'FX channels: Set fader value',
       options: [...OPTION_SETS.fxChannel, OPTIONS.faderValuesSlider],
       callback: action => {
         const c = getFxChannelFromOptions(action.options, conn);
         const value = Number(action.options.value);
         return c.setFaderLevelDB(value);
+      }
+    },
+
+    [ActionType.FadeFxChannel]: {
+      label: 'FX channels: Fade transition',
+      options: [...OPTION_SETS.fxChannel, ...OPTION_SETS.fadeTransition],
+      callback: action => {
+        const c = getFxChannelFromOptions(action.options, conn);
+        return c.fadeToDB(
+          Number(action.options.value),
+          Number(action.options.fadeTime),
+          Number(action.options.easing)
+        );
+      }
+    },
+
+    [ActionType.ChangeFxChannelValue]: {
+      label: 'FX channels: Change fader value (relative)',
+      options: [...OPTION_SETS.fxChannel, OPTIONS.faderChangeField],
+      callback: action => {
+        const c = getFxChannelFromOptions(action.options, conn);
+        const value = Number(action.options.value);
+        return c.changeFaderLevelDB(value);
       }
     },
 
