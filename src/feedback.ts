@@ -24,7 +24,9 @@ export enum FeedbackType {
   SoloMasterChannel = 'solomasterchannel',
   DimMaster = 'dimmaster',
   MuteAuxChannel = 'muteauxchannel',
-  MuteFxChannel = 'mutefxchannel'
+  PostAuxChannel = 'postauxchannel',
+  MuteFxChannel = 'mutefxchannel',
+  PostFxChannel = 'postfxchannel'
 }
 
 export function GetFeedbacksList(
@@ -34,6 +36,11 @@ export function GetFeedbacksList(
 ): CompanionFeedbacks {
   const muteColorPickers = [
     getBackgroundPicker(instance.rgb(255, 0, 0)),
+    getForegroundPicker(instance.rgb(255, 255, 255))
+  ];
+
+  const postColorPickers = [
+    getBackgroundPicker(instance.rgb(0, 255, 0)),
     getForegroundPicker(instance.rgb(255, 255, 255))
   ];
 
@@ -92,6 +99,18 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
+    [FeedbackType.PostAuxChannel]: {
+      label: 'Change colors from AUX bus channel POST state',
+      description: 'If the specified channel on the AUX bus has POST enabled, change color of the bank',
+      options: [...postColorPickers, ...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
+      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      subscribe: evt => {
+        const c = getAuxChannelFromOptions(evt.options, conn);
+        feedback.connect(evt, c.post$);
+      },
+      unsubscribe: evt => feedback.unsubscribe(evt.id)
+    },
+
     [FeedbackType.MuteFxChannel]: {
       label: 'Change colors from FX bus channel MUTE state',
       description: 'If the specified channel on the FX bus is muted, change color of the bank',
@@ -100,6 +119,18 @@ export function GetFeedbacksList(
       subscribe: evt => {
         const c = getFxChannelFromOptions(evt.options, conn);
         feedback.connect(evt, c.mute$);
+      },
+      unsubscribe: evt => feedback.unsubscribe(evt.id)
+    },
+
+    [FeedbackType.PostFxChannel]: {
+      label: 'Change colors from FX bus channel POST state',
+      description: 'If the specified channel on the FX bus has POST enabled, change color of the bank',
+      options: [...postColorPickers, ...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
+      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      subscribe: evt => {
+        const c = getFxChannelFromOptions(evt.options, conn);
+        feedback.connect(evt, c.post$);
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     }
