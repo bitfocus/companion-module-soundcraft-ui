@@ -55,7 +55,8 @@ export function GetFeedbacksList(
       callback: evt => getOptColorsForBinaryState(feedback, evt),
       subscribe: evt => {
         const c = getMasterChannelFromOptions(evt.options, conn);
-        feedback.connect(evt, c.mute$);
+        const streamId = c.fullChannelId + '-mute';
+        feedback.connect(evt, c.mute$, streamId);
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
@@ -72,7 +73,8 @@ export function GetFeedbacksList(
       callback: evt => getOptColorsForBinaryState(feedback, evt),
       subscribe: evt => {
         const c = getMasterChannelFromOptions(evt.options, conn);
-        feedback.connect(evt, c.solo$);
+        const streamId = c.fullChannelId + '-solo';
+        feedback.connect(evt, c.solo$, streamId);
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
@@ -86,7 +88,7 @@ export function GetFeedbacksList(
         getStateCheckbox('Dimmed')
       ],
       callback: evt => getOptColorsForBinaryState(feedback, evt),
-      subscribe: evt => feedback.connect(evt, conn.master.dim$),
+      subscribe: evt => feedback.connect(evt, conn.master.dim$, 'masterdim'),
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
@@ -97,7 +99,8 @@ export function GetFeedbacksList(
       callback: evt => getOptColorsForBinaryState(feedback, evt),
       subscribe: evt => {
         const c = getAuxChannelFromOptions(evt.options, conn);
-        feedback.connect(evt, c.mute$);
+        const streamId = c.fullChannelId + '-mute';
+        feedback.connect(evt, c.mute$, streamId);
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
@@ -109,7 +112,8 @@ export function GetFeedbacksList(
       callback: evt => getOptColorsForBinaryState(feedback, evt),
       subscribe: evt => {
         const c = getAuxChannelFromOptions(evt.options, conn);
-        feedback.connect(evt, c.post$);
+        const streamId = c.fullChannelId + '-post';
+        feedback.connect(evt, c.post$, streamId);
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
@@ -121,7 +125,8 @@ export function GetFeedbacksList(
       callback: evt => getOptColorsForBinaryState(feedback, evt),
       subscribe: evt => {
         const c = getFxChannelFromOptions(evt.options, conn);
-        feedback.connect(evt, c.mute$);
+        const streamId = c.fullChannelId + '-mute';
+        feedback.connect(evt, c.mute$, streamId);
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
@@ -133,7 +138,8 @@ export function GetFeedbacksList(
       callback: evt => getOptColorsForBinaryState(feedback, evt),
       subscribe: evt => {
         const c = getFxChannelFromOptions(evt.options, conn);
-        feedback.connect(evt, c.post$);
+        const streamId = c.fullChannelId + '-post';
+        feedback.connect(evt, c.post$, streamId);
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
@@ -169,7 +175,7 @@ export function GetFeedbacksList(
           map(s => s === state ? 1 : 0),
           distinctUntilChanged(),
         );
-        feedback.connect(evt, state$);
+        feedback.connect(evt, state$, 'playerstate');
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
