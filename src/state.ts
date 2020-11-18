@@ -3,10 +3,21 @@ import { Subject, Observable } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
 import { CompanionFeedbackEvent } from '../../../instance_skel_types';
 import { UiConfig } from './config';
+import { FeedbackType } from './feedback';
+
+interface UiFeedbackSubscription {
+  state: any;
+  feedbacks: Map<string, FeedbackType>;
+}
 
 export class UiFeedbackState {
   private feedbackUnsubscribe$ = new Subject<string>();
-  private state: { [feedbackId: string]: any } = {};
+
+  /** Internal map of all subscriptions, current state and connected feedbacks */
+  private subscriptions = new Map<string, UiFeedbackSubscription>();
+  
+  /** Simple inverted map of feedback IDs to stream IDs for faster lookup */
+  private feedbackStreamMap = new Map<string, string>(); // <FeedbackId, StreamId>
 
   constructor(private instance: InstanceSkel<UiConfig>) {}
 
@@ -16,30 +27,24 @@ export class UiFeedbackState {
    * The stream will be subscribed until we call `unsubscribeFeedback` with the internal feedback ID.
    * @param evt The feedback metadata from Companion
    * @param stream$ The observable stream of values for this feedback
+   * @param streamId Internal identifier for the stream. Used to group similar streams
    */
-  connect(evt: CompanionFeedbackEvent, stream$: Observable<any>): void {
-    const unsubscribe$ = this.feedbackUnsubscribe$.pipe(filter(fid => fid === evt.id || !fid));
-    stream$.pipe(takeUntil(unsubscribe$)).subscribe(value => this.set(value, evt.id, evt.type));
-  }
+  connect(evt: CompanionFeedbackEvent, stream$: Observable<any>, streamId: string): void {
+    // if there is NO subscription to this observable yet,
+    // create an entry and subscribe the stream
+    if (!this.subscriptions.get(streamId)) {
+      const sub = {
+        state: null,
+        feedbacks: new Map<string, FeedbackType>()
+      }
+      this.subscriptions.set(streamId, sub);
 
-  /**
-   * Set the state value for a feedback.
-   * Only used internally after connecting a stream
-   * @param value
-   * @param feedbackId
-   * @param feedbackType
-   */
-  private set(value: any, feedbackId: string, feedbackType?: string) {
-    this.state[feedbackId] = value;
-    this.instance.checkFeedbacks(feedbackType);
-  }
+      const unsubscribe$ = this.feedbackUnsubscribe$.pipe(filter(sid => sid === streamId || !sid));
+      stream$.pipe(takeUntil(unsubscribe$)).subscribe(state => this.handleStateUpdate(streamId, state));
+    }
 
-  /**
-   * Remove this feedback
-   * @param feedbackId Internal ID of the feedback
-   */
-  private unset(feedbackId: string) {
-    delete this.state[feedbackId];
+    // register new feedback subscription
+    this.addFeedbackSubscription(streamId, evt.id, evt.type as FeedbackType);
   }
 
   /**
@@ -47,7 +52,8 @@ export class UiFeedbackState {
    * @param feedbackId Internal ID of the feedback
    */
   get(feedbackId: string) {
-    return this.state[feedbackId];
+    const streamId = this.feedbackStreamMap.get(feedbackId);
+    return streamId && this.subscriptions.get(streamId)?.state;
   }
 
   /**
@@ -55,8 +61,20 @@ export class UiFeedbackState {
    * @param feedbackId Internal ID of the feedback
    */
   unsubscribe(feedbackId: string) {
-    this.feedbackUnsubscribe$.next(feedbackId);
-    this.unset(feedbackId);
+    const streamId = this.feedbackStreamMap.get(feedbackId);
+    if (!streamId) { return; }
+    
+    const sub = this.subscriptions.get(streamId);
+    if (!sub) { return; }
+    // remove feedback entry
+    sub.feedbacks.delete(feedbackId);
+    this.feedbackStreamMap.delete(feedbackId);
+    
+    // if no entries left, remove whole subscription
+    if (sub.feedbacks.size === 0) {
+      this.feedbackUnsubscribe$.next(streamId);
+      this.subscriptions.delete(streamId);
+    }
   }
 
   /**
@@ -64,6 +82,62 @@ export class UiFeedbackState {
    */
   unsubscribeAll() {
     this.feedbackUnsubscribe$.next();
-    this.state = {};
+    this.subscriptions.clear();
+    this.feedbackStreamMap.clear();
+  }
+
+
+  /**
+   * Handle updated state values from the subscribed streams
+   * @param streamId 
+   * @param value the new state value
+   */
+  private handleStateUpdate(streamId: string, value: any) {
+    // change state value
+    this.setState(streamId, value);
+
+    // get distinct feedback types for this streamId and refresh them
+    this.getFeedbackTypes(streamId).forEach(fb => {
+      this.instance.checkFeedbacks(fb);
+    });
+  }
+
+  /**
+   * Get distinct list of all feedback types for a given stream ID.
+   * Used to update feedbacks accordingly when the state changes.
+   * @param streamId
+   */
+  private getFeedbackTypes(streamId: string) {
+    const feedbacks = this.subscriptions.get(streamId)?.feedbacks;
+    if (feedbacks) {
+      return Array.from(new Set(feedbacks.values()));
+    } else {
+      return [];
+    }
+  }
+
+  /**
+   * Set the state for a given stream ID, assuming that the subscription entry already exists
+   * @param streamId
+   */
+  private setState(streamId: string, state: any) {
+    const sub = this.subscriptions.get(streamId);
+    if (!sub) { return; }
+    
+    sub.state = state;
+  }
+
+  /**
+   * Add one feedback subscription to the map, assuming that the general subscription entry already exists
+   * @param streamId 
+   * @param feedbackId 
+   * @param feedbackType 
+   */
+  private addFeedbackSubscription(streamId: string, feedbackId: string, feedbackType: FeedbackType) {
+    const sub = this.subscriptions.get(streamId);
+    if (!sub) { return; }
+
+    sub.feedbacks.set(feedbackId, feedbackType);
+    this.feedbackStreamMap.set(feedbackId, streamId);
   }
 }
