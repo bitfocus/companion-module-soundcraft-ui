@@ -18,7 +18,7 @@ export type CompanionFeedbackOrActionEventOptions = CompanionActionEvent['option
 export function getMasterChannel(source: MasterBus, type: ChannelType, channel: number) {
   switch (type) {
     case 'l':
-      return source.input(channel);
+      return source.line(channel);
     case 'p':
       return source.player(channel);
     case 'a':
@@ -49,7 +49,7 @@ export function getMasterChannelFromOptions(
 export function getAuxChannel(source: AuxBus, type: ChannelType, channel: number) {
   switch (type) {
     case 'l':
-      return source.input(channel);
+      return source.line(channel);
     case 'p':
       return source.player(channel);
     case 'f':
@@ -75,7 +75,7 @@ export function getAuxChannelFromOptions(
 export function getFxChannel(source: FxBus, type: ChannelType, channel: number) {
   switch (type) {
     case 'l':
-      return source.input(channel);
+      return source.line(channel);
     case 'p':
       return source.player(channel);
     case 's':
