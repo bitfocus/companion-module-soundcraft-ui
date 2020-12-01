@@ -46,6 +46,8 @@ export enum ActionType {
   MediaPrev = 'mediaprev',
   MediaSwitchPlist = 'mediaswitchplist',
   MediaSwitchTrack = 'mediaswitchtrack',
+  MediaSetPlayMode = 'mediasetplaymode',
+  MediaSetShuffle = 'mediasetshuffle'
 }
 
 type CompanionActionWithCallback = CompanionAction & Required<Pick<CompanionAction, 'callback'>>;
@@ -401,7 +403,53 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
           action.options.track as string
         );
       }
-    }
+    },
+
+    [ActionType.MediaSetPlayMode]: {
+      label: 'Media Player: Set play mode (MANUAL/AUTO)',
+      options: [
+        {
+          type: 'dropdown',
+          label: 'Mode',
+          id: 'mode',
+          choices: [
+            { id: 'manual', label: 'MANUAL' },
+            { id: 'auto', label: 'AUTO' },
+          ],
+          default: 'manual'
+        }
+      ],
+      callback: action => {
+        switch (action.options.mode) {
+          case 'manual':
+            return conn.player.setManual();
+          case 'auto':
+            return conn.player.setAuto();
+        }
+      }
+    },
+
+    [ActionType.MediaSetShuffle]: {
+      label: 'Media Player: Set shuffle',
+      options: [
+        {
+          type: 'dropdown',
+          label: 'Shuffle',
+          id: 'shuffle',
+          ...CHOICES.onofftoggleDropdown
+        }
+      ],
+      callback: action => {
+        switch (Number(action.options.shuffle)) {
+          case 0:
+            return conn.player.setShuffle(0);
+          case 1:
+            return conn.player.setShuffle(1);
+          case 2:
+            return conn.player.toggleShuffle();
+        }        
+      }
+    },
   };
 
   return actions;
