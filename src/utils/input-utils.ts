@@ -109,6 +109,22 @@ export const OPTIONS: { [key: string]: SomeCompanionInputField } = {
     id: 'mute',
     ...CHOICES.mute
   },
+  muteGroupDropdown: {
+    type: 'dropdown',
+    label: 'Group',
+    id: 'group',
+    choices: [
+      { id: 1, label: 'MUTE Group 1' },
+      { id: 2, label: 'MUTE Group 2' },
+      { id: 3, label: 'MUTE Group 3' },
+      { id: 4, label: 'MUTE Group 4' },
+      { id: 5, label: 'MUTE Group 5' },
+      { id: 6, label: 'MUTE Group 6' },
+      { id: 'all', label: 'MUTE ALL' },
+      { id: 'fx', label: 'MUTE FX' }
+    ],
+    default: 1
+  },
   soloDropdown: {
     type: 'dropdown',
     label: 'Solo',

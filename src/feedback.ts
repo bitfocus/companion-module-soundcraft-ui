@@ -9,11 +9,12 @@ import {
   getOptColorsForBinaryState,
   getStateCheckbox
 } from './utils/feedback-utils';
-import { OPTION_SETS } from './utils/input-utils';
+import { OPTION_SETS, OPTIONS } from './utils/input-utils';
 import {
   getAuxChannelFromOptions,
   getFxChannelFromOptions,
-  getMasterChannelFromOptions
+  getMasterChannelFromOptions,
+  getMuteGroupIDFromOptions
 } from './utils/channel-selection';
 import { PlayerState, SoundcraftUI } from 'soundcraft-ui-connection';
 import { distinctUntilChanged, map } from 'rxjs/operators';
@@ -31,7 +32,8 @@ export enum FeedbackType {
   PostFxChannel = 'postfxchannel',
   MediaPlayerState = 'mediaplayerstate',
   MediaPlayerShuffle = 'mediaplayershuffle',
-  DTRecordState = 'dualtrackrecordstate'
+  DTRecordState = 'dualtrackrecordstate',
+  MuteMuteGroup = 'mutemutegroup'
 }
 
 export function GetFeedbacksList(
@@ -216,6 +218,26 @@ export function GetFeedbacksList(
           case 'busy':
             return feedback.connect(evt, recorder.busy$, 'dtrec-busy');
         }
+      },
+      unsubscribe: evt => feedback.unsubscribe(evt.id)
+    },
+
+    [FeedbackType.MuteMuteGroup]: {
+      label: 'Change colors from MUTE group/ALL/FX state',
+      description: 'If the specified group is muted, change color of the bank',
+      options: [
+        ...muteColorPickers,
+        OPTIONS.muteGroupDropdown,
+        getStateCheckbox('Muted')
+      ],
+      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      subscribe: evt => {
+        const groupId = getMuteGroupIDFromOptions(evt.options);
+        if (groupId === -1) { return; }
+        const group = conn.muteGroup(groupId);
+
+        const streamId = 'mgstate' + groupId;
+        feedback.connect(evt, group.state$, streamId);
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
