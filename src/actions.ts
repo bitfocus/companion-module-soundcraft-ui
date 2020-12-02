@@ -47,7 +47,10 @@ export enum ActionType {
   MediaSwitchPlist = 'mediaswitchplist',
   MediaSwitchTrack = 'mediaswitchtrack',
   MediaSetPlayMode = 'mediasetplaymode',
-  MediaSetShuffle = 'mediasetshuffle'
+  MediaSetShuffle = 'mediasetshuffle',
+
+  // 2-Track Recorder
+  DTRecordToggle = 'dualtrackrecordtoggle'
 }
 
 type CompanionActionWithCallback = CompanionAction & Required<Pick<CompanionAction, 'callback'>>;
@@ -449,6 +452,15 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
             return conn.player.toggleShuffle();
         }        
       }
+    },
+    
+    /**
+     * 2-track Recorder
+     */
+    [ActionType.DTRecordToggle]: {
+      label: '2-Track USB Recording: Record Toggle',
+      options: [],
+      callback: () => conn.recorderDualTrack.recordToggle()
     },
   };
 

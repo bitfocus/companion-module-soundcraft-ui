@@ -30,7 +30,8 @@ export enum FeedbackType {
   MuteFxChannel = 'mutefxchannel',
   PostFxChannel = 'postfxchannel',
   MediaPlayerState = 'mediaplayerstate',
-  MediaPlayerShuffle = 'mediaplayershuffle'
+  MediaPlayerShuffle = 'mediaplayershuffle',
+  DTRecordState = 'dualtrackrecordstate'
 }
 
 export function GetFeedbacksList(
@@ -163,13 +164,7 @@ export function GetFeedbacksList(
           default: PlayerState.Playing
         }
       ],
-      callback: evt => {
-        if (feedback.get(evt.id)) {
-          return getOptColors(evt);
-        } else {
-          return {};
-        }
-      },
+      callback: evt => feedback.get(evt.id) ? getOptColors(evt) : {},
       subscribe: evt => {
         const state = Number(evt.options.state);
         const state$ = conn.player.state$.pipe(
@@ -192,6 +187,36 @@ export function GetFeedbacksList(
       ],
       callback: evt => getOptColorsForBinaryState(feedback, evt),
       subscribe: evt => feedback.connect(evt, conn.player.shuffle$, 'playershuffle'),
+      unsubscribe: evt => feedback.unsubscribe(evt.id)
+    },
+
+    [FeedbackType.DTRecordState]: {
+      label: 'Change colors from 2-track USB recording state',
+      description: 'If the 2-track USB recorder has the specified state, change color of the bank',
+      options: [
+        getBackgroundPicker(instance.rgb(255, 0, 0)),
+        getForegroundPicker(instance.rgb(255, 255, 255)),
+        {
+          type: 'dropdown',
+          label: 'State',
+          id: 'state',
+          choices: [
+            { id: 'rec', label: 'Recording' },
+            { id: 'busy', label: 'Busy' }
+          ],
+          default: 'rec'
+        }
+      ],
+      callback: evt => feedback.get(evt.id) ? getOptColors(evt) : {},
+      subscribe: evt => {
+        const recorder = conn.recorderDualTrack;
+        switch (evt.options.state) {
+          case 'rec':
+            return feedback.connect(evt, recorder.recording$, 'dtrec-rec');
+          case 'busy':
+            return feedback.connect(evt, recorder.busy$, 'dtrec-busy');
+        }
+      },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
   };
