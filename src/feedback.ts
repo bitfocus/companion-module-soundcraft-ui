@@ -29,7 +29,8 @@ export enum FeedbackType {
   PostAuxChannel = 'postauxchannel',
   MuteFxChannel = 'mutefxchannel',
   PostFxChannel = 'postfxchannel',
-  MediaPlayerState = 'mediaplayerstate'
+  MediaPlayerState = 'mediaplayerstate',
+  MediaPlayerShuffle = 'mediaplayershuffle'
 }
 
 export function GetFeedbacksList(
@@ -178,6 +179,19 @@ export function GetFeedbacksList(
         const streamId = 'playerstate' + state;
         feedback.connect(evt, state$, streamId);
       },
+      unsubscribe: evt => feedback.unsubscribe(evt.id)
+    },
+
+    [FeedbackType.MediaPlayerShuffle]: {
+      label: 'Change colors from media player shuffle setting',
+      description: 'If the shuffle setting of the media player has the specified state, change color of the bank',
+      options: [
+        getBackgroundPicker(instance.rgb(156, 22, 69)),
+        getForegroundPicker(instance.rgb(255, 255, 255)),
+        getStateCheckbox('Shuffle')
+      ],
+      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      subscribe: evt => feedback.connect(evt, conn.player.shuffle$, 'playershuffle'),
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
   };
