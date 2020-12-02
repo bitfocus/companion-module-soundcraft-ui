@@ -175,7 +175,8 @@ export function GetFeedbacksList(
           map(s => s === state ? 1 : 0),
           distinctUntilChanged(),
         );
-        feedback.connect(evt, state$, 'playerstate');
+        const streamId = 'playerstate' + state;
+        feedback.connect(evt, state$, streamId);
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
