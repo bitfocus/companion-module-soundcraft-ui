@@ -6,7 +6,8 @@ import {
   SoundcraftUI,
   AuxChannel,
   FxChannel,
-  MasterChannel
+  MasterChannel,
+  MuteGroupID
 } from 'soundcraft-ui-connection';
 import { CompanionActionEvent, CompanionFeedbackEvent } from '../../../../instance_skel_types';
 import { optionToChannelType } from './utils';
@@ -91,4 +92,19 @@ export function getFxChannelFromOptions(options: CompanionFeedbackOrActionEventO
   const channel = Number(options.channel);
   const channelType = optionToChannelType(options.channelType);
   return getFxChannel(conn.fx(bus), channelType, channel);
+}
+
+
+export function getMuteGroupIDFromOptions(options: CompanionFeedbackOrActionEventOptions): MuteGroupID {
+  const group = options.group;
+  if (group === 'all' || group === 'fx') {
+    return group;
+  }
+
+  const groupAsNum = Number(group);
+  if (groupAsNum) {
+    return groupAsNum;
+  }
+
+  return 'all';
 }

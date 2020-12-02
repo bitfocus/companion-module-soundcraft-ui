@@ -4,7 +4,8 @@ import { CHOICES, OPTIONS, OPTION_SETS } from './utils/input-utils';
 import {
   getAuxChannelFromOptions,
   getFxChannelFromOptions,
-  getMasterChannelFromOptions
+  getMasterChannelFromOptions,
+  getMuteGroupIDFromOptions
 } from './utils/channel-selection';
 import InstanceSkel = require('../../../instance_skel');
 import { UiConfig } from './config';
@@ -50,7 +51,11 @@ export enum ActionType {
   MediaSetShuffle = 'mediasetshuffle',
 
   // 2-Track Recorder
-  DTRecordToggle = 'dualtrackrecordtoggle'
+  DTRecordToggle = 'dualtrackrecordtoggle',
+
+  // MUTE Groups / ALL / FX
+  MuteGroupMute = 'mutegroupmute',
+  MuteGroupClear = 'mutegroupclear',
 }
 
 type CompanionActionWithCallback = CompanionAction & Required<Pick<CompanionAction, 'callback'>>;
@@ -461,6 +466,34 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       label: '2-Track USB Recording: Record Toggle',
       options: [],
       callback: () => conn.recorderDualTrack.recordToggle()
+    },
+
+    /**
+     * MUTE Groups / ALL / FX
+     */
+    [ActionType.MuteGroupMute]: {
+      label: 'MUTE Groups/ALL/FX: Mute',
+      options: [OPTIONS.muteGroupDropdown, OPTIONS.muteDropdown],
+      callback: action => {
+        const groupId = getMuteGroupIDFromOptions(action.options);
+        if (groupId === -1) { return; }
+        
+        const group = conn.muteGroup(groupId);
+        switch (Number(action.options.mute)) {
+          case 0:
+            return group.unmute();
+          case 1:
+            return group.mute();
+          case 2:
+            return group.toggle();
+        }
+      }
+    },
+
+    [ActionType.MuteGroupClear]: {
+      label: 'MUTE Groups/ALL/FX: Clear',
+      options: [],
+      callback: () => conn.clearMuteGroups()
     },
   };
 
