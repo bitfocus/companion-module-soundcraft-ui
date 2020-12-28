@@ -56,7 +56,7 @@
 	},
 	"dependencies": {
 		"rxjs": "^6.6.3",
-		"soundcraft-ui-connection": "^0.7.0"
+		"soundcraft-ui-connection": "^0.7.1"
 	},
 	"devDependencies": {
 		"@types/node": "^12.0.4",
