@@ -181,6 +181,17 @@ export const OPTIONS: { [key: string]: SomeCompanionInputField } = {
     max: 100,
     default: 3
   },
+  volumeBusesDropdown: {
+    type: 'dropdown',
+    label: 'Bus',
+    id: 'bus',
+    choices: [
+      { id: 'solo', label: 'SOLO' },
+      { id: 'hp1', label: 'Headphone 1' },
+      { id: 'hp2', label: 'Headphone 2' }
+    ],
+    default: 'solo'
+  }
 };
 
 /**

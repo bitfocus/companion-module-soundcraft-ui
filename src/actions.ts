@@ -5,7 +5,8 @@ import {
   getAuxChannelFromOptions,
   getFxChannelFromOptions,
   getMasterChannelFromOptions,
-  getMuteGroupIDFromOptions
+  getMuteGroupIDFromOptions,
+  getVolumeBusFromOptions
 } from './utils/channel-selection';
 import InstanceSkel = require('../../../instance_skel');
 import { UiConfig } from './config';
@@ -268,6 +269,29 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
         const c = getAuxChannelFromOptions(action.options, conn);
         const value = Number(action.options.postproc);
         return c.setPostProc(value);
+      }
+    },
+
+    /**
+     * Volume Buses (SOLO and Headphone)
+     */
+    [ActionType.SetVolumeBusValue]: {
+      label: 'SOLO/Headphone Bus: Set volume',
+      options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderValuesSlider],
+      callback: action => {
+        const bus = getVolumeBusFromOptions(action.options, conn);
+        const value = Number(action.options.value);
+        return bus && bus.setFaderLevelDB(value);
+      }
+    },
+
+    [ActionType.ChangeVolumeBusValue]: {
+      label: 'SOLO/Headphone Bus: Change volume (relative)',
+      options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderChangeField],
+      callback: action => {
+        const bus = getVolumeBusFromOptions(action.options, conn);
+        const value = Number(action.options.value);
+        return bus && bus.changeFaderLevelDB(value);
       }
     },
 

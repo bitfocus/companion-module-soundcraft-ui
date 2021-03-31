@@ -7,7 +7,8 @@ import {
   AuxChannel,
   FxChannel,
   MasterChannel,
-  MuteGroupID
+  MuteGroupID,
+  VolumeBus
 } from 'soundcraft-ui-connection';
 import { CompanionActionEvent, CompanionFeedbackEvent } from '../../../../instance_skel_types';
 import { optionToChannelType } from './utils';
@@ -107,4 +108,20 @@ export function getMuteGroupIDFromOptions(options: CompanionFeedbackOrActionEven
   }
 
   return 'all';
+}
+
+export function getVolumeBusFromOptions(
+  options: CompanionFeedbackOrActionEventOptions,
+  conn: SoundcraftUI
+): VolumeBus | undefined {
+  switch (options.bus) {
+    case 'solo':
+      return conn.volume.solo;
+    case 'hp1':
+      return conn.volume.headphone(1);
+    case 'hp2':
+      return conn.volume.headphone(2);
+    default:
+      return;
+  }
 }
