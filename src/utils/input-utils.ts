@@ -63,7 +63,7 @@ export const CHOICES = {
     choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.s],
     default: 'i'
   }
-}
+};
 
 /**
  * Commonly used option fields
@@ -149,7 +149,7 @@ export const OPTIONS: { [key: string]: SomeCompanionInputField } = {
     choices: [
       { id: 0, label: 'PRE' },
       { id: 1, label: 'POST' },
-      { id: 2, label: 'Toggle' },
+      { id: 2, label: 'Toggle' }
     ],
     default: 2
   },
@@ -161,7 +161,7 @@ export const OPTIONS: { [key: string]: SomeCompanionInputField } = {
       { id: Easings.Linear, label: 'Linear / None' },
       { id: Easings.EaseIn, label: 'Ease In' },
       { id: Easings.EaseOut, label: 'Ease Out' },
-      { id: Easings.EaseInOut, label: 'Ease In Out' },
+      { id: Easings.EaseInOut, label: 'Ease In Out' }
     ],
     default: Easings.Linear
   },

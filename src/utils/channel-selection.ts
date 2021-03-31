@@ -17,7 +17,7 @@ export type CompanionFeedbackOrActionEventOptions = CompanionActionEvent['option
 
 /** Master Channels */
 
-export function getMasterChannel(source: MasterBus, type: ChannelType, channel: number) {
+export function getMasterChannel(source: MasterBus, type: ChannelType, channel: number): MasterChannel {
   switch (type) {
     case 'l':
       return source.line(channel);
@@ -48,7 +48,7 @@ export function getMasterChannelFromOptions(
 
 /** AUX Channels */
 
-export function getAuxChannel(source: AuxBus, type: ChannelType, channel: number) {
+export function getAuxChannel(source: AuxBus, type: ChannelType, channel: number): AuxChannel {
   switch (type) {
     case 'l':
       return source.line(channel);
@@ -74,7 +74,7 @@ export function getAuxChannelFromOptions(
 
 /** FX Channels */
 
-export function getFxChannel(source: FxBus, type: ChannelType, channel: number) {
+export function getFxChannel(source: FxBus, type: ChannelType, channel: number): FxChannel {
   switch (type) {
     case 'l':
       return source.line(channel);
@@ -94,7 +94,6 @@ export function getFxChannelFromOptions(options: CompanionFeedbackOrActionEventO
   const channelType = optionToChannelType(options.channelType);
   return getFxChannel(conn.fx(bus), channelType, channel);
 }
-
 
 export function getMuteGroupIDFromOptions(options: CompanionFeedbackOrActionEventOptions): MuteGroupID {
   const group = options.group;

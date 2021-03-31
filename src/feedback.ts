@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import InstanceSkel = require('../../../instance_skel');
 import { CompanionFeedback, CompanionFeedbacks } from '../../../instance_skel_types';
 import { UiConfig } from './config';
@@ -166,12 +167,12 @@ export function GetFeedbacksList(
           default: PlayerState.Playing
         }
       ],
-      callback: evt => feedback.get(evt.id) ? getOptColors(evt) : {},
+      callback: evt => (feedback.get(evt.id) ? getOptColors(evt) : {}),
       subscribe: evt => {
         const state = Number(evt.options.state);
         const state$ = conn.player.state$.pipe(
-          map(s => s === state ? 1 : 0),
-          distinctUntilChanged(),
+          map(s => (s === state ? 1 : 0)),
+          distinctUntilChanged()
         );
         const streamId = 'playerstate' + state;
         feedback.connect(evt, state$, streamId);
@@ -209,7 +210,7 @@ export function GetFeedbacksList(
           default: 'rec'
         }
       ],
-      callback: evt => feedback.get(evt.id) ? getOptColors(evt) : {},
+      callback: evt => (feedback.get(evt.id) ? getOptColors(evt) : {}),
       subscribe: evt => {
         const recorder = conn.recorderDualTrack;
         switch (evt.options.state) {
@@ -225,22 +226,20 @@ export function GetFeedbacksList(
     [FeedbackType.MuteMuteGroup]: {
       label: 'Change colors from MUTE group/ALL/FX state',
       description: 'If the specified group is muted, change color of the bank',
-      options: [
-        ...muteColorPickers,
-        OPTIONS.muteGroupDropdown,
-        getStateCheckbox('Muted')
-      ],
+      options: [...muteColorPickers, OPTIONS.muteGroupDropdown, getStateCheckbox('Muted')],
       callback: evt => getOptColorsForBinaryState(feedback, evt),
       subscribe: evt => {
         const groupId = getMuteGroupIDFromOptions(evt.options);
-        if (groupId === -1) { return; }
+        if (groupId === -1) {
+          return;
+        }
         const group = conn.muteGroup(groupId);
 
         const streamId = 'mgstate' + groupId;
         feedback.connect(evt, group.state$, streamId);
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
-    },
+    }
   };
 
   return feedbacks;

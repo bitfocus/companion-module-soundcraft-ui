@@ -40,8 +40,11 @@ export function getOptColors(evt: CompanionFeedbackEvent): CompanionFeedbackResu
   };
 }
 
-export function getOptColorsForBinaryState(feedback: UiFeedbackState, evt: CompanionFeedbackEvent) {
-  const state = intToBool(feedback.get(evt.id));
+export function getOptColorsForBinaryState(
+  feedback: UiFeedbackState,
+  evt: CompanionFeedbackEvent
+): CompanionFeedbackResult {
+  const state = intToBool(Number(feedback.get(evt.id)));
   if (evt.options.state === state) {
     return getOptColors(evt);
   } else {

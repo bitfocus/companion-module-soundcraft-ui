@@ -1,8 +1,8 @@
-import InstanceSkel = require('../../../instance_skel')
-import { SomeCompanionConfigField } from '../../../instance_skel_types'
+import InstanceSkel = require('../../../instance_skel');
+import { SomeCompanionConfigField } from '../../../instance_skel_types';
 
 export interface UiConfig {
-  host: string
+  host: string;
 }
 
 export function GetConfigFields(self: InstanceSkel<UiConfig>): SomeCompanionConfigField[] {
@@ -14,5 +14,5 @@ export function GetConfigFields(self: InstanceSkel<UiConfig>): SomeCompanionConf
       width: 12,
       regex: self.REGEX_IP
     }
-  ]
+  ];
 }

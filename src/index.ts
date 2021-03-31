@@ -33,7 +33,7 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
    * Create new mixer connection object,
    * start connection and set things up
    */
-  private createConnection() {
+  private createConnection(): void {
     if (this.config.host) {
       this.conn = new SoundcraftUI(this.config.host);
       this.conn.connect();
@@ -46,7 +46,7 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
   /**
    * Consume the status of the connection and map it to companion status flags
    */
-  private subscribeConnectionStatus() {
+  private subscribeConnectionStatus(): void {
     if (!this.conn) {
       return;
     }
