@@ -33,7 +33,7 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
    * Create new mixer connection object,
    * start connection and set things up
    */
-  private createConnection() {
+  private createConnection(): void {
     if (this.config.host) {
       this.conn = new SoundcraftUI(this.config.host);
       this.conn.connect();
@@ -46,7 +46,7 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
   /**
    * Consume the status of the connection and map it to companion status flags
    */
-  private subscribeConnectionStatus() {
+  private subscribeConnectionStatus(): void {
     if (!this.conn) {
       return;
     }
@@ -83,13 +83,14 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
    * Process an updated configuration array.
    */
   public updateConfig(config: UiConfig): void {
+    const oldConfig = this.config;
+    this.config = config;
+
     // if host has changed, reconnect
-    if (this.config.host !== config.host) {
-      this.conn.disconnect();
+    if (config.host && oldConfig.host !== config.host) {
+      this.conn && this.conn.disconnect();
       this.createConnection();
     }
-
-    this.config = config;
   }
 
   /**
@@ -106,9 +107,7 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
   public destroy(): void {
     this.state.unsubscribeAll();
 
-    if (this.conn) {
-      this.conn.disconnect();
-    }
+    this.conn && this.conn.disconnect();
   }
 }
 
