@@ -1,3 +1,8 @@
+# 2.0.1
+
+- add support for headphone/solo level setting
+- fix connection error bug due to wrong config timing
+
 # 2.0.0
 
 This is a complete rework of this module. It now uses the generic connection library [soundcraft-ui-connection](https://www.npmjs.com/package/soundcraft-ui-connection) to communicate with the mixer.
