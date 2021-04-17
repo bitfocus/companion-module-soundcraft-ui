@@ -7,7 +7,8 @@ import {
   AuxChannel,
   FxChannel,
   MasterChannel,
-  MuteGroupID
+  MuteGroupID,
+  VolumeBus
 } from 'soundcraft-ui-connection';
 import { CompanionActionEvent, CompanionFeedbackEvent } from '../../../../instance_skel_types';
 import { optionToChannelType } from './utils';
@@ -16,7 +17,7 @@ export type CompanionFeedbackOrActionEventOptions = CompanionActionEvent['option
 
 /** Master Channels */
 
-export function getMasterChannel(source: MasterBus, type: ChannelType, channel: number) {
+export function getMasterChannel(source: MasterBus, type: ChannelType, channel: number): MasterChannel {
   switch (type) {
     case 'l':
       return source.line(channel);
@@ -47,7 +48,7 @@ export function getMasterChannelFromOptions(
 
 /** AUX Channels */
 
-export function getAuxChannel(source: AuxBus, type: ChannelType, channel: number) {
+export function getAuxChannel(source: AuxBus, type: ChannelType, channel: number): AuxChannel {
   switch (type) {
     case 'l':
       return source.line(channel);
@@ -73,7 +74,7 @@ export function getAuxChannelFromOptions(
 
 /** FX Channels */
 
-export function getFxChannel(source: FxBus, type: ChannelType, channel: number) {
+export function getFxChannel(source: FxBus, type: ChannelType, channel: number): FxChannel {
   switch (type) {
     case 'l':
       return source.line(channel);
@@ -94,7 +95,6 @@ export function getFxChannelFromOptions(options: CompanionFeedbackOrActionEventO
   return getFxChannel(conn.fx(bus), channelType, channel);
 }
 
-
 export function getMuteGroupIDFromOptions(options: CompanionFeedbackOrActionEventOptions): MuteGroupID {
   const group = options.group;
   if (group === 'all' || group === 'fx') {
@@ -107,4 +107,20 @@ export function getMuteGroupIDFromOptions(options: CompanionFeedbackOrActionEven
   }
 
   return 'all';
+}
+
+export function getVolumeBusFromOptions(
+  options: CompanionFeedbackOrActionEventOptions,
+  conn: SoundcraftUI
+): VolumeBus | undefined {
+  switch (options.bus) {
+    case 'solo':
+      return conn.volume.solo;
+    case 'hp1':
+      return conn.volume.headphone(1);
+    case 'hp2':
+      return conn.volume.headphone(2);
+    default:
+      return;
+  }
 }

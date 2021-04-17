@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { CompanionAction, CompanionActions } from '../../../instance_skel_types';
 import { SoundcraftUI } from 'soundcraft-ui-connection';
 import { CHOICES, OPTIONS, OPTION_SETS } from './utils/input-utils';
@@ -5,7 +6,8 @@ import {
   getAuxChannelFromOptions,
   getFxChannelFromOptions,
   getMasterChannelFromOptions,
-  getMuteGroupIDFromOptions
+  getMuteGroupIDFromOptions,
+  getVolumeBusFromOptions
 } from './utils/channel-selection';
 import InstanceSkel = require('../../../instance_skel');
 import { UiConfig } from './config';
@@ -39,6 +41,10 @@ export enum ActionType {
   ChangeFxChannelValue = 'changefxchannelvalue',
   FadeFxChannel = 'fadefxchannel',
 
+  // Volume Buses (SOLO, Headphone)
+  SetVolumeBusValue = 'setvolumebusvalue',
+  ChangeVolumeBusValue = 'changevolumebusvalue',
+
   // Media Player
   MediaPlay = 'mediaplay',
   MediaStop = 'mediastop',
@@ -55,7 +61,7 @@ export enum ActionType {
 
   // MUTE Groups / ALL / FX
   MuteGroupMute = 'mutegroupmute',
-  MuteGroupClear = 'mutegroupclear',
+  MuteGroupClear = 'mutegroupclear'
 }
 
 type CompanionActionWithCallback = CompanionAction & Required<Pick<CompanionAction, 'callback'>>;
@@ -85,7 +91,7 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
         );
       }
     },
-    
+
     [ActionType.ChangeMasterValue]: {
       label: 'Master: Change fader value (relative)',
       options: [OPTIONS.faderChangeField],
@@ -151,11 +157,7 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       options: [...OPTION_SETS.masterChannel, ...OPTION_SETS.fadeTransition],
       callback: action => {
         const c = getMasterChannelFromOptions(action.options, conn);
-        return c.fadeToDB(
-          Number(action.options.value),
-          Number(action.options.fadeTime),
-          Number(action.options.easing)
-        );
+        return c.fadeToDB(Number(action.options.value), Number(action.options.fadeTime), Number(action.options.easing));
       }
     },
 
@@ -219,11 +221,7 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       options: [...OPTION_SETS.auxChannel, ...OPTION_SETS.fadeTransition],
       callback: action => {
         const c = getAuxChannelFromOptions(action.options, conn);
-        return c.fadeToDB(
-          Number(action.options.value),
-          Number(action.options.fadeTime),
-          Number(action.options.easing)
-        );
+        return c.fadeToDB(Number(action.options.value), Number(action.options.fadeTime), Number(action.options.easing));
       }
     },
 
@@ -272,6 +270,29 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
     },
 
     /**
+     * Volume Buses (SOLO and Headphone)
+     */
+    [ActionType.SetVolumeBusValue]: {
+      label: 'SOLO/Headphone Bus: Set volume',
+      options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderValuesSlider],
+      callback: action => {
+        const bus = getVolumeBusFromOptions(action.options, conn);
+        const value = Number(action.options.value);
+        return bus && bus.setFaderLevelDB(value);
+      }
+    },
+
+    [ActionType.ChangeVolumeBusValue]: {
+      label: 'SOLO/Headphone Bus: Change volume (relative)',
+      options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderChangeField],
+      callback: action => {
+        const bus = getVolumeBusFromOptions(action.options, conn);
+        const value = Number(action.options.value);
+        return bus && bus.changeFaderLevelDB(value);
+      }
+    },
+
+    /**
      * FX channels
      */
     [ActionType.MuteFxChannel]: {
@@ -305,11 +326,7 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       options: [...OPTION_SETS.fxChannel, ...OPTION_SETS.fadeTransition],
       callback: action => {
         const c = getFxChannelFromOptions(action.options, conn);
-        return c.fadeToDB(
-          Number(action.options.value),
-          Number(action.options.fadeTime),
-          Number(action.options.easing)
-        );
+        return c.fadeToDB(Number(action.options.value), Number(action.options.fadeTime), Number(action.options.easing));
       }
     },
 
@@ -406,10 +423,7 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
         }
       ],
       callback: action => {
-        conn.player.loadTrack(
-          action.options.playlist as string,
-          action.options.track as string
-        );
+        conn.player.loadTrack(action.options.playlist as string, action.options.track as string);
       }
     },
 
@@ -422,7 +436,7 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
           id: 'mode',
           choices: [
             { id: 'manual', label: 'MANUAL' },
-            { id: 'auto', label: 'AUTO' },
+            { id: 'auto', label: 'AUTO' }
           ],
           default: 'manual'
         }
@@ -455,10 +469,10 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
             return conn.player.setShuffle(1);
           case 2:
             return conn.player.toggleShuffle();
-        }        
+        }
       }
     },
-    
+
     /**
      * 2-track Recorder
      */
@@ -476,8 +490,10 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       options: [OPTIONS.muteGroupDropdown, OPTIONS.muteDropdown],
       callback: action => {
         const groupId = getMuteGroupIDFromOptions(action.options);
-        if (groupId === -1) { return; }
-        
+        if (groupId === -1) {
+          return;
+        }
+
         const group = conn.muteGroup(groupId);
         switch (Number(action.options.mute)) {
           case 0:
@@ -494,7 +510,7 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       label: 'MUTE Groups/ALL/FX: Clear',
       options: [],
       callback: () => conn.clearMuteGroups()
-    },
+    }
   };
 
   return actions;
