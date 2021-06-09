@@ -2,21 +2,21 @@ import { faderValueToDB } from 'soundcraft-ui-connection';
 import {
   CompanionCoreInstanceconfig,
   CompanionMigrationAction,
-  CompanionMigrationFeedback
+  CompanionMigrationFeedback,
+  CompanionUpgradeContext
 } from '../../../instance_skel_types';
 import { ActionType } from './actions';
 import { UiConfig } from './config';
 
 export function upgradeV2x0x0(
-  _config: CompanionCoreInstanceconfig & UiConfig,
+  _context: CompanionUpgradeContext,
+  _config: (CompanionCoreInstanceconfig & UiConfig) | null,
   actions: CompanionMigrationAction[],
-  releaseActions: CompanionMigrationAction[],
   _feedbacks: CompanionMigrationFeedback[]
 ): boolean {
   let changed = false;
 
-  const allActions = [...actions, ...releaseActions];
-  for (const action of allActions) {
+  for (const action of actions) {
     switch (action.action) {
       case 'mute': {
         action.options.channelType = action.options.type;
