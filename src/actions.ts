@@ -61,7 +61,12 @@ export enum ActionType {
 
   // MUTE Groups / ALL / FX
   MuteGroupMute = 'mutegroupmute',
-  MuteGroupClear = 'mutegroupclear'
+  MuteGroupClear = 'mutegroupclear',
+
+  // Shows / Snapshots / Cues
+  LoadShow = 'loadshow',
+  LoadSnapshot = 'loadsnapshot',
+  LoadCue = 'loadcue'
 }
 
 type CompanionActionWithCallback = CompanionAction & Required<Pick<CompanionAction, 'callback'>>;
@@ -510,6 +515,77 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       label: 'MUTE Groups/ALL/FX: Clear',
       options: [],
       callback: () => conn.clearMuteGroups()
+    },
+
+    /**
+     * Shows / Snapshots / Cues
+     */
+    [ActionType.LoadShow]: {
+      label: 'Shows: Load Show',
+      options: [
+        {
+          type: 'textinput',
+          label: 'Show Name',
+          id: 'show',
+          default: 'Default',
+          regex: instance.REGEX_SOMETHING
+        }
+      ],
+      callback: action => {
+        if (action.options.show) {
+          conn.shows.loadShow(action.options.show as string);
+        }
+      }
+    },
+
+    [ActionType.LoadSnapshot]: {
+      label: 'Shows: Load Snapshot',
+      options: [
+        {
+          type: 'textinput',
+          label: 'Show Name',
+          id: 'show',
+          default: 'Default',
+          regex: instance.REGEX_SOMETHING
+        },
+        {
+          type: 'textinput',
+          label: 'Snapshot Name',
+          id: 'snapshot',
+          default: '* Init *',
+          regex: instance.REGEX_SOMETHING
+        }
+      ],
+      callback: action => {
+        if (action.options.show && action.options.snapshot) {
+          conn.shows.loadSnapshot(action.options.show as string, action.options.snapshot as string);
+        }
+      }
+    },
+
+    [ActionType.LoadCue]: {
+      label: 'Shows: Load Cue',
+      options: [
+        {
+          type: 'textinput',
+          label: 'Show Name',
+          id: 'show',
+          default: 'Default',
+          regex: instance.REGEX_SOMETHING
+        },
+        {
+          type: 'textinput',
+          label: 'Cue Name',
+          id: 'cue',
+          default: '',
+          regex: instance.REGEX_SOMETHING
+        }
+      ],
+      callback: action => {
+        if (action.options.show && action.options.cue) {
+          conn.shows.loadCue(action.options.show as string, action.options.cue as string);
+        }
+      }
     }
   };
 
