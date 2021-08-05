@@ -1,3 +1,12 @@
+# 2.0.3
+
+- add support for loading shows, snapshots and cues
+- migrate to new boolean feedbacks
+
+# 2.0.2
+
+- chore: convert upgrade scripts ([bca2a60](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/bca2a60d64f59a8017f001584bfd9f188acaf4b1))
+
 # 2.0.1
 
 - add support for headphone/solo level setting
