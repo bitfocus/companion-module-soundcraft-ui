@@ -1,4 +1,5 @@
 import { faderValueToDB } from 'soundcraft-ui-connection';
+import InstanceSkel = require('../../../instance_skel');
 import {
   CompanionCoreInstanceconfig,
   CompanionMigrationAction,
@@ -7,6 +8,22 @@ import {
 } from '../../../instance_skel_types';
 import { ActionType } from './actions';
 import { UiConfig } from './config';
+import { FeedbackType } from './feedback';
+
+// see https://github.com/bitfocus/companion/wiki/Migrating-legacy-to-boolean-feedbacks
+export const upgradeLegacyFeedbackToBoolean = InstanceSkel.CreateConvertToBooleanFeedbackUpgradeScript({
+  [FeedbackType.MuteMasterChannel]: true,
+  [FeedbackType.SoloMasterChannel]: true,
+  [FeedbackType.DimMaster]: true,
+  [FeedbackType.MuteAuxChannel]: true,
+  [FeedbackType.PostAuxChannel]: true,
+  [FeedbackType.MuteFxChannel]: true,
+  [FeedbackType.PostFxChannel]: true,
+  [FeedbackType.MediaPlayerState]: true,
+  [FeedbackType.MediaPlayerShuffle]: true,
+  [FeedbackType.DTRecordState]: true,
+  [FeedbackType.MuteMuteGroup]: true
+});
 
 export function upgradeV2x0x0(
   _context: CompanionUpgradeContext,
