@@ -5,7 +5,7 @@ import { GetActionsList } from './actions';
 import { GetConfigFields, UiConfig } from './config';
 import { GetFeedbacksList } from './feedback';
 import { UiFeedbackState } from './state';
-import { upgradeV2x0x0 } from './upgrades';
+import { upgradeLegacyFeedbackToBoolean, upgradeV2x0x0 } from './upgrades';
 
 /**
  * Companion instance class for the Soundcraft Ui Mixers.
@@ -19,7 +19,7 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
   }
 
   static GetUpgradeScripts(): CompanionStaticUpgradeScript[] {
-    return [upgradeV2x0x0];
+    return [upgradeV2x0x0, upgradeLegacyFeedbackToBoolean];
   }
 
   /**

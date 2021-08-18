@@ -3,13 +3,7 @@ import InstanceSkel = require('../../../instance_skel');
 import { CompanionFeedback, CompanionFeedbacks } from '../../../instance_skel_types';
 import { UiConfig } from './config';
 import { UiFeedbackState } from './state';
-import {
-  getBackgroundPicker,
-  getForegroundPicker,
-  getOptColors,
-  getOptColorsForBinaryState,
-  getStateCheckbox
-} from './utils/feedback-utils';
+import { getFeedbackFromBinaryState, getStateCheckbox } from './utils/feedback-utils';
 import { OPTION_SETS, OPTIONS } from './utils/input-utils';
 import {
   getAuxChannelFromOptions,
@@ -42,22 +36,24 @@ export function GetFeedbacksList(
   feedback: UiFeedbackState,
   conn: SoundcraftUI
 ): CompanionFeedbacks {
-  const muteColorPickers = [
-    getBackgroundPicker(instance.rgb(255, 0, 0)),
-    getForegroundPicker(instance.rgb(255, 255, 255))
-  ];
+  const muteStyle = {
+    color: instance.rgb(255, 255, 255),
+    bgcolor: instance.rgb(255, 0, 0)
+  };
 
-  const postColorPickers = [
-    getBackgroundPicker(instance.rgb(0, 255, 0)),
-    getForegroundPicker(instance.rgb(255, 255, 255))
-  ];
+  const postStyle = {
+    bgcolor: instance.rgb(0, 255, 0),
+    color: instance.rgb(255, 255, 255)
+  };
 
   const feedbacks: { [type in FeedbackType]: CompanionFeedbackWithCallback } = {
     [FeedbackType.MuteMasterChannel]: {
+      type: 'boolean',
       label: 'Change colors from master channel MUTE state',
       description: 'If the specified target is muted, change color of the bank',
-      options: [...muteColorPickers, ...OPTION_SETS.masterChannel, getStateCheckbox('Muted')],
-      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      style: muteStyle,
+      options: [...OPTION_SETS.masterChannel, getStateCheckbox('Muted')],
+      callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
         const c = getMasterChannelFromOptions(evt.options, conn);
         const streamId = c.fullChannelId + '-mute';
@@ -67,15 +63,12 @@ export function GetFeedbacksList(
     },
 
     [FeedbackType.SoloMasterChannel]: {
+      type: 'boolean',
       label: 'Change colors from master channel SOLO state',
       description: 'If the channel is soloed, change color of the bank',
-      options: [
-        getBackgroundPicker(instance.rgb(255, 255, 0)),
-        getForegroundPicker(instance.rgb(0, 0, 0)),
-        ...OPTION_SETS.masterChannel,
-        getStateCheckbox('Solo')
-      ],
-      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      style: postStyle,
+      options: [...OPTION_SETS.masterChannel, getStateCheckbox('Solo')],
+      callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
         const c = getMasterChannelFromOptions(evt.options, conn);
         const streamId = c.fullChannelId + '-solo';
@@ -85,23 +78,26 @@ export function GetFeedbacksList(
     },
 
     [FeedbackType.DimMaster]: {
+      type: 'boolean',
       label: 'Change colors from master DIM state',
       description: 'If the master is dimmed, change color of the bank',
-      options: [
-        getBackgroundPicker(instance.rgb(0, 150, 255)),
-        getForegroundPicker(instance.rgb(255, 255, 255)),
-        getStateCheckbox('Dimmed')
-      ],
-      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      style: {
+        color: instance.rgb(255, 255, 255),
+        bgcolor: instance.rgb(0, 150, 255)
+      },
+      options: [getStateCheckbox('Dimmed')],
+      callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => feedback.connect(evt, conn.master.dim$, 'masterdim'),
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
     [FeedbackType.MuteAuxChannel]: {
+      type: 'boolean',
       label: 'Change colors from AUX bus channel MUTE state',
       description: 'If the specified channel on the AUX bus is muted, change color of the bank',
-      options: [...muteColorPickers, ...OPTION_SETS.auxChannel, getStateCheckbox('Muted')],
-      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      style: muteStyle,
+      options: [...OPTION_SETS.auxChannel, getStateCheckbox('Muted')],
+      callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
         const c = getAuxChannelFromOptions(evt.options, conn);
         const streamId = c.fullChannelId + '-mute';
@@ -111,10 +107,12 @@ export function GetFeedbacksList(
     },
 
     [FeedbackType.PostAuxChannel]: {
+      type: 'boolean',
       label: 'Change colors from AUX bus channel POST state',
       description: 'If the specified channel on the AUX bus has POST enabled, change color of the bank',
-      options: [...postColorPickers, ...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
-      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      style: postStyle,
+      options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
+      callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
         const c = getAuxChannelFromOptions(evt.options, conn);
         const streamId = c.fullChannelId + '-post';
@@ -124,10 +122,12 @@ export function GetFeedbacksList(
     },
 
     [FeedbackType.MuteFxChannel]: {
+      type: 'boolean',
       label: 'Change colors from FX bus channel MUTE state',
       description: 'If the specified channel on the FX bus is muted, change color of the bank',
-      options: [...muteColorPickers, ...OPTION_SETS.fxChannel, getStateCheckbox('Muted')],
-      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      style: muteStyle,
+      options: [...OPTION_SETS.fxChannel, getStateCheckbox('Muted')],
+      callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
         const c = getFxChannelFromOptions(evt.options, conn);
         const streamId = c.fullChannelId + '-mute';
@@ -137,10 +137,12 @@ export function GetFeedbacksList(
     },
 
     [FeedbackType.PostFxChannel]: {
+      type: 'boolean',
       label: 'Change colors from FX bus channel POST state',
       description: 'If the specified channel on the FX bus has POST enabled, change color of the bank',
-      options: [...postColorPickers, ...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
-      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      style: postStyle,
+      options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
+      callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
         const c = getFxChannelFromOptions(evt.options, conn);
         const streamId = c.fullChannelId + '-post';
@@ -150,11 +152,14 @@ export function GetFeedbacksList(
     },
 
     [FeedbackType.MediaPlayerState]: {
+      type: 'boolean',
       label: 'Change colors from media player state',
       description: 'If the media player has the specified state, change color of the bank',
+      style: {
+        color: instance.rgb(255, 255, 255),
+        bgcolor: instance.rgb(0, 255, 0)
+      },
       options: [
-        getBackgroundPicker(instance.rgb(0, 255, 0)),
-        getForegroundPicker(instance.rgb(255, 255, 255)),
         {
           type: 'dropdown',
           label: 'State',
@@ -167,7 +172,7 @@ export function GetFeedbacksList(
           default: PlayerState.Playing
         }
       ],
-      callback: evt => (feedback.get(evt.id) ? getOptColors(evt) : {}),
+      callback: evt => !!feedback.get(evt.id),
       subscribe: evt => {
         const state = Number(evt.options.state);
         const state$ = conn.player.state$.pipe(
@@ -181,24 +186,28 @@ export function GetFeedbacksList(
     },
 
     [FeedbackType.MediaPlayerShuffle]: {
+      type: 'boolean',
       label: 'Change colors from media player shuffle setting',
       description: 'If the shuffle setting of the media player has the specified state, change color of the bank',
-      options: [
-        getBackgroundPicker(instance.rgb(156, 22, 69)),
-        getForegroundPicker(instance.rgb(255, 255, 255)),
-        getStateCheckbox('Shuffle')
-      ],
-      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      style: {
+        color: instance.rgb(255, 255, 255),
+        bgcolor: instance.rgb(156, 22, 69)
+      },
+      options: [getStateCheckbox('Shuffle')],
+      callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => feedback.connect(evt, conn.player.shuffle$, 'playershuffle'),
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
     [FeedbackType.DTRecordState]: {
+      type: 'boolean',
       label: 'Change colors from 2-track USB recording state',
       description: 'If the 2-track USB recorder has the specified state, change color of the bank',
+      style: {
+        color: instance.rgb(255, 255, 255),
+        bgcolor: instance.rgb(255, 0, 0)
+      },
       options: [
-        getBackgroundPicker(instance.rgb(255, 0, 0)),
-        getForegroundPicker(instance.rgb(255, 255, 255)),
         {
           type: 'dropdown',
           label: 'State',
@@ -210,7 +219,7 @@ export function GetFeedbacksList(
           default: 'rec'
         }
       ],
-      callback: evt => (feedback.get(evt.id) ? getOptColors(evt) : {}),
+      callback: evt => !!feedback.get(evt.id),
       subscribe: evt => {
         const recorder = conn.recorderDualTrack;
         switch (evt.options.state) {
@@ -224,10 +233,12 @@ export function GetFeedbacksList(
     },
 
     [FeedbackType.MuteMuteGroup]: {
+      type: 'boolean',
       label: 'Change colors from MUTE group/ALL/FX state',
       description: 'If the specified group is muted, change color of the bank',
-      options: [...muteColorPickers, OPTIONS.muteGroupDropdown, getStateCheckbox('Muted')],
-      callback: evt => getOptColorsForBinaryState(feedback, evt),
+      style: muteStyle,
+      options: [OPTIONS.muteGroupDropdown, getStateCheckbox('Muted')],
+      callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
         const groupId = getMuteGroupIDFromOptions(evt.options);
         if (groupId === -1) {
