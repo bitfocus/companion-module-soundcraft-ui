@@ -19,3 +19,4 @@ Please be aware of your device's capabilities – not all available features are
 | Media Player          | Control media player transport, load playlists and tracks        |
 | 2-Track Recording     | Control the Dual-Track Recorder (Ui24R only)                     |
 | Dim Master            | Dim the master bus (incl. feedback) (Ui24R only)                 |
+| Shows                 | Load shows, snapshots and cues                                   |
