@@ -103,6 +103,14 @@ export const OPTIONS: { [key: string]: SomeCompanionInputField } = {
     max: 24,
     default: 1
   },
+  hwChannelNumberField: {
+    type: 'number',
+    label: 'HW Channel number',
+    id: 'hwchannel',
+    min: 1,
+    max: 20,
+    default: 1
+  },
   muteDropdown: {
     type: 'dropdown',
     label: 'Mute',
