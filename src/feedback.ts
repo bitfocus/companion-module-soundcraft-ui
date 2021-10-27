@@ -50,8 +50,8 @@ export function GetFeedbacksList(
   const feedbacks: { [type in FeedbackType]: CompanionFeedbackWithCallback } = {
     [FeedbackType.MuteMasterChannel]: {
       type: 'boolean',
-      label: 'Change colors from master channel MUTE state',
-      description: 'If the specified target is muted, change color of the bank',
+      label: 'Master channel: MUTE',
+      description: 'If the master channel is muted, change style of the bank',
       style: muteStyle,
       options: [...OPTION_SETS.masterChannel, getStateCheckbox('Muted')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
@@ -65,8 +65,8 @@ export function GetFeedbacksList(
 
     [FeedbackType.SoloMasterChannel]: {
       type: 'boolean',
-      label: 'Change colors from master channel SOLO state',
-      description: 'If the channel is soloed, change color of the bank',
+      label: 'Master channel: SOLO',
+      description: 'If the master channel is soloed, change style of the bank',
       style: postStyle,
       options: [...OPTION_SETS.masterChannel, getStateCheckbox('Solo')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
@@ -80,8 +80,8 @@ export function GetFeedbacksList(
 
     [FeedbackType.DimMaster]: {
       type: 'boolean',
-      label: 'Change colors from master DIM state',
-      description: 'If the master is dimmed, change color of the bank',
+      label: 'Master: DIM',
+      description: 'If the master is dimmed, change style of the bank',
       style: {
         color: instance.rgb(255, 255, 255),
         bgcolor: instance.rgb(0, 150, 255)
@@ -94,8 +94,8 @@ export function GetFeedbacksList(
 
     [FeedbackType.MuteAuxChannel]: {
       type: 'boolean',
-      label: 'Change colors from AUX bus channel MUTE state',
-      description: 'If the specified channel on the AUX bus is muted, change color of the bank',
+      label: 'AUX bus channel: MUTE',
+      description: 'If the specified channel on the AUX bus is muted, change style of the bank',
       style: muteStyle,
       options: [...OPTION_SETS.auxChannel, getStateCheckbox('Muted')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
@@ -109,8 +109,8 @@ export function GetFeedbacksList(
 
     [FeedbackType.PostAuxChannel]: {
       type: 'boolean',
-      label: 'Change colors from AUX bus channel POST state',
-      description: 'If the specified channel on the AUX bus has POST enabled, change color of the bank',
+      label: 'AUX bus channel: POST',
+      description: 'If the specified channel on the AUX bus has POST enabled, change style of the bank',
       style: postStyle,
       options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
@@ -124,8 +124,8 @@ export function GetFeedbacksList(
 
     [FeedbackType.MuteFxChannel]: {
       type: 'boolean',
-      label: 'Change colors from FX bus channel MUTE state',
-      description: 'If the specified channel on the FX bus is muted, change color of the bank',
+      label: 'FX bus channel: MUTE',
+      description: 'If the specified channel on the FX bus is muted, change style of the bank',
       style: muteStyle,
       options: [...OPTION_SETS.fxChannel, getStateCheckbox('Muted')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
@@ -139,8 +139,8 @@ export function GetFeedbacksList(
 
     [FeedbackType.PostFxChannel]: {
       type: 'boolean',
-      label: 'Change colors from FX bus channel POST state',
-      description: 'If the specified channel on the FX bus has POST enabled, change color of the bank',
+      label: 'FX bus channel: POST',
+      description: 'If the specified channel on the FX bus has POST enabled, change style of the bank',
       style: postStyle,
       options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
@@ -154,8 +154,8 @@ export function GetFeedbacksList(
 
     [FeedbackType.MediaPlayerState]: {
       type: 'boolean',
-      label: 'Change colors from media player state',
-      description: 'If the media player has the specified state, change color of the bank',
+      label: 'Media Player: Player State',
+      description: 'If the media player has the specified state, change style of the bank',
       style: {
         color: instance.rgb(255, 255, 255),
         bgcolor: instance.rgb(0, 255, 0)
@@ -188,8 +188,8 @@ export function GetFeedbacksList(
 
     [FeedbackType.MediaPlayerShuffle]: {
       type: 'boolean',
-      label: 'Change colors from media player shuffle setting',
-      description: 'If the shuffle setting of the media player has the specified state, change color of the bank',
+      label: 'Media Player: Shuffle',
+      description: 'If the shuffle setting of the media player has the specified state, change style of the bank',
       style: {
         color: instance.rgb(255, 255, 255),
         bgcolor: instance.rgb(156, 22, 69)
@@ -202,8 +202,8 @@ export function GetFeedbacksList(
 
     [FeedbackType.DTRecordState]: {
       type: 'boolean',
-      label: 'Change colors from 2-track USB recording state',
-      description: 'If the 2-track USB recorder has the specified state, change color of the bank',
+      label: '2-track USB recording: Recording State',
+      description: 'If the 2-track USB recorder has the specified state, change style of the bank',
       style: {
         color: instance.rgb(255, 255, 255),
         bgcolor: instance.rgb(255, 0, 0)
@@ -235,8 +235,8 @@ export function GetFeedbacksList(
 
     [FeedbackType.MuteMuteGroup]: {
       type: 'boolean',
-      label: 'Change colors from MUTE group/ALL/FX state',
-      description: 'If the specified group is muted, change color of the bank',
+      label: 'MUTE group/ALL/FX state',
+      description: 'If the specified group is muted, change style of the bank',
       style: muteStyle,
       options: [OPTIONS.muteGroupDropdown, getStateCheckbox('Muted')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
@@ -255,8 +255,8 @@ export function GetFeedbacksList(
 
     [FeedbackType.HwPhantomPower]: {
       type: 'boolean',
-      label: 'Change colors from phantom power state',
-      description: 'If Phantom Power is enabled for a channel, change color of the bank',
+      label: 'HW Channel: Phantom power',
+      description: 'If Phantom Power is enabled for a channel, change style of the bank',
       style: {
         bgcolor: instance.rgb(51, 102, 255),
         color: instance.rgb(255, 255, 255)
