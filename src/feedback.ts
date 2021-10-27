@@ -28,7 +28,8 @@ export enum FeedbackType {
   MediaPlayerState = 'mediaplayerstate',
   MediaPlayerShuffle = 'mediaplayershuffle',
   DTRecordState = 'dualtrackrecordstate',
-  MuteMuteGroup = 'mutemutegroup'
+  MuteMuteGroup = 'mutemutegroup',
+  HwPhantomPower = 'hwphantompower'
 }
 
 export function GetFeedbacksList(
@@ -248,6 +249,25 @@ export function GetFeedbacksList(
 
         const streamId = 'mgstate' + groupId;
         feedback.connect(evt, group.state$, streamId);
+      },
+      unsubscribe: evt => feedback.unsubscribe(evt.id)
+    },
+
+    [FeedbackType.HwPhantomPower]: {
+      type: 'boolean',
+      label: 'Change colors from phantom power state',
+      description: 'If Phantom Power is enabled for a channel, change color of the bank',
+      style: {
+        bgcolor: instance.rgb(51, 102, 255),
+        color: instance.rgb(255, 255, 255)
+      },
+      options: [OPTIONS.hwChannelNumberField, getStateCheckbox('Phantom Power enabled')],
+      callback: evt => getFeedbackFromBinaryState(feedback, evt),
+      subscribe: evt => {
+        const channelNo = Number(evt.options.hwchannel);
+        const channel = conn.hw(channelNo);
+        const streamId = 'hw' + channelNo + 'phantom';
+        feedback.connect(evt, channel.phantom$, streamId);
       },
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     }

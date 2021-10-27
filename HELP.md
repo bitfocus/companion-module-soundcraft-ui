@@ -20,3 +20,4 @@ Please be aware of your device's capabilities – not all available features are
 | 2-Track Recording     | Control the Dual-Track Recorder (Ui24R only)                     |
 | Dim Master            | Dim the master bus (incl. feedback) (Ui24R only)                 |
 | Shows                 | Load shows, snapshots and cues                                   |
+| Phantom Power         | Switch phantom power on hardware channels                        |

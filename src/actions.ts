@@ -66,7 +66,10 @@ export enum ActionType {
   // Shows / Snapshots / Cues
   LoadShow = 'loadshow',
   LoadSnapshot = 'loadsnapshot',
-  LoadCue = 'loadcue'
+  LoadCue = 'loadcue',
+
+  // Hardware Channels / Phantom Power
+  HwSetPhantomPower = 'hwsetphantompower'
 }
 
 type CompanionActionWithCallback = CompanionAction & Required<Pick<CompanionAction, 'callback'>>;
@@ -584,6 +587,37 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       callback: action => {
         if (action.options.show && action.options.cue) {
           conn.shows.loadCue(action.options.show as string, action.options.cue as string);
+        }
+      }
+    },
+
+    /**
+     * HW Channels / Phantom Power
+     */
+    [ActionType.HwSetPhantomPower]: {
+      label: 'HW Channel: Set Phantom Power',
+      description:
+        'A Hardware Channel is a physical input on the mixer. Be aware that input and HW channel numbers can be different when patching is enabled. Use with care! Enabling phantom power can destroy some microphones.',
+      options: [
+        OPTIONS.hwChannelNumberField,
+        {
+          type: 'dropdown',
+          label: 'Phantom Power',
+          id: 'power',
+          ...CHOICES.onofftoggleDropdown
+        }
+      ],
+      callback: action => {
+        const channelNo = Number(action.options.hwchannel);
+        const channel = conn.hw(channelNo);
+
+        switch (Number(action.options.power)) {
+          case 0:
+            return channel.phantomOff();
+          case 1:
+            return channel.phantomOn();
+          case 2:
+            return channel.togglePhantom();
         }
       }
     }

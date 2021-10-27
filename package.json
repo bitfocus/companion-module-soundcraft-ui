@@ -57,7 +57,7 @@
 	"dependencies": {
 		"@types/node": "^12.0.4",
 		"rxjs": "^6.6.3",
-		"soundcraft-ui-connection": "0.10.1"
+		"soundcraft-ui-connection": "^0.11.0"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "~2.31.0",
