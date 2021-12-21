@@ -1,3 +1,8 @@
+# 2.0.4
+
+- add actions and feedback for phantom power ([499d3be](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/499d3be64fa8eab13b31109ef5af463fd1e1eecd))
+- change feedback descriptions ([b15bca4](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/b15bca441ebf0e5d05f6640fb02b2cccd069a600))
+
 # 2.0.3
 
 - add support for loading shows, snapshots and cues
