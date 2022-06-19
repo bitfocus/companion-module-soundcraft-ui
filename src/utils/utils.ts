@@ -17,7 +17,7 @@ export function isValidChannelType(input: string): input is ChannelType {
   return !!FADER_TYPES[input as ChannelType];
 }
 
-export function optionToChannelType(input: string | number | boolean | undefined): ChannelType {
+export function optionToChannelType(input: unknown): ChannelType {
   if (typeof input === 'string' && isValidChannelType(input)) {
     return input;
   } else {
