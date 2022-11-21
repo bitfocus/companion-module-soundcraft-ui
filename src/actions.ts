@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { CompanionAction, CompanionActions } from '../../../instance_skel_types';
+import { CompanionActionDefinitions } from '@companion-module/base';
 import { SoundcraftUI } from 'soundcraft-ui-connection';
 import { CHOICES, OPTIONS, OPTION_SETS } from './utils/input-utils';
 import {
@@ -12,7 +12,7 @@ import {
 import InstanceSkel = require('../../../instance_skel');
 import { UiConfig } from './config';
 
-export enum ActionType {
+export enum ActionId {
   // Master
   SetMasterValue = 'setmastervalue',
   ChangeMasterValue = 'changemastervalue',
@@ -72,15 +72,13 @@ export enum ActionType {
   HwSetPhantomPower = 'hwsetphantompower'
 }
 
-type CompanionActionWithCallback = CompanionAction & Required<Pick<CompanionAction, 'callback'>>;
-
-export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: SoundcraftUI): CompanionActions {
-  const actions: { [id in ActionType]: CompanionActionWithCallback } = {
+export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: SoundcraftUI): CompanionActionDefinitions {
+  return {
     /**
      * MASTER
      */
-    [ActionType.SetMasterValue]: {
-      label: 'Master: Set fader value',
+    [ActionId.SetMasterValue]: {
+      name: 'Master: Set fader value',
       options: [OPTIONS.faderValuesSlider],
       callback: action => {
         const value = Number(action.options.value);
@@ -88,8 +86,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.FadeMaster]: {
-      label: 'Master: Fade transition',
+    [ActionId.FadeMaster]: {
+      name: 'Master: Fade transition',
       options: [...OPTION_SETS.fadeTransition],
       callback: action => {
         return conn.master.fadeToDB(
@@ -100,8 +98,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.ChangeMasterValue]: {
-      label: 'Master: Change fader value (relative)',
+    [ActionId.ChangeMasterValue]: {
+      name: 'Master: Change fader value (relative)',
       options: [OPTIONS.faderChangeField],
       callback: action => {
         const value = Number(action.options.value);
@@ -109,8 +107,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.DimMaster]: {
-      label: 'Master: Dim',
+    [ActionId.DimMaster]: {
+      name: 'Master: Dim',
       options: [
         {
           type: 'dropdown',
@@ -134,8 +132,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
     /**
      * Master Channels
      */
-    [ActionType.MuteMasterChannel]: {
-      label: 'Master channels: Mute',
+    [ActionId.MuteMasterChannel]: {
+      name: 'Master channels: Mute',
       options: [...OPTION_SETS.masterChannel, OPTIONS.muteDropdown],
       callback: action => {
         const c = getMasterChannelFromOptions(action.options, conn);
@@ -150,8 +148,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.SetMasterChannelValue]: {
-      label: 'Master channels: Set fader value',
+    [ActionId.SetMasterChannelValue]: {
+      name: 'Master channels: Set fader value',
       options: [...OPTION_SETS.masterChannel, OPTIONS.faderValuesSlider],
       callback: action => {
         const c = getMasterChannelFromOptions(action.options, conn);
@@ -160,8 +158,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.FadeMasterChannel]: {
-      label: 'Master channels: Fade transition',
+    [ActionId.FadeMasterChannel]: {
+      name: 'Master channels: Fade transition',
       options: [...OPTION_SETS.masterChannel, ...OPTION_SETS.fadeTransition],
       callback: action => {
         const c = getMasterChannelFromOptions(action.options, conn);
@@ -169,8 +167,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.ChangeMasterChannelValue]: {
-      label: 'Master channels: Change fader value (relative)',
+    [ActionId.ChangeMasterChannelValue]: {
+      name: 'Master channels: Change fader value (relative)',
       options: [...OPTION_SETS.masterChannel, OPTIONS.faderChangeField],
       callback: action => {
         const c = getMasterChannelFromOptions(action.options, conn);
@@ -179,8 +177,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.SoloMasterChannel]: {
-      label: 'Master channels: Solo',
+    [ActionId.SoloMasterChannel]: {
+      name: 'Master channels: Solo',
       options: [...OPTION_SETS.masterChannel, OPTIONS.soloDropdown],
       callback: action => {
         const c = getMasterChannelFromOptions(action.options, conn);
@@ -198,8 +196,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
     /**
      * AUX Channels
      */
-    [ActionType.MuteAuxChannel]: {
-      label: 'AUX channels: Mute',
+    [ActionId.MuteAuxChannel]: {
+      name: 'AUX channels: Mute',
       options: [...OPTION_SETS.auxChannel, OPTIONS.muteDropdown],
       callback: action => {
         const c = getAuxChannelFromOptions(action.options, conn);
@@ -214,8 +212,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.SetAuxChannelValue]: {
-      label: 'AUX channels: Set fader value',
+    [ActionId.SetAuxChannelValue]: {
+      name: 'AUX channels: Set fader value',
       options: [...OPTION_SETS.auxChannel, OPTIONS.faderValuesSlider],
       callback: action => {
         const c = getAuxChannelFromOptions(action.options, conn);
@@ -224,8 +222,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.FadeAuxChannel]: {
-      label: 'AUX channels: Fade transition',
+    [ActionId.FadeAuxChannel]: {
+      name: 'AUX channels: Fade transition',
       options: [...OPTION_SETS.auxChannel, ...OPTION_SETS.fadeTransition],
       callback: action => {
         const c = getAuxChannelFromOptions(action.options, conn);
@@ -233,8 +231,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.ChangeAuxChannelValue]: {
-      label: 'AUX channels: Change fader value (relative)',
+    [ActionId.ChangeAuxChannelValue]: {
+      name: 'AUX channels: Change fader value (relative)',
       options: [...OPTION_SETS.auxChannel, OPTIONS.faderChangeField],
       callback: action => {
         const c = getAuxChannelFromOptions(action.options, conn);
@@ -243,8 +241,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.SetAuxChannelPost]: {
-      label: 'AUX channels: Set PRE/POST',
+    [ActionId.SetAuxChannelPost]: {
+      name: 'AUX channels: Set PRE/POST',
       options: [...OPTION_SETS.auxChannel, OPTIONS.prepostDropdown],
       callback: action => {
         const c = getAuxChannelFromOptions(action.options, conn);
@@ -259,13 +257,13 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.SetAuxChannelPostProc]: {
-      label: 'AUX channels: Set POST PROC',
+    [ActionId.SetAuxChannelPostProc]: {
+      name: 'AUX channels: Set POST PROC',
       options: [
         ...OPTION_SETS.auxChannel,
         {
           type: 'dropdown',
-          label: 'POST PROC',
+          name: 'POST PROC',
           id: 'postproc',
           ...CHOICES.onoffDropdown
         }
@@ -280,8 +278,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
     /**
      * Volume Buses (SOLO and Headphone)
      */
-    [ActionType.SetVolumeBusValue]: {
-      label: 'SOLO/Headphone Bus: Set volume',
+    [ActionId.SetVolumeBusValue]: {
+      name: 'SOLO/Headphone Bus: Set volume',
       options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderValuesSlider],
       callback: action => {
         const bus = getVolumeBusFromOptions(action.options, conn);
@@ -290,8 +288,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.ChangeVolumeBusValue]: {
-      label: 'SOLO/Headphone Bus: Change volume (relative)',
+    [ActionId.ChangeVolumeBusValue]: {
+      name: 'SOLO/Headphone Bus: Change volume (relative)',
       options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderChangeField],
       callback: action => {
         const bus = getVolumeBusFromOptions(action.options, conn);
@@ -303,8 +301,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
     /**
      * FX channels
      */
-    [ActionType.MuteFxChannel]: {
-      label: 'FX channels: Mute',
+    [ActionId.MuteFxChannel]: {
+      name: 'FX channels: Mute',
       options: [...OPTION_SETS.fxChannel, OPTIONS.muteDropdown],
       callback: action => {
         const c = getFxChannelFromOptions(action.options, conn);
@@ -319,8 +317,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.SetFxChannelValue]: {
-      label: 'FX channels: Set fader value',
+    [ActionId.SetFxChannelValue]: {
+      name: 'FX channels: Set fader value',
       options: [...OPTION_SETS.fxChannel, OPTIONS.faderValuesSlider],
       callback: action => {
         const c = getFxChannelFromOptions(action.options, conn);
@@ -329,8 +327,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.FadeFxChannel]: {
-      label: 'FX channels: Fade transition',
+    [ActionId.FadeFxChannel]: {
+      name: 'FX channels: Fade transition',
       options: [...OPTION_SETS.fxChannel, ...OPTION_SETS.fadeTransition],
       callback: action => {
         const c = getFxChannelFromOptions(action.options, conn);
@@ -338,8 +336,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.ChangeFxChannelValue]: {
-      label: 'FX channels: Change fader value (relative)',
+    [ActionId.ChangeFxChannelValue]: {
+      name: 'FX channels: Change fader value (relative)',
       options: [...OPTION_SETS.fxChannel, OPTIONS.faderChangeField],
       callback: action => {
         const c = getFxChannelFromOptions(action.options, conn);
@@ -348,8 +346,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.SetFxChannelPost]: {
-      label: 'FX channels: Set PRE/POST',
+    [ActionId.SetFxChannelPost]: {
+      name: 'FX channels: Set PRE/POST',
       options: [...OPTION_SETS.fxChannel, OPTIONS.prepostDropdown],
       callback: action => {
         const c = getFxChannelFromOptions(action.options, conn);
@@ -367,38 +365,38 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
     /**
      * Media Player
      */
-    [ActionType.MediaPlay]: {
-      label: 'Media Player: Play/Stop',
+    [ActionId.MediaPlay]: {
+      name: 'Media Player: Play/Stop',
       options: [],
       callback: () => conn.player.play()
     },
 
-    [ActionType.MediaStop]: {
-      label: 'Media Player: Stop',
+    [ActionId.MediaStop]: {
+      name: 'Media Player: Stop',
       options: [],
       callback: () => conn.player.stop()
     },
 
-    [ActionType.MediaPause]: {
-      label: 'Media Player: Pause',
+    [ActionId.MediaPause]: {
+      name: 'Media Player: Pause',
       options: [],
       callback: () => conn.player.pause()
     },
 
-    [ActionType.MediaNext]: {
-      label: 'Media Player: Next track',
+    [ActionId.MediaNext]: {
+      name: 'Media Player: Next track',
       options: [],
       callback: () => conn.player.next()
     },
 
-    [ActionType.MediaPrev]: {
-      label: 'Media Player: Previous track',
+    [ActionId.MediaPrev]: {
+      name: 'Media Player: Previous track',
       options: [],
       callback: () => conn.player.prev()
     },
 
-    [ActionType.MediaSwitchPlist]: {
-      label: 'Media Player: Switch Playlist',
+    [ActionId.MediaSwitchPlist]: {
+      name: 'Media Player: Switch Playlist',
       options: [
         {
           type: 'textinput',
@@ -413,8 +411,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.MediaSwitchTrack]: {
-      label: 'Media Player: Switch Track',
+    [ActionId.MediaSwitchTrack]: {
+      name: 'Media Player: Switch Track',
       options: [
         {
           type: 'textinput',
@@ -435,8 +433,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.MediaSetPlayMode]: {
-      label: 'Media Player: Set play mode (MANUAL/AUTO)',
+    [ActionId.MediaSetPlayMode]: {
+      name: 'Media Player: Set play mode (MANUAL/AUTO)',
       options: [
         {
           type: 'dropdown',
@@ -459,8 +457,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.MediaSetShuffle]: {
-      label: 'Media Player: Set shuffle',
+    [ActionId.MediaSetShuffle]: {
+      name: 'Media Player: Set shuffle',
       options: [
         {
           type: 'dropdown',
@@ -484,8 +482,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
     /**
      * 2-track Recorder
      */
-    [ActionType.DTRecordToggle]: {
-      label: '2-Track USB Recording: Record Toggle',
+    [ActionId.DTRecordToggle]: {
+      name: '2-Track USB Recording: Record Toggle',
       options: [],
       callback: () => conn.recorderDualTrack.recordToggle()
     },
@@ -493,8 +491,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
     /**
      * MUTE Groups / ALL / FX
      */
-    [ActionType.MuteGroupMute]: {
-      label: 'MUTE Groups/ALL/FX: Mute',
+    [ActionId.MuteGroupMute]: {
+      name: 'MUTE Groups/ALL/FX: Mute',
       options: [OPTIONS.muteGroupDropdown, OPTIONS.muteDropdown],
       callback: action => {
         const groupId = getMuteGroupIDFromOptions(action.options);
@@ -514,8 +512,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.MuteGroupClear]: {
-      label: 'MUTE Groups/ALL/FX: Clear',
+    [ActionId.MuteGroupClear]: {
+      name: 'MUTE Groups/ALL/FX: Clear',
       options: [],
       callback: () => conn.clearMuteGroups()
     },
@@ -523,8 +521,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
     /**
      * Shows / Snapshots / Cues
      */
-    [ActionType.LoadShow]: {
-      label: 'Shows: Load Show',
+    [ActionId.LoadShow]: {
+      name: 'Shows: Load Show',
       options: [
         {
           type: 'textinput',
@@ -541,8 +539,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.LoadSnapshot]: {
-      label: 'Shows: Load Snapshot',
+    [ActionId.LoadSnapshot]: {
+      name: 'Shows: Load Snapshot',
       options: [
         {
           type: 'textinput',
@@ -566,8 +564,8 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     },
 
-    [ActionType.LoadCue]: {
-      label: 'Shows: Load Cue',
+    [ActionId.LoadCue]: {
+      name: 'Shows: Load Cue',
       options: [
         {
           type: 'textinput',
@@ -594,15 +592,15 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
     /**
      * HW Channels / Phantom Power
      */
-    [ActionType.HwSetPhantomPower]: {
-      label: 'HW Channel: Set Phantom Power',
+    [ActionId.HwSetPhantomPower]: {
+      name: 'HW Channel: Set Phantom Power',
       description:
         'A Hardware Channel is a physical input on the mixer. Be aware that input and HW channel numbers can be different when patching is enabled. Use with care! Enabling phantom power can destroy some microphones.',
       options: [
         OPTIONS.hwChannelNumberField,
         {
           type: 'dropdown',
-          label: 'Phantom Power',
+          name: 'Phantom Power',
           id: 'power',
           ...CHOICES.onofftoggleDropdown
         }
@@ -622,6 +620,4 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
       }
     }
   };
-
-  return actions;
 }

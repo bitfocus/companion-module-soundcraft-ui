@@ -6,7 +6,7 @@ import {
   CompanionMigrationFeedback,
   CompanionUpgradeContext
 } from '../../../instance_skel_types';
-import { ActionType } from './actions';
+import { ActionId } from './actions';
 import { UiConfig } from './config';
 import { FeedbackType } from './feedback';
 
@@ -42,7 +42,7 @@ export function upgradeV2x0x0(
         action.options.channel = Number(action.options.channel);
         action.options.mute = Number(action.options.mute);
 
-        action.action = ActionType.MuteMasterChannel;
+        action.action = ActionId.MuteMasterChannel;
         action.label = `${action.instance}:${action.action}`;
 
         changed = true;
@@ -58,7 +58,7 @@ export function upgradeV2x0x0(
         action.options.value = Math.max(faderValueToDB(value), -100);
         delete action.options.level;
 
-        action.action = ActionType.SetMasterChannelValue;
+        action.action = ActionId.SetMasterChannelValue;
         action.label = `${action.instance}:${action.action}`;
 
         changed = true;
