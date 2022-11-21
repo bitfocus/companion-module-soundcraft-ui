@@ -261,7 +261,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
         ...OPTION_SETS.auxChannel,
         {
           type: 'dropdown',
-          name: 'POST PROC',
+          label: 'POST PROC',
           id: 'postproc',
           ...CHOICES.onoffDropdown
         }
@@ -598,7 +598,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
         OPTIONS.hwChannelNumberField,
         {
           type: 'dropdown',
-          name: 'Phantom Power',
+          label: 'Phantom Power',
           id: 'power',
           ...CHOICES.onofftoggleDropdown
         }

@@ -1,7 +1,6 @@
-import InstanceSkel = require('../../../instance_skel');
+import { CompanionFeedbackInfo, InstanceBase } from '@companion-module/base';
 import { Subject, Observable } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
-import { CompanionFeedbackEvent } from '../../../instance_skel_types';
 import { UiConfig } from './config';
 import { FeedbackId } from './feedback';
 
@@ -19,7 +18,7 @@ export class UiFeedbackState {
   /** Simple inverted map of feedback IDs to stream IDs for faster lookup */
   private feedbackStreamMap = new Map<string, string>(); // <FeedbackId, StreamId>
 
-  constructor(private instance: InstanceSkel<UiConfig>) {}
+  constructor(private instance: InstanceBase<UiConfig>) {}
 
   /**
    * Register a stream of feedback values from the mixer.
@@ -29,7 +28,7 @@ export class UiFeedbackState {
    * @param stream$ The observable stream of values for this feedback
    * @param streamId Internal identifier for the stream. Used to group similar streams
    */
-  connect(evt: CompanionFeedbackEvent, stream$: Observable<unknown>, streamId: string): void {
+  connect(evt: CompanionFeedbackInfo, stream$: Observable<unknown>, streamId: string): void {
     // if there is NO subscription to this observable yet,
     // create an entry and subscribe the stream
     if (!this.subscriptions.get(streamId)) {
