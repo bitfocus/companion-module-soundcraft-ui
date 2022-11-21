@@ -1,3 +1,11 @@
+# 2.0.6
+
+- fix: type error ([f5fc91b](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/f5fc91b81e8307e01bf2c59385ce0d5d03af1218))
+
+# 2.0.5
+
+- bulk tidy package.json ([9ca37eb](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/9ca37eb873c537b55d1e5c6b81a43623394eacb3))
+
 # 2.0.4
 
 - add actions and feedback for phantom power ([499d3be](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/499d3be64fa8eab13b31109ef5af463fd1e1eecd))
