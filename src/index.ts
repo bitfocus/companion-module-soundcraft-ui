@@ -23,11 +23,10 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	 * Main initialization function called once the module
 	 * is OK to start doing things.
 	 */
-	async init(_config: UiConfig): Promise<void> {
-		this.log('debug', 'HALLO WELT')
-		// this.updateStatus(InstanceStatus.Disconnected)
-		// this.createConnection(config)
-		// await this.configUpdated(config)
+	async init(config: UiConfig): Promise<void> {
+		this.updateStatus(InstanceStatus.Disconnected)
+		this.createConnection(config)
+		await this.configUpdated(config)
 	}
 
 	/**
