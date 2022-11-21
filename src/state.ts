@@ -3,11 +3,11 @@ import { Subject, Observable } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
 import { CompanionFeedbackEvent } from '../../../instance_skel_types';
 import { UiConfig } from './config';
-import { FeedbackType } from './feedback';
+import { FeedbackId } from './feedback';
 
 interface UiFeedbackSubscription {
   state: unknown;
-  feedbacks: Map<string, FeedbackType>;
+  feedbacks: Map<string, FeedbackId>;
 }
 
 export class UiFeedbackState {
@@ -35,7 +35,7 @@ export class UiFeedbackState {
     if (!this.subscriptions.get(streamId)) {
       const sub = {
         state: null,
-        feedbacks: new Map<string, FeedbackType>()
+        feedbacks: new Map<string, FeedbackId>()
       };
       this.subscriptions.set(streamId, sub);
 
@@ -44,7 +44,7 @@ export class UiFeedbackState {
     }
 
     // register new feedback subscription
-    this.addFeedbackSubscription(streamId, evt.id, evt.type as FeedbackType);
+    this.addFeedbackSubscription(streamId, evt.id, evt.type as FeedbackId);
   }
 
   /**
@@ -110,7 +110,7 @@ export class UiFeedbackState {
    * Used to update feedbacks accordingly when the state changes.
    * @param streamId
    */
-  private getFeedbackTypes(streamId: string): FeedbackType[] {
+  private getFeedbackTypes(streamId: string): FeedbackId[] {
     const feedbacks = this.subscriptions.get(streamId)?.feedbacks;
     if (feedbacks) {
       return Array.from(new Set(feedbacks.values()));
@@ -138,7 +138,7 @@ export class UiFeedbackState {
    * @param feedbackId
    * @param feedbackType
    */
-  private addFeedbackSubscription(streamId: string, feedbackId: string, feedbackType: FeedbackType): void {
+  private addFeedbackSubscription(streamId: string, feedbackId: string, feedbackType: FeedbackId): void {
     const sub = this.subscriptions.get(streamId);
     if (!sub) {
       return;

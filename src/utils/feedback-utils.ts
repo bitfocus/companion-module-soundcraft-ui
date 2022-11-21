@@ -1,4 +1,5 @@
-import { CompanionFeedbackEvent, CompanionInputFieldCheckbox } from '../../../../instance_skel_types';
+import { CompanionFeedbackBooleanEvent, CompanionInputFieldCheckbox } from '@companion-module/base';
+
 import { UiFeedbackState } from '../state';
 import { intToBool } from './utils';
 
@@ -11,7 +12,7 @@ export function getStateCheckbox(label: string): CompanionInputFieldCheckbox {
   };
 }
 
-export function getFeedbackFromBinaryState(feedback: UiFeedbackState, evt: CompanionFeedbackEvent): boolean {
+export function getFeedbackFromBinaryState(feedback: UiFeedbackState, evt: CompanionFeedbackBooleanEvent): boolean {
   const state = intToBool(Number(feedback.get(evt.id)));
   return evt.options.state === state;
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { CompanionActionDefinitions } from '@companion-module/base';
+import { CompanionActionDefinitions, Regex } from '@companion-module/base';
 import { SoundcraftUI } from 'soundcraft-ui-connection';
 import { CHOICES, OPTIONS, OPTION_SETS } from './utils/input-utils';
 import {
@@ -9,8 +9,6 @@ import {
   getMuteGroupIDFromOptions,
   getVolumeBusFromOptions
 } from './utils/channel-selection';
-import InstanceSkel = require('../../../instance_skel');
-import { UiConfig } from './config';
 
 export enum ActionId {
   // Master
@@ -72,7 +70,7 @@ export enum ActionId {
   HwSetPhantomPower = 'hwsetphantompower'
 }
 
-export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: SoundcraftUI): CompanionActionDefinitions {
+export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
   return {
     /**
      * MASTER
@@ -403,7 +401,7 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
           label: 'Playlist',
           id: 'playlist',
           default: '~all~',
-          regex: instance.REGEX_SOMETHING
+          regex: Regex.SOMETHING
         }
       ],
       callback: action => {
@@ -419,13 +417,13 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
           label: 'Playlist',
           id: 'playlist',
           default: '~all~',
-          regex: instance.REGEX_SOMETHING
+          regex: Regex.SOMETHING
         },
         {
           type: 'textinput',
           label: 'Track/File',
           id: 'track',
-          regex: instance.REGEX_SOMETHING
+          regex: Regex.SOMETHING
         }
       ],
       callback: action => {
@@ -529,7 +527,7 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
           label: 'Show Name',
           id: 'show',
           default: 'Default',
-          regex: instance.REGEX_SOMETHING
+          regex: Regex.SOMETHING
         }
       ],
       callback: action => {
@@ -547,14 +545,14 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
           label: 'Show Name',
           id: 'show',
           default: 'Default',
-          regex: instance.REGEX_SOMETHING
+          regex: Regex.SOMETHING
         },
         {
           type: 'textinput',
           label: 'Snapshot Name',
           id: 'snapshot',
           default: '* Init *',
-          regex: instance.REGEX_SOMETHING
+          regex: Regex.SOMETHING
         }
       ],
       callback: action => {
@@ -572,14 +570,14 @@ export function GetActionsList(instance: InstanceSkel<UiConfig>, conn: Soundcraf
           label: 'Show Name',
           id: 'show',
           default: 'Default',
-          regex: instance.REGEX_SOMETHING
+          regex: Regex.SOMETHING
         },
         {
           type: 'textinput',
           label: 'Cue Name',
           id: 'cue',
           default: '',
-          regex: instance.REGEX_SOMETHING
+          regex: Regex.SOMETHING
         }
       ],
       callback: action => {

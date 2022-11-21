@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import InstanceSkel = require('../../../instance_skel');
-import { CompanionFeedback, CompanionFeedbacks } from '../../../instance_skel_types';
-import { UiConfig } from './config';
+import { CompanionFeedbackDefinitions, combineRgb } from '@companion-module/base';
+import { PlayerState, SoundcraftUI } from 'soundcraft-ui-connection';
+import { distinctUntilChanged, map } from 'rxjs/operators';
+
 import { UiFeedbackState } from './state';
 import { getFeedbackFromBinaryState, getStateCheckbox } from './utils/feedback-utils';
 import { OPTION_SETS, OPTIONS } from './utils/input-utils';
@@ -11,13 +12,8 @@ import {
   getMasterChannelFromOptions,
   getMuteGroupIDFromOptions
 } from './utils/channel-selection';
-import { PlayerState, SoundcraftUI } from 'soundcraft-ui-connection';
-import { distinctUntilChanged, map } from 'rxjs/operators';
 
-type CompanionFeedbackWithCallback = CompanionFeedback &
-  Required<Pick<CompanionFeedback, 'callback' | 'subscribe' | 'unsubscribe'>>;
-
-export enum FeedbackType {
+export enum FeedbackId {
   MuteMasterChannel = 'mutemasterchannel',
   SoloMasterChannel = 'solomasterchannel',
   DimMaster = 'dimmaster',
@@ -32,27 +28,23 @@ export enum FeedbackType {
   HwPhantomPower = 'hwphantompower'
 }
 
-export function GetFeedbacksList(
-  instance: InstanceSkel<UiConfig>,
-  feedback: UiFeedbackState,
-  conn: SoundcraftUI
-): CompanionFeedbacks {
-  const muteStyle = {
-    color: instance.rgb(255, 255, 255),
-    bgcolor: instance.rgb(255, 0, 0)
-  };
+const muteStyle = {
+  color: combineRgb(255, 255, 255),
+  bgcolor: combineRgb(255, 0, 0)
+};
 
-  const postStyle = {
-    bgcolor: instance.rgb(0, 255, 0),
-    color: instance.rgb(255, 255, 255)
-  };
+const postStyle = {
+  bgcolor: combineRgb(0, 255, 0),
+  color: combineRgb(255, 255, 255)
+};
 
-  const feedbacks: { [type in FeedbackType]: CompanionFeedbackWithCallback } = {
-    [FeedbackType.MuteMasterChannel]: {
+export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI): CompanionFeedbackDefinitions {
+  return {
+    [FeedbackId.MuteMasterChannel]: {
       type: 'boolean',
-      label: 'Master channel: MUTE',
+      name: 'Master channel: MUTE',
       description: 'If the master channel is muted, change style of the bank',
-      style: muteStyle,
+      defaultStyle: muteStyle,
       options: [...OPTION_SETS.masterChannel, getStateCheckbox('Muted')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
@@ -63,11 +55,11 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
-    [FeedbackType.SoloMasterChannel]: {
+    [FeedbackId.SoloMasterChannel]: {
       type: 'boolean',
-      label: 'Master channel: SOLO',
+      name: 'Master channel: SOLO',
       description: 'If the master channel is soloed, change style of the bank',
-      style: postStyle,
+      defaultStyle: postStyle,
       options: [...OPTION_SETS.masterChannel, getStateCheckbox('Solo')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
@@ -78,13 +70,13 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
-    [FeedbackType.DimMaster]: {
+    [FeedbackId.DimMaster]: {
       type: 'boolean',
-      label: 'Master: DIM',
+      name: 'Master: DIM',
       description: 'If the master is dimmed, change style of the bank',
-      style: {
-        color: instance.rgb(255, 255, 255),
-        bgcolor: instance.rgb(0, 150, 255)
+      defaultStyle: {
+        color: combineRgb(255, 255, 255),
+        bgcolor: combineRgb(0, 150, 255)
       },
       options: [getStateCheckbox('Dimmed')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
@@ -92,11 +84,11 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
-    [FeedbackType.MuteAuxChannel]: {
+    [FeedbackId.MuteAuxChannel]: {
       type: 'boolean',
-      label: 'AUX bus channel: MUTE',
+      name: 'AUX bus channel: MUTE',
       description: 'If the specified channel on the AUX bus is muted, change style of the bank',
-      style: muteStyle,
+      defaultStyle: muteStyle,
       options: [...OPTION_SETS.auxChannel, getStateCheckbox('Muted')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
@@ -107,11 +99,11 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
-    [FeedbackType.PostAuxChannel]: {
+    [FeedbackId.PostAuxChannel]: {
       type: 'boolean',
-      label: 'AUX bus channel: POST',
+      name: 'AUX bus channel: POST',
       description: 'If the specified channel on the AUX bus has POST enabled, change style of the bank',
-      style: postStyle,
+      defaultStyle: postStyle,
       options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
@@ -122,11 +114,11 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
-    [FeedbackType.MuteFxChannel]: {
+    [FeedbackId.MuteFxChannel]: {
       type: 'boolean',
-      label: 'FX bus channel: MUTE',
+      name: 'FX bus channel: MUTE',
       description: 'If the specified channel on the FX bus is muted, change style of the bank',
-      style: muteStyle,
+      defaultStyle: muteStyle,
       options: [...OPTION_SETS.fxChannel, getStateCheckbox('Muted')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
@@ -137,11 +129,11 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
-    [FeedbackType.PostFxChannel]: {
+    [FeedbackId.PostFxChannel]: {
       type: 'boolean',
-      label: 'FX bus channel: POST',
+      name: 'FX bus channel: POST',
       description: 'If the specified channel on the FX bus has POST enabled, change style of the bank',
-      style: postStyle,
+      defaultStyle: postStyle,
       options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
@@ -152,13 +144,13 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
-    [FeedbackType.MediaPlayerState]: {
+    [FeedbackId.MediaPlayerState]: {
       type: 'boolean',
-      label: 'Media Player: Player State',
+      name: 'Media Player: Player State',
       description: 'If the media player has the specified state, change style of the bank',
-      style: {
-        color: instance.rgb(255, 255, 255),
-        bgcolor: instance.rgb(0, 255, 0)
+      defaultStyle: {
+        color: combineRgb(255, 255, 255),
+        bgcolor: combineRgb(0, 255, 0)
       },
       options: [
         {
@@ -186,13 +178,13 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
-    [FeedbackType.MediaPlayerShuffle]: {
+    [FeedbackId.MediaPlayerShuffle]: {
       type: 'boolean',
-      label: 'Media Player: Shuffle',
+      name: 'Media Player: Shuffle',
       description: 'If the shuffle setting of the media player has the specified state, change style of the bank',
-      style: {
-        color: instance.rgb(255, 255, 255),
-        bgcolor: instance.rgb(156, 22, 69)
+      defaultStyle: {
+        color: combineRgb(255, 255, 255),
+        bgcolor: combineRgb(156, 22, 69)
       },
       options: [getStateCheckbox('Shuffle')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
@@ -200,13 +192,13 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
-    [FeedbackType.DTRecordState]: {
+    [FeedbackId.DTRecordState]: {
       type: 'boolean',
-      label: '2-track USB recording: Recording State',
+      name: '2-track USB recording: Recording State',
       description: 'If the 2-track USB recorder has the specified state, change style of the bank',
-      style: {
-        color: instance.rgb(255, 255, 255),
-        bgcolor: instance.rgb(255, 0, 0)
+      defaultStyle: {
+        color: combineRgb(255, 255, 255),
+        bgcolor: combineRgb(255, 0, 0)
       },
       options: [
         {
@@ -233,11 +225,11 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
-    [FeedbackType.MuteMuteGroup]: {
+    [FeedbackId.MuteMuteGroup]: {
       type: 'boolean',
-      label: 'MUTE group/ALL/FX state',
+      name: 'MUTE group/ALL/FX state',
       description: 'If the specified group is muted, change style of the bank',
-      style: muteStyle,
+      defaultStyle: muteStyle,
       options: [OPTIONS.muteGroupDropdown, getStateCheckbox('Muted')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
       subscribe: evt => {
@@ -253,13 +245,13 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     },
 
-    [FeedbackType.HwPhantomPower]: {
+    [FeedbackId.HwPhantomPower]: {
       type: 'boolean',
-      label: 'HW Channel: Phantom power',
+      name: 'HW Channel: Phantom power',
       description: 'If Phantom Power is enabled for a channel, change style of the bank',
-      style: {
-        bgcolor: instance.rgb(51, 102, 255),
-        color: instance.rgb(255, 255, 255)
+      defaultStyle: {
+        bgcolor: combineRgb(51, 102, 255),
+        color: combineRgb(255, 255, 255)
       },
       options: [OPTIONS.hwChannelNumberField, getStateCheckbox('Phantom Power enabled')],
       callback: evt => getFeedbackFromBinaryState(feedback, evt),
@@ -272,6 +264,4 @@ export function GetFeedbacksList(
       unsubscribe: evt => feedback.unsubscribe(evt.id)
     }
   };
-
-  return feedbacks;
 }

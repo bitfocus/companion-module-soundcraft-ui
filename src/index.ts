@@ -1,43 +1,41 @@
-import InstanceSkel = require('../../../instance_skel');
-import { CompanionConfigField, CompanionStaticUpgradeScript, CompanionSystem } from '../../../instance_skel_types';
+import { InstanceBase, InstanceStatus, runEntrypoint, SomeCompanionConfigField } from '@companion-module/base';
 import { SoundcraftUI, ConnectionStatus, ConnectionErrorEvent } from 'soundcraft-ui-connection';
+
 import { GetActionsList } from './actions';
-import { GetConfigFields, UiConfig } from './config';
+import { instanceConfigFields, UiConfig } from './config';
 import { GetFeedbacksList } from './feedback';
 import { UiFeedbackState } from './state';
-import { upgradeLegacyFeedbackToBoolean, upgradeV2x0x0 } from './upgrades';
+import { upgradeLegacyFeedbackToBoolean } from './upgrades';
 
 /**
  * Companion instance class for the Soundcraft Ui Mixers.
  */
-class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
+class SoundcraftUiInstance extends InstanceBase<UiConfig> {
   state = new UiFeedbackState(this);
-  conn!: SoundcraftUI;
+  conn?: SoundcraftUI;
+  private config: UiConfig = {};
 
-  constructor(system: CompanionSystem, id: string, config: UiConfig) {
-    super(system, id, config);
-  }
-
-  static GetUpgradeScripts(): CompanionStaticUpgradeScript[] {
-    return [upgradeV2x0x0, upgradeLegacyFeedbackToBoolean];
+  constructor(internal: unknown) {
+    super(internal);
   }
 
   /**
    * Main initialization function called once the module
    * is OK to start doing things.
    */
-  public init(): void {
-    this.status(this.STATUS_UNKNOWN);
-    this.createConnection();
+  async init(config: UiConfig): Promise<void> {
+    this.updateStatus(InstanceStatus.Disconnected);
+    this.createConnection(config);
+    await this.configUpdated(config);
   }
 
   /**
    * Create new mixer connection object,
    * start connection and set things up
    */
-  private createConnection(): void {
-    if (this.config.host) {
-      this.conn = new SoundcraftUI(this.config.host);
+  private createConnection(config: UiConfig): void {
+    if (config.host) {
+      this.conn = new SoundcraftUI(config.host);
       this.conn.connect();
 
       this.subscribeConnectionStatus();
@@ -56,16 +54,16 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
     this.conn.status$.subscribe(status => {
       switch (status.type) {
         case ConnectionStatus.Opening:
-          this.status(this.STATUS_WARNING, 'Connecting');
+          this.updateStatus(InstanceStatus.UnknwownWarning, 'Connecting');
           break;
         case ConnectionStatus.Error:
-          this.status(this.STATUS_ERROR, (status as ConnectionErrorEvent).payload.message);
+          this.updateStatus(InstanceStatus.ConnectionFailure, (status as ConnectionErrorEvent).payload.message);
           break;
         case ConnectionStatus.Open:
-          this.status(this.STATUS_OK);
+          this.updateStatus(InstanceStatus.Ok);
           break;
         case ConnectionStatus.Close:
-          this.status(this.STATUS_ERROR, 'Disconnected');
+          this.updateStatus(InstanceStatus.Disconnected, 'Disconnected');
           break;
       }
     });
@@ -76,41 +74,45 @@ class SoundcraftUiInstance extends InstanceSkel<UiConfig> {
    * such as actions, feedback and presets.
    */
   private updateCompanionBits(): void {
-    this.setActions(GetActionsList(this, this.conn));
-    this.setFeedbackDefinitions(GetFeedbacksList(this, this.state, this.conn));
+    if (!this.conn) {
+      this.updateStatus(InstanceStatus.ConnectionFailure);
+      return;
+    }
+
+    this.setActionDefinitions(GetActionsList(this.conn));
+    this.setFeedbackDefinitions(GetFeedbacksList(this.state, this.conn));
     this.subscribeFeedbacks();
   }
 
   /**
    * Process an updated configuration array.
    */
-  public updateConfig(config: UiConfig): void {
+  async configUpdated(config: UiConfig): Promise<void> {
     const oldConfig = this.config;
     this.config = config;
 
     // if host has changed, reconnect
-    if (config.host && oldConfig.host !== config.host) {
+    if (config.host && oldConfig?.host !== config.host) {
+      console.log('RECONNECT AFTER CONFIG CHANGE');
       this.conn && this.conn.disconnect();
-      this.createConnection();
+      this.createConnection(config);
     }
   }
 
   /**
    * Create the configuration fields for web config.
    */
-  // eslint-disable-next-line @typescript-eslint/camelcase
-  public config_fields(): CompanionConfigField[] {
-    return GetConfigFields(this);
+  public getConfigFields(): SomeCompanionConfigField[] {
+    return instanceConfigFields;
   }
 
   /**
    * Clean up the instance before it is destroyed.
    */
-  public destroy(): void {
+  async destroy(): Promise<void> {
     this.state.unsubscribeAll();
-
-    this.conn && this.conn.disconnect();
+    this.conn?.disconnect();
   }
 }
 
-export = SoundcraftUiInstance;
+runEntrypoint(SoundcraftUiInstance, [upgradeLegacyFeedbackToBoolean]);
