@@ -1,0 +1,30 @@
+{
+  "id": "soundcraft-ui",
+  "name": "soundcraft-ui",
+  "shortname": "soundcraftui",
+  "description": "Module for controlling the Soundcraft Ui consoles",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "git+https://github.com/bitfocus/companion-module-soundcraft-ui.git",
+  "bugs": "https://github.com/bitfocus/companion-module-soundcraft-ui/issues",
+  "maintainers": [
+    {
+      "name": "Ferdinand Malcher",
+      "email": "ferdinand@malcher.media"
+    },
+    {
+      "name": "Christian Himmler",
+      "email": "christian@himmlers.de"
+    }
+  ],
+  "legacyIds": [],
+  "runtime": {
+    "type": "node14",
+    "api": "nodejs-ipc",
+    "apiVersion": "0.0.0",
+    "entrypoint": "../dist/index.js"
+  },
+  "manufacturer": "Soundcraft",
+  "products": ["UI12", "UI16", "UI24"],
+  "keywords": ["Audio"]
+}
