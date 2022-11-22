@@ -5,7 +5,7 @@ import { GetActionsList } from './actions'
 import { instanceConfigFields, UiConfig } from './config'
 import { GetFeedbacksList } from './feedback'
 import { UiFeedbackState } from './state'
-import { upgradeLegacyFeedbackToBoolean } from './upgrades'
+import { upgradeLegacyFeedbackToBoolean, upgradeV2x0x0 } from './upgrades'
 
 /**
  * Companion instance class for the Soundcraft Ui Mixers.
@@ -113,4 +113,4 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	}
 }
 
-runEntrypoint(SoundcraftUiInstance, [upgradeLegacyFeedbackToBoolean])
+runEntrypoint(SoundcraftUiInstance, [upgradeV2x0x0, upgradeLegacyFeedbackToBoolean])
