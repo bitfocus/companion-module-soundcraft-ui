@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.build.json",
-  "include": ["src/**/*.ts", "dump-model.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules/**"],
   "compilerOptions": {
     // "types": ["jest", "node"]
