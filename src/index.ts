@@ -26,7 +26,6 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	async init(config: UiConfig): Promise<void> {
 		this.updateStatus(InstanceStatus.Disconnected)
 		this.createConnection(config)
-		await this.configUpdated(config)
 	}
 
 	/**
@@ -93,7 +92,6 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 
 		// if host has changed, reconnect
 		if (config.host && oldConfig?.host !== config.host) {
-			console.log('RECONNECT AFTER CONFIG CHANGE')
 			this.conn?.disconnect()
 			this.createConnection(config)
 		}
@@ -110,7 +108,6 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	 * Clean up the instance before it is destroyed.
 	 */
 	async destroy(): Promise<void> {
-		this.log('debug', 'DESTROY')
 		this.state.unsubscribeAll()
 		this.conn?.disconnect()
 	}
