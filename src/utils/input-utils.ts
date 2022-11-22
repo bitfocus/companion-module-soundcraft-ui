@@ -1,13 +1,4 @@
-import {
-	CompanionInputFieldCheckbox,
-	CompanionInputFieldColor,
-	CompanionInputFieldDropdown,
-	CompanionInputFieldMultiDropdown,
-	CompanionInputFieldNumber,
-	CompanionInputFieldStaticText,
-	CompanionInputFieldTextInput,
-	DropdownChoice,
-} from '@companion-module/base'
+import { DropdownChoice } from '@companion-module/base'
 import { ChannelType, Easings } from 'soundcraft-ui-connection'
 
 /**
@@ -78,16 +69,7 @@ export const CHOICES = {
  * Commonly used option fields
  */
 
-type SomeOptionField =
-	| CompanionInputFieldStaticText
-	| CompanionInputFieldColor
-	| CompanionInputFieldTextInput
-	| CompanionInputFieldDropdown
-	| CompanionInputFieldMultiDropdown
-	| CompanionInputFieldNumber
-	| CompanionInputFieldCheckbox
-
-export const OPTIONS: { [key: string]: SomeOptionField } = {
+export const OPTIONS = {
 	masterChannelTypeDropdown: {
 		type: 'dropdown',
 		label: 'Channel Type',
@@ -224,8 +206,7 @@ export const OPTIONS: { [key: string]: SomeOptionField } = {
 /**
  * Commonly used combinations of option fields
  */
-
-export const OPTION_SETS: { [key: string]: SomeOptionField[] } = {
+export const OPTION_SETS = {
 	masterChannel: [OPTIONS.masterChannelTypeDropdown, OPTIONS.channelNumberField],
 	auxChannel: [OPTIONS.busNumberField, OPTIONS.auxChannelTypeDropdown, OPTIONS.channelNumberField],
 	fxChannel: [OPTIONS.busNumberField, OPTIONS.fxChannelTypeDropdown, OPTIONS.channelNumberField],
