@@ -11,6 +11,7 @@
 		"lint": "yarn lint:raw .",
 		"dist": "yarn companion-module-build"
 	},
+	"homepage": "https://github.com/bitfocus/companion-module-soundcraft-ui#readme",
 	"author": "Ferdinand Malcher <ferdinand@malcher.media>",
 	"contributors": [
 		"Christian Himmler <christian@himmlers.de>"
