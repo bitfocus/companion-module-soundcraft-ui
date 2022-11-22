@@ -2,20 +2,20 @@
 # yarn lockfile v1
 
 
-"@companion-module/base@~0.4.7":
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/@companion-module/base/-/base-0.4.7.tgz#ea4f716c712886b36d6af0cf6171bbffcea0905f"
-  integrity sha512-rSqmxMTFFVRHWi5Vi1WD6/S6yf6afYfrUeiL5HgavbzdTlU897uhtX2MfL03huWgWC3FRH//sMZP7oEEH4V5mA==
+"@companion-module/base@^0.4.8":
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/@companion-module/base/-/base-0.4.8.tgz#731876355920d969230f9f18fe0fa436713e5da5"
+  integrity sha512-XyKyAg3bvdo9TA68vLOUc71PM9zgA+84g/gnqgvh8Z2hYO5GPGxte1o/nD4YLnRw8YvuHAvQVu1JNNKgb+lmRQ==
   dependencies:
-    "@sentry/node" "^7.14.0"
-    "@sentry/tracing" "^7.14.0"
+    "@sentry/node" "^7.18.0"
+    "@sentry/tracing" "^7.18.0"
     ajv "^8.11.0"
     ejson "^2.2.3"
     eventemitter3 "^4.0.7"
     nanoid "^3.3.4"
     p-queue "^6.6.2"
     p-timeout "^4.1.0"
-    tslib "^2.4.0"
+    tslib "^2.4.1"
 
 "@companion-module/tools@^0.3.3":
   version "0.3.3"
@@ -144,7 +144,7 @@
     "@sentry/utils" "7.20.1"
     tslib "^1.9.3"
 
-"@sentry/node@^7.14.0":
+"@sentry/node@^7.18.0":
   version "7.20.1"
   resolved "https://registry.yarnpkg.com/@sentry/node/-/node-7.20.1.tgz#7558eba81f47c17674845cd151f34d5bf425ee67"
   integrity sha512-vSzvS8b7dI8pKkE7nPFUxzjtpJAfSmUzc3epD6gCV+GnE+h5ROeAh+0tS55ak72FIZU0YHvlXGVSpPIcxS1dcg==
@@ -157,7 +157,7 @@
     lru_map "^0.3.3"
     tslib "^1.9.3"
 
-"@sentry/tracing@^7.14.0":
+"@sentry/tracing@^7.18.0":
   version "7.20.1"
   resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-7.20.1.tgz#7bb44ec7b00ec1623d2ab2d95f2016e9ee119493"
   integrity sha512-LAiQcJMcOFkUwkGvqLghcVOtVVglHBQ2r7kRo75kqI0OTn/xMPRyPBGo94G+9zAKm+w7dGF5AUqq/4VUm7DJ+g==
@@ -2218,7 +2218,7 @@ tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.1.0, tslib@^2.4.0:
+tslib@^2.1.0, tslib@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.1.tgz#0d0bfbaac2880b91e22df0768e55be9753a5b17e"
   integrity sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==
