@@ -1,3 +1,9 @@
+# 3.0.0
+
+Migration to the new module API of Companion v3.
+This release contains no functional changes in the action or feedback surface of the module.
+
+
 # 2.0.6
 
 - fix: type error ([f5fc91b](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/f5fc91b81e8307e01bf2c59385ce0d5d03af1218))
