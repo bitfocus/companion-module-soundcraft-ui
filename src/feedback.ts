@@ -1,4 +1,4 @@
-import { CompanionFeedbackDefinitions, combineRgb } from '@companion-module/base'
+import { CompanionFeedbackDefinitions, combineRgb, CompanionFeedbackButtonStyleResult } from '@companion-module/base'
 import { PlayerState, SoundcraftUI } from 'soundcraft-ui-connection'
 import { distinctUntilChanged, map } from 'rxjs/operators'
 
@@ -27,14 +27,15 @@ export enum FeedbackId {
 	HwPhantomPower = 'hwphantompower',
 }
 
-const muteStyle = {
-	color: combineRgb(255, 255, 255),
-	bgcolor: combineRgb(255, 0, 0),
-}
-
-const postStyle = {
-	bgcolor: combineRgb(0, 255, 0),
-	color: combineRgb(255, 255, 255),
+const defaultStyles: { [key: string]: CompanionFeedbackButtonStyleResult } = {
+	mute: {
+		color: combineRgb(255, 255, 255),
+		bgcolor: combineRgb(255, 0, 0),
+	},
+	post: {
+		bgcolor: combineRgb(0, 255, 0),
+		color: combineRgb(255, 255, 255),
+	},
 }
 
 export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI): CompanionFeedbackDefinitions {
@@ -43,7 +44,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 			type: 'boolean',
 			name: 'Master channel: MUTE',
 			description: 'If the master channel is muted, change style of the bank',
-			defaultStyle: muteStyle,
+			defaultStyle: defaultStyles.mute,
 			options: [...OPTION_SETS.masterChannel, getStateCheckbox('Muted')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
 			subscribe: (evt) => {
@@ -58,7 +59,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 			type: 'boolean',
 			name: 'Master channel: SOLO',
 			description: 'If the master channel is soloed, change style of the bank',
-			defaultStyle: postStyle,
+			defaultStyle: defaultStyles.post,
 			options: [...OPTION_SETS.masterChannel, getStateCheckbox('Solo')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
 			subscribe: (evt) => {
@@ -87,7 +88,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 			type: 'boolean',
 			name: 'AUX bus channel: MUTE',
 			description: 'If the specified channel on the AUX bus is muted, change style of the bank',
-			defaultStyle: muteStyle,
+			defaultStyle: defaultStyles.mute,
 			options: [...OPTION_SETS.auxChannel, getStateCheckbox('Muted')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
 			subscribe: (evt) => {
@@ -102,7 +103,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 			type: 'boolean',
 			name: 'AUX bus channel: POST',
 			description: 'If the specified channel on the AUX bus has POST enabled, change style of the bank',
-			defaultStyle: postStyle,
+			defaultStyle: defaultStyles.post,
 			options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
 			subscribe: (evt) => {
@@ -117,7 +118,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 			type: 'boolean',
 			name: 'FX bus channel: MUTE',
 			description: 'If the specified channel on the FX bus is muted, change style of the bank',
-			defaultStyle: muteStyle,
+			defaultStyle: defaultStyles.mute,
 			options: [...OPTION_SETS.fxChannel, getStateCheckbox('Muted')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
 			subscribe: (evt) => {
@@ -132,7 +133,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 			type: 'boolean',
 			name: 'FX bus channel: POST',
 			description: 'If the specified channel on the FX bus has POST enabled, change style of the bank',
-			defaultStyle: postStyle,
+			defaultStyle: defaultStyles.post,
 			options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
 			subscribe: (evt) => {
@@ -228,7 +229,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 			type: 'boolean',
 			name: 'MUTE group/ALL/FX state',
 			description: 'If the specified group is muted, change style of the bank',
-			defaultStyle: muteStyle,
+			defaultStyle: defaultStyles.mute,
 			options: [OPTIONS.muteGroupDropdown, getStateCheckbox('Muted')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
 			subscribe: (evt) => {
