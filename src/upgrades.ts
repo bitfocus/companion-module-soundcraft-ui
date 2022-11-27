@@ -1,71 +1,30 @@
-import { faderValueToDB } from 'soundcraft-ui-connection';
-import InstanceSkel = require('../../../instance_skel');
-import {
-  CompanionCoreInstanceconfig,
-  CompanionMigrationAction,
-  CompanionMigrationFeedback,
-  CompanionUpgradeContext
-} from '../../../instance_skel_types';
-import { ActionType } from './actions';
-import { UiConfig } from './config';
-import { FeedbackType } from './feedback';
+import { CompanionStaticUpgradeScript, CreateConvertToBooleanFeedbackUpgradeScript } from '@companion-module/base'
+import { FeedbackId } from './feedback'
 
-// see https://github.com/bitfocus/companion/wiki/Migrating-legacy-to-boolean-feedbacks
-export const upgradeLegacyFeedbackToBoolean = InstanceSkel.CreateConvertToBooleanFeedbackUpgradeScript({
-  [FeedbackType.MuteMasterChannel]: true,
-  [FeedbackType.SoloMasterChannel]: true,
-  [FeedbackType.DimMaster]: true,
-  [FeedbackType.MuteAuxChannel]: true,
-  [FeedbackType.PostAuxChannel]: true,
-  [FeedbackType.MuteFxChannel]: true,
-  [FeedbackType.PostFxChannel]: true,
-  [FeedbackType.MediaPlayerState]: true,
-  [FeedbackType.MediaPlayerShuffle]: true,
-  [FeedbackType.DTRecordState]: true,
-  [FeedbackType.MuteMuteGroup]: true
-});
+export const upgradeLegacyFeedbackToBoolean = CreateConvertToBooleanFeedbackUpgradeScript({
+	[FeedbackId.MuteMasterChannel]: true,
+	[FeedbackId.SoloMasterChannel]: true,
+	[FeedbackId.DimMaster]: true,
+	[FeedbackId.MuteAuxChannel]: true,
+	[FeedbackId.PostAuxChannel]: true,
+	[FeedbackId.MuteFxChannel]: true,
+	[FeedbackId.PostFxChannel]: true,
+	[FeedbackId.MediaPlayerState]: true,
+	[FeedbackId.MediaPlayerShuffle]: true,
+	[FeedbackId.DTRecordState]: true,
+	[FeedbackId.MuteMuteGroup]: true,
+})
 
-export function upgradeV2x0x0(
-  _context: CompanionUpgradeContext,
-  _config: (CompanionCoreInstanceconfig & UiConfig) | null,
-  actions: CompanionMigrationAction[],
-  _feedbacks: CompanionMigrationFeedback[]
-): boolean {
-  let changed = false;
-
-  for (const action of actions) {
-    switch (action.action) {
-      case 'mute': {
-        action.options.channelType = action.options.type;
-        delete action.options.type;
-
-        action.options.channel = Number(action.options.channel);
-        action.options.mute = Number(action.options.mute);
-
-        action.action = ActionType.MuteMasterChannel;
-        action.label = `${action.instance}:${action.action}`;
-
-        changed = true;
-        break;
-      }
-
-      case 'fade': {
-        action.options.channel = Number(action.options.channel);
-        action.options.channelType = action.options.type;
-        delete action.options.type;
-
-        const value = Number(action.options.level);
-        action.options.value = Math.max(faderValueToDB(value), -100);
-        delete action.options.level;
-
-        action.action = ActionType.SetMasterChannelValue;
-        action.label = `${action.instance}:${action.action}`;
-
-        changed = true;
-        break;
-      }
-    }
-  }
-
-  return changed;
+/**
+ * Dummy upgrade script as a replacement for the old implementation prior to v3.
+ * People who used v1 of this module have already upgraded to v2
+ * so the upgrade implementation is not necessary anymore.
+ * However, the script must not be deleted:
+ * > "We track whether they have run by recording the count that have been run.
+ * > So with it going from 2 to 1 upgrade scripts, some users will have their db reporting that they
+ * > have run 2, some will report that they have run 1. When you add a new upgrade script,
+ * > all those whose db says 2 will think they have already run it."
+ */
+export const upgradeV2x0x0: CompanionStaticUpgradeScript<unknown> = function (_context, _props) {
+	return { updatedActions: [], updatedConfig: null, updatedFeedbacks: [] }
 }

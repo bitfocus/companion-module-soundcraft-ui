@@ -1,9 +1,8 @@
 **Soundcraft Ui12 / Ui16 / Ui24R**
 
 This module controls the Soundcraft Ui series (Ui12, Ui16 and Ui24R).
-Go over to [Soundcraft](https://www.soundcraft.com/en/product_families/ui-series) to get additional information about the different consoles and their capabilities.
-
 Please be aware of your device's capabilities – not all available features are supported on all device versions.
+If you're missing a feature, feel free to [open an issue](https://github.com/bitfocus/companion-module-soundcraft-ui/issues).
 
 | Console Function      | What it does                                                     |
 | --------------------- | ---------------------------------------------------------------- |
