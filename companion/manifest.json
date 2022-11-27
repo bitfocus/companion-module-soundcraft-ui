@@ -25,6 +25,6 @@
 		"entrypoint": "../dist/index.js"
 	},
 	"manufacturer": "Soundcraft",
-	"products": ["UI12", "UI16", "UI24R"],
+	"products": ["Ui12", "Ui16", "Ui24R"],
 	"keywords": ["Audio"]
 }
