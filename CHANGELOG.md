@@ -1,8 +1,11 @@
 # 3.0.0
 
-Migration to the new module API of Companion v3.
+Migration to the new Module API of Companion v3.
 This release contains no functional changes in the action or feedback surface of the module.
 
+- migrate to new Companion Module API v3
+- update to TypeScript 4.9
+- minor refactoring
 
 # 2.0.6
 
