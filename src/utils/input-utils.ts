@@ -1,13 +1,4 @@
-import {
-	CompanionInputFieldCheckbox,
-	CompanionInputFieldColor,
-	CompanionInputFieldDropdown,
-	CompanionInputFieldMultiDropdown,
-	CompanionInputFieldNumber,
-	CompanionInputFieldStaticText,
-	CompanionInputFieldTextInput,
-	DropdownChoice,
-} from '@companion-module/base'
+import { CompanionInputFieldDropdown, CompanionInputFieldNumber, DropdownChoice, literal } from '@companion-module/base'
 import { ChannelType, Easings } from 'soundcraft-ui-connection'
 
 /**
@@ -77,67 +68,57 @@ export const CHOICES = {
 /**
  * Commonly used option fields
  */
-
-type SomeOptionField =
-	| CompanionInputFieldStaticText
-	| CompanionInputFieldColor
-	| CompanionInputFieldTextInput
-	| CompanionInputFieldDropdown
-	| CompanionInputFieldMultiDropdown
-	| CompanionInputFieldNumber
-	| CompanionInputFieldCheckbox
-
-export const OPTIONS: { [key: string]: SomeOptionField } = {
-	masterChannelTypeDropdown: {
+export const OPTIONS = {
+	masterChannelTypeDropdown: literal<CompanionInputFieldDropdown>({
 		type: 'dropdown',
 		label: 'Channel Type',
 		id: 'channelType',
 		choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.f, FADER_TYPES.s, FADER_TYPES.a, FADER_TYPES.v],
 		default: 'i',
-	},
-	auxChannelTypeDropdown: {
+	}),
+	auxChannelTypeDropdown: literal<CompanionInputFieldDropdown>({
 		type: 'dropdown',
 		label: 'Channel Type',
 		id: 'channelType',
 		...CHOICES.auxChannelTypes,
-	},
-	fxChannelTypeDropdown: {
+	}),
+	fxChannelTypeDropdown: literal<CompanionInputFieldDropdown>({
 		type: 'dropdown',
 		label: 'Channel Type',
 		id: 'channelType',
 		...CHOICES.fxChannelTypes,
-	},
-	busNumberField: {
+	}),
+	busNumberField: literal<CompanionInputFieldNumber>({
 		type: 'number',
 		label: 'Bus number',
 		id: 'bus',
 		min: 1,
 		max: 10,
 		default: 1,
-	},
-	channelNumberField: {
+	}),
+	channelNumberField: literal<CompanionInputFieldNumber>({
 		type: 'number',
 		label: 'Channel number',
 		id: 'channel',
 		min: 1,
 		max: 24,
 		default: 1,
-	},
-	hwChannelNumberField: {
+	}),
+	hwChannelNumberField: literal<CompanionInputFieldNumber>({
 		type: 'number',
 		label: 'HW Channel number',
 		id: 'hwchannel',
 		min: 1,
 		max: 20,
 		default: 1,
-	},
-	muteDropdown: {
+	}),
+	muteDropdown: literal<CompanionInputFieldDropdown>({
 		type: 'dropdown',
 		label: 'Mute',
 		id: 'mute',
 		...CHOICES.mute,
-	},
-	muteGroupDropdown: {
+	}),
+	muteGroupDropdown: literal<CompanionInputFieldDropdown>({
 		type: 'dropdown',
 		label: 'Group',
 		id: 'group',
@@ -152,14 +133,14 @@ export const OPTIONS: { [key: string]: SomeOptionField } = {
 			{ id: 'fx', label: 'MUTE FX' },
 		],
 		default: 1,
-	},
-	soloDropdown: {
+	}),
+	soloDropdown: literal<CompanionInputFieldDropdown>({
 		type: 'dropdown',
 		label: 'Solo',
 		id: 'solo',
 		...CHOICES.onofftoggleDropdown,
-	},
-	faderValuesSlider: {
+	}),
+	faderValuesSlider: literal<CompanionInputFieldNumber>({
 		type: 'number',
 		label: 'Fader Level dB (-100 = -∞)',
 		id: 'value',
@@ -169,8 +150,8 @@ export const OPTIONS: { [key: string]: SomeOptionField } = {
 		step: 0.1,
 		min: -100,
 		max: 10,
-	},
-	prepostDropdown: {
+	}),
+	prepostDropdown: literal<CompanionInputFieldDropdown>({
 		type: 'dropdown',
 		label: 'PRE/POST',
 		id: 'post',
@@ -180,8 +161,8 @@ export const OPTIONS: { [key: string]: SomeOptionField } = {
 			{ id: 2, label: 'Toggle' },
 		],
 		default: 2,
-	},
-	easingsDropdown: {
+	}),
+	easingsDropdown: literal<CompanionInputFieldDropdown>({
 		type: 'dropdown',
 		label: 'Easing',
 		id: 'easing',
@@ -192,24 +173,24 @@ export const OPTIONS: { [key: string]: SomeOptionField } = {
 			{ id: Easings.EaseInOut, label: 'Ease In Out' },
 		],
 		default: Easings.Linear,
-	},
-	fadeTimeField: {
+	}),
+	fadeTimeField: literal<CompanionInputFieldNumber>({
 		type: 'number',
 		label: 'Fade time (ms)',
 		id: 'fadeTime',
 		min: 100,
 		max: 60000,
 		default: 2000,
-	},
-	faderChangeField: {
+	}),
+	faderChangeField: literal<CompanionInputFieldNumber>({
 		type: 'number',
 		label: 'Change value (dB)',
 		id: 'value',
 		min: -100,
 		max: 100,
 		default: 3,
-	},
-	volumeBusesDropdown: {
+	}),
+	volumeBusesDropdown: literal<CompanionInputFieldDropdown>({
 		type: 'dropdown',
 		label: 'Bus',
 		id: 'bus',
@@ -219,13 +200,13 @@ export const OPTIONS: { [key: string]: SomeOptionField } = {
 			{ id: 'hp2', label: 'Headphone 2' },
 		],
 		default: 'solo',
-	},
+	}),
 }
 
 /**
  * Commonly used combinations of option fields
  */
-export const OPTION_SETS: { [key: string]: SomeOptionField[] } = {
+export const OPTION_SETS = {
 	masterChannel: [OPTIONS.masterChannelTypeDropdown, OPTIONS.channelNumberField],
 	auxChannel: [OPTIONS.busNumberField, OPTIONS.auxChannelTypeDropdown, OPTIONS.channelNumberField],
 	fxChannel: [OPTIONS.busNumberField, OPTIONS.fxChannelTypeDropdown, OPTIONS.channelNumberField],
