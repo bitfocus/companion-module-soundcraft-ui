@@ -1,18 +1,15 @@
-import InstanceSkel = require('../../../instance_skel');
-import { SomeCompanionConfigField } from '../../../instance_skel_types';
+import { Regex, SomeCompanionConfigField } from '@companion-module/base'
 
 export interface UiConfig {
-  host?: string;
+	host?: string
 }
 
-export function GetConfigFields(self: InstanceSkel<UiConfig>): SomeCompanionConfigField[] {
-  return [
-    {
-      type: 'textinput',
-      id: 'host',
-      label: 'Target IP',
-      width: 12,
-      regex: self.REGEX_IP
-    }
-  ];
-}
+export const instanceConfigFields: SomeCompanionConfigField[] = [
+	{
+		type: 'textinput',
+		id: 'host',
+		label: 'Target IP',
+		width: 12,
+		regex: Regex.IP,
+	},
+]
