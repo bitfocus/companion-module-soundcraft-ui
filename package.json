@@ -35,7 +35,7 @@
 	},
 	"dependencies": {
 		"@companion-module/base": "~1.0",
-		"rxjs": "^6.6.3",
+		"rxjs": "~7.5.0",
 		"soundcraft-ui-connection": "^0.11.0"
 	},
 	"devDependencies": {
