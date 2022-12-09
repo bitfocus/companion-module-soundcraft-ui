@@ -25,19 +25,24 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	 */
 	async init(config: UiConfig): Promise<void> {
 		this.updateStatus(InstanceStatus.Disconnected)
-		this.createConnection(config)
+		await this.createConnection(config)
 	}
 
 	/**
 	 * Create new mixer connection object,
 	 * start connection and set things up
 	 */
-	private createConnection(config: UiConfig): void {
+	private async createConnection(config: UiConfig) {
 		if (config.host) {
 			this.conn = new SoundcraftUI(config.host)
-			this.conn.connect()
-
 			this.subscribeConnectionStatus()
+
+			try {
+				await this.conn.connect()
+			} catch (e) {
+				this.updateStatus(InstanceStatus.ConnectionFailure, JSON.stringify(e))
+			}
+
 			this.updateCompanionBits()
 		}
 	}
@@ -56,7 +61,7 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 					this.updateStatus(InstanceStatus.Connecting)
 					break
 				case ConnectionStatus.Error:
-					this.updateStatus(InstanceStatus.ConnectionFailure, (status as ConnectionErrorEvent).payload.message)
+					this.updateStatus(InstanceStatus.ConnectionFailure, JSON.stringify((status as ConnectionErrorEvent).payload))
 					break
 				case ConnectionStatus.Open:
 					this.updateStatus(InstanceStatus.Ok)
@@ -92,8 +97,10 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 
 		// if host has changed, reconnect
 		if (config.host && oldConfig?.host !== config.host) {
-			this.conn?.disconnect()
-			this.createConnection(config)
+			if (this.conn) {
+				await this.conn.disconnect()
+			}
+			await this.createConnection(config)
 		}
 	}
 
@@ -109,7 +116,9 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	 */
 	async destroy(): Promise<void> {
 		this.state.unsubscribeAll()
-		this.conn?.disconnect()
+		if (this.conn) {
+			await this.conn.disconnect()
+		}
 	}
 }
 

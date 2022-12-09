@@ -86,7 +86,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		[ActionId.FadeMaster]: {
 			name: 'Master: Fade transition',
 			options: [...OPTION_SETS.fadeTransition],
-			callback: (action) => {
+			callback: async (action) => {
 				return conn.master.fadeToDB(
 					Number(action.options.value),
 					Number(action.options.fadeTime),
@@ -158,7 +158,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		[ActionId.FadeMasterChannel]: {
 			name: 'Master channels: Fade transition',
 			options: [...OPTION_SETS.masterChannel, ...OPTION_SETS.fadeTransition],
-			callback: (action) => {
+			callback: async (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
 				return c.fadeToDB(Number(action.options.value), Number(action.options.fadeTime), Number(action.options.easing))
 			},
@@ -222,7 +222,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		[ActionId.FadeAuxChannel]: {
 			name: 'AUX channels: Fade transition',
 			options: [...OPTION_SETS.auxChannel, ...OPTION_SETS.fadeTransition],
-			callback: (action) => {
+			callback: async (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
 				return c.fadeToDB(Number(action.options.value), Number(action.options.fadeTime), Number(action.options.easing))
 			},
@@ -327,7 +327,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		[ActionId.FadeFxChannel]: {
 			name: 'FX channels: Fade transition',
 			options: [...OPTION_SETS.fxChannel, ...OPTION_SETS.fadeTransition],
-			callback: (action) => {
+			callback: async (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
 				return c.fadeToDB(Number(action.options.value), Number(action.options.fadeTime), Number(action.options.easing))
 			},
