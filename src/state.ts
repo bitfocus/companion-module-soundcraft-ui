@@ -1,6 +1,5 @@
 import { CompanionFeedbackInfo, InstanceBase } from '@companion-module/base'
-import { Subject, Observable } from 'rxjs'
-import { takeUntil, filter } from 'rxjs/operators'
+import { Subject, Observable, takeUntil, filter } from 'rxjs'
 import { UiConfig } from './config'
 import { FeedbackId } from './feedback'
 
@@ -10,7 +9,7 @@ interface UiFeedbackSubscription {
 }
 
 export class UiFeedbackState {
-	private feedbackUnsubscribe$ = new Subject<string>()
+	private feedbackUnsubscribe$ = new Subject<string | void>()
 
 	/** Internal map of all subscriptions, current state and connected feedbacks */
 	private subscriptions = new Map<string, UiFeedbackSubscription>()
