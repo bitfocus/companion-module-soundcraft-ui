@@ -1,5 +1,5 @@
 import { CompanionActionDefinitions, Regex } from '@companion-module/base'
-import { SoundcraftUI } from 'soundcraft-ui-connection'
+import { DelayableMasterChannel, SoundcraftUI } from 'soundcraft-ui-connection'
 import { CHOICES, OPTIONS, OPTION_SETS } from './utils/input-utils'
 import {
 	getAuxChannelFromOptions,
@@ -15,6 +15,8 @@ export enum ActionId {
 	ChangeMasterValue = 'changemastervalue',
 	FadeMaster = 'fademaster',
 	DimMaster = 'dimmaster',
+	SetMasterDelay = 'setmasterdelay',
+	ChangeMasterDelay = 'changemasterdelay',
 
 	// Master Channels
 	MuteMasterChannel = 'mutemasterchannel',
@@ -22,6 +24,8 @@ export enum ActionId {
 	SetMasterChannelValue = 'setmasterchannelvalue',
 	ChangeMasterChannelValue = 'changemasterchannelvalue',
 	FadeMasterChannel = 'fademasterchannel',
+	SetMasterChannelDelay = 'setmasterchanneldelay',
+	ChangeMasterChannelDelay = 'changemasterchanneldelay',
 
 	// AUX Channels
 	MuteAuxChannel = 'muteauxchannel',
@@ -126,6 +130,44 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
+		[ActionId.SetMasterDelay]: {
+			name: 'Master: Set output delay',
+			options: [OPTIONS.delayTimeField(0, 500), OPTIONS.masterDelayDropdown],
+			callback: (action) => {
+				const time = Number(action.options.time)
+				switch (action.options.side) {
+					case 'left':
+						return conn.master.setDelayL(time)
+					case 'right':
+						return conn.master.setDelayR(time)
+					default: {
+						conn.master.setDelayL(time)
+						conn.master.setDelayR(time)
+						return
+					}
+				}
+			},
+		},
+
+		[ActionId.ChangeMasterDelay]: {
+			name: 'Master: Change output delay (relative)',
+			options: [OPTIONS.delayTimeField(-500, 500), OPTIONS.masterDelayDropdown],
+			callback: (action) => {
+				const time = Number(action.options.time)
+				switch (action.options.side) {
+					case 'left':
+						return conn.master.changeDelayL(time)
+					case 'right':
+						return conn.master.changeDelayR(time)
+					default: {
+						conn.master.changeDelayL(time)
+						conn.master.changeDelayR(time)
+						return
+					}
+				}
+			},
+		},
+
 		/**
 		 * Master Channels
 		 */
@@ -187,6 +229,28 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					case 2:
 						return c.toggleSolo()
 				}
+			},
+		},
+
+		[ActionId.SetMasterChannelDelay]: {
+			name: 'Master channels: Set output delay',
+			description: 'Input and Line channels allow for max. 250 ms, AUX master faders can be delayed by max. 500ms.',
+			options: [...OPTION_SETS.delayableMasterChannel(0, 500)],
+			callback: (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn) as DelayableMasterChannel
+				const time = Number(action.options.time)
+				c.setDelay(time)
+			},
+		},
+
+		[ActionId.ChangeMasterChannelDelay]: {
+			name: 'Master channels: Change output delay (relative)',
+			description: 'Input and Line channels allow for max. 250 ms, AUX master faders can be delayed by max. 500ms.',
+			options: [...OPTION_SETS.delayableMasterChannel(-500, 500)],
+			callback: (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn) as DelayableMasterChannel
+				const time = Number(action.options.time)
+				c.changeDelay(time)
 			},
 		},
 

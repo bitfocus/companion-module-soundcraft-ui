@@ -1,4 +1,10 @@
-import { CompanionInputFieldDropdown, CompanionInputFieldNumber, DropdownChoice, literal } from '@companion-module/base'
+import {
+	CompanionInputFieldDropdown,
+	CompanionInputFieldNumber,
+	DropdownChoice,
+	literal,
+	SomeCompanionActionInputField,
+} from '@companion-module/base'
 import { ChannelType, Easings } from 'soundcraft-ui-connection'
 
 /**
@@ -54,6 +60,11 @@ export const CHOICES = {
 		default: 'i',
 	},
 
+	masterDelayableChannelTypes: {
+		choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.a],
+		default: 'i',
+	},
+
 	auxChannelTypes: {
 		choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.f],
 		default: 'i',
@@ -73,8 +84,7 @@ export const OPTIONS = {
 		type: 'dropdown',
 		label: 'Channel Type',
 		id: 'channelType',
-		choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.f, FADER_TYPES.s, FADER_TYPES.a, FADER_TYPES.v],
-		default: 'i',
+		...CHOICES.masterChannelTypes,
 	}),
 	auxChannelTypeDropdown: literal<CompanionInputFieldDropdown>({
 		type: 'dropdown',
@@ -201,6 +211,27 @@ export const OPTIONS = {
 		],
 		default: 'solo',
 	}),
+	masterDelayDropdown: literal<CompanionInputFieldDropdown>({
+		type: 'dropdown',
+		label: 'Delay side',
+		id: 'side',
+		choices: [
+			{ id: 'both', label: 'Left and right' },
+			{ id: 'left', label: 'Left' },
+			{ id: 'right', label: 'Right' },
+		],
+		default: 'both',
+	}),
+	delayTimeField: (min: number, max: number): CompanionInputFieldNumber => {
+		return {
+			type: 'number',
+			label: 'Delay time (ms)',
+			id: 'time',
+			min,
+			max,
+			default: 0,
+		}
+	},
 }
 
 /**
@@ -211,4 +242,14 @@ export const OPTION_SETS = {
 	auxChannel: [OPTIONS.busNumberField, OPTIONS.auxChannelTypeDropdown, OPTIONS.channelNumberField],
 	fxChannel: [OPTIONS.busNumberField, OPTIONS.fxChannelTypeDropdown, OPTIONS.channelNumberField],
 	fadeTransition: [OPTIONS.faderValuesSlider, OPTIONS.fadeTimeField, OPTIONS.easingsDropdown],
+	delayableMasterChannel: (min: number, max: number): SomeCompanionActionInputField[] => [
+		{
+			type: 'dropdown',
+			label: 'Channel Type',
+			id: 'channelType',
+			...CHOICES.masterDelayableChannelTypes,
+		},
+		OPTIONS.channelNumberField,
+		OPTIONS.delayTimeField(min, max),
+	],
 }
