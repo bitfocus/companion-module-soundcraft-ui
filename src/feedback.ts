@@ -1,6 +1,6 @@
 import { CompanionFeedbackDefinitions, combineRgb, CompanionFeedbackButtonStyleResult } from '@companion-module/base'
 import { PlayerState, SoundcraftUI } from 'soundcraft-ui-connection'
-import { distinctUntilChanged, map } from 'rxjs/operators'
+import { distinctUntilChanged, map } from 'rxjs'
 
 import { UiFeedbackState } from './state'
 import { getFeedbackFromBinaryState, getStateCheckbox } from './utils/feedback-utils'
