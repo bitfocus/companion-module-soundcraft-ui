@@ -1,6 +1,6 @@
 {
 	"name": "soundcraft-ui",
-	"version": "2.0.6",
+	"version": "2.0.7",
 	"api_version": "1.0.0",
 	"support": {
 		"action": true,
@@ -21,7 +21,7 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"dev": "yarn build:watch",
-		"build": "npx rimraf dist && npx typescript@~4.0.5 -p tsconfig.build.json",
+		"build": "npx rimraf dist && npx --package=typescript@~4.0.5 -c 'tsc -p tsconfig.build.json'",
 		"build:main": "tsc -p tsconfig.build.json",
 		"build:watch": "tsc -p tsconfig.build.json --watch",
 		"lint": "eslint . --ext .ts",
