@@ -1,5 +1,5 @@
 import { CompanionFeedbackDefinitions, combineRgb, CompanionFeedbackButtonStyleResult } from '@companion-module/base'
-import { PlayerState, SoundcraftUI } from 'soundcraft-ui-connection'
+import { MtkState, PlayerState, SoundcraftUI } from 'soundcraft-ui-connection'
 import { distinctUntilChanged, map } from 'rxjs'
 
 import { UiFeedbackState } from './state'
@@ -23,6 +23,8 @@ export enum FeedbackId {
 	MediaPlayerState = 'mediaplayerstate',
 	MediaPlayerShuffle = 'mediaplayershuffle',
 	DTRecordState = 'dualtrackrecordstate',
+	MTKPlayerState = 'mtkplayerstate',
+	MTKRecordState = 'mtkrecordstate',
 	MuteMuteGroup = 'mutemutegroup',
 	HwPhantomPower = 'hwphantompower',
 }
@@ -220,6 +222,71 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 						return feedback.connect(evt, recorder.recording$, 'dtrec-rec')
 					case 'busy':
 						return feedback.connect(evt, recorder.busy$, 'dtrec-busy')
+				}
+			},
+			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+		},
+
+		[FeedbackId.MTKPlayerState]: {
+			type: 'boolean',
+			name: 'Multitrack Recording: Player State',
+			defaultStyle: {
+				color: combineRgb(255, 255, 255),
+				bgcolor: combineRgb(0, 255, 0),
+			},
+			options: [
+				{
+					type: 'dropdown',
+					label: 'State',
+					id: 'state',
+					choices: [
+						{ id: MtkState.Stopped, label: 'Stopped' },
+						{ id: MtkState.Playing, label: 'Playing' },
+						{ id: MtkState.Paused, label: 'Paused' },
+					],
+					default: PlayerState.Playing,
+				},
+			],
+			callback: (evt) => !!feedback.get(evt.id),
+			subscribe: (evt) => {
+				const state = Number(evt.options.state)
+				const state$ = conn.recorderMultiTrack.state$.pipe(
+					map((s) => (s === state ? 1 : 0)),
+					distinctUntilChanged()
+				)
+				const streamId = 'mtkstate' + state
+				feedback.connect(evt, state$, streamId)
+			},
+			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+		},
+
+		[FeedbackId.MTKRecordState]: {
+			type: 'boolean',
+			name: 'Multitrack Recording: Recording State',
+			defaultStyle: {
+				color: combineRgb(255, 255, 255),
+				bgcolor: combineRgb(255, 0, 0),
+			},
+			options: [
+				{
+					type: 'dropdown',
+					label: 'State',
+					id: 'state',
+					choices: [
+						{ id: 'rec', label: 'Recording' },
+						{ id: 'busy', label: 'Busy' },
+					],
+					default: 'rec',
+				},
+			],
+			callback: (evt) => !!feedback.get(evt.id),
+			subscribe: (evt) => {
+				const recorder = conn.recorderMultiTrack
+				switch (evt.options.state) {
+					case 'rec':
+						return feedback.connect(evt, recorder.recording$, 'mtk-rec')
+					case 'busy':
+						return feedback.connect(evt, recorder.busy$, 'mtk-busy')
 				}
 			},
 			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
