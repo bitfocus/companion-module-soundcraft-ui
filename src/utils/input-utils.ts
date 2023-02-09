@@ -2,7 +2,6 @@ import {
 	CompanionInputFieldDropdown,
 	CompanionInputFieldNumber,
 	DropdownChoice,
-	literal,
 	SomeCompanionActionInputField,
 } from '@companion-module/base'
 import { ChannelType, Easings } from 'soundcraft-ui-connection'
@@ -80,55 +79,55 @@ export const CHOICES = {
  * Commonly used option fields
  */
 export const OPTIONS = {
-	masterChannelTypeDropdown: literal<CompanionInputFieldDropdown>({
+	masterChannelTypeDropdown: {
 		type: 'dropdown',
 		label: 'Channel Type',
 		id: 'channelType',
 		...CHOICES.masterChannelTypes,
-	}),
-	auxChannelTypeDropdown: literal<CompanionInputFieldDropdown>({
+	} satisfies CompanionInputFieldDropdown,
+	auxChannelTypeDropdown: {
 		type: 'dropdown',
 		label: 'Channel Type',
 		id: 'channelType',
 		...CHOICES.auxChannelTypes,
-	}),
-	fxChannelTypeDropdown: literal<CompanionInputFieldDropdown>({
+	} satisfies CompanionInputFieldDropdown,
+	fxChannelTypeDropdown: {
 		type: 'dropdown',
 		label: 'Channel Type',
 		id: 'channelType',
 		...CHOICES.fxChannelTypes,
-	}),
-	busNumberField: literal<CompanionInputFieldNumber>({
+	} satisfies CompanionInputFieldDropdown,
+	busNumberField: {
 		type: 'number',
 		label: 'Bus number',
 		id: 'bus',
 		min: 1,
 		max: 10,
 		default: 1,
-	}),
-	channelNumberField: literal<CompanionInputFieldNumber>({
+	} satisfies CompanionInputFieldNumber,
+	channelNumberField: {
 		type: 'number',
 		label: 'Channel number',
 		id: 'channel',
 		min: 1,
 		max: 24,
 		default: 1,
-	}),
-	hwChannelNumberField: literal<CompanionInputFieldNumber>({
+	} satisfies CompanionInputFieldNumber,
+	hwChannelNumberField: {
 		type: 'number',
 		label: 'HW Channel number',
 		id: 'hwchannel',
 		min: 1,
 		max: 20,
 		default: 1,
-	}),
-	muteDropdown: literal<CompanionInputFieldDropdown>({
+	} satisfies CompanionInputFieldNumber,
+	muteDropdown: {
 		type: 'dropdown',
 		label: 'Mute',
 		id: 'mute',
 		...CHOICES.mute,
-	}),
-	muteGroupDropdown: literal<CompanionInputFieldDropdown>({
+	} satisfies CompanionInputFieldDropdown,
+	muteGroupDropdown: {
 		type: 'dropdown',
 		label: 'Group',
 		id: 'group',
@@ -143,14 +142,14 @@ export const OPTIONS = {
 			{ id: 'fx', label: 'MUTE FX' },
 		],
 		default: 1,
-	}),
-	soloDropdown: literal<CompanionInputFieldDropdown>({
+	} satisfies CompanionInputFieldDropdown,
+	soloDropdown: {
 		type: 'dropdown',
 		label: 'Solo',
 		id: 'solo',
 		...CHOICES.onofftoggleDropdown,
-	}),
-	faderValuesSlider: literal<CompanionInputFieldNumber>({
+	} satisfies CompanionInputFieldDropdown,
+	faderValuesSlider: {
 		type: 'number',
 		label: 'Fader Level dB (-100 = -∞)',
 		id: 'value',
@@ -160,8 +159,8 @@ export const OPTIONS = {
 		step: 0.1,
 		min: -100,
 		max: 10,
-	}),
-	prepostDropdown: literal<CompanionInputFieldDropdown>({
+	} satisfies CompanionInputFieldNumber,
+	prepostDropdown: {
 		type: 'dropdown',
 		label: 'PRE/POST',
 		id: 'post',
@@ -171,8 +170,8 @@ export const OPTIONS = {
 			{ id: 2, label: 'Toggle' },
 		],
 		default: 2,
-	}),
-	easingsDropdown: literal<CompanionInputFieldDropdown>({
+	} satisfies CompanionInputFieldDropdown,
+	easingsDropdown: {
 		type: 'dropdown',
 		label: 'Easing',
 		id: 'easing',
@@ -183,24 +182,24 @@ export const OPTIONS = {
 			{ id: Easings.EaseInOut, label: 'Ease In Out' },
 		],
 		default: Easings.Linear,
-	}),
-	fadeTimeField: literal<CompanionInputFieldNumber>({
+	} satisfies CompanionInputFieldDropdown,
+	fadeTimeField: {
 		type: 'number',
 		label: 'Fade time (ms)',
 		id: 'fadeTime',
 		min: 100,
 		max: 60000,
 		default: 2000,
-	}),
-	faderChangeField: literal<CompanionInputFieldNumber>({
+	} satisfies CompanionInputFieldNumber,
+	faderChangeField: {
 		type: 'number',
 		label: 'Change value (dB)',
 		id: 'value',
 		min: -100,
 		max: 100,
 		default: 3,
-	}),
-	volumeBusesDropdown: literal<CompanionInputFieldDropdown>({
+	} satisfies CompanionInputFieldNumber,
+	volumeBusesDropdown: {
 		type: 'dropdown',
 		label: 'Bus',
 		id: 'bus',
@@ -210,8 +209,8 @@ export const OPTIONS = {
 			{ id: 'hp2', label: 'Headphone 2' },
 		],
 		default: 'solo',
-	}),
-	masterDelayDropdown: literal<CompanionInputFieldDropdown>({
+	} satisfies CompanionInputFieldDropdown,
+	masterDelayDropdown: {
 		type: 'dropdown',
 		label: 'Delay side',
 		id: 'side',
@@ -221,7 +220,7 @@ export const OPTIONS = {
 			{ id: 'right', label: 'Right' },
 		],
 		default: 'both',
-	}),
+	} satisfies CompanionInputFieldDropdown,
 	delayTimeField: (min: number, max: number): CompanionInputFieldNumber => {
 		return {
 			type: 'number',
