@@ -1,11 +1,13 @@
 # 3.0.0
 
-Migration to the new Module API of Companion v3.
-This release contains no functional changes in the action or feedback surface of the module.
+This release migrates the module to the new Module API of Companion v3.
+It also contains a few new features:
 
 - migrate to new Companion Module API v3
 - update to TypeScript 4.9
-- minor refactoring
+- refactoring and improvement
+- add support for output delay (set and change)
+- add support for multitrack recording
 
 # 2.0.6
 
