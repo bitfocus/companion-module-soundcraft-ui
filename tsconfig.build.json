@@ -8,7 +8,6 @@
 		"paths": {
 			"*": ["./node_modules/*"]
 		},
-		"lib": ["es2020"],
 		"target": "es2020"
 	}
 }
