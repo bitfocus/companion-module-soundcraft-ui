@@ -45,7 +45,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.MuteMasterChannel]: {
 			type: 'boolean',
 			name: 'Master channel: MUTE',
-			description: 'If the master channel is muted, change style of the bank',
+			description: 'If the specified master channel is muted',
 			defaultStyle: defaultStyles.mute,
 			options: [...OPTION_SETS.masterChannel, getStateCheckbox('Muted')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
@@ -60,7 +60,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.SoloMasterChannel]: {
 			type: 'boolean',
 			name: 'Master channel: SOLO',
-			description: 'If the master channel is soloed, change style of the bank',
+			description: 'If the specified master channel has SOLO active',
 			defaultStyle: defaultStyles.post,
 			options: [...OPTION_SETS.masterChannel, getStateCheckbox('Solo')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
@@ -75,7 +75,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.DimMaster]: {
 			type: 'boolean',
 			name: 'Master: DIM',
-			description: 'If the master is dimmed, change style of the bank',
+			description: 'If the master is dimmed',
 			defaultStyle: {
 				color: combineRgb(255, 255, 255),
 				bgcolor: combineRgb(0, 150, 255),
@@ -89,7 +89,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.MuteAuxChannel]: {
 			type: 'boolean',
 			name: 'AUX bus channel: MUTE',
-			description: 'If the specified channel on the AUX bus is muted, change style of the bank',
+			description: 'If the specified channel on the AUX bus is muted',
 			defaultStyle: defaultStyles.mute,
 			options: [...OPTION_SETS.auxChannel, getStateCheckbox('Muted')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
@@ -104,7 +104,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.PostAuxChannel]: {
 			type: 'boolean',
 			name: 'AUX bus channel: POST',
-			description: 'If the specified channel on the AUX bus has POST enabled, change style of the bank',
+			description: 'If the specified channel on the AUX bus has POST enabled',
 			defaultStyle: defaultStyles.post,
 			options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
@@ -119,7 +119,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.MuteFxChannel]: {
 			type: 'boolean',
 			name: 'FX bus channel: MUTE',
-			description: 'If the specified channel on the FX bus is muted, change style of the bank',
+			description: 'If the specified channel on the FX bus is muted',
 			defaultStyle: defaultStyles.mute,
 			options: [...OPTION_SETS.fxChannel, getStateCheckbox('Muted')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
@@ -134,7 +134,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.PostFxChannel]: {
 			type: 'boolean',
 			name: 'FX bus channel: POST',
-			description: 'If the specified channel on the FX bus has POST enabled, change style of the bank',
+			description: 'If the specified channel on the FX bus has POST enabled',
 			defaultStyle: defaultStyles.post,
 			options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
@@ -149,7 +149,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.MediaPlayerState]: {
 			type: 'boolean',
 			name: 'Media Player: Player State',
-			description: 'If the media player has the specified state, change style of the bank',
+			description: 'If the media player has the specified state (playing, paused, stopped)',
 			defaultStyle: {
 				color: combineRgb(255, 255, 255),
 				bgcolor: combineRgb(0, 255, 0),
@@ -183,7 +183,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.MediaPlayerShuffle]: {
 			type: 'boolean',
 			name: 'Media Player: Shuffle',
-			description: 'If the shuffle setting of the media player has the specified state, change style of the bank',
+			description: 'If the shuffle setting of the media player has the specified state',
 			defaultStyle: {
 				color: combineRgb(255, 255, 255),
 				bgcolor: combineRgb(156, 22, 69),
@@ -197,7 +197,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.DTRecordState]: {
 			type: 'boolean',
 			name: '2-track USB recording: Recording State',
-			description: 'If the 2-track USB recorder has the specified state, change style of the bank',
+			description: 'If the 2-track USB recorder has the specified state (recording, busy)',
 			defaultStyle: {
 				color: combineRgb(255, 255, 255),
 				bgcolor: combineRgb(255, 0, 0),
@@ -230,6 +230,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.MTKPlayerState]: {
 			type: 'boolean',
 			name: 'Multitrack Recording: Player State',
+			description: 'If the multitrack player has the specified state (playing, paused, stopped)',
 			defaultStyle: {
 				color: combineRgb(255, 255, 255),
 				bgcolor: combineRgb(0, 255, 0),
@@ -263,6 +264,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.MTKRecordState]: {
 			type: 'boolean',
 			name: 'Multitrack Recording: Recording State',
+			description: 'If the multitrack recorder has the specified state (recording, busy)',
 			defaultStyle: {
 				color: combineRgb(255, 255, 255),
 				bgcolor: combineRgb(255, 0, 0),
@@ -295,7 +297,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.MuteMuteGroup]: {
 			type: 'boolean',
 			name: 'MUTE group/ALL/FX state',
-			description: 'If the specified group is muted, change style of the bank',
+			description: 'If the specified group is muted',
 			defaultStyle: defaultStyles.mute,
 			options: [OPTIONS.muteGroupDropdown, getStateCheckbox('Muted')],
 			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
@@ -315,7 +317,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 		[FeedbackId.HwPhantomPower]: {
 			type: 'boolean',
 			name: 'HW Channel: Phantom power',
-			description: 'If Phantom Power is enabled for a channel, change style of the bank',
+			description: 'If Phantom Power is enabled for an input',
 			defaultStyle: {
 				bgcolor: combineRgb(51, 102, 255),
 				color: combineRgb(255, 255, 255),
