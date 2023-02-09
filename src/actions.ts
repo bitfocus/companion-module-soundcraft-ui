@@ -86,6 +86,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		 */
 		[ActionId.SetMasterValue]: {
 			name: 'Master: Set fader value',
+			description: 'Set the fader value (dB) for the master fader',
 			options: [OPTIONS.faderValuesSlider],
 			callback: (action) => {
 				const value = Number(action.options.value)
@@ -95,6 +96,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.FadeMaster]: {
 			name: 'Master: Fade transition',
+			description: 'Perform a timed fade transition on the master fader',
 			options: [...OPTION_SETS.fadeTransition],
 			callback: async (action) => {
 				return conn.master.fadeToDB(
@@ -107,6 +109,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.ChangeMasterValue]: {
 			name: 'Master: Change fader value (relative)',
+			description: 'Relatively change the fader value (dB) for the master fader',
 			options: [OPTIONS.faderChangeField],
 			callback: (action) => {
 				const value = Number(action.options.value)
@@ -116,6 +119,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.DimMaster]: {
 			name: 'Master: Dim',
+			description: 'Dim the master fader (Ui24R only)',
 			options: [
 				{
 					type: 'dropdown',
@@ -138,6 +142,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.SetMasterDelay]: {
 			name: 'Master: Set output delay',
+			description: 'Set delay for the master output (left, right or both)',
 			options: [OPTIONS.delayTimeField(0, 500), OPTIONS.masterDelayDropdown],
 			callback: (action) => {
 				const time = Number(action.options.time)
@@ -157,6 +162,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.ChangeMasterDelay]: {
 			name: 'Master: Change output delay (relative)',
+			description: 'Relatively change delay for the master output (left, right or both)',
 			options: [OPTIONS.delayTimeField(-500, 500), OPTIONS.masterDelayDropdown],
 			callback: (action) => {
 				const time = Number(action.options.time)
@@ -179,6 +185,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		 */
 		[ActionId.MuteMasterChannel]: {
 			name: 'Master channels: Mute',
+			description: 'Set or toggle MUTE for a channel on the master bus',
 			options: [...OPTION_SETS.masterChannel, OPTIONS.muteDropdown],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
@@ -195,6 +202,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.SetMasterChannelValue]: {
 			name: 'Master channels: Set fader value',
+			description: 'Set the fader value (dB) for a channel on the master bus',
 			options: [...OPTION_SETS.masterChannel, OPTIONS.faderValuesSlider],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
@@ -205,6 +213,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.FadeMasterChannel]: {
 			name: 'Master channels: Fade transition',
+			description: 'Perform a timed fade transition for a channel on the master bus',
 			options: [...OPTION_SETS.masterChannel, ...OPTION_SETS.fadeTransition],
 			callback: async (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
@@ -214,6 +223,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.ChangeMasterChannelValue]: {
 			name: 'Master channels: Change fader value (relative)',
+			description: 'Relatively change the fader value (dB) for a channel on the master bus',
 			options: [...OPTION_SETS.masterChannel, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
@@ -224,6 +234,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.SoloMasterChannel]: {
 			name: 'Master channels: Solo',
+			description: 'Set or toggle SOLO for a channel on the master bus',
 			options: [...OPTION_SETS.masterChannel, OPTIONS.soloDropdown],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
@@ -240,7 +251,8 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.SetMasterChannelDelay]: {
 			name: 'Master channels: Set output delay',
-			description: 'Input and Line channels allow for max. 250 ms, AUX master faders can be delayed by max. 500ms.',
+			description:
+				'Set output delay for a channel on the master bus. Input and Line channels allow for max. 250 ms, AUX master faders can be delayed by max. 500ms.',
 			options: [...OPTION_SETS.delayableMasterChannel(0, 500)],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn) as DelayableMasterChannel
@@ -251,7 +263,8 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.ChangeMasterChannelDelay]: {
 			name: 'Master channels: Change output delay (relative)',
-			description: 'Input and Line channels allow for max. 250 ms, AUX master faders can be delayed by max. 500ms.',
+			description:
+				'Relatively change output delay for a channel on the master bus. Input and Line channels allow for max. 250 ms, AUX master faders can be delayed by max. 500ms.',
 			options: [...OPTION_SETS.delayableMasterChannel(-500, 500)],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn) as DelayableMasterChannel
@@ -265,6 +278,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		 */
 		[ActionId.MuteAuxChannel]: {
 			name: 'AUX channels: Mute',
+			description: 'Set or toggle MUTE for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.muteDropdown],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
@@ -281,6 +295,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.SetAuxChannelValue]: {
 			name: 'AUX channels: Set fader value',
+			description: 'Set the fader value (dB) for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.faderValuesSlider],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
@@ -291,6 +306,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.FadeAuxChannel]: {
 			name: 'AUX channels: Fade transition',
+			description: 'Perform a timed fade transition for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, ...OPTION_SETS.fadeTransition],
 			callback: async (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
@@ -300,6 +316,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.ChangeAuxChannelValue]: {
 			name: 'AUX channels: Change fader value (relative)',
+			description: 'Relatively change the fader value (dB) for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
@@ -310,6 +327,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.SetAuxChannelPost]: {
 			name: 'AUX channels: Set PRE/POST',
+			description: 'Set or toggle PRE/POST for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.prepostDropdown],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
@@ -326,6 +344,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.SetAuxChannelPostProc]: {
 			name: 'AUX channels: Set POST PROC',
+			description: 'Set POST PROC/PRE PROC for a channel on an AUX bus (Ui24R only)',
 			options: [
 				...OPTION_SETS.auxChannel,
 				{
@@ -347,6 +366,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		 */
 		[ActionId.SetVolumeBusValue]: {
 			name: 'SOLO/Headphone Bus: Set volume',
+			description: 'Set the fader value (dB) for a SOLO or headphone bus (Ui24R only)',
 			options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderValuesSlider],
 			callback: (action) => {
 				const bus = getVolumeBusFromOptions(action.options, conn)
@@ -357,6 +377,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.ChangeVolumeBusValue]: {
 			name: 'SOLO/Headphone Bus: Change volume (relative)',
+			description: 'Relatively change the fader value (dB) for a SOLO or headphone bus (Ui24R only)',
 			options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const bus = getVolumeBusFromOptions(action.options, conn)
@@ -370,6 +391,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		 */
 		[ActionId.MuteFxChannel]: {
 			name: 'FX channels: Mute',
+			description: 'Mute/unmute a channel on an FX bus',
 			options: [...OPTION_SETS.fxChannel, OPTIONS.muteDropdown],
 			callback: (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
@@ -386,6 +408,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.SetFxChannelValue]: {
 			name: 'FX channels: Set fader value',
+			description: 'Set the fader value (dB) for a channel on an FX bus',
 			options: [...OPTION_SETS.fxChannel, OPTIONS.faderValuesSlider],
 			callback: (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
@@ -396,6 +419,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.FadeFxChannel]: {
 			name: 'FX channels: Fade transition',
+			description: 'Perform a timed fade transition for a channel on an FX bus',
 			options: [...OPTION_SETS.fxChannel, ...OPTION_SETS.fadeTransition],
 			callback: async (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
@@ -405,6 +429,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.ChangeFxChannelValue]: {
 			name: 'FX channels: Change fader value (relative)',
+			description: 'Relatively change the fader value (dB) for a channel on an FX bus',
 			options: [...OPTION_SETS.fxChannel, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
@@ -415,6 +440,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.SetFxChannelPost]: {
 			name: 'FX channels: Set PRE/POST',
+			description: 'Set or toggle PRE/POST for a channel on an FX bus',
 			options: [...OPTION_SETS.fxChannel, OPTIONS.prepostDropdown],
 			callback: (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
@@ -587,6 +613,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		 */
 		[ActionId.MuteGroupMute]: {
 			name: 'MUTE Groups/ALL/FX: Mute',
+			description: 'Mute/unmute a mute group or ALL/FX',
 			options: [OPTIONS.muteGroupDropdown, OPTIONS.muteDropdown],
 			callback: (action) => {
 				const groupId = getMuteGroupIDFromOptions(action.options)
@@ -608,6 +635,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 
 		[ActionId.MuteGroupClear]: {
 			name: 'MUTE Groups/ALL/FX: Clear',
+			description: 'Unmute all mute groups',
 			options: [],
 			callback: () => conn.clearMuteGroups(),
 		},
@@ -689,7 +717,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		[ActionId.HwSetPhantomPower]: {
 			name: 'HW Channel: Set Phantom Power',
 			description:
-				'A Hardware Channel is a physical input on the mixer. Be aware that input and HW channel numbers can be different when patching is enabled. Use with care! Enabling phantom power can destroy some microphones.',
+				'Set or toggle phantom power for a physical input. Be aware that input and HW channel numbers can be different when patching is enabled (Ui24R only). Use with care! Phantom power can destroy some microphones.',
 			options: [
 				OPTIONS.hwChannelNumberField,
 				{
