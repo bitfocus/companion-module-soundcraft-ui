@@ -1,6 +1,7 @@
 {
 	"name": "soundcraft-ui",
 	"version": "3.0.0",
+	"homepage": "https://github.com/bitfocus/companion-module-soundcraft-ui#readme",
 	"main": "dist/index.js",
 	"scripts": {
 		"prepare": "husky install",
@@ -11,7 +12,6 @@
 		"lint": "yarn lint:raw .",
 		"dist": "yarn companion-module-build"
 	},
-	"homepage": "https://github.com/bitfocus/companion-module-soundcraft-ui#readme",
 	"author": "Ferdinand Malcher <ferdinand@malcher.media>",
 	"contributors": [
 		"Christian Himmler <christian@himmlers.de>"
@@ -34,16 +34,18 @@
 		"node": "^18.12"
 	},
 	"dependencies": {
-		"@companion-module/base": "~1.0",
-		"rxjs": "~7.5.0",
-		"soundcraft-ui-connection": "1.4.0"
+		"@companion-module/base": "^1.4.1",
+		"bufferutil": "^4.0.7",
+		"rxjs": "7.8.1",
+		"soundcraft-ui-connection": "2.0.1",
+		"utf-8-validate": "^6.0.3"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^1.0.0",
+		"@companion-module/tools": "^1.2.1",
 		"@types/node": "^18.11.18",
-		"husky": "^8.0.1",
-		"lint-staged": "^13.1.0",
-		"rimraf": "^4.1.2",
-		"typescript": "~4.9"
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.2",
+		"rimraf": "^5.0.0",
+		"typescript": "~5.0.4"
 	}
 }
