@@ -1,3 +1,9 @@
+# 3.1.0
+
+- feat: add support for automix ([12a4319](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/12a43190dc29c78a97a6dca5c5b70e98eb8a78f3))
+- chore: upgrade example configs to v3 ([a33b1f3](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/a33b1f301943fe32bd1481488ef6c6d88e7b836b))
+- chore: update dependencies, module-base to 1.4.1 ([2acd1c3](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/2acd1c3103b9bb5261f283a6c81ebb1c619457d2))
+
 # 3.0.0
 
 This release migrates the module to the new Module API of Companion v3.
