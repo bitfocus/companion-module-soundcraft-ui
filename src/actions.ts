@@ -1,9 +1,10 @@
 import { CompanionActionDefinitions, Regex } from '@companion-module/base'
-import { DelayableMasterChannel, SoundcraftUI } from 'soundcraft-ui-connection'
+import { AutomixGroupId, DelayableMasterChannel, SoundcraftUI } from 'soundcraft-ui-connection'
 import { CHOICES, OPTIONS, OPTION_SETS } from './utils/input-utils'
 import {
 	getAuxChannelFromOptions,
 	getFxChannelFromOptions,
+	getMasterChannel,
 	getMasterChannelFromOptions,
 	getMuteGroupIDFromOptions,
 	getVolumeBusFromOptions,
@@ -77,6 +78,10 @@ export enum ActionId {
 
 	// Hardware Channels / Phantom Power
 	HwSetPhantomPower = 'hwsetphantompower',
+
+	// Automix
+	AutomixAssignGroupToChannel = 'automixassigngrouptochannel',
+	AutomixEnableGroup = 'automixenablegroup',
 }
 
 export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
@@ -738,6 +743,82 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 						return channel.phantomOn()
 					case 2:
 						return channel.togglePhantom()
+				}
+			},
+		},
+
+		/**
+		 * Automix
+		 */
+		[ActionId.AutomixAssignGroupToChannel]: {
+			name: 'Automix: Assign channel to automix group',
+			description: 'Assign a master input channel to an automix group',
+			options: [
+				OPTIONS.channelNumberField,
+				{
+					type: 'dropdown',
+					label: 'Automix Group',
+					id: 'group',
+					choices: [
+						{ id: 'a', label: 'A' },
+						{ id: 'b', label: 'B' },
+						{ id: 'none', label: 'None / Remove' },
+					],
+					default: 'none',
+				},
+			],
+			callback: (action) => {
+				const channel = getMasterChannel(conn.master, 'i', Number(action.options.channel))
+				let group: AutomixGroupId | 'none' = 'none'
+				switch (action.options.group) {
+					case 'a':
+						group = 'a'
+						break
+					case 'b':
+						group = 'b'
+						break
+					default:
+						group = 'none'
+				}
+
+				channel.automixAssignGroup(group)
+			},
+		},
+
+		[ActionId.AutomixEnableGroup]: {
+			name: 'Automix: Enable/disable automix group',
+			description: 'Enable, disable or toggle an automix group',
+			options: [
+				{
+					type: 'dropdown',
+					label: 'Automix Group',
+					id: 'group',
+					choices: [
+						{ id: 'a', label: 'A' },
+						{ id: 'b', label: 'B' },
+					],
+					default: 'a',
+				},
+				{
+					type: 'dropdown',
+					label: 'Enable/disable',
+					id: 'state',
+					...CHOICES.onofftoggleDropdown,
+				},
+			],
+			callback: (action) => {
+				let group = conn.automix.groups.a
+				if (action.options.group === 'b') {
+					group = conn.automix.groups.b
+				}
+
+				switch (Number(action.options.state)) {
+					case 0:
+						return group.disable()
+					case 1:
+						return group.enable()
+					case 2:
+						return group.toggle()
 				}
 			},
 		},
