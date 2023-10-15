@@ -2230,10 +2230,10 @@ slice-ansi@^5.0.0:
     ansi-styles "^6.0.0"
     is-fullwidth-code-point "^4.0.0"
 
-soundcraft-ui-connection@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/soundcraft-ui-connection/-/soundcraft-ui-connection-2.0.1.tgz#370865973f5fc0eb42fe88fbee1d4788cb5723a7"
-  integrity sha512-Cmlkj/0Mu/6wec+1cNhYgwZ+B4e0kV4sdfOY3GiP810WhESTrRi8ZjpDKZBLdslN7x6ynlDVQ3B21YZyKXkL1Q==
+soundcraft-ui-connection@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/soundcraft-ui-connection/-/soundcraft-ui-connection-2.1.0.tgz#c48dabea8d8dfe5eb03552b2ecdee442ebb9f85b"
+  integrity sha512-dn1aMkNmYN2xY6TFZGRPatwC+uGHDZRfgFqdpZdylgKMZ34To4kK93qVvBxfKEmL6Yo4Gze3quNw0+cWkC3q9Q==
   dependencies:
     isomorphic-ws "^5.0.0"
     ws "^7.4.1"

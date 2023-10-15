@@ -27,6 +27,7 @@ export enum FeedbackId {
 	MTKRecordState = 'mtkrecordstate',
 	MuteMuteGroup = 'mutemutegroup',
 	HwPhantomPower = 'hwphantompower',
+	AutomixGroupState = 'automixgroupstate',
 }
 
 const defaultStyles: { [key: string]: CompanionFeedbackButtonStyleResult } = {
@@ -329,6 +330,41 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 				const channel = conn.hw(channelNo)
 				const streamId = 'hw' + channelNo + 'phantom'
 				feedback.connect(evt, channel.phantom$, streamId)
+			},
+			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+		},
+
+		[FeedbackId.AutomixGroupState]: {
+			type: 'boolean',
+			name: 'Automix: Group State',
+			description: 'If an automix group is enabled/disabled',
+			defaultStyle: {
+				bgcolor: combineRgb(30, 150, 50),
+				color: combineRgb(255, 255, 255),
+			},
+			options: [
+				{
+					type: 'dropdown',
+					label: 'Automix Group',
+					id: 'group',
+					choices: [
+						{ id: 'a', label: 'A' },
+						{ id: 'b', label: 'B' },
+					],
+					default: 'a',
+				},
+				getStateCheckbox('Group enabled'),
+			],
+			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			subscribe: (evt) => {
+				const groupId = evt.options.group
+
+				let group = conn.automix.groups.a
+				if (groupId === 'b') {
+					group = conn.automix.groups.b
+				}
+				const streamId = 'amixgroupstate' + groupId
+				feedback.connect(evt, group.state$, streamId)
 			},
 			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
 		},
