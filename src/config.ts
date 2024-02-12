@@ -12,4 +12,12 @@ export const instanceConfigFields: SomeCompanionConfigField[] = [
 		width: 12,
 		regex: Regex.IP,
 	},
+	{
+		type: 'static-text',
+		id: 'info',
+		width: 12,
+		label: 'IP address change',
+		value:
+			'After changing the IP address of the mixer, it might be necessary to disable and re-enable the module or to restart Companion.',
+	},
 ]
