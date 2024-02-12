@@ -1,6 +1,7 @@
-import { CompanionActionDefinitions, Regex } from '@companion-module/base'
-import { AutomixGroupId, DelayableMasterChannel, SoundcraftUI } from 'soundcraft-ui-connection'
-import { CHOICES, OPTIONS, OPTION_SETS } from './utils/input-utils'
+import { type CompanionActionDefinitions, Regex } from '@companion-module/base'
+import type { AutomixGroupId, DelayableMasterChannel, SoundcraftUI } from 'soundcraft-ui-connection'
+
+import { CHOICES, OPTIONS, OPTION_SETS } from './utils/input-utils.js'
 import {
 	getAuxChannelFromOptions,
 	getFxChannelFromOptions,
@@ -8,7 +9,7 @@ import {
 	getMasterChannelFromOptions,
 	getMuteGroupIDFromOptions,
 	getVolumeBusFromOptions,
-} from './utils/channel-selection'
+} from './utils/channel-selection.js'
 
 export enum ActionId {
 	// Master

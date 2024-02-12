@@ -1,7 +1,8 @@
-import { CompanionFeedbackInfo, InstanceBase } from '@companion-module/base'
+import { type CompanionFeedbackInfo, InstanceBase } from '@companion-module/base'
 import { Subject, Observable, takeUntil, filter } from 'rxjs'
-import { UiConfig } from './config'
-import { FeedbackId } from './feedback'
+
+import { type UiConfig } from './config.js'
+import { FeedbackId } from './feedback.js'
 
 interface UiFeedbackSubscription {
 	state: unknown

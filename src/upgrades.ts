@@ -1,5 +1,5 @@
-import { CompanionStaticUpgradeScript, CreateConvertToBooleanFeedbackUpgradeScript } from '@companion-module/base'
-import { FeedbackId } from './feedback'
+import { type CompanionStaticUpgradeScript, CreateConvertToBooleanFeedbackUpgradeScript } from '@companion-module/base'
+import { FeedbackId } from './feedback.js'
 
 export const upgradeLegacyFeedbackToBoolean = CreateConvertToBooleanFeedbackUpgradeScript({
 	[FeedbackId.MuteMasterChannel]: true,

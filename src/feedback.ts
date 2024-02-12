@@ -1,16 +1,20 @@
-import { CompanionFeedbackDefinitions, combineRgb, CompanionFeedbackButtonStyleResult } from '@companion-module/base'
+import {
+	type CompanionFeedbackDefinitions,
+	type CompanionFeedbackButtonStyleResult,
+	combineRgb,
+} from '@companion-module/base'
 import { MtkState, PlayerState, SoundcraftUI } from 'soundcraft-ui-connection'
 import { distinctUntilChanged, map } from 'rxjs'
 
-import { UiFeedbackState } from './state'
-import { getFeedbackFromBinaryState, getStateCheckbox } from './utils/feedback-utils'
-import { OPTION_SETS, OPTIONS } from './utils/input-utils'
+import { UiFeedbackState } from './state.js'
+import { getFeedbackFromBinaryState, getStateCheckbox } from './utils/feedback-utils.js'
+import { OPTION_SETS, OPTIONS } from './utils/input-utils.js'
 import {
 	getAuxChannelFromOptions,
 	getFxChannelFromOptions,
 	getMasterChannelFromOptions,
 	getMuteGroupIDFromOptions,
-} from './utils/channel-selection'
+} from './utils/channel-selection.js'
 
 export enum FeedbackId {
 	MuteMasterChannel = 'mutemasterchannel',

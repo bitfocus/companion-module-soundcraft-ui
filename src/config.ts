@@ -1,4 +1,4 @@
-import { Regex, SomeCompanionConfigField } from '@companion-module/base'
+import { type SomeCompanionConfigField, Regex } from '@companion-module/base'
 
 export interface UiConfig {
 	host?: string

@@ -1,11 +1,11 @@
-import { InstanceBase, InstanceStatus, runEntrypoint, SomeCompanionConfigField } from '@companion-module/base'
-import { SoundcraftUI, ConnectionStatus, ConnectionErrorEvent } from 'soundcraft-ui-connection'
+import { InstanceBase, InstanceStatus, runEntrypoint, type SomeCompanionConfigField } from '@companion-module/base'
+import { SoundcraftUI, ConnectionStatus, type ConnectionErrorEvent } from 'soundcraft-ui-connection'
 
-import { GetActionsList } from './actions'
-import { instanceConfigFields, UiConfig } from './config'
-import { GetFeedbacksList } from './feedback'
-import { UiFeedbackState } from './state'
-import { upgradeLegacyFeedbackToBoolean, upgradeV2x0x0 } from './upgrades'
+import { GetActionsList } from './actions.js'
+import { instanceConfigFields, type UiConfig } from './config.js'
+import { GetFeedbacksList } from './feedback.js'
+import { UiFeedbackState } from './state.js'
+import { upgradeLegacyFeedbackToBoolean, upgradeV2x0x0 } from './upgrades.js'
 
 /**
  * Companion instance class for the Soundcraft Ui Mixers.

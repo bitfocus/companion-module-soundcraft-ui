@@ -1,5 +1,6 @@
-import { ChannelType } from 'soundcraft-ui-connection'
-import { FADER_TYPES } from './input-utils'
+import { type ChannelType } from 'soundcraft-ui-connection'
+
+import { FADER_TYPES } from './input-utils.js'
 
 export function intToBool(value: number): boolean {
 	return value === 1

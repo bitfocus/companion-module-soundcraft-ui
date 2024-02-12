@@ -1,7 +1,7 @@
-import { CompanionFeedbackBooleanEvent, CompanionInputFieldCheckbox } from '@companion-module/base'
+import type { CompanionFeedbackBooleanEvent, CompanionInputFieldCheckbox } from '@companion-module/base'
 
-import { UiFeedbackState } from '../state'
-import { intToBool } from './utils'
+import { UiFeedbackState } from '../state.js'
+import { intToBool } from './utils.js'
 
 export function getStateCheckbox(label: string): CompanionInputFieldCheckbox {
 	return {

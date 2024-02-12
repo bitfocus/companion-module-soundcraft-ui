@@ -1,5 +1,6 @@
 import {
-	ChannelType,
+	type ChannelType,
+	type MuteGroupID,
 	MasterBus,
 	AuxBus,
 	FxBus,
@@ -7,11 +8,11 @@ import {
 	AuxChannel,
 	FxChannel,
 	MasterChannel,
-	MuteGroupID,
 	VolumeBus,
 } from 'soundcraft-ui-connection'
-import { CompanionOptionValues } from '@companion-module/base'
-import { optionToChannelType } from './utils'
+
+import { type CompanionOptionValues } from '@companion-module/base'
+import { optionToChannelType } from './utils.js'
 
 /** Master Channels */
 

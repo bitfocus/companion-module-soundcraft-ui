@@ -1,10 +1,10 @@
-import {
+import type {
 	CompanionInputFieldDropdown,
 	CompanionInputFieldNumber,
 	DropdownChoice,
 	SomeCompanionActionInputField,
 } from '@companion-module/base'
-import { ChannelType, Easings } from 'soundcraft-ui-connection'
+import { type ChannelType, Easings } from 'soundcraft-ui-connection'
 
 /**
  * This file contains generic helpers for action/feedback creation
