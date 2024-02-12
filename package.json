@@ -4,13 +4,15 @@
 	"homepage": "https://github.com/bitfocus/companion-module-soundcraft-ui#readme",
 	"main": "dist/index.js",
 	"scripts": {
-		"prepare": "husky install",
-		"dev": "yarn build:main --watch",
+		"postinstall": "husky",
+		"dev": "run build:main --watch",
 		"build": "rimraf dist && yarn build:main",
 		"build:main": "tsc -p tsconfig.build.json",
-		"lint:raw": "eslint --ext .ts --ext .js --ignore-pattern dist --ignore-pattern pkg",
+		"lint:raw": "run eslint --ext .ts --ext .js --ignore-pattern dist --ignore-pattern pkg",
 		"lint": "yarn lint:raw .",
-		"dist": "yarn companion-module-build"
+		"dist": "yarn companion-module-build",
+		"eslint": "./node_modules/.bin/eslint",
+		"prettier": "./node_modules/.bin/prettier"
 	},
 	"author": "Ferdinand Malcher <ferdinand@malcher.media>",
 	"contributors": [
@@ -24,28 +26,29 @@
 	"prettier": "@companion-module/tools/.prettierrc.json",
 	"lint-staged": {
 		"*.{css,json,md,scss}": [
-			"prettier --write"
+			"run prettier --write"
 		],
 		"*.{ts,tsx,js,jsx}": [
-			"yarn lint:raw --fix"
+			"run lint:raw --fix"
 		]
 	},
 	"engines": {
 		"node": "^18.12"
 	},
 	"dependencies": {
-		"@companion-module/base": "^1.4.1",
+		"@companion-module/base": "~1.7.0",
 		"bufferutil": "^4.0.7",
 		"rxjs": "7.8.1",
 		"soundcraft-ui-connection": "2.1.0",
 		"utf-8-validate": "^6.0.3"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^1.2.1",
-		"@types/node": "^18.11.18",
-		"husky": "^8.0.3",
-		"lint-staged": "^13.2.2",
-		"rimraf": "^5.0.0",
-		"typescript": "~5.0.4"
-	}
+		"@companion-module/tools": "^1.5.0",
+		"@types/node": "^18.19.10",
+		"husky": "^9.0.6",
+		"lint-staged": "^15.2.0",
+		"rimraf": "^5.0.5",
+		"typescript": "~5.2.2"
+	},
+	"packageManager": "yarn@4.0.2"
 }
