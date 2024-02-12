@@ -13,7 +13,6 @@ import { upgradeLegacyFeedbackToBoolean, upgradeV2x0x0 } from './upgrades'
 class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	private state = new UiFeedbackState(this)
 	private conn?: SoundcraftUI
-	private config: UiConfig = {}
 
 	constructor(internal: unknown) {
 		super(internal)
@@ -25,7 +24,7 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	 */
 	async init(config: UiConfig): Promise<void> {
 		this.updateStatus(InstanceStatus.Disconnected)
-		await this.createConnection(config)
+		void this.createConnection(config)
 	}
 
 	/**
@@ -92,16 +91,16 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	 * Process an updated configuration array.
 	 */
 	async configUpdated(config: UiConfig): Promise<void> {
-		const oldConfig = this.config
-		this.config = config
-
-		// if host has changed, reconnect
-		if (config.host && oldConfig?.host !== config.host) {
-			if (this.conn) {
+		if (this.conn) {
+			// TODO: use real connection status and disconnect when connection is open
+			// currently blocked in connection lib
+			/*if (status.type === ConnectionStatus.Open) {
+				console.log('disconnecting from mixer')
 				await this.conn.disconnect()
-			}
-			await this.createConnection(config)
+			}*/
+			void this.conn.disconnect()
 		}
+		void this.createConnection(config)
 	}
 
 	/**
