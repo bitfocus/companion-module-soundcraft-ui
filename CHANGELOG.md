@@ -1,3 +1,9 @@
+# 3.1.1
+
+- fix: do not wait for connect/disconnect promises ([d0f0e69](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/d0f0e6960927db00f1e17010448de788e1b53d61))
+- chore: update deps, scripts and yarnv4 ([f0b7953](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/f0b7953e1274a5fd0de33d5886e8d54a9a626abb))
+- chore: update to ESM ([fddb372](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/fddb372f0810f6268457e989b7384d7be5a43127))
+
 # 3.1.0
 
 - feat: add support for automix ([12a4319](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/12a43190dc29c78a97a6dca5c5b70e98eb8a78f3))
