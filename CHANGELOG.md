@@ -1,3 +1,9 @@
+# 3.2.0
+
+- feat: add action and feedback for MTK soundcheck state ([3236b79](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/3236b79fb00b47e6e85b9194d1c10198b854f917))
+- chore: update connection library to 2.2.1 ([c753aa1](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/c753aa120ec3778a7e4bb6e645c2d842cc2bb013))
+- chore: update example pages to v4 format ([0f9a8f8](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/0f9a8f836a12423c859d8e3c6157554014bf4355))
+
 # 3.1.1
 
 - fix: do not wait for connect/disconnect promises ([d0f0e69](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/d0f0e6960927db00f1e17010448de788e1b53d61))
