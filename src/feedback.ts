@@ -29,6 +29,7 @@ export enum FeedbackId {
 	DTRecordState = 'dualtrackrecordstate',
 	MTKPlayerState = 'mtkplayerstate',
 	MTKRecordState = 'mtkrecordstate',
+	MTKSoundcheckState = 'mtksoundcheckstate',
 	MuteMuteGroup = 'mutemutegroup',
 	HwPhantomPower = 'hwphantompower',
 	AutomixGroupState = 'automixgroupstate',
@@ -296,6 +297,20 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 						return feedback.connect(evt, recorder.busy$, 'mtk-busy')
 				}
 			},
+			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+		},
+
+		[FeedbackId.MTKSoundcheckState]: {
+			type: 'boolean',
+			name: 'Multitrack Recording: Soundcheck State',
+			description: 'If soundcheck in the multitrack recorder has the specified state',
+			defaultStyle: {
+				bgcolor: combineRgb(0, 255, 0),
+				color: combineRgb(255, 255, 255),
+			},
+			options: [getStateCheckbox('Active')],
+			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			subscribe: (evt) => feedback.connect(evt, conn.recorderMultiTrack.soundcheck$, 'mtksoundcheck'),
 			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
 		},
 

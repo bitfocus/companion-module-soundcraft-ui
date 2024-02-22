@@ -67,6 +67,7 @@ export enum ActionId {
 	MTKPause = 'mtkstop',
 	MTKStop = 'mtkpause',
 	MTKRecordToggle = 'mtkrecordtoggle',
+	MTKSoundcheck = 'mtksoundcheck',
 
 	// MUTE Groups / ALL / FX
 	MuteGroupMute = 'mutegroupmute',
@@ -612,6 +613,31 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			name: 'Multitrack Recording: Record Toggle',
 			options: [],
 			callback: () => conn.recorderMultiTrack.recordToggle(),
+		},
+
+		[ActionId.MTKSoundcheck]: {
+			name: 'Multitrack Recording: Activate/deactivate soundcheck',
+			description: 'Activate, deactivate or toggle soundcheck in the multitrack recorder',
+			options: [
+				{
+					type: 'dropdown',
+					label: 'Activate/deactivate',
+					id: 'state',
+					...CHOICES.onofftoggleDropdown,
+				},
+			],
+			callback: (action) => {
+				const recorder = conn.recorderMultiTrack
+
+				switch (Number(action.options.state)) {
+					case 0:
+						return recorder.deactivateSoundcheck()
+					case 1:
+						return recorder.activateSoundcheck()
+					case 2:
+						return recorder.toggleSoundcheck()
+				}
+			},
 		},
 
 		/**
