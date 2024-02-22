@@ -1,1 +1,431 @@
-{"version":3,"type":"page","controls":{"bank:10-1":{"type":"pageup"},"bank:10-2":{"type":"button","style":{"text":"⏺","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[{"id":"SQPjn0w8jhz-RUyI9Tozv","type":"mtkrecordstate","instance_id":"EbuFcCWrGYVCwtqCmOrlQ","options":{"state":"rec"},"style":{"color":16777215,"bgcolor":16711680}},{"id":"ZpdAhfPAI2OWXpBtlxRcP","type":"mtkrecordstate","instance_id":"EbuFcCWrGYVCwtqCmOrlQ","options":{"state":"busy"},"style":{"color":16777215,"bgcolor":16750899}}],"steps":{"0":{"action_sets":{"down":[{"id":"RmUBdeRRPag1f7KLwzw5H","action":"mtkrecordtoggle","instance":"EbuFcCWrGYVCwtqCmOrlQ","options":{},"delay":0}],"up":[]}}}},"bank:10-3":{"type":"button","style":{"text":"⏵ ⏹","size":"30","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[{"id":"q3w5nUjs6pVDUmV6q0j-4","type":"mtkplayerstate","instance_id":"EbuFcCWrGYVCwtqCmOrlQ","options":{"state":2},"style":{"color":16777215,"bgcolor":16711680}},{"id":"WCF04spb0CX6Ew5Lb5H1E","type":"mtkplayerstate","instance_id":"EbuFcCWrGYVCwtqCmOrlQ","options":{"state":0},"style":{"color":16777215,"bgcolor":65280}}],"steps":{"0":{"action_sets":{"down":[{"id":"_0AU9-25-OynoJylY3iwU","action":"mtkplay","instance":"EbuFcCWrGYVCwtqCmOrlQ","options":{},"delay":0}],"up":[]}}}},"bank:10-4":{"type":"button","style":{"text":"⏸","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[{"id":"qPlCN1N_bebn2O5JokXtE","type":"mtkplayerstate","instance_id":"EbuFcCWrGYVCwtqCmOrlQ","options":{"state":1},"style":{"color":16777215,"bgcolor":16750899}}],"steps":{"0":{"action_sets":{"down":[{"id":"4LzVTrvac8_6oByQBkEi_","action":"mtkstop","instance":"EbuFcCWrGYVCwtqCmOrlQ","options":{},"delay":0}],"up":[]}}}},"bank:10-5":{"type":"button","style":{"text":"⏹","size":"44","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[{"id":"ARhGE6iZDE5_nAup-5Jy-","type":"mtkplayerstate","instance_id":"EbuFcCWrGYVCwtqCmOrlQ","options":{"state":2},"style":{"color":16777215,"bgcolor":16711680}}],"steps":{"0":{"action_sets":{"down":[{"id":"tAG2l5JYqdsHhpJLVMj0w","action":"mtkpause","instance":"EbuFcCWrGYVCwtqCmOrlQ","options":{},"delay":0}],"up":[]}}}},"bank:10-9":{"type":"pagenum"},"bank:10-17":{"type":"pagedown"}},"page":{"name":"Multitrack"},"instances":{"EbuFcCWrGYVCwtqCmOrlQ":{"instance_type":"soundcraft-ui","sortOrder":1,"label":"soundcraftui","isFirstInit":false,"config":{"host":"10.75.23.95"},"lastUpgradeIndex":1,"enabled":true}},"oldPageNumber":10}
+{
+	"version": 4,
+	"type": "page",
+	"page": {
+		"name": "Multitrack",
+		"controls": {
+			"0": {
+				"0": {
+					"type": "pageup"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "REC",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "_tgBE7DC4KmRmHo0QAH4M",
+							"type": "mtkrecordstate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"state": "rec"
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 16711680
+							},
+							"isInverted": false
+						},
+						{
+							"id": "xSXcmezW-lPZkTqlQHmOn",
+							"type": "mtkrecordstate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"state": "busy"
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 16750899
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "KWh56YYi2ghr0lNTIjMh2",
+										"action": "mtkrecordtoggle",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Play/\\nStop",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "UWsBoUD_g_o2yxqoupReG",
+							"type": "mtkplayerstate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"state": 2
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 16711680
+							},
+							"isInverted": false
+						},
+						{
+							"id": "HXpTjGg0e8iQ4CXFmS0z2",
+							"type": "mtkplayerstate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"state": 0
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 65280
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "ztl7i6LaR84JxcaUPNkHP",
+										"action": "mtkplay",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "Pause",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "Up92DtuUW5T7SomIJZDWp",
+							"type": "mtkplayerstate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"state": 1
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 16750899
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "eKWENz41m8jiPhyHo-ZON",
+										"action": "mtkstop",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "STOP",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "w4AyFoqOh6JJflpq3_Whr",
+							"type": "mtkplayerstate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"state": 2
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 16711680
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "DbbObWfesrBEJLp86PjZB",
+										"action": "mtkpause",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"1": {
+				"0": {
+					"type": "pagenum"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "Sound\\ncheck",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "v0yY17Ds47sde_EG15jJf",
+							"type": "mtksoundcheckstate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"state": true
+							},
+							"style": {
+								"bgcolor": 65280,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "XO4rD_oDiKQRkK73eEoFH",
+										"action": "mtksoundcheck",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"state": 2
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"2": {
+				"0": {
+					"type": "pagedown"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "SC ON",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "7JTDG4T2F0dM2GMYtStpe",
+										"action": "mtksoundcheck",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"state": 1
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"3": {
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "SC OFF",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "Lg80_-6ay0ZM05NmYvigH",
+										"action": "mtksoundcheck",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"state": 0
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			}
+		},
+		"gridSize": {
+			"minColumn": 0,
+			"maxColumn": 7,
+			"minRow": 0,
+			"maxRow": 3
+		}
+	},
+	"instances": {
+		"K5mVTsGHIPgqYkyqYxEWS": {
+			"instance_type": "soundcraft-ui",
+			"sortOrder": 2,
+			"label": "ui24",
+			"isFirstInit": false,
+			"config": {
+				"product": "UI24",
+				"host": "10.75.23.95",
+				"import_to": "M56cJZPf5-"
+			},
+			"enabled": true,
+			"lastUpgradeIndex": 1
+		}
+	},
+	"oldPageNumber": 11
+}
