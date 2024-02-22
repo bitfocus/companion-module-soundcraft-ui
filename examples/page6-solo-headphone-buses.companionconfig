@@ -1,1 +1,576 @@
-{"version":3,"type":"page","controls":{"bank:86-1":{"type":"pageup"},"bank:86-2":{"type":"button","style":{"text":"SOLO Volume\\n5 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"qIxPK6MD6Ye8JiNDXse5-","label":"GiXDbh3CB:setvolumebusvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setvolumebusvalue","options":{"bus":"solo","value":5}}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:86-3":{"type":"button","style":{"text":"HP 1 Volume\\n5 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"f-8vds9Fd6fj_T_0yYRyS","label":"GiXDbh3CB:setvolumebusvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setvolumebusvalue","options":{"bus":"hp1","value":5}}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:86-4":{"type":"button","style":{"text":"HP 2 Volume\\n5 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"-2GH8FMzCI2_6rQN6f4jH","label":"GiXDbh3CB:setvolumebusvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setvolumebusvalue","options":{"bus":"hp2","value":5}}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:86-9":{"type":"pagenum"},"bank:86-10":{"type":"button","style":{"text":"SOLO Volume\\n-20 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"Ti5DGUWu4cz3uRlzTr4VQ","label":"GiXDbh3CB:setvolumebusvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setvolumebusvalue","options":{"bus":"solo","value":-20}}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:86-11":{"type":"button","style":{"text":"HP 1 Volume\\n-20 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"HvN4aDfc6KaTZdw6h7TDI","label":"GiXDbh3CB:setvolumebusvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setvolumebusvalue","options":{"bus":"hp1","value":-20}}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:86-12":{"type":"button","style":{"text":"HP 2 Volume\\n-20 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"iibjpk7axEbtFGlfQ69Yw","label":"GiXDbh3CB:setvolumebusvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setvolumebusvalue","options":{"bus":"hp2","value":-20}}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:86-17":{"type":"pagedown"},"bank:86-18":{"type":"button","style":{"text":"SOLO Volume\\nCH +3 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"v-zH_4tEnS5p8JzDM2w1_","label":"GiXDbh3CB:changevolumebusvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"changevolumebusvalue","options":{"bus":"solo","value":3}}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:86-19":{"type":"button","style":{"text":"HP 1 Volume\\nCH +3 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"zICKD90RrRQPaDE3u7gqC","label":"GiXDbh3CB:changevolumebusvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"changevolumebusvalue","options":{"bus":"hp1","value":3}}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:86-20":{"type":"button","style":{"text":"HP 2 Volume\\nCH +3 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"S5x343NEHAxiXV3gFosjF","label":"GiXDbh3CB:changevolumebusvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"changevolumebusvalue","options":{"bus":"hp2","value":3}}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:86-26":{"type":"button","style":{"text":"SOLO Volume\\nCH -6 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"Lm_M48aSHxmpv7JjVFQZJ","label":"GiXDbh3CB:changevolumebusvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"changevolumebusvalue","options":{"bus":"solo","value":-6}}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:86-27":{"type":"button","style":{"text":"HP 1 Volume\\nCH -6 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"eO1THV50rxWvd9LEo5zSL","label":"GiXDbh3CB:changevolumebusvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"changevolumebusvalue","options":{"bus":"hp1","value":-6}}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:86-28":{"type":"button","style":{"text":"HP 2 Volume\\nCH -6 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"_n8DhxRL9FJ3kOxlGoC_s","label":"GiXDbh3CB:changevolumebusvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"changevolumebusvalue","options":{"bus":"hp2","value":-6}}],"up":[]},"options":{"runWhileHeld":[]}}}}},"page":{"name":"SOLO/HP"},"instances":{"K5mVTsGHIPgqYkyqYxEWS":{"instance_type":"soundcraft-ui","label":"ui24","isFirstInit":false,"config":{"product":"UI24","host":"10.75.23.95","import_to":"M56cJZPf5-"},"enabled":true,"lastUpgradeIndex":1}},"oldPageNumber":86}
+{
+	"version": 4,
+	"type": "page",
+	"page": {
+		"name": "SOLO/HP",
+		"controls": {
+			"0": {
+				"0": {
+					"type": "pageup"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "SOLO Volume\\n5 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "MeRPDsv2XmeXhmwNCF5d6",
+										"label": "GiXDbh3CB:setvolumebusvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setvolumebusvalue",
+										"options": {
+											"bus": "solo",
+											"value": 5
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "HP 1 Volume\\n5 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "tdxMhLIv49XG9CEXHrvBt",
+										"label": "GiXDbh3CB:setvolumebusvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setvolumebusvalue",
+										"options": {
+											"bus": "hp1",
+											"value": 5
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "HP 2 Volume\\n5 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "OyFkiNg5T2lI1DRqVKEtQ",
+										"label": "GiXDbh3CB:setvolumebusvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setvolumebusvalue",
+										"options": {
+											"bus": "hp2",
+											"value": 5
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"1": {
+				"0": {
+					"type": "pagenum"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "SOLO Volume\\n-20 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "kMgN9yqHO-QLNIzSwkCf-",
+										"label": "GiXDbh3CB:setvolumebusvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setvolumebusvalue",
+										"options": {
+											"bus": "solo",
+											"value": -20
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "HP 1 Volume\\n-20 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "hvTv9dKsZBRT3jsQATqRx",
+										"label": "GiXDbh3CB:setvolumebusvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setvolumebusvalue",
+										"options": {
+											"bus": "hp1",
+											"value": -20
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "HP 2 Volume\\n-20 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "mDVzlmY18eKgz3eCaz8k2",
+										"label": "GiXDbh3CB:setvolumebusvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setvolumebusvalue",
+										"options": {
+											"bus": "hp2",
+											"value": -20
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"2": {
+				"0": {
+					"type": "pagedown"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "SOLO Volume\\nCH +3 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "_oDTLbbuXXntpzD7-VBLn",
+										"label": "GiXDbh3CB:changevolumebusvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "changevolumebusvalue",
+										"options": {
+											"bus": "solo",
+											"value": 3
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "HP 1 Volume\\nCH +3 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "AoLwuPh--0o3rv1ZDZNCN",
+										"label": "GiXDbh3CB:changevolumebusvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "changevolumebusvalue",
+										"options": {
+											"bus": "hp1",
+											"value": 3
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "HP 2 Volume\\nCH +3 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "-b-ERA4fKfMrGswmZ0LeB",
+										"label": "GiXDbh3CB:changevolumebusvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "changevolumebusvalue",
+										"options": {
+											"bus": "hp2",
+											"value": 3
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"3": {
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "SOLO Volume\\nCH -6 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "7ZdJBAsVJ4LAI1yJCHbxg",
+										"label": "GiXDbh3CB:changevolumebusvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "changevolumebusvalue",
+										"options": {
+											"bus": "solo",
+											"value": -6
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "HP 1 Volume\\nCH -6 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "t5rWinSGhSSXw040T_nBi",
+										"label": "GiXDbh3CB:changevolumebusvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "changevolumebusvalue",
+										"options": {
+											"bus": "hp1",
+											"value": -6
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "HP 2 Volume\\nCH -6 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "yeyNZWX80guNyWGbXfn4K",
+										"label": "GiXDbh3CB:changevolumebusvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "changevolumebusvalue",
+										"options": {
+											"bus": "hp2",
+											"value": -6
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			}
+		},
+		"gridSize": {
+			"minColumn": 0,
+			"maxColumn": 7,
+			"minRow": 0,
+			"maxRow": 3
+		}
+	},
+	"instances": {
+		"K5mVTsGHIPgqYkyqYxEWS": {
+			"instance_type": "soundcraft-ui",
+			"sortOrder": 2,
+			"label": "ui24",
+			"isFirstInit": false,
+			"config": {
+				"product": "UI24",
+				"host": "10.75.23.95",
+				"import_to": "M56cJZPf5-"
+			},
+			"enabled": true,
+			"lastUpgradeIndex": 1
+		}
+	},
+	"oldPageNumber": 36
+}

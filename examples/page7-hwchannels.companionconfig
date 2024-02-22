@@ -1,1 +1,348 @@
-{"version":3,"type":"page","controls":{"bank:87-1":{"type":"pageup"},"bank:87-2":{"type":"button","style":{"text":"Phantom\\n5\\nON","size":"14","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"rZT42YsaX7tonFBfR6CBN","label":"GiXDbh3CB:hwsetphantompower","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"hwsetphantompower","options":{"hwchannel":5,"power":1},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:87-3":{"type":"button","style":{"text":"Phantom\\n5\\nOFF","size":"14","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"yXEQC_21JrKmr-N5dqO05","label":"GiXDbh3CB:hwsetphantompower","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"hwsetphantompower","options":{"hwchannel":5,"power":0,"bestoption":"1dfsdfsdf"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:87-4":{"type":"button","style":{"text":"Phantom\\n5\\nToggle","size":"14","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[{"id":"XH9lVn1o-ofM8WI4Gd5TX","type":"hwphantompower","instance_id":"K5mVTsGHIPgqYkyqYxEWS","options":{"hwchannel":5,"state":true},"style":{"bgcolor":3368703,"color":16777215}}],"steps":{"0":{"action_sets":{"down":[{"id":"CXgTgDRctxuY3DRqFXyH6","label":"GiXDbh3CB:hwsetphantompower","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"hwsetphantompower","options":{"hwchannel":5,"power":2},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:87-9":{"type":"pagenum"},"bank:87-10":{"type":"button","style":{"text":"Phantom\\n6\\nON","size":"14","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"v5m2xvkQNyk6GUzAk2iPK","label":"GiXDbh3CB:hwsetphantompower","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"hwsetphantompower","options":{"hwchannel":6,"power":1},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:87-11":{"type":"button","style":{"text":"Phantom\\n6\\nOFF","size":"14","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"G3AeXHNuUQj80Mqh73Ut2","label":"GiXDbh3CB:hwsetphantompower","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"hwsetphantompower","options":{"hwchannel":6,"power":0,"bestoption":"1dfsdfsdf"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:87-12":{"type":"button","style":{"text":"Phantom\\n6\\nToggle","size":"14","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[{"id":"3WQdwlAXVRi1I8V_sIBgj","type":"hwphantompower","instance_id":"K5mVTsGHIPgqYkyqYxEWS","options":{"hwchannel":6,"state":true},"style":{"bgcolor":3368703,"color":16777215}}],"steps":{"0":{"action_sets":{"down":[{"id":"jTG31cS0EtdmhtIMEyCvz","label":"GiXDbh3CB:hwsetphantompower","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"hwsetphantompower","options":{"hwchannel":6,"power":2},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:87-17":{"type":"pagedown"}},"page":{"name":"HW Channels"},"instances":{"K5mVTsGHIPgqYkyqYxEWS":{"instance_type":"soundcraft-ui","label":"ui24","isFirstInit":false,"config":{"product":"UI24","host":"10.75.23.95","import_to":"M56cJZPf5-"},"enabled":true,"lastUpgradeIndex":1}},"oldPageNumber":87}
+{
+	"version": 4,
+	"type": "page",
+	"page": {
+		"name": "HW Channels",
+		"controls": {
+			"0": {
+				"0": {
+					"type": "pageup"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "Phantom\\n5\\nON",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "zsBPr0Dui_-EGcwFHhZe_",
+										"label": "GiXDbh3CB:hwsetphantompower",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "hwsetphantompower",
+										"options": {
+											"hwchannel": 5,
+											"power": 1
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Phantom\\n5\\nOFF",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "16kfvQbya3kSasngzCdKA",
+										"label": "GiXDbh3CB:hwsetphantompower",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "hwsetphantompower",
+										"options": {
+											"hwchannel": 5,
+											"power": 0,
+											"bestoption": "1dfsdfsdf"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "Phantom\\n5\\nToggle",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "95avfCTSRosXSXjHoBcFw",
+							"type": "hwphantompower",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"hwchannel": 5,
+								"state": true
+							},
+							"style": {
+								"bgcolor": 3368703,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "6OghMa48rZgAEAJQv_iTc",
+										"label": "GiXDbh3CB:hwsetphantompower",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "hwsetphantompower",
+										"options": {
+											"hwchannel": 5,
+											"power": 2
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"1": {
+				"0": {
+					"type": "pagenum"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "Phantom\\n6\\nON",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "jUxi6jAWqfLwvGYxEM2KY",
+										"label": "GiXDbh3CB:hwsetphantompower",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "hwsetphantompower",
+										"options": {
+											"hwchannel": 6,
+											"power": 1
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Phantom\\n6\\nOFF",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "_VqyPiAI_nL5DQPEd1BUo",
+										"label": "GiXDbh3CB:hwsetphantompower",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "hwsetphantompower",
+										"options": {
+											"hwchannel": 6,
+											"power": 0,
+											"bestoption": "1dfsdfsdf"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "Phantom\\n6\\nToggle",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "0TiAGgSffMRGs1c7VedvQ",
+							"type": "hwphantompower",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"hwchannel": 6,
+								"state": true
+							},
+							"style": {
+								"bgcolor": 3368703,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "h_hOPW6pmxkpU_oUGKUpA",
+										"label": "GiXDbh3CB:hwsetphantompower",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "hwsetphantompower",
+										"options": {
+											"hwchannel": 6,
+											"power": 2
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"2": {
+				"0": {
+					"type": "pagedown"
+				}
+			}
+		},
+		"gridSize": {
+			"minColumn": 0,
+			"maxColumn": 7,
+			"minRow": 0,
+			"maxRow": 3
+		}
+	},
+	"instances": {
+		"K5mVTsGHIPgqYkyqYxEWS": {
+			"instance_type": "soundcraft-ui",
+			"sortOrder": 2,
+			"label": "ui24",
+			"isFirstInit": false,
+			"config": {
+				"product": "UI24",
+				"host": "10.75.23.95",
+				"import_to": "M56cJZPf5-"
+			},
+			"enabled": true,
+			"lastUpgradeIndex": 1
+		}
+	},
+	"oldPageNumber": 37
+}

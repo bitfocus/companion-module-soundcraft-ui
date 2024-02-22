@@ -1,1 +1,359 @@
-{"version":3,"type":"page","controls":{"bank:88-1":{"type":"pageup"},"bank:88-2":{"type":"button","style":{"text":"Load SHOW Default","size":"14","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"ZOgFDEEYhAzYT9AOnhzbQ","label":"GiXDbh3CB:loadshow","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"loadshow","options":{"show":"Default"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:88-3":{"type":"button","style":{"text":"Load Snapshot\\n* Init *","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"F9N0h2oywrq7AFjzSCqgr","label":"GiXDbh3CB:loadsnapshot","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"loadsnapshot","options":{"show":"Default","snapshot":"* Init *"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:88-9":{"type":"pagenum"},"bank:88-10":{"type":"button","style":{"text":"Load SHOW testshow","size":"14","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"o2Ka-HJzN-oaRPBxxMtcm","label":"GiXDbh3CB:loadshow","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"loadshow","options":{"show":"testshow"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:88-11":{"type":"button","style":{"text":"Load Snapshot\\nts / ts1","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"Qdg1gU7ffnmpnTvTxBYz_","label":"GiXDbh3CB:loadsnapshot","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"loadsnapshot","options":{"show":"testshow","snapshot":"testsnapshot1"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:88-12":{"type":"button","style":{"text":"Load Snapshot\\nts / ts2","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"LSDbZV86ykoh1jl0Sb0_8","label":"GiXDbh3CB:loadsnapshot","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"loadsnapshot","options":{"show":"testshow","snapshot":"testsnapshot2"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:88-13":{"type":"button","style":{"text":"Load Cue\\nts / tc1","size":"14","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"CE9IJdhhUCAH4Uz0Kjv1H","label":"GiXDbh3CB:loadcue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"loadcue","options":{"show":"testshow","cue":"testcue1"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:88-14":{"type":"button","style":{"text":"Load Cue\\nts / tc2","size":"14","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"IS1EqTOyK2nEq7O-HYuu3","label":"GiXDbh3CB:loadcue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"loadcue","options":{"show":"testshow","cue":"testcue2"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:88-17":{"type":"pagedown"}},"page":{"name":"Show, Snapshots, Cues"},"instances":{"K5mVTsGHIPgqYkyqYxEWS":{"instance_type":"soundcraft-ui","label":"ui24","isFirstInit":false,"config":{"product":"UI24","host":"10.75.23.95","import_to":"M56cJZPf5-"},"enabled":true,"lastUpgradeIndex":1}},"oldPageNumber":88}
+{
+	"version": 4,
+	"type": "page",
+	"page": {
+		"name": "Show, Snapshots, Cues",
+		"controls": {
+			"0": {
+				"0": {
+					"type": "pageup"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "Load SHOW Default",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "gc9ndMT02xIO1wysHFLry",
+										"label": "GiXDbh3CB:loadshow",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "loadshow",
+										"options": {
+											"show": "Default"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Load Snapshot\\n* Init *",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "FO1AVc83bD9HRG4Zq28p8",
+										"label": "GiXDbh3CB:loadsnapshot",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "loadsnapshot",
+										"options": {
+											"show": "Default",
+											"snapshot": "* Init *"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"1": {
+				"0": {
+					"type": "pagenum"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "Load SHOW testshow",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "6J1hLH35GgevomNiH6MZQ",
+										"label": "GiXDbh3CB:loadshow",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "loadshow",
+										"options": {
+											"show": "testshow"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Load Snapshot\\nts / ts1",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "1ISPfMuEgOi5wRNPzhFLh",
+										"label": "GiXDbh3CB:loadsnapshot",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "loadsnapshot",
+										"options": {
+											"show": "testshow",
+											"snapshot": "testsnapshot1"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "Load Snapshot\\nts / ts2",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "G8U9pukvQUcqhwMgiQplP",
+										"label": "GiXDbh3CB:loadsnapshot",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "loadsnapshot",
+										"options": {
+											"show": "testshow",
+											"snapshot": "testsnapshot2"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "Load Cue\\nts / tc1",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "zIkOOVIpe6yetDwJPGRCu",
+										"label": "GiXDbh3CB:loadcue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "loadcue",
+										"options": {
+											"show": "testshow",
+											"cue": "testcue1"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Load Cue\\nts / tc2",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "ijRZUK6RGnW6m0tGfwQcv",
+										"label": "GiXDbh3CB:loadcue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "loadcue",
+										"options": {
+											"show": "testshow",
+											"cue": "testcue2"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"2": {
+				"0": {
+					"type": "pagedown"
+				}
+			}
+		},
+		"gridSize": {
+			"minColumn": 0,
+			"maxColumn": 7,
+			"minRow": 0,
+			"maxRow": 3
+		}
+	},
+	"instances": {
+		"K5mVTsGHIPgqYkyqYxEWS": {
+			"instance_type": "soundcraft-ui",
+			"sortOrder": 2,
+			"label": "ui24",
+			"isFirstInit": false,
+			"config": {
+				"product": "UI24",
+				"host": "10.75.23.95",
+				"import_to": "M56cJZPf5-"
+			},
+			"enabled": true,
+			"lastUpgradeIndex": 1
+		}
+	},
+	"oldPageNumber": 38
+}
