@@ -1,1 +1,592 @@
-{"version":3,"type":"page","controls":{"bank:95-1":{"type":"pageup"},"bank:95-2":{"type":"button","style":{"text":"A","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default"},"options":{"relativeDelay":false,"stepAutoProgress":true},"feedbacks":[{"id":"1BoLSGx0bcXYT0SCdRje8","type":"automixgroupstate","instance_id":"K5mVTsGHIPgqYkyqYxEWS","options":{"group":"a","state":true},"style":{"bgcolor":2004530,"color":16777215}}],"steps":{"0":{"action_sets":{"down":[{"id":"znUZVZ-Hy0Xw71YvDBVMI","action":"automixenablegroup","instance":"K5mVTsGHIPgqYkyqYxEWS","options":{"group":"a","state":2},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:95-3":{"type":"button","style":{"text":"B","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default"},"options":{"relativeDelay":false,"stepAutoProgress":true},"feedbacks":[{"id":"Do9bfsmKCITdxI4TT1E5h","type":"automixgroupstate","instance_id":"K5mVTsGHIPgqYkyqYxEWS","options":{"group":"b","state":true},"style":{"bgcolor":2004530,"color":16777215}}],"steps":{"0":{"action_sets":{"down":[{"id":"tE7-fHlDs_Ec29exSevaO","action":"automixenablegroup","instance":"K5mVTsGHIPgqYkyqYxEWS","options":{"group":"b","state":2},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:95-5":{"type":"button","style":{"text":"CH1\\nA","size":"24","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default"},"options":{"relativeDelay":false,"stepAutoProgress":true},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"cB7VsyUvSOTiQ1MikOvOo","action":"automixassigngrouptochannel","instance":"K5mVTsGHIPgqYkyqYxEWS","options":{"channel":1,"group":"a"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:95-6":{"type":"button","style":{"text":"CH3\\nA","size":"24","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default"},"options":{"relativeDelay":false,"stepAutoProgress":true},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"gDx4RpyXcIOd5sYeLiaAz","action":"automixassigngrouptochannel","instance":"K5mVTsGHIPgqYkyqYxEWS","options":{"channel":3,"group":"a"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:95-9":{"type":"pagenum"},"bank:95-10":{"type":"button","style":{"text":"A\\nON","size":"24","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default"},"options":{"relativeDelay":false,"stepAutoProgress":true},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"ZOh-tykp3scMrsh-qFp-R","action":"automixenablegroup","instance":"K5mVTsGHIPgqYkyqYxEWS","options":{"group":"a","state":1},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:95-11":{"type":"button","style":{"text":"B\\nON","size":"24","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default"},"options":{"relativeDelay":false,"stepAutoProgress":true},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"mc2i2zAqaXzuPihpLCmSz","action":"automixenablegroup","instance":"K5mVTsGHIPgqYkyqYxEWS","options":{"group":"b","state":1},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:95-13":{"type":"button","style":{"text":"CH1\\nB","size":"24","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default"},"options":{"relativeDelay":false,"stepAutoProgress":true},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"DyV3LiHjAFm0yb_HErA9A","action":"automixassigngrouptochannel","instance":"K5mVTsGHIPgqYkyqYxEWS","options":{"channel":1,"group":"b"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:95-14":{"type":"button","style":{"text":"CH3\\nB","size":"24","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default"},"options":{"relativeDelay":false,"stepAutoProgress":true},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"1DG9FfAgYWwETlNqMWKdI","action":"automixassigngrouptochannel","instance":"K5mVTsGHIPgqYkyqYxEWS","options":{"channel":3,"group":"b"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:95-17":{"type":"pagedown"},"bank:95-18":{"type":"button","style":{"text":"A\\nOFF","size":"24","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default"},"options":{"relativeDelay":false,"stepAutoProgress":true},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"YiH1jhfEdD8hLgPrDLjwv","action":"automixenablegroup","instance":"K5mVTsGHIPgqYkyqYxEWS","options":{"group":"a","state":0},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:95-19":{"type":"button","style":{"text":"B\\nOFF","size":"24","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default"},"options":{"relativeDelay":false,"stepAutoProgress":true},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"7zvZXOFTlYZcsJhUXiWUu","action":"automixenablegroup","instance":"K5mVTsGHIPgqYkyqYxEWS","options":{"group":"b","state":0},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:95-21":{"type":"button","style":{"text":"CH1\\nNone","size":"24","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default"},"options":{"relativeDelay":false,"stepAutoProgress":true},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"6xak-2XojF6qNe_PaiMFB","action":"automixassigngrouptochannel","instance":"K5mVTsGHIPgqYkyqYxEWS","options":{"channel":1,"group":"none"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:95-22":{"type":"button","style":{"text":"CH3\\nNone","size":"24","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default"},"options":{"relativeDelay":false,"stepAutoProgress":true},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"-BaI-ImC_W84-wO3g_2r4","action":"automixassigngrouptochannel","instance":"K5mVTsGHIPgqYkyqYxEWS","options":{"channel":3,"group":"none"},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}}},"page":{"name":"Automix"},"instances":{"K5mVTsGHIPgqYkyqYxEWS":{"instance_type":"soundcraft-ui","label":"ui24","isFirstInit":false,"config":{"product":"UI24","host":"10.75.23.95","import_to":"M56cJZPf5-"},"enabled":true,"lastUpgradeIndex":1}},"oldPageNumber":95}
+{
+	"version": 4,
+	"type": "page",
+	"page": {
+		"name": "Automix",
+		"controls": {
+			"0": {
+				"0": {
+					"type": "pageup"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "A",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "5G-_-csJNji2_O0ftOqc2",
+							"type": "automixgroupstate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"group": "a",
+								"state": true
+							},
+							"style": {
+								"bgcolor": 2004530,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "CrqkE62ZRBx7G8R4HZtbU",
+										"action": "automixenablegroup",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"group": "a",
+											"state": 2
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "B",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "hTcSCIAZuGW-Vk4VrRwbv",
+							"type": "automixgroupstate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"group": "b",
+								"state": true
+							},
+							"style": {
+								"bgcolor": 2004530,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "pnCZKkIWD2P3_IZHuI9Vu",
+										"action": "automixenablegroup",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"group": "b",
+											"state": 2
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "CH1\\nA",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "4V_oAKMO1eGjAioWncNnA",
+										"action": "automixassigngrouptochannel",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channel": 1,
+											"group": "a"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "CH3\\nA",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "U_0_d-mTBR4i9bvcq2phX",
+										"action": "automixassigngrouptochannel",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channel": 3,
+											"group": "a"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"1": {
+				"0": {
+					"type": "pagenum"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "A\\nON",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "EGOpAc4_5-hl-xcQ4IVof",
+										"action": "automixenablegroup",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"group": "a",
+											"state": 1
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "B\\nON",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "QQMpWWPCDiGA2Mk_e-P6n",
+										"action": "automixenablegroup",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"group": "b",
+											"state": 1
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "CH1\\nB",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "eT0sYn7242J4rQt6cHrrL",
+										"action": "automixassigngrouptochannel",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channel": 1,
+											"group": "b"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "CH3\\nB",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "bGeEysgKEoXmsS3uGPwBl",
+										"action": "automixassigngrouptochannel",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channel": 3,
+											"group": "b"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"2": {
+				"0": {
+					"type": "pagedown"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "A\\nOFF",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "g0tASgFhSUXGA1jOcWYBO",
+										"action": "automixenablegroup",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"group": "a",
+											"state": 0
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "B\\nOFF",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "mfN_XquYFP1JTweH90tRK",
+										"action": "automixenablegroup",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"group": "b",
+											"state": 0
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "CH1\\nNone",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "BprkKRRIlWxDJN4HcPXhi",
+										"action": "automixassigngrouptochannel",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channel": 1,
+											"group": "none"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "CH3\\nNone",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "yu8KqHHrsyPWFIsq5A_Er",
+										"action": "automixassigngrouptochannel",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channel": 3,
+											"group": "none"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			}
+		},
+		"gridSize": {
+			"minColumn": 0,
+			"maxColumn": 7,
+			"minRow": 0,
+			"maxRow": 3
+		}
+	},
+	"instances": {
+		"K5mVTsGHIPgqYkyqYxEWS": {
+			"instance_type": "soundcraft-ui",
+			"sortOrder": 2,
+			"label": "ui24",
+			"isFirstInit": false,
+			"config": {
+				"product": "UI24",
+				"host": "10.75.23.95",
+				"import_to": "M56cJZPf5-"
+			},
+			"enabled": true,
+			"lastUpgradeIndex": 1
+		}
+	},
+	"oldPageNumber": 41
+}

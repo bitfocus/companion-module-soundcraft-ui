@@ -1,1 +1,734 @@
-{"version":3,"type":"page","controls":{"bank:96-1":{"type":"pageup"},"bank:96-2":{"type":"button","style":{"text":"AUX 3\\nInput 3\\nUnmute","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[],"up":[{"id":"6drKiLkUuKZLvpO7ix1An","label":"GiXDbh3CB:muteauxchannel","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"muteauxchannel","options":{"bus":"3","channelType":"i","channel":"3","mute":"0"},"delay":0}]},"options":{"runWhileHeld":[]}}}},"bank:96-3":{"type":"button","style":{"text":"AUX 3\\nInput 3\\nPOST","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[],"up":[{"id":"XezeN6jJ-Uy06314bd_qi","label":"GiXDbh3CB:setauxchannelpost","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setauxchannelpost","options":{"bus":"3","channelType":"i","channel":"3","post":"1"}}]},"options":{"runWhileHeld":[]}}}},"bank:96-4":{"type":"button","style":{"text":"AUX 3\\nInput 3\\nPREPROC","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[],"up":[{"id":"SH1KxuQTyYHRp9WvAYZb5","label":"GiXDbh3CB:setauxchannelpostproc","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setauxchannelpostproc","options":{"bus":"3","channelType":"i","channel":"3","postproc":"0"}}]},"options":{"runWhileHeld":[]}}}},"bank:96-5":{"type":"button","style":{"text":"AUX 3\\nInput 3\\n0 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[],"up":[{"id":"VM71tUH7ZpgJf-CQQODIR","label":"GiXDbh3CB:setauxchannelvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setauxchannelvalue","options":{"bus":"3","channelType":"i","channel":"3","value":0}}]},"options":{"runWhileHeld":[]}}}},"bank:96-6":{"type":"button","style":{"text":"AUX 3\\nInput 3\\nFade\\n0 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"1fMXVu4sbf9BrqzhS2hin","label":"GiXDbh3CB:fadeauxchannel","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"fadeauxchannel","options":{"bus":3,"channelType":"i","channel":3,"value":0,"fadeTime":2000,"easing":0}}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:96-7":{"type":"button","style":{"text":"AUX 3 \\nInput 3\\n+ 3 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"elLc1mUFxh2s7Ob9YGCFK","label":"GiXDbh3CB:changeauxchannelvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"changeauxchannelvalue","options":{"bus":3,"channelType":"i","channel":3,"value":3},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:96-9":{"type":"pagenum"},"bank:96-10":{"type":"button","style":{"text":"AUX 3\\nInput 3\\nMute","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[],"up":[{"id":"70GW4aZMwgrupBfruodoH","label":"GiXDbh3CB:muteauxchannel","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"muteauxchannel","options":{"bus":"3","channelType":"i","channel":"3","mute":"1"}}]},"options":{"runWhileHeld":[]}}}},"bank:96-11":{"type":"button","style":{"text":"AUX 3\\nInput 3\\nPRE","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[],"up":[{"id":"qm1O_9v3_Xdgw-CcOuRoA","label":"GiXDbh3CB:setauxchannelpost","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setauxchannelpost","options":{"bus":"3","channelType":"i","channel":"3","post":"0"}}]},"options":{"runWhileHeld":[]}}}},"bank:96-12":{"type":"button","style":{"text":"AUX 3\\nInput 3\\nPOSTPROC","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[],"up":[{"id":"SAowLKd14DsnoCKQi2mQ4","label":"GiXDbh3CB:setauxchannelpostproc","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setauxchannelpostproc","options":{"bus":"3","channelType":"i","channel":"3","postproc":1}}]},"options":{"runWhileHeld":[]}}}},"bank:96-13":{"type":"button","style":{"text":"AUX 3\\nInput 3\\n-12 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[],"up":[{"id":"KxDC5UfSbYfSoyr22GiNB","label":"GiXDbh3CB:setauxchannelvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setauxchannelvalue","options":{"bus":"3","channelType":"i","channel":"3","value":1.4}}]},"options":{"runWhileHeld":[]}}}},"bank:96-14":{"type":"button","style":{"text":"AUX 3\\nInput 3\\nFade\\n-12 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"HxesHEDgj08N6dSKCXCIc","label":"GiXDbh3CB:fadeauxchannel","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"fadeauxchannel","options":{"bus":3,"channelType":"i","channel":3,"value":-12,"fadeTime":2000,"easing":0},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:96-15":{"type":"button","style":{"text":"AUX 3 \\nInput 3\\n- 3 dB","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[],"steps":{"0":{"action_sets":{"down":[{"id":"eBPV4VbExU3PcY3fkwgfY","label":"GiXDbh3CB:changeauxchannelvalue","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"changeauxchannelvalue","options":{"bus":3,"channelType":"i","channel":3,"value":-3},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:96-17":{"type":"pagedown"},"bank:96-18":{"type":"button","style":{"text":"AUX 3\\nInput 3\\nM Toggle","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[{"id":"btfDm1PAQqvcIAQ_u1cFb","type":"muteauxchannel","instance_id":"K5mVTsGHIPgqYkyqYxEWS","options":{"bus":"3","channelType":"i","channel":"3","state":true},"style":{"bgcolor":16711680,"color":16777215}}],"steps":{"0":{"action_sets":{"down":[{"id":"zqZBtvE8VEkOfbCYgxtno","label":"GiXDbh3CB:muteauxchannel","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"muteauxchannel","options":{"bus":3,"channelType":"i","channel":3,"mute":2},"delay":0}],"up":[]},"options":{"runWhileHeld":[]}}}},"bank:96-19":{"type":"button","style":{"text":"AUX 3\\nInput 3\\nP Toggle","size":"auto","png":null,"alignment":"center:center","pngalignment":"center:center","color":16777215,"bgcolor":0,"show_topbar":"default","latch":false},"options":{"relativeDelay":false,"stepAutoProgress":true,"rotaryActions":false},"feedbacks":[{"id":"z7j-Ew95avP28nM_V-dEf","type":"postauxchannel","instance_id":"K5mVTsGHIPgqYkyqYxEWS","options":{"bus":"3","channelType":"i","channel":"3","state":true},"style":{"bgcolor":65280,"color":16777215}}],"steps":{"0":{"action_sets":{"down":[],"up":[{"id":"QyArsPHLBf39Kf5RphtK3","label":"GiXDbh3CB:setauxchannelpost","instance":"K5mVTsGHIPgqYkyqYxEWS","action":"setauxchannelpost","options":{"bus":"3","channelType":"i","channel":"3","post":"2"},"delay":0}]},"options":{"runWhileHeld":[]}}}}},"page":{"name":"AUX CH"},"instances":{"K5mVTsGHIPgqYkyqYxEWS":{"instance_type":"soundcraft-ui","label":"ui24","isFirstInit":false,"config":{"product":"UI24","host":"10.75.23.95","import_to":"M56cJZPf5-"},"enabled":true,"lastUpgradeIndex":1}},"oldPageNumber":96}
+{
+	"version": 4,
+	"type": "page",
+	"page": {
+		"name": "AUX CH",
+		"controls": {
+			"0": {
+				"0": {
+					"type": "pageup"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3\\nInput 3\\nUnmute",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": [
+									{
+										"id": "uQDk0ceEdyWYg-3yBuT8m",
+										"label": "GiXDbh3CB:muteauxchannel",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "muteauxchannel",
+										"options": {
+											"bus": "3",
+											"channelType": "i",
+											"channel": "3",
+											"mute": "0"
+										},
+										"delay": 0
+									}
+								]
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3\\nInput 3\\nPOST",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": [
+									{
+										"id": "wWD67E3RWCxwvPSFfv5gj",
+										"label": "GiXDbh3CB:setauxchannelpost",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setauxchannelpost",
+										"options": {
+											"bus": "3",
+											"channelType": "i",
+											"channel": "3",
+											"post": "1"
+										}
+									}
+								]
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3\\nInput 3\\nPREPROC",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": [
+									{
+										"id": "SwdNm8GlKhKEJwsmc0mPO",
+										"label": "GiXDbh3CB:setauxchannelpostproc",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setauxchannelpostproc",
+										"options": {
+											"bus": "3",
+											"channelType": "i",
+											"channel": "3",
+											"postproc": "0"
+										}
+									}
+								]
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3\\nInput 3\\n0 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": [
+									{
+										"id": "_Arfqub0HX2V3-DNLw4kh",
+										"label": "GiXDbh3CB:setauxchannelvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setauxchannelvalue",
+										"options": {
+											"bus": "3",
+											"channelType": "i",
+											"channel": "3",
+											"value": 0
+										}
+									}
+								]
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3\\nInput 3\\nFade\\n0 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "cWPlFWKZOwTUbSWss4apU",
+										"label": "GiXDbh3CB:fadeauxchannel",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "fadeauxchannel",
+										"options": {
+											"bus": 3,
+											"channelType": "i",
+											"channel": 3,
+											"value": 0,
+											"fadeTime": 2000,
+											"easing": 0
+										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3 \\nInput 3\\n+ 3 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "fF-pDZ3IKM4AefGI0DjPu",
+										"label": "GiXDbh3CB:changeauxchannelvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "changeauxchannelvalue",
+										"options": {
+											"bus": 3,
+											"channelType": "i",
+											"channel": 3,
+											"value": 3
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"1": {
+				"0": {
+					"type": "pagenum"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3\\nInput 3\\nMute",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": [
+									{
+										"id": "O4J9RK5UpghD6EmToQcoI",
+										"label": "GiXDbh3CB:muteauxchannel",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "muteauxchannel",
+										"options": {
+											"bus": "3",
+											"channelType": "i",
+											"channel": "3",
+											"mute": "1"
+										}
+									}
+								]
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3\\nInput 3\\nPRE",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": [
+									{
+										"id": "ekTFqIB0VkY737spmkinR",
+										"label": "GiXDbh3CB:setauxchannelpost",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setauxchannelpost",
+										"options": {
+											"bus": "3",
+											"channelType": "i",
+											"channel": "3",
+											"post": "0"
+										}
+									}
+								]
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3\\nInput 3\\nPOSTPROC",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": [
+									{
+										"id": "1Yhoq4ywS1HUPrSxjqo-n",
+										"label": "GiXDbh3CB:setauxchannelpostproc",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setauxchannelpostproc",
+										"options": {
+											"bus": "3",
+											"channelType": "i",
+											"channel": "3",
+											"postproc": 1
+										}
+									}
+								]
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3\\nInput 3\\n-12 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": [
+									{
+										"id": "YYwaJNyFZgChBDktou7tW",
+										"label": "GiXDbh3CB:setauxchannelvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setauxchannelvalue",
+										"options": {
+											"bus": "3",
+											"channelType": "i",
+											"channel": "3",
+											"value": 1.4
+										}
+									}
+								]
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3\\nInput 3\\nFade\\n-12 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "OGqTdLwfbVaDBU7xMdJkE",
+										"label": "GiXDbh3CB:fadeauxchannel",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "fadeauxchannel",
+										"options": {
+											"bus": 3,
+											"channelType": "i",
+											"channel": 3,
+											"value": -12,
+											"fadeTime": 2000,
+											"easing": 0
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3 \\nInput 3\\n- 3 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "OjsMiDpQnN9ZdnfYMiuSv",
+										"label": "GiXDbh3CB:changeauxchannelvalue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "changeauxchannelvalue",
+										"options": {
+											"bus": 3,
+											"channelType": "i",
+											"channel": 3,
+											"value": -3
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"2": {
+				"0": {
+					"type": "pagedown"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3\\nInput 3\\nM Toggle",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "ZVZmDM86CC6Q9EmJLr1Dk",
+							"type": "muteauxchannel",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"bus": "3",
+								"channelType": "i",
+								"channel": "3",
+								"state": true
+							},
+							"style": {
+								"bgcolor": 16711680,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "8mS1KTKF1it7g9743OBYc",
+										"label": "GiXDbh3CB:muteauxchannel",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "muteauxchannel",
+										"options": {
+											"bus": 3,
+											"channelType": "i",
+											"channel": 3,
+											"mute": 2
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "AUX 3\\nInput 3\\nP Toggle",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "CdfVEgm6bSs3x0lcGf7KR",
+							"type": "postauxchannel",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"bus": "3",
+								"channelType": "i",
+								"channel": "3",
+								"state": true
+							},
+							"style": {
+								"bgcolor": 65280,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": [
+									{
+										"id": "9PeEokJRBSQix_W9OsxVs",
+										"label": "GiXDbh3CB:setauxchannelpost",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"action": "setauxchannelpost",
+										"options": {
+											"bus": "3",
+											"channelType": "i",
+											"channel": "3",
+											"post": "2"
+										},
+										"delay": 0
+									}
+								]
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			}
+		},
+		"gridSize": {
+			"minColumn": 0,
+			"maxColumn": 7,
+			"minRow": 0,
+			"maxRow": 3
+		}
+	},
+	"instances": {
+		"K5mVTsGHIPgqYkyqYxEWS": {
+			"instance_type": "soundcraft-ui",
+			"sortOrder": 2,
+			"label": "ui24",
+			"isFirstInit": false,
+			"config": {
+				"product": "UI24",
+				"host": "10.75.23.95",
+				"import_to": "M56cJZPf5-"
+			},
+			"enabled": true,
+			"lastUpgradeIndex": 1
+		}
+	},
+	"oldPageNumber": 33
+}
