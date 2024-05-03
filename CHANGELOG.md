@@ -1,3 +1,7 @@
+# 3.3.0
+
+- chore: bump @companion-module/base to ~1.8.0 ([c0f298a](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/c0f298a1d4e3a73fc51d5b3df0ec8b61d5a59497))
+
 # 3.2.0
 
 - feat: add action and feedback for MTK soundcheck state ([3236b79](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/3236b79fb00b47e6e85b9194d1c10198b854f917))
