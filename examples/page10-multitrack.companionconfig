@@ -313,6 +313,183 @@
 							}
 						}
 					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "Input 1 Toggle",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "hEso_0eYn8VcsaCTq15-O",
+							"type": "masterchannelmtkselection",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"channelType": "i",
+								"channel": 1,
+								"state": true
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 10066176
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "jouW161ad4IfTm7u5fRz7",
+										"action": "masterchannelselectmtk",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": "i",
+											"channel": 1,
+											"select": 2
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Input 5 Toggle",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "QlcPBmLVsJtsMxKLIyw-C",
+							"type": "masterchannelmtkselection",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"channelType": "i",
+								"channel": 5,
+								"state": true
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 10066176
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "bLq3waQ5AOwDNCHMjwNn6",
+										"action": "masterchannelselectmtk",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": "i",
+											"channel": 5,
+											"select": 2
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Line 1 Toggle",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "qOQrF8zBw81NxzOOF5RR3",
+							"type": "masterchannelmtkselection",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"channelType": "l",
+								"channel": 1,
+								"state": true
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 10066176
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "m2t2r_5d6nn5Jr8z90u--",
+										"action": "masterchannelselectmtk",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": "l",
+											"channel": 1,
+											"select": 2
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
 				}
 			},
 			"2": {
@@ -398,6 +575,135 @@
 							}
 						}
 					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "Input 1\\nOn",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "RiXEGsF09re9ph4D05Y-n",
+										"action": "masterchannelselectmtk",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": "i",
+											"channel": 1,
+											"select": 1
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Input 5\\nOn",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "Y9Ly6_YPbRRmcWw2446aW",
+										"action": "masterchannelselectmtk",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": "i",
+											"channel": 5,
+											"select": 1
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Line 1\\nOn",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "dQJGORZU4rSaVJ-lhKva5",
+										"action": "masterchannelselectmtk",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": "l",
+											"channel": 1,
+											"select": 1
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
 				}
 			},
 			"3": {
@@ -470,6 +776,135 @@
 										"action": "mtkrecordstop",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "Input 1\\nOff",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "IG9-oh2ARFMHXdOcM46kY",
+										"action": "masterchannelselectmtk",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": "i",
+											"channel": 1,
+											"select": 0
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Input 5\\nOff",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "2z3sqBkX_AAec1zA0O4K3",
+										"action": "masterchannelselectmtk",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": "i",
+											"channel": 5,
+											"select": 0
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Line 1\\nOff",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "Silztmnrii2I4HZ20mf5z",
+										"action": "masterchannelselectmtk",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": "l",
+											"channel": 1,
+											"select": 0
+										},
 										"delay": 0
 									}
 								],

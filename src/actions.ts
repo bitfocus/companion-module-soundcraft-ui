@@ -28,6 +28,7 @@ export enum ActionId {
 	FadeMasterChannel = 'fademasterchannel',
 	SetMasterChannelDelay = 'setmasterchanneldelay',
 	ChangeMasterChannelDelay = 'changemasterchanneldelay',
+	MasterChannelSelectMTK = 'masterchannelselectmtk',
 
 	// AUX Channels
 	MuteAuxChannel = 'muteauxchannel',
@@ -281,6 +282,31 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 				const c = getMasterChannelFromOptions(action.options, conn) as DelayableMasterChannel
 				const time = Number(action.options.time)
 				c.changeDelay(time)
+			},
+		},
+
+		[ActionId.MasterChannelSelectMTK]: {
+			name: 'Master channels: Select for multi-track recording',
+			description: 'Include or remove an input or line channel for multi-track recording',
+			options: [
+				...OPTION_SETS.multiTrackMasterChannel,
+				{
+					type: 'dropdown',
+					label: 'Select Channel',
+					id: 'select',
+					...CHOICES.onofftoggleDropdown,
+				},
+			],
+			callback: (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn)
+				switch (Number(action.options.select)) {
+					case 0:
+						return c.multiTrackUnselect()
+					case 1:
+						return c.multiTrackSelect()
+					case 2:
+						return c.multiTrackToggle()
+				}
 			},
 		},
 
