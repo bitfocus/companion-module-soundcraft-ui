@@ -44,9 +44,9 @@
 		"utf-8-validate": "^6.0.3"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^1.5.0",
-		"@types/node": "^18.19.10",
-		"husky": "^9.0.6",
+		"@companion-module/tools": "^1.5.1",
+		"@types/node": "^18.19.32",
+		"husky": "^9.0.11",
 		"lint-staged": "^15.2.0",
 		"rimraf": "^5.0.5",
 		"typescript": "~5.2.2"
