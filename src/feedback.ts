@@ -19,6 +19,7 @@ import {
 export enum FeedbackId {
 	MuteMasterChannel = 'mutemasterchannel',
 	SoloMasterChannel = 'solomasterchannel',
+	MasterChannelMTKSelection = 'masterchannelmtkselection',
 	DimMaster = 'dimmaster',
 	MuteAuxChannel = 'muteauxchannel',
 	PostAuxChannel = 'postauxchannel',
@@ -74,6 +75,24 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 				const c = getMasterChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-solo'
 				feedback.connect(evt, c.solo$, streamId)
+			},
+			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+		},
+
+		[FeedbackId.MasterChannelMTKSelection]: {
+			type: 'boolean',
+			name: 'Master channel: Multi-Track Selection State',
+			description: 'If the specified master channel is selected for multi-track recording',
+			defaultStyle: {
+				color: combineRgb(255, 255, 255),
+				bgcolor: combineRgb(153, 153, 0),
+			},
+			options: [...OPTION_SETS.multiTrackMasterChannel, getStateCheckbox('Selected')],
+			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			subscribe: (evt) => {
+				const c = getMasterChannelFromOptions(evt.options, conn)
+				const streamId = c.fullChannelId + '-mtkrec'
+				feedback.connect(evt, c.multiTrackSelected$, streamId)
 			},
 			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
 		},

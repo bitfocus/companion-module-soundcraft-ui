@@ -251,4 +251,14 @@ export const OPTION_SETS = {
 		OPTIONS.channelNumberField,
 		OPTIONS.delayTimeField(min, max),
 	],
+	multiTrackMasterChannel: [
+		{
+			type: 'dropdown',
+			label: 'Channel Type',
+			id: 'channelType',
+			choices: [FADER_TYPES.i, FADER_TYPES.l],
+			default: 'i',
+		},
+		OPTIONS.channelNumberField,
+	] satisfies SomeCompanionActionInputField[],
 }
