@@ -1,3 +1,9 @@
+# 3.4.0
+
+- feat: add start/stop actions for DT and MTK recording ([2e7d5cd](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/2e7d5cd4869633bad92e39009a1675f67daaa711))
+- feat: add actions and feedback for multi-track channel selection ([b3ba8b5](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/b3ba8b569dcf62e9cc20a1c09d1b6a37d8021f34))
+- chore: update dependencies ([c5d400e](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/c5d400e49f1c71e289698cb7bdef60243f9f86b8))
+
 # 3.3.0
 
 - chore: bump @companion-module/base to ~1.8.0 ([c0f298a](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/c0f298a1d4e3a73fc51d5b3df0ec8b61d5a59497))
