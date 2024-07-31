@@ -1,3 +1,7 @@
+# 3.4.1
+
+This patch release just updates the version numbers.
+
 # 3.4.0
 
 - feat: add start/stop actions for DT and MTK recording ([2e7d5cd](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/2e7d5cd4869633bad92e39009a1675f67daaa711))
