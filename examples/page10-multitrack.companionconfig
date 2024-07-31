@@ -11,74 +11,6 @@
 				"1": {
 					"type": "button",
 					"style": {
-						"text": "REC",
-						"textExpression": false,
-						"size": "24",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default",
-						"png": null,
-						"latch": false
-					},
-					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
-					},
-					"feedbacks": [
-						{
-							"id": "_tgBE7DC4KmRmHo0QAH4M",
-							"type": "mtkrecordstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
-							"options": {
-								"state": "rec"
-							},
-							"style": {
-								"color": 16777215,
-								"bgcolor": 16711680
-							},
-							"isInverted": false
-						},
-						{
-							"id": "xSXcmezW-lPZkTqlQHmOn",
-							"type": "mtkrecordstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
-							"options": {
-								"state": "busy"
-							},
-							"style": {
-								"color": 16777215,
-								"bgcolor": 16750899
-							},
-							"isInverted": false
-						}
-					],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"id": "KWh56YYi2ghr0lNTIjMh2",
-										"action": "mtkrecordtoggle",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {},
-										"delay": 0
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					}
-				},
-				"2": {
-					"type": "button",
-					"style": {
 						"text": "Play/\\nStop",
 						"textExpression": false,
 						"size": "18",
@@ -98,7 +30,7 @@
 					},
 					"feedbacks": [
 						{
-							"id": "UWsBoUD_g_o2yxqoupReG",
+							"id": "ieB_drW6XE2VnoZrQ60yu",
 							"type": "mtkplayerstate",
 							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
@@ -111,7 +43,7 @@
 							"isInverted": false
 						},
 						{
-							"id": "HXpTjGg0e8iQ4CXFmS0z2",
+							"id": "xqWFb-Kstrg0f4ngceA2S",
 							"type": "mtkplayerstate",
 							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
@@ -129,7 +61,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "ztl7i6LaR84JxcaUPNkHP",
+										"id": "1OF6l9mdikzvkkSUEOGrg",
 										"action": "mtkplay",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
@@ -144,7 +76,7 @@
 						}
 					}
 				},
-				"3": {
+				"2": {
 					"type": "button",
 					"style": {
 						"text": "Pause",
@@ -166,7 +98,7 @@
 					},
 					"feedbacks": [
 						{
-							"id": "Up92DtuUW5T7SomIJZDWp",
+							"id": "IHtSSTP4b32vRZEw_izTB",
 							"type": "mtkplayerstate",
 							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
@@ -184,7 +116,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "eKWENz41m8jiPhyHo-ZON",
+										"id": "bBRFyJbUrbPq6-EjUCMPQ",
 										"action": "mtkstop",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
@@ -199,7 +131,7 @@
 						}
 					}
 				},
-				"4": {
+				"3": {
 					"type": "button",
 					"style": {
 						"text": "STOP",
@@ -221,7 +153,7 @@
 					},
 					"feedbacks": [
 						{
-							"id": "w4AyFoqOh6JJflpq3_Whr",
+							"id": "qDLTzGZnr6qG_FLz-6clC",
 							"type": "mtkplayerstate",
 							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
@@ -239,7 +171,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "DbbObWfesrBEJLp86PjZB",
+										"id": "hjb_KinCQX1fCxUxpRH60",
 										"action": "mtkpause",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
@@ -279,7 +211,7 @@
 					},
 					"feedbacks": [
 						{
-							"id": "v0yY17Ds47sde_EG15jJf",
+							"id": "bz9DDlrWC2JO--4AryVOI",
 							"type": "mtksoundcheckstate",
 							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
@@ -297,12 +229,80 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "XO4rD_oDiKQRkK73eEoFH",
+										"id": "fD3TKOpJyJTcrZpbUqUxQ",
 										"action": "mtksoundcheck",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"state": 2
 										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "REC",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "hxwKphso3PUaCh_ZP0aIl",
+							"type": "mtkrecordstate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"state": "rec"
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 16711680
+							},
+							"isInverted": false
+						},
+						{
+							"id": "2XD1zLA3gHk6lX0vSKLAR",
+							"type": "mtkrecordstate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"state": "busy"
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 16750899
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "QoAlIUAj0HbhuoORZu-Kf",
+										"action": "mtkrecordtoggle",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
 										"delay": 0
 									}
 								],
@@ -343,12 +343,51 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "7JTDG4T2F0dM2GMYtStpe",
+										"id": "MuNnJGyOjPaLC7lRM26Co",
 										"action": "mtksoundcheck",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"state": 1
 										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "REC Start",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "Rou1h1w_NI2nuOLVeevFn",
+										"action": "mtkrecordstart",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
 										"delay": 0
 									}
 								],
@@ -386,12 +425,51 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Lg80_-6ay0ZM05NmYvigH",
+										"id": "5DnSZemjZ_er_7J2qpTJR",
 										"action": "mtksoundcheck",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"state": 0
 										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "REC Stop",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "ZGXw6p2dZDq3kq1Ii11qO",
+										"action": "mtkrecordstop",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
 										"delay": 0
 									}
 								],
@@ -427,5 +505,5 @@
 			"lastUpgradeIndex": 1
 		}
 	},
-	"oldPageNumber": 11
+	"oldPageNumber": 93
 }

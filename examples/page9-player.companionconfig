@@ -34,11 +34,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "ItfKN_ACNeLL2nKK4pNoc",
+										"id": "ZefQBKZuCEa7EPesm5tNL",
 										"label": "GiXDbh3CB:mediaprev",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "mediaprev",
-										"options": {}
+										"options": {},
+										"delay": 0
 									}
 								],
 								"up": []
@@ -71,7 +72,7 @@
 					},
 					"feedbacks": [
 						{
-							"id": "4wgqEuDMKO9cUk2R_9swZ",
+							"id": "zfkq1_E63a_SNRhuqt59k",
 							"type": "mediaplayerstate",
 							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
@@ -84,7 +85,7 @@
 							"isInverted": false
 						},
 						{
-							"id": "K3IKu2g69HPzgameYJNys",
+							"id": "FTiKIdeEpxXL46BMHdeTT",
 							"type": "mediaplayerstate",
 							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
@@ -102,7 +103,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "KpkMYIeCFQX4SQANoezAu",
+										"id": "LL4nW3PA4VSz-Hm8kicr4",
 										"label": "GiXDbh3CB:mediaplay",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "mediaplay",
@@ -140,7 +141,7 @@
 					},
 					"feedbacks": [
 						{
-							"id": "zhFFH7aIrFLSMd_yE8WAt",
+							"id": "84ZCAUhxQJ37bLtijPIFw",
 							"type": "mediaplayerstate",
 							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
@@ -158,11 +159,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "vqyHbcI2UCVA-sn2PwaZL",
+										"id": "R2k5fll9bHE8KQFPX9SGh",
 										"label": "GiXDbh3CB:mediapause",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "mediapause",
-										"options": {}
+										"options": {},
+										"delay": 0
 									}
 								],
 								"up": []
@@ -195,7 +197,7 @@
 					},
 					"feedbacks": [
 						{
-							"id": "af8No1PbKHiHTzZAYPBM8",
+							"id": "jQU_2c1SmLe_wWep2r2c9",
 							"type": "mediaplayerstate",
 							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
@@ -213,7 +215,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Xc9dms1dp2P870iWRmEpM",
+										"id": "uCSSGomP_94dubpwJsTkl",
 										"label": "GiXDbh3CB:mediastop",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "mediastop",
@@ -254,7 +256,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "9M4ivXwVOIIGEHdkDMO71",
+										"id": "eVD-cLC1oBheklLBRa5dj",
 										"label": "GiXDbh3CB:medianext",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "medianext",
@@ -291,7 +293,7 @@
 					},
 					"feedbacks": [
 						{
-							"id": "tyn4bAbyGA56VB__0zcQK",
+							"id": "B78IoJ-DHpxKqsT6EXrl9",
 							"type": "dualtrackrecordstate",
 							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
@@ -304,7 +306,7 @@
 							"isInverted": false
 						},
 						{
-							"id": "oE67VReihBgkOlSDJDRd_",
+							"id": "7unsgdf7reaeEOZzHmfbP",
 							"type": "dualtrackrecordstate",
 							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
@@ -322,7 +324,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Ing-6Dhu__9sjMPmuUZs-",
+										"id": "85SPOFIJJHm6i95dWfGAI",
 										"label": "GiXDbh3CB:dualtrackrecordtoggle",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "dualtrackrecordtoggle",
@@ -369,13 +371,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "z8M6sbi5dmTEX3_vHtICl",
+										"id": "D27YIs7zOjKdYJPDk7lWO",
 										"label": "GiXDbh3CB:mediaswitchplist",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "mediaswitchplist",
 										"options": {
 											"playlist": "~all~"
-										}
+										},
+										"delay": 0
 									}
 								],
 								"up": []
@@ -410,7 +413,18 @@
 					"steps": {
 						"0": {
 							"action_sets": {
-								"down": [],
+								"down": [
+									{
+										"id": "LJ3a5g7yP06-0ahhBJpa0",
+										"action": "mediaswitchtrack",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"playlist": "~all~",
+											"track": "Meetup/Music/Power_Shutoff.mp3"
+										},
+										"delay": 0
+									}
+								],
 								"up": []
 							},
 							"options": {
@@ -445,13 +459,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "kMkNc3BQwUjwPFGVRRQ6A",
+										"id": "3jJjWbJNJ6-GVxvng37ZC",
 										"label": "GiXDbh3CB:mediasetplaymode",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "mediasetplaymode",
 										"options": {
 											"mode": "manual"
-										}
+										},
+										"delay": 0
 									}
 								],
 								"up": []
@@ -488,13 +503,52 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Yw1ovSQU5Ro28QPJ5tgRE",
+										"id": "HbaDDSPVuMNqLRmc_8-2f",
 										"label": "GiXDbh3CB:mediasetshuffle",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "mediasetshuffle",
 										"options": {
 											"shuffle": 1
 										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"7": {
+					"type": "button",
+					"style": {
+						"text": "REC Start",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "AbUW-bfOEi3F-zKzhU6wT",
+										"action": "dualtrackrecordstart",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
+										"delay": 0
 									}
 								],
 								"up": []
@@ -536,13 +590,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "gSX9H5uR1WzQ944Z4pEm9",
+										"id": "rOhMDAqyy8pMazJyhyR3x",
 										"label": "GiXDbh3CB:mediaswitchplist",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "mediaswitchplist",
 										"options": {
 											"playlist": "Meetup"
-										}
+										},
+										"delay": 0
 									}
 								],
 								"up": []
@@ -577,7 +632,18 @@
 					"steps": {
 						"0": {
 							"action_sets": {
-								"down": [],
+								"down": [
+									{
+										"id": "QSko8cW8BkQVnlnd7eC2a",
+										"action": "mediaswitchtrack",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"playlist": "~all~",
+											"track": "Meetup/Music/Thinking_About_The_Universe.mp3"
+										},
+										"delay": 0
+									}
+								],
 								"up": []
 							},
 							"options": {
@@ -612,13 +678,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "hAG2n705iP3PvqnLdGAlL",
+										"id": "AT1ItN9_HWaf5uHzqgsOy",
 										"label": "GiXDbh3CB:mediasetplaymode",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "mediasetplaymode",
 										"options": {
 											"mode": "auto"
-										}
+										},
+										"delay": 0
 									}
 								],
 								"up": []
@@ -655,13 +722,52 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "rwvQbj253WzxC1l3MhrBl",
+										"id": "hhj95hZBWV55BbgBgA_gS",
 										"label": "GiXDbh3CB:mediasetshuffle",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "mediasetshuffle",
 										"options": {
 											"shuffle": "0"
 										}
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"7": {
+					"type": "button",
+					"style": {
+						"text": "REC Stop",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "MEdOAro-MCSVouzPTJUgR",
+										"action": "dualtrackrecordstop",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
+										"delay": 0
 									}
 								],
 								"up": []
@@ -696,7 +802,7 @@
 					},
 					"feedbacks": [
 						{
-							"id": "MmDVUJ0mh_F26NdWenwyD",
+							"id": "S-zBSTsR4UNomyMKRbJzp",
 							"type": "mediaplayershuffle",
 							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
@@ -714,7 +820,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "NHOeeZ_SBNbmT9_2xClMU",
+										"id": "UikONbExQHrl0EU2d5X98",
 										"label": "GiXDbh3CB:mediasetshuffle",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "mediasetshuffle",
@@ -756,5 +862,5 @@
 			"lastUpgradeIndex": 1
 		}
 	},
-	"oldPageNumber": 39
+	"oldPageNumber": 94
 }
