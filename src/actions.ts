@@ -61,12 +61,16 @@ export enum ActionId {
 
 	// 2-Track Recorder
 	DTRecordToggle = 'dualtrackrecordtoggle',
+	DTRecordStart = 'dualtrackrecordstart',
+	DTRecordStop = 'dualtrackrecordstop',
 
 	// Multi-Track Recorder
 	MTKPlay = 'mtkplay',
 	MTKPause = 'mtkstop',
 	MTKStop = 'mtkpause',
 	MTKRecordToggle = 'mtkrecordtoggle',
+	MTKRecordStart = 'mtkrecordstart',
+	MTKRecordStop = 'mtkrecordstop',
 	MTKSoundcheck = 'mtksoundcheck',
 
 	// MUTE Groups / ALL / FX
@@ -582,6 +586,18 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		/**
 		 * 2-track Recorder
 		 */
+		[ActionId.DTRecordStart]: {
+			name: '2-Track Recording: Record Start',
+			options: [],
+			callback: () => conn.recorderDualTrack.recordStart(),
+		},
+
+		[ActionId.DTRecordStop]: {
+			name: '2-Track Recording: Record Stop',
+			options: [],
+			callback: () => conn.recorderDualTrack.recordStop(),
+		},
+
 		[ActionId.DTRecordToggle]: {
 			name: '2-Track Recording: Record Toggle',
 			options: [],
@@ -607,6 +623,18 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			name: 'Multitrack Recording: Pause',
 			options: [],
 			callback: () => conn.recorderMultiTrack.pause(),
+		},
+
+		[ActionId.MTKRecordStart]: {
+			name: 'Multitrack Recording: Record Start',
+			options: [],
+			callback: () => conn.recorderMultiTrack.recordStart(),
+		},
+
+		[ActionId.MTKRecordStop]: {
+			name: 'Multitrack Recording: Record Stop',
+			options: [],
+			callback: () => conn.recorderMultiTrack.recordStop(),
 		},
 
 		[ActionId.MTKRecordToggle]: {
