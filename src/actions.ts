@@ -65,7 +65,7 @@ export enum ActionId {
 	DTRecordStart = 'dualtrackrecordstart',
 	DTRecordStop = 'dualtrackrecordstop',
 
-	// Multi-Track Recorder
+	// Multitrack Recorder
 	MTKPlay = 'mtkplay',
 	MTKPause = 'mtkstop',
 	MTKStop = 'mtkpause',
@@ -286,8 +286,8 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		},
 
 		[ActionId.MasterChannelSelectMTK]: {
-			name: 'Master channels: Select for multi-track recording',
-			description: 'Include or remove an input or line channel for multi-track recording',
+			name: 'Master channels: Select for multitrack recording',
+			description: 'Include or remove an input or line channel for multitrack recording',
 			options: [
 				...OPTION_SETS.multiTrackMasterChannel,
 				{
@@ -631,46 +631,50 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		},
 
 		/**
-		 * Multi-track Recorder
+		 * Multitrack Recorder
 		 */
 		[ActionId.MTKPlay]: {
-			name: 'Multitrack Recording: Play/Pause',
+			name: 'Multitrack: Play/Pause Playback',
+			description:
+				'Play or pause playback in the multitrack recorder. If playback is running, it will be paused. If playback is stopped or paused, it will be started.',
 			options: [],
 			callback: () => conn.recorderMultiTrack.play(),
 		},
 
 		[ActionId.MTKStop]: {
-			name: 'Multitrack Recording: Stop',
+			name: 'Multitrack: Stop Playback',
+			description:
+				'Stop playback in the multitrack recorder. This will not stop recording, please use the "Multitrack: Stop Recording" action for this use-case.',
 			options: [],
 			callback: () => conn.recorderMultiTrack.stop(),
 		},
 
 		[ActionId.MTKPause]: {
-			name: 'Multitrack Recording: Pause',
+			name: 'Multitrack: Pause Playback',
 			options: [],
 			callback: () => conn.recorderMultiTrack.pause(),
 		},
 
 		[ActionId.MTKRecordStart]: {
-			name: 'Multitrack Recording: Record Start',
+			name: 'Multitrack: Start Recording',
 			options: [],
 			callback: () => conn.recorderMultiTrack.recordStart(),
 		},
 
 		[ActionId.MTKRecordStop]: {
-			name: 'Multitrack Recording: Record Stop',
+			name: 'Multitrack: Stop Recording',
 			options: [],
 			callback: () => conn.recorderMultiTrack.recordStop(),
 		},
 
 		[ActionId.MTKRecordToggle]: {
-			name: 'Multitrack Recording: Record Toggle',
+			name: 'Multitrack: Toggle Recording',
 			options: [],
 			callback: () => conn.recorderMultiTrack.recordToggle(),
 		},
 
 		[ActionId.MTKSoundcheck]: {
-			name: 'Multitrack Recording: Activate/deactivate soundcheck',
+			name: 'Multitrack: Activate/deactivate soundcheck',
 			description: 'Activate, deactivate or toggle soundcheck in the multitrack recorder',
 			options: [
 				{

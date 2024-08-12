@@ -81,8 +81,8 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 
 		[FeedbackId.MasterChannelMTKSelection]: {
 			type: 'boolean',
-			name: 'Master channel: Multi-Track Selection State',
-			description: 'If the specified master channel is selected for multi-track recording',
+			name: 'Master channel: Multitrack Selection State',
+			description: 'If the specified master channel is selected for multitrack recording',
 			defaultStyle: {
 				color: combineRgb(255, 255, 255),
 				bgcolor: combineRgb(153, 153, 0),
