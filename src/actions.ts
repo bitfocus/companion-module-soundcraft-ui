@@ -244,6 +244,33 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
+		[ActionId.ChangeMasterValue]: {
+			name: 'Master: Change fader value (relative expression)',
+			description: 'Relatively change the fader value (dB) for the master fader using a custom expression',
+			options: [
+				{
+					type: 'textinput',
+					label: 'Custom Expression',
+					id: 'expression',
+					default: '1', // Default to a simple relative change
+					regex: Regex.SOMETHING,
+				},
+			],
+			callback: (action) => {
+				let value: number;
+				try {
+					// Evaluate the expression; be careful with eval as it can execute arbitrary code.
+					value = eval(action.options.expression);
+				} catch (error) {
+					// Handle any errors in expression evaluation
+					console.error('Error evaluating expression:', error);
+					value = 0; // Fallback to no change if there's an error
+				}
+				return conn.master.changeFaderLevelDB(value);
+			},
+		},
+
+
 		[ActionId.SoloMasterChannel]: {
 			name: 'Master channels: Solo',
 			description: 'Set or toggle SOLO for a channel on the master bus',
