@@ -9,11 +9,9 @@
 		"dev": "run build:main --watch",
 		"build": "rimraf dist && yarn build:main",
 		"build:main": "tsc -p tsconfig.build.json",
-		"lint:raw": "run eslint --ext .ts --ext .js --ignore-pattern dist --ignore-pattern pkg",
+		"lint:raw": "eslint",
 		"lint": "yarn lint:raw .",
-		"dist": "yarn companion-module-build",
-		"eslint": "./node_modules/.bin/eslint",
-		"prettier": "./node_modules/.bin/prettier"
+		"dist": "yarn companion-module-build"
 	},
 	"author": "Ferdinand Malcher <ferdinand@malcher.media>",
 	"contributors": [
@@ -37,19 +35,21 @@
 		"node": "^18.12"
 	},
 	"dependencies": {
-		"@companion-module/base": "~1.8.0",
+		"@companion-module/base": "~1.10.0",
 		"bufferutil": "^4.0.7",
 		"rxjs": "7.8.1",
 		"soundcraft-ui-connection": "2.5.0",
 		"utf-8-validate": "^6.0.3"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^1.5.1",
+		"@companion-module/tools": "^2.0.3",
 		"@types/node": "^18.19.32",
-		"husky": "^9.0.11",
-		"lint-staged": "^15.2.0",
-		"rimraf": "^5.0.5",
-		"typescript": "~5.2.2"
+		"eslint": "^9.10.0",
+		"husky": "^9.1.5",
+		"lint-staged": "^15.2.9",
+		"prettier": "^3.3.3",
+		"rimraf": "^5.0.10",
+		"typescript": "~5.5.4"
 	},
-	"packageManager": "yarn@4.0.2"
+	"packageManager": "yarn@4.4.0"
 }
