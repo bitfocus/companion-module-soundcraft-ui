@@ -1,3 +1,8 @@
+# 3.5.0
+
+- feat: save/update snapshots ([3eb1650](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/3eb165029fa2d0c559caf4a10534713ae7d85fad))
+- chore: update dependencies ([0ad8797](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/0ad8797273d8e2abd0fa6ea87d24a437d938c4b5))
+
 # 3.4.1
 
 This patch release just updates the version numbers.
