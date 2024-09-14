@@ -34,7 +34,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "gc9ndMT02xIO1wysHFLry",
+										"id": "LV9vOlRpuASV17ke5j1z_",
 										"label": "GiXDbh3CB:loadshow",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadshow",
@@ -78,7 +78,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "FO1AVc83bD9HRG4Zq28p8",
+										"id": "0z53kOpkINEIVPh_3EkfX",
 										"label": "GiXDbh3CB:loadsnapshot",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadsnapshot",
@@ -128,7 +128,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "6J1hLH35GgevomNiH6MZQ",
+										"id": "DOid2eAPD6kOf5WDTXR8v",
 										"label": "GiXDbh3CB:loadshow",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadshow",
@@ -172,7 +172,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "1ISPfMuEgOi5wRNPzhFLh",
+										"id": "ADOkzK5vWyLs4J7e7pnON",
 										"label": "GiXDbh3CB:loadsnapshot",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadsnapshot",
@@ -217,7 +217,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "G8U9pukvQUcqhwMgiQplP",
+										"id": "7YOCBF0TuUDcn28krNuRk",
 										"label": "GiXDbh3CB:loadsnapshot",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadsnapshot",
@@ -262,7 +262,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "zIkOOVIpe6yetDwJPGRCu",
+										"id": "BW1uwR3uRkytCFJkVONBG",
 										"label": "GiXDbh3CB:loadcue",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadcue",
@@ -307,7 +307,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "ijRZUK6RGnW6m0tGfwQcv",
+										"id": "LF0cT8JurF8jtw-VK74Vn",
 										"label": "GiXDbh3CB:loadcue",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadcue",
@@ -330,6 +330,135 @@
 			"2": {
 				"0": {
 					"type": "pagedown"
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Save Snapshot\\nts / ts1",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 10046464,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "oDfUnbjk5lwp18PkQ3Uu8",
+										"action": "savesnapshot",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"show": "testshow",
+											"snapshot": "testsnapshot1"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "Save Snapshot\\nts / ts2",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 10046464,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "LrgcuGvZ_hiMpDutHbsgt",
+										"action": "savesnapshot",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"show": "testshow",
+											"snapshot": "testsnapshot2"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"3": {
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Update current snapshot",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 6947073,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "vMtugZfFHVHo0fjxrI3k7",
+										"action": "updatecurrentsnapshot",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
 				}
 			}
 		},
@@ -355,5 +484,5 @@
 			"lastUpgradeIndex": 1
 		}
 	},
-	"oldPageNumber": 38
+	"oldPageNumber": 94
 }
