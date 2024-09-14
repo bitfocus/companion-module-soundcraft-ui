@@ -82,6 +82,8 @@ export enum ActionId {
 	LoadShow = 'loadshow',
 	LoadSnapshot = 'loadsnapshot',
 	LoadCue = 'loadcue',
+	SaveSnapshot = 'savesnapshot',
+	UpdateCurrentSnapshot = 'updatecurrentsnapshot',
 
 	// Hardware Channels / Phantom Power
 	HwSetPhantomPower = 'hwsetphantompower',
@@ -799,6 +801,39 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					conn.shows.loadCue(action.options.show as string, action.options.cue as string)
 				}
 			},
+		},
+
+		[ActionId.SaveSnapshot]: {
+			name: 'Shows: Save Snapshot',
+			description: 'Save or overwrite a snapshot in a show. This action will not ask for confirmation!',
+			options: [
+				{
+					type: 'textinput',
+					label: 'Show Name',
+					id: 'show',
+					default: '',
+					regex: Regex.SOMETHING,
+				},
+				{
+					type: 'textinput',
+					label: 'Snapshot Name',
+					id: 'snapshot',
+					default: '',
+					regex: Regex.SOMETHING,
+				},
+			],
+			callback: (action) => {
+				if (action.options.show && action.options.snapshot) {
+					conn.shows.saveSnapshot(action.options.show as string, action.options.snapshot as string)
+				}
+			},
+		},
+
+		[ActionId.UpdateCurrentSnapshot]: {
+			name: 'Shows: Update Current Snapshot',
+			description: 'Update the currently loaded show snapshot. This action will not ask for confirmation!',
+			options: [],
+			callback: () => conn.shows.updateCurrentSnapshot(),
 		},
 
 		/**
