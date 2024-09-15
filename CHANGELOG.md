@@ -1,3 +1,7 @@
+# 3.5.1
+
+- chore: update yarn.lock for yarn 4.4.0 ([4e63d3a](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/4e63d3ac005cac3e88abb066dd0e8b9f42e9f4db))
+
 # 3.5.0
 
 - feat: save/update snapshots ([3eb1650](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/3eb165029fa2d0c559caf4a10534713ae7d85fad))
