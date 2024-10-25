@@ -23,3 +23,4 @@ If you're missing a feature, feel free to [open an issue](https://github.com/bit
 | Shows, Snapshots, Cues | Load shows, snapshots and cues. Save snapshots and cues          |
 | Phantom Power          | Switch phantom power on hardware channels                        |
 | Automix                | Enable/disable automix groups, assign channels to groups         |
+| FX Settings            | Set parameters and BPM for FX processors                         |

@@ -47,6 +47,7 @@ export enum ActionId {
 
 	// FX Settings
 	SetFxBPM = 'setfxbpm',
+	SetFxParam = 'setfxparam',
 
 	// Volume Buses (SOLO, Headphone)
 	SetVolumeBusValue = 'setvolumebusvalue',
@@ -534,6 +535,57 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 				chosenFx.forEach((fxNo) => {
 					conn.fx(fxNo).setBpm(bpm)
 				})
+			},
+		},
+
+		[ActionId.SetFxParam]: {
+			name: 'FX: Set FX Parameter',
+			description:
+				'Set parameter for an FX processor. Not every FX uses all of the 6 available parameters. There are no units and number conversion available: The value represents the fader range in percent.',
+			options: [
+				{
+					type: 'dropdown',
+					label: 'FX',
+					id: 'fx',
+					choices: [
+						{ id: 1, label: 'FX 1' },
+						{ id: 2, label: 'FX 2' },
+						{ id: 3, label: 'FX 3' },
+						{ id: 4, label: 'FX 4' },
+					],
+					default: 1,
+				},
+				{
+					type: 'dropdown',
+					label: 'Parameter',
+					id: 'param',
+					choices: [
+						{ id: 1, label: '1' },
+						{ id: 2, label: '2' },
+						{ id: 3, label: '3' },
+						{ id: 4, label: '4' },
+						{ id: 5, label: '5' },
+						{ id: 6, label: '6' },
+					],
+					default: 1,
+				},
+				{
+					type: 'number',
+					label: 'Parameter Fader Level (%)',
+					id: 'value',
+					range: true,
+					required: true,
+					default: 0,
+					step: 1,
+					min: 0,
+					max: 100,
+				},
+			],
+			callback: (action) => {
+				const normalizedValue = Number(action.options.value) / 100
+
+				const fx = conn.fx(Number(action.options.fx))
+				fx.setParam(Number(action.options.param), normalizedValue)
 			},
 		},
 

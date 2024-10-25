@@ -11,14 +11,190 @@
 				"1": {
 					"type": "button",
 					"style": {
-						"text": "BPM 120\\nFX 2,3,4",
+						"text": "FX 1\\nBPM 30",
 						"textExpression": false,
 						"size": "14",
 						"png64": null,
 						"alignment": "center:center",
 						"pngalignment": "center:center",
 						"color": 16777215,
-						"bgcolor": 0,
+						"bgcolor": 26112,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "UTgS7ob8TRE7nk5gOPsC5",
+										"action": "setfxbpm",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": [
+												1
+											],
+											"bpm": 30
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "FX 2\\nBPM 180",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 26112,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "VDd81R1RXwS19SWTVahwi",
+										"action": "setfxbpm",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": [
+												2
+											],
+											"bpm": 180
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "FX 3\\nBPM 100",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 26112,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "YYPIz5BL2opF6x84x9VIX",
+										"action": "setfxbpm",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": [
+												3
+											],
+											"bpm": 100
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "FX 4\\nBPM 80",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 26112,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "TQS54cQ8UDbp8u2TNzDGo",
+										"action": "setfxbpm",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": [
+												4
+											],
+											"bpm": 80
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "FX 2,3,4\\nBPM 120",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 26112,
 						"show_topbar": "default"
 					},
 					"options": {
@@ -54,17 +230,17 @@
 						}
 					}
 				},
-				"2": {
+				"7": {
 					"type": "button",
 					"style": {
-						"text": "BPM 60\\nFX 2,3,4",
+						"text": "FX 2,3,4\\nBPM 60",
 						"textExpression": false,
 						"size": "14",
 						"png64": null,
 						"alignment": "center:center",
 						"pngalignment": "center:center",
 						"color": 16777215,
-						"bgcolor": 0,
+						"bgcolor": 26112,
 						"show_topbar": "default"
 					},
 					"options": {
@@ -99,11 +275,16 @@
 							}
 						}
 					}
+				}
+			},
+			"1": {
+				"0": {
+					"type": "pagenum"
 				},
-				"3": {
+				"1": {
 					"type": "button",
 					"style": {
-						"text": "BPM 80\\nFX 4",
+						"text": "FX 1\\nParam 2\\n80 %",
 						"textExpression": false,
 						"size": "14",
 						"png64": null,
@@ -124,14 +305,99 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "TQS54cQ8UDbp8u2TNzDGo",
-										"action": "setfxbpm",
+										"id": "9ZWjUhGQke9s-mwOXDrns",
+										"action": "setfxparam",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": [
-												4
-											],
-											"bpm": 80
+											"fx": 1,
+											"param": 2,
+											"value": 80
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "FX 2\\nParam 3\\n60 %",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "gEfXHsixkpnpeCx4Q5fQv",
+										"action": "setfxparam",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": 2,
+											"param": 3,
+											"value": 60
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "FX 3\\nParam 4\\n20 %",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "RntQBYjPiXG3lFZapzcu9",
+										"action": "setfxparam",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": 3,
+											"param": 4,
+											"value": 20
 										},
 										"delay": 0
 									}
@@ -147,7 +413,7 @@
 				"4": {
 					"type": "button",
 					"style": {
-						"text": "BPM 100\\nFX 3",
+						"text": "FX 4\\nParam 1\\n80 %",
 						"textExpression": false,
 						"size": "14",
 						"png64": null,
@@ -168,14 +434,13 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "YYPIz5BL2opF6x84x9VIX",
-										"action": "setfxbpm",
+										"id": "r8eMny7b6gm_KWUAsZIgH",
+										"action": "setfxparam",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": [
-												3
-											],
-											"bpm": 100
+											"fx": 4,
+											"param": 1,
+											"value": 80
 										},
 										"delay": 0
 									}
@@ -189,14 +454,355 @@
 					}
 				}
 			},
-			"1": {
-				"0": {
-					"type": "pagenum"
-				}
-			},
 			"2": {
 				"0": {
 					"type": "pagedown"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "FX 1\\nParam 2\\n50 %",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "3LR7ssY07MlFCXeL1nqLv",
+										"action": "setfxparam",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": 1,
+											"param": 2,
+											"value": 50
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "FX 2\\nParam 3\\n100 %",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "1m7vGzmPF36YsKT0e2q8o",
+										"action": "setfxparam",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": 2,
+											"param": 3,
+											"value": 100
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "FX 3\\nParam 4\\n90 %",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "XlF_urOlF0okOVhzxGDWH",
+										"action": "setfxparam",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": 3,
+											"param": 4,
+											"value": 90
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "FX 4\\nParam 1\\n35 %",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "ZDKd0UDgI68O64Ch0Nwog",
+										"action": "setfxparam",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": 4,
+											"param": 1,
+											"value": 35
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"3": {
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "FX 1\\nParam 3\\n30 %",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "_MlubS7ORUtN-EQ3YdDpW",
+										"action": "setfxparam",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": 1,
+											"param": 3,
+											"value": 30
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "FX 2\\nParam 4\\n0 %",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "5YB8N0V1wpwdh8fVwWNfu",
+										"action": "setfxparam",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": 2,
+											"param": 4,
+											"value": 0
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "FX 3\\nParam 1\\n80 %",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "jVY_U355Mbg-D6rT3V6Nf",
+										"action": "setfxparam",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": 3,
+											"param": 1,
+											"value": 80
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "FX 4\\nParam 3\\n10 %",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "c05AxYUrimP6Ej0fjTrHq",
+										"action": "setfxparam",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": 4,
+											"param": 3,
+											"value": 10
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
 				}
 			}
 		},
