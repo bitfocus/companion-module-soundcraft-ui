@@ -197,7 +197,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 				const state = Number(evt.options.state)
 				const state$ = conn.player.state$.pipe(
 					map((s) => (s === state ? 1 : 0)),
-					distinctUntilChanged()
+					distinctUntilChanged(),
 				)
 				const streamId = 'playerstate' + state
 				feedback.connect(evt, state$, streamId)
@@ -278,7 +278,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 				const state = Number(evt.options.state)
 				const state$ = conn.recorderMultiTrack.state$.pipe(
 					map((s) => (s === state ? 1 : 0)),
-					distinctUntilChanged()
+					distinctUntilChanged(),
 				)
 				const streamId = 'mtkstate' + state
 				feedback.connect(evt, state$, streamId)

@@ -35,21 +35,22 @@
 		"node": "^18.12"
 	},
 	"dependencies": {
-		"@companion-module/base": "~1.10.0",
+		"@companion-module/base": "~1.11.0",
 		"bufferutil": "^4.0.7",
 		"rxjs": "7.8.1",
 		"soundcraft-ui-connection": "^2.7.0",
 		"utf-8-validate": "^6.0.3"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^2.0.3",
+		"@companion-module/tools": "^2.1.0",
 		"@types/node": "^18.19.32",
-		"eslint": "^9.10.0",
+		"eslint": "^9.11.1",
 		"husky": "^9.1.5",
 		"lint-staged": "^15.2.9",
 		"prettier": "^3.3.3",
 		"rimraf": "^5.0.10",
-		"typescript": "~5.5.4"
+		"typescript-eslint": "^8.7.0",
+		"typescript": "~5.6.2"
 	},
 	"packageManager": "yarn@4.4.0"
 }
