@@ -45,6 +45,9 @@ export enum ActionId {
 	ChangeFxChannelValue = 'changefxchannelvalue',
 	FadeFxChannel = 'fadefxchannel',
 
+	// FX Settings
+	SetFxBPM = 'setfxbpm',
+
 	// Volume Buses (SOLO, Headphone)
 	SetVolumeBusValue = 'setvolumebusvalue',
 	ChangeVolumeBusValue = 'changevolumebusvalue',
@@ -493,6 +496,44 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					case 2:
 						return c.togglePost()
 				}
+			},
+		},
+
+		/**
+		 * FX Settings
+		 */
+		[ActionId.SetFxBPM]: {
+			name: 'FX: Set BPM',
+			description: 'Set BPM value for FX processors',
+			options: [
+				{
+					type: 'multidropdown',
+					label: 'FX',
+					id: 'fx',
+					choices: [
+						{ id: 1, label: 'FX 1' },
+						{ id: 2, label: 'FX 2' },
+						{ id: 3, label: 'FX 3' },
+						{ id: 4, label: 'FX 4' },
+					],
+					default: [2, 3, 4],
+					minSelection: 1,
+				},
+				{
+					type: 'number',
+					label: 'BPM',
+					id: 'bpm',
+					min: 20,
+					max: 400,
+					default: 120,
+				},
+			],
+			callback: (action) => {
+				const bpm = Number(action.options.bpm)
+				const chosenFx = action.options.fx as number[]
+				chosenFx.forEach((fxNo) => {
+					conn.fx(fxNo).setBpm(bpm)
+				})
 			},
 		},
 
