@@ -1,0 +1,226 @@
+{
+	"version": 4,
+	"type": "page",
+	"page": {
+		"name": "FX Settings",
+		"controls": {
+			"0": {
+				"0": {
+					"type": "pageup"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "BPM 120\\nFX 2,3,4",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "OARPe-Gg6irO-VAkLJbRH",
+										"action": "setfxbpm",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": [
+												2,
+												3,
+												4
+											],
+											"bpm": 120
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "BPM 60\\nFX 2,3,4",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "lFiVLFdmrjX8IckLqnsqR",
+										"action": "setfxbpm",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": [
+												2,
+												3,
+												4
+											],
+											"bpm": 60
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "BPM 80\\nFX 4",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "TQS54cQ8UDbp8u2TNzDGo",
+										"action": "setfxbpm",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": [
+												4
+											],
+											"bpm": 80
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "BPM 100\\nFX 3",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "YYPIz5BL2opF6x84x9VIX",
+										"action": "setfxbpm",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"fx": [
+												3
+											],
+											"bpm": 100
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"1": {
+				"0": {
+					"type": "pagenum"
+				}
+			},
+			"2": {
+				"0": {
+					"type": "pagedown"
+				}
+			}
+		},
+		"gridSize": {
+			"minColumn": 0,
+			"maxColumn": 7,
+			"minRow": 0,
+			"maxRow": 3
+		}
+	},
+	"instances": {
+		"K5mVTsGHIPgqYkyqYxEWS": {
+			"instance_type": "soundcraft-ui",
+			"sortOrder": 2,
+			"label": "ui24",
+			"isFirstInit": false,
+			"config": {
+				"product": "UI24",
+				"host": "10.75.23.95",
+				"import_to": "M56cJZPf5-"
+			},
+			"enabled": true,
+			"lastUpgradeIndex": 1
+		}
+	},
+	"oldPageNumber": 96
+}
