@@ -1,3 +1,11 @@
+# 3.6.0
+
+- feat: add support for setting FX params ([38e7ad7](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/38e7ad7315a2f6601bd3106ee5f52409426bdc42))
+- feat: add support for FX BPM setting ([be3aa8a](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/be3aa8ac754d825aae1687d17455391a8ebb8641))
+- feat: add support for saving cues ([9950317](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/9950317f6b6f8abd5a9a5719f73ed9873062105a))
+- chore: update soundcraft-ui-connection to 2.7.0 ([0e5d4ca](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/0e5d4ca0673b1024bc39df3a3b4c046b78ef232b))
+- chore: migrate ESLint config, update deps ([0c96d09](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/0c96d0991cdb36c42d3d8ba935c580502b3ee373))
+
 # 3.5.1
 
 - chore: update yarn.lock for yarn 4.4.0 ([4e63d3a](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/4e63d3ac005cac3e88abb066dd0e8b9f42e9f4db))

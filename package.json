@@ -1,6 +1,6 @@
 {
 	"name": "soundcraft-ui",
-	"version": "3.5.1",
+	"version": "3.6.0",
 	"homepage": "https://github.com/bitfocus/companion-module-soundcraft-ui#readme",
 	"main": "dist/index.js",
 	"type": "module",
