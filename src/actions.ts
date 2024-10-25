@@ -84,6 +84,8 @@ export enum ActionId {
 	LoadCue = 'loadcue',
 	SaveSnapshot = 'savesnapshot',
 	UpdateCurrentSnapshot = 'updatecurrentsnapshot',
+	SaveCue = 'savecue',
+	UpdateCurrentCue = 'updatecurrentcue',
 
 	// Hardware Channels / Phantom Power
 	HwSetPhantomPower = 'hwsetphantompower',
@@ -116,7 +118,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 				return conn.master.fadeToDB(
 					Number(action.options.value),
 					Number(action.options.fadeTime),
-					Number(action.options.easing)
+					Number(action.options.easing),
 				)
 			},
 		},
@@ -834,6 +836,39 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			description: 'Update the currently loaded show snapshot. This action will not ask for confirmation!',
 			options: [],
 			callback: () => conn.shows.updateCurrentSnapshot(),
+		},
+
+		[ActionId.SaveCue]: {
+			name: 'Shows: Save Cue',
+			description: 'Save or overwrite a cue in a show. This action will not ask for confirmation!',
+			options: [
+				{
+					type: 'textinput',
+					label: 'Show Name',
+					id: 'show',
+					default: '',
+					regex: Regex.SOMETHING,
+				},
+				{
+					type: 'textinput',
+					label: 'Cue Name',
+					id: 'cue',
+					default: '',
+					regex: Regex.SOMETHING,
+				},
+			],
+			callback: (action) => {
+				if (action.options.show && action.options.cue) {
+					conn.shows.saveCue(action.options.show as string, action.options.cue as string)
+				}
+			},
+		},
+
+		[ActionId.UpdateCurrentCue]: {
+			name: 'Shows: Update Current Cue',
+			description: 'Update the currently loaded show cue. This action will not ask for confirmation!',
+			options: [],
+			callback: () => conn.shows.updateCurrentCue(),
 		},
 
 		/**

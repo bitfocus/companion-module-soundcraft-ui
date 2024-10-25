@@ -34,7 +34,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "LV9vOlRpuASV17ke5j1z_",
+										"id": "0_CshEWKnmOeBIwQ-AJmp",
 										"label": "GiXDbh3CB:loadshow",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadshow",
@@ -78,7 +78,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "0z53kOpkINEIVPh_3EkfX",
+										"id": "jR9jWsM42h1szMoQy0Cr8",
 										"label": "GiXDbh3CB:loadsnapshot",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadsnapshot",
@@ -128,7 +128,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "DOid2eAPD6kOf5WDTXR8v",
+										"id": "5985FHzudxpSqAQyHZ6Go",
 										"label": "GiXDbh3CB:loadshow",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadshow",
@@ -172,7 +172,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "ADOkzK5vWyLs4J7e7pnON",
+										"id": "Et_3wzVEyOHmRNK0kZ7JA",
 										"label": "GiXDbh3CB:loadsnapshot",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadsnapshot",
@@ -217,7 +217,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "7YOCBF0TuUDcn28krNuRk",
+										"id": "DSlhW3OYBhUOQIUa0D7yY",
 										"label": "GiXDbh3CB:loadsnapshot",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadsnapshot",
@@ -262,7 +262,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "BW1uwR3uRkytCFJkVONBG",
+										"id": "7yHqy1iLdp3Zj0-2QcKII",
 										"label": "GiXDbh3CB:loadcue",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadcue",
@@ -307,7 +307,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "LF0cT8JurF8jtw-VK74Vn",
+										"id": "Yz-Uc5d6FG4WIuDhiZ14W",
 										"label": "GiXDbh3CB:loadcue",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"action": "loadcue",
@@ -357,7 +357,7 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "oDfUnbjk5lwp18PkQ3Uu8",
+										"id": "cC2UezZU7iALBtDxqbBGj",
 										"action": "savesnapshot",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -401,12 +401,100 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "LrgcuGvZ_hiMpDutHbsgt",
+										"id": "82KNc7lISxc0EBFnNyQuG",
 										"action": "savesnapshot",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"show": "testshow",
 											"snapshot": "testsnapshot2"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "Save Cue\\nts / tc1",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 10498305,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "0y1UKtzDXcHgbWVIEQudd",
+										"action": "savecue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"show": "testshow",
+											"cue": "testcue1"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Save Cue\\nts / tc2",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 10498305,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "NsmEDIS4vwblb5Vsmksrt",
+										"action": "savecue",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"show": "testshow",
+											"cue": "testcue2"
 										},
 										"delay": 0
 									}
@@ -445,8 +533,47 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "vMtugZfFHVHo0fjxrI3k7",
+										"id": "1xMtyCu28myvbtSw_kRey",
 										"action": "updatecurrentsnapshot",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "Update current cue",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 6947073,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "fTaBdKTRYWGuPQ3l9iLbS",
+										"action": "updatecurrentcue",
 										"instance": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
 										"delay": 0
@@ -484,5 +611,5 @@
 			"lastUpgradeIndex": 1
 		}
 	},
-	"oldPageNumber": 94
+	"oldPageNumber": 98
 }
