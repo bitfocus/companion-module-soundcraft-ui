@@ -1932,15 +1932,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"isomorphic-ws@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "isomorphic-ws@npm:5.0.0"
-  peerDependencies:
-    ws: "*"
-  checksum: 10c0/a058ac8b5e6efe9e46252cb0bc67fd325005d7216451d1a51238bc62d7da8486f828ef017df54ddf742e0fffcbe4b1bcc2a66cc115b027ed0180334cd18df252
-  languageName: node
-  linkType: hard
-
 "jackspeak@npm:^3.1.2":
   version: 3.4.3
   resolution: "jackspeak@npm:3.4.3"
@@ -2354,6 +2345,15 @@ __metadata:
   bin:
     mkdirp: dist/cjs/src/bin.js
   checksum: 10c0/9f2b975e9246351f5e3a40dcfac99fcd0baa31fbfab615fe059fb11e51f10e4803c63de1f384c54d656e4db31d000e4767e9ef076a22e12a641357602e31d57d
+  languageName: node
+  linkType: hard
+
+"modern-isomorphic-ws@npm:1.0.5":
+  version: 1.0.5
+  resolution: "modern-isomorphic-ws@npm:1.0.5"
+  peerDependencies:
+    ws: ^8.11.0
+  checksum: 10c0/0a2d25813136f9f8882c9c58073cc46d9d318814ed98758ef1de9ff69dbe6492bc6844c40b61d997dd9050738cb884eb7e04ebfa536d8c505f88503572bb05f7
   languageName: node
   linkType: hard
 
@@ -3009,13 +3009,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"soundcraft-ui-connection@npm:^2.7.0":
-  version: 2.7.0
-  resolution: "soundcraft-ui-connection@npm:2.7.0"
+"soundcraft-ui-connection@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "soundcraft-ui-connection@npm:3.2.0"
   dependencies:
-    isomorphic-ws: "npm:^5.0.0"
-    ws: "npm:^7.4.1"
-  checksum: 10c0/39c454e254f07b0240afa330aacfb8bf8351d38ac3eb294a589bfac9faf1e6e15a7202e28b13a9ba0795099f41cd9d81c2d5ffde53ae17f49a0d12e3b3580ad0
+    modern-isomorphic-ws: "npm:1.0.5"
+    ws: "npm:^8.18.0"
+  checksum: 10c0/01809eea9cb3ea0a2d2df6c59273bd2a38229a6737d822201a772ee17ee1e6903208bce1cee4eae0de57533d08eca32fa133f97a782d2ab541612a3073fe071a
   languageName: node
   linkType: hard
 
@@ -3033,7 +3033,7 @@ __metadata:
     prettier: "npm:^3.3.3"
     rimraf: "npm:^5.0.10"
     rxjs: "npm:7.8.1"
-    soundcraft-ui-connection: "npm:^2.7.0"
+    soundcraft-ui-connection: "npm:^3.2.0"
     typescript: "npm:~5.6.2"
     typescript-eslint: "npm:^8.7.0"
     utf-8-validate: "npm:^6.0.3"
@@ -3563,18 +3563,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:^7.4.1":
-  version: 7.5.10
-  resolution: "ws@npm:7.5.10"
+"ws@npm:^8.18.0":
+  version: 8.18.0
+  resolution: "ws@npm:8.18.0"
   peerDependencies:
     bufferutil: ^4.0.1
-    utf-8-validate: ^5.0.2
+    utf-8-validate: ">=5.0.2"
   peerDependenciesMeta:
     bufferutil:
       optional: true
     utf-8-validate:
       optional: true
-  checksum: 10c0/bd7d5f4aaf04fae7960c23dcb6c6375d525e00f795dd20b9385902bd008c40a94d3db3ce97d878acc7573df852056ca546328b27b39f47609f80fb22a0a9b61d
+  checksum: 10c0/25eb33aff17edcb90721ed6b0eb250976328533ad3cd1a28a274bd263682e7296a6591ff1436d6cbc50fa67463158b062f9d1122013b361cec99a05f84680e06
   languageName: node
   linkType: hard
 
