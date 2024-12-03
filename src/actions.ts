@@ -10,6 +10,7 @@ import {
 	getMuteGroupIDFromOptions,
 	getVolumeBusFromOptions,
 } from './utils/channel-selection.js'
+import { patchDestinations, patchSources } from './utils/patch-parameters.js'
 
 export enum ActionId {
 	// Master
@@ -97,6 +98,9 @@ export enum ActionId {
 	// Automix
 	AutomixAssignGroupToChannel = 'automixassigngrouptochannel',
 	AutomixEnableGroup = 'automixenablegroup',
+
+	// Patching
+	PatchingSetRoute = 'patchingsetroute',
 }
 
 export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
@@ -1068,6 +1072,39 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					case 2:
 						return group.toggle()
 				}
+			},
+		},
+
+		[ActionId.PatchingSetRoute]: {
+			name: 'Patching: Configure patch route (Ui24R only)',
+			description:
+				'Configure patch from source to destination. USB-A inputs cannot be patched to HW OUTS and CASCADE OUTS.',
+			options: [
+				{
+					type: 'dropdown',
+					label: 'Source (from)',
+					id: 'source',
+					choices: patchSources,
+					default: 'none',
+				},
+				{
+					type: 'dropdown',
+					label: 'Destination (to)',
+					id: 'destination',
+					choices: patchDestinations,
+					default: 'i.0.src',
+				},
+			],
+			callback: (action) => {
+				const source = action.options.source as string
+				const destination = action.options.destination as string
+
+				// USB-A source cannot be patched to HW OUTS or CASCADE OUTS
+				if (source.startsWith('ua') && (destination.startsWith('hwout') || destination.startsWith('casc'))) {
+					return
+				}
+
+				conn.conn.sendMessage(`SETS^${destination}^${source}`)
 			},
 		},
 	}
