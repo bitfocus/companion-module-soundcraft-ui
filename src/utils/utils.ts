@@ -25,3 +25,8 @@ export function optionToChannelType(input: unknown): ChannelType {
 		return 'i'
 	}
 }
+
+/** Create array with specified amount of items, created by the transform callback. */
+export function createRangeArray<T>(amount: number, transform: (i: number) => T): T[] {
+	return new Array(Math.max(amount, 1)).fill(undefined).map((_, i) => transform(i))
+}
