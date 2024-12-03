@@ -15,6 +15,7 @@ import {
 	getMasterChannelFromOptions,
 	getMuteGroupIDFromOptions,
 } from './utils/channel-selection.js'
+import { patchDestinations, patchSources } from './utils/patch-parameters.js'
 
 export enum FeedbackId {
 	MuteMasterChannel = 'mutemasterchannel',
@@ -34,6 +35,7 @@ export enum FeedbackId {
 	MuteMuteGroup = 'mutemutegroup',
 	HwPhantomPower = 'hwphantompower',
 	AutomixGroupState = 'automixgroupstate',
+	PatchingRouteState = 'patchingroutestate',
 }
 
 const defaultStyles: { [key: string]: CompanionFeedbackButtonStyleResult } = {
@@ -403,6 +405,46 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 				}
 				const streamId = 'amixgroupstate' + groupId
 				feedback.connect(evt, group.state$, streamId)
+			},
+			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+		},
+
+		[FeedbackId.PatchingRouteState]: {
+			type: 'boolean',
+			name: 'Patching: Route config state (Ui24R only)',
+			description: 'If the specified source is patched to the specified destination',
+			defaultStyle: {
+				bgcolor: combineRgb(0, 128, 0),
+				color: combineRgb(255, 255, 255),
+			},
+			options: [
+				{
+					type: 'dropdown',
+					label: 'Source (from)',
+					id: 'source',
+					choices: patchSources,
+					default: 'none',
+				},
+				{
+					type: 'dropdown',
+					label: 'Destination (to)',
+					id: 'destination',
+					choices: patchDestinations,
+					default: 'i.0.src',
+				},
+			],
+			callback: (evt) => !!feedback.get(evt.id),
+			subscribe: (evt) => {
+				const source = evt.options.source as string
+				const destination = evt.options.destination as string
+
+				const feedback$ = conn.store.state$.pipe(
+					map((state) => state[destination] === source),
+					distinctUntilChanged(),
+				)
+
+				const streamId = `patchroute-${source}-${destination}`
+				feedback.connect(evt, feedback$, streamId)
 			},
 			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
 		},

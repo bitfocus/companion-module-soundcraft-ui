@@ -1,0 +1,1245 @@
+{
+	"version": 4,
+	"type": "page",
+	"page": {
+		"name": "Patching",
+		"controls": {
+			"0": {
+				"0": {
+					"type": "pageup"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nHWIN 5\\nCH 5",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "5vUbXcN6N-Voktg1sCicK",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "hw.4",
+								"destination": "i.4.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "JXztEiKDMmsVyh4ORIYI1",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "hw.4",
+											"destination": "i.4.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nHWIN LI L\\nLI L",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "X698Ir6JQ8jFLq9Ny_2Fi",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "li.0",
+								"destination": "l.0.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "-Bh2jR-K8XfVGE1SLMObQ",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "li.0",
+											"destination": "l.0.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nUSB-A 3\\nCH 7",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "5II7rmZRn6XjmvWUE6NHN",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "ua.2",
+								"destination": "i.6.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "XVf9cginv-zzsHvy77tu9",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "ua.2",
+											"destination": "i.6.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nM ML\\nHW ML",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "sfE3zFYXUbz3E5kku39tj",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "m.0",
+								"destination": "hwoutm.0.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "NdM9Osyu22pOEtIo6Pq1n",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "m.0",
+											"destination": "hwoutm.0.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nHWIN 3\\nCSLOT 10",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "7jL9nGpsuzOWwiXnW_cfZ",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "hw.2",
+								"destination": "casc.9.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "jydZZ0OA_EcFHZRRc74bo",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "hw.2",
+											"destination": "casc.9.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nCIN 24\\nSC CH 3",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "RKEb5UTQqP_88vwy8A_vY",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "cs.23",
+								"destination": "i.2.scsrc"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "b3TlE7RDuuJoMCO7OJbH5",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "cs.23",
+											"destination": "i.2.scsrc"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"7": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nNONE\\nCH 5",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 102,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "-Ito_nm0-BEtdCpYK5ocm",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "none",
+								"destination": "i.4.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "9dSQgOL5teemQV9Tz8xTO",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "none",
+											"destination": "i.4.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"1": {
+				"0": {
+					"type": "pagenum"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nHW IN 4\\nCH 5",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "nVHw7NdxAwCwEttYLcb-z",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "hw.3",
+								"destination": "i.4.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "MViRBTFEpSsr9fxhVdjD5",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "hw.3",
+											"destination": "i.4.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nHWIN LI R\\nLI L",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "Wbz8WqmbrRTlHM7T92gW6",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "li.1",
+								"destination": "l.0.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "tN1RC4vPjb9qkFexrJ_Dj",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "li.1",
+											"destination": "l.0.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nUSB-A 10\\nCH 7",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "jPGLKI73ZmqPgZu3xv862",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "ua.9",
+								"destination": "i.6.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "ouhOIn5tpKy5EqP9B53Ni",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "ua.9",
+											"destination": "i.6.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nM A3\\nHW ML",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "aCOPPMbnKrYIryiibLg96",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "a.2",
+								"destination": "hwoutm.0.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "XksQLwG_cCiyzws4VVOHh",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "a.2",
+											"destination": "hwoutm.0.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nHWIN 6\\nCSLOT 10",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "tBnmpoLx2xbgWzZgv9HUm",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "hw.5",
+								"destination": "casc.9.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "rH9G47EPxb6uvB7_Abwjb",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "hw.5",
+											"destination": "casc.9.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nCIN 20\\nSC CH 3",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "5ZMDECnnunuKgxp_IUnVt",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "cs.19",
+								"destination": "i.2.scsrc"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "5jp3Hvy2-urfRaETW1qsu",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "cs.19",
+											"destination": "i.2.scsrc"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"7": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nNONE\\nCH 7",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 102,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "k_1QXC9ZB8Vu2hXUymQop",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "none",
+								"destination": "i.6.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "GcmekAoNdDmDbcqlp1URb",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "none",
+											"destination": "i.6.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"2": {
+				"0": {
+					"type": "pagedown"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nHWIN 16\\nHW H1L",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "ny7weoJDZ9X72NbcQZCyi",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "hw.15",
+								"destination": "hwouthp.0.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "CkF3rE1kUO87pyq0IBz8G",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "hw.15",
+											"destination": "hwouthp.0.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nHWIN 8\\nSC CH 8",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "FqB7-tK4Xii4ogVIb2uxL",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "hw.7",
+								"destination": "i.7.scsrc"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "-aIX7uTLE8crBymPHKwEy",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "hw.7",
+											"destination": "i.7.scsrc"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nDAW 15\\nSC CH 10",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "vGrZ52--lthyrni8BtLiZ",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "ub.14",
+								"destination": "i.9.scsrc"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "ehP-x-W7GgnUfYyx8YCJZ",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "ub.14",
+											"destination": "i.9.scsrc"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			},
+			"3": {
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nHWIN 15\\nHW H1L",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "LLoJT0EzNmQyVmFhuw8r3",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "hw.14",
+								"destination": "hwouthp.0.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "9HjFl5je4qfvcq2J1PrVd",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "hw.14",
+											"destination": "hwouthp.0.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nHWIN 7\\nSC CH 8",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "9PysuK3LG5xKSQ_3txxST",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "hw.6",
+								"destination": "i.7.scsrc"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "DldwRCj2rloFaWnwlm3Ed",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "hw.6",
+											"destination": "i.7.scsrc"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "Patch\\nDAW 14\\nSC CH 10",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "Uhne5nslmyr_fh9qaoc_1",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "ub.13",
+								"destination": "i.9.scsrc"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "ijT_VEnGd7W1qP1EiyiQM",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "ub.13",
+											"destination": "i.9.scsrc"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				},
+				"7": {
+					"type": "button",
+					"style": {
+						"text": "!!!\\nPatch\\nUSB-A 1\\nHW A2",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 10289409,
+						"show_topbar": "default"
+					},
+					"options": {
+						"relativeDelay": false,
+						"rotaryActions": false,
+						"stepAutoProgress": true
+					},
+					"feedbacks": [
+						{
+							"id": "zF71bh4hxEP7jNJHtetJP",
+							"type": "patchingroutestate",
+							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"source": "ua.0",
+								"destination": "hwoutaux.1.src"
+							},
+							"style": {
+								"bgcolor": 32768,
+								"color": 16777215
+							},
+							"isInverted": false
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "b1_cl-VvJJzbs7AVxhefL",
+										"action": "patchingsetroute",
+										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"source": "ua.0",
+											"destination": "hwoutaux.1.src"
+										},
+										"delay": 0
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					}
+				}
+			}
+		},
+		"gridSize": {
+			"minColumn": 0,
+			"maxColumn": 7,
+			"minRow": 0,
+			"maxRow": 3
+		}
+	},
+	"instances": {
+		"K5mVTsGHIPgqYkyqYxEWS": {
+			"instance_type": "soundcraft-ui",
+			"sortOrder": 2,
+			"label": "ui24",
+			"isFirstInit": false,
+			"config": {
+				"product": "UI24",
+				"host": "10.75.23.95",
+				"import_to": "M56cJZPf5-"
+			},
+			"enabled": true,
+			"lastUpgradeIndex": 1
+		}
+	},
+	"oldPageNumber": 93
+}
