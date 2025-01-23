@@ -1,3 +1,9 @@
+# 3.7.0
+
+- feat: add support for patching/routing on Ui24R ([b7a1ca3](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/b7a1ca39c3dca1d68aa4ffa9f0b014ccbc48b5a9))
+- chore: update connection lib to 3.2.0 ([37ef8fc](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/37ef8fc3a1e4c4cbedfc4d2d41d38a7f9796bfbb))
+- chore: add 'Companion Module Checks' workflow ([adaf6e1](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/adaf6e15c5e68936e4a049aed9b48b5ebd7a8c02))
+
 # 3.6.0
 
 - feat: add support for setting FX params ([38e7ad7](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/38e7ad7315a2f6601bd3106ee5f52409426bdc42))
