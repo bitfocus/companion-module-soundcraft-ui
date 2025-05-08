@@ -32,25 +32,25 @@
 		]
 	},
 	"engines": {
-		"node": "^18.12"
+		"node": "^22.2"
 	},
 	"dependencies": {
-		"@companion-module/base": "~1.11.0",
+		"@companion-module/base": "^1.12.0",
 		"bufferutil": "^4.0.7",
 		"rxjs": "7.8.1",
 		"soundcraft-ui-connection": "^4.0.0",
 		"utf-8-validate": "^6.0.3"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^2.1.0",
+		"@companion-module/tools": "^2.3.0",
 		"@types/node": "^18.19.32",
-		"eslint": "^9.11.1",
-		"husky": "^9.1.5",
-		"lint-staged": "^15.2.9",
-		"prettier": "^3.3.3",
-		"rimraf": "^5.0.10",
-		"typescript": "~5.6.2",
-		"typescript-eslint": "^8.7.0"
+		"eslint": "^9.27.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.5.2",
+		"prettier": "^3.5.3",
+		"rimraf": "^6.0.1",
+		"typescript": "~5.8.3",
+		"typescript-eslint": "^8.32.1"
 	},
-	"packageManager": "yarn@4.4.0"
+	"packageManager": "yarn@4.9.1"
 }
