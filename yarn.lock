@@ -3009,13 +3009,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"soundcraft-ui-connection@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "soundcraft-ui-connection@npm:3.2.0"
+"soundcraft-ui-connection@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "soundcraft-ui-connection@npm:4.0.0"
   dependencies:
     modern-isomorphic-ws: "npm:1.0.5"
     ws: "npm:^8.18.0"
-  checksum: 10c0/01809eea9cb3ea0a2d2df6c59273bd2a38229a6737d822201a772ee17ee1e6903208bce1cee4eae0de57533d08eca32fa133f97a782d2ab541612a3073fe071a
+  checksum: 10c0/2fbbf7fea783433f35d8ce8cc5ad56b495f22f3d7533f0ed708a7176d097b0c5dddc58b4eb410e3bc80bd88b9f3cbab0188436f8cabc82ed929ce347d5cc98b7
   languageName: node
   linkType: hard
 
@@ -3033,7 +3033,7 @@ __metadata:
     prettier: "npm:^3.3.3"
     rimraf: "npm:^5.0.10"
     rxjs: "npm:7.8.1"
-    soundcraft-ui-connection: "npm:^3.2.0"
+    soundcraft-ui-connection: "npm:^4.0.0"
     typescript: "npm:~5.6.2"
     typescript-eslint: "npm:^8.7.0"
     utf-8-validate: "npm:^6.0.3"
