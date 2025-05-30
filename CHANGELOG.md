@@ -1,3 +1,10 @@
+# 3.7.1 (2025-05-30)
+
+- chore: add release dates to changelog ([944a6ec](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/944a6ecbae949290737ad4b955c061ed972da111))
+- chore: update connection lib to 4.0.0 ([8768a4e](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/8768a4ef96684089ed45e506642015fe70e4c689))
+- chore: update dependencies ([780653e](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/780653e8593d9df48c5cb89fcd44669991109103))
+- chore: update yarn lockfile ([c2a172c](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/c2a172c7f62683a9fcce4ebfa8a1676b683a5860))
+
 # 3.7.0 (2025-01-23)
 
 - feat: add support for patching/routing on Ui24R ([b7a1ca3](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/b7a1ca39c3dca1d68aa4ffa9f0b014ccbc48b5a9))
