@@ -11,6 +11,7 @@ import {
 	getVolumeBusFromOptions,
 } from './utils/channel-selection.js'
 import { patchDestinations, patchSources } from './utils/patch-parameters.js'
+import { convertPanOffsetToLinearOffset, convertPanToLinearValue } from './utils/utils.js'
 
 export enum ActionId {
 	// Master
@@ -24,6 +25,8 @@ export enum ActionId {
 	// Master Channels
 	MuteMasterChannel = 'mutemasterchannel',
 	SoloMasterChannel = 'solomasterchannel',
+	SetMasterChannelPan = 'setmasterchannelpan',
+	ChangeMasterChannelPan = 'changemasterchannelpan',
 	SetMasterChannelValue = 'setmasterchannelvalue',
 	ChangeMasterChannelValue = 'changemasterchannelvalue',
 	FadeMasterChannel = 'fademasterchannel',
@@ -38,6 +41,8 @@ export enum ActionId {
 	FadeAuxChannel = 'fadeauxchannel',
 	SetAuxChannelPost = 'setauxchannelpost',
 	SetAuxChannelPostProc = 'setauxchannelpostproc',
+	SetAuxChannelPan = 'setauxchannelpan',
+	ChangeAuxChannelPan = 'changeauxchannelpan',
 
 	// FX Channels
 	MuteFxChannel = 'mutefxchannel',
@@ -273,6 +278,28 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
+		[ActionId.SetMasterChannelPan]: {
+			name: 'Master channels: Set PAN',
+			description: 'Set PAN value for a channel on the master bus',
+			options: [...OPTION_SETS.pannableMasterChannel, OPTIONS.panValueSlider],
+			callback: (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn)
+				const panValue = Number(action.options.value)
+				c.setPan(convertPanToLinearValue(panValue))
+			},
+		},
+
+		[ActionId.ChangeMasterChannelPan]: {
+			name: 'Master channels: Change PAN (relative)',
+			description: 'Relatively change PAN value for a channel on the master bus (PAN Range: -100 to 100)',
+			options: [...OPTION_SETS.pannableMasterChannel, OPTIONS.panChangeField],
+			callback: (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn)
+				const panValue = Number(action.options.value)
+				c.changePan(convertPanOffsetToLinearOffset(panValue))
+			},
+		},
+
 		[ActionId.SetMasterChannelDelay]: {
 			name: 'Master channels: Set output delay',
 			description:
@@ -407,6 +434,29 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 				const c = getAuxChannelFromOptions(action.options, conn)
 				const value = Number(action.options.postproc)
 				return c.setPostProc(value)
+			},
+		},
+
+		[ActionId.SetAuxChannelPan]: {
+			name: 'AUX channels: Set PAN',
+			description: 'Set PAN value for a channel on a AUX bus. Not possible for mono AUX!',
+			options: [...OPTION_SETS.auxChannel, OPTIONS.panValueSlider],
+			callback: (action) => {
+				const c = getAuxChannelFromOptions(action.options, conn)
+				const panValue = Number(action.options.value)
+				c.setPan(convertPanToLinearValue(panValue))
+			},
+		},
+
+		[ActionId.ChangeAuxChannelPan]: {
+			name: 'AUX channels: Change PAN (relative)',
+			description:
+				'Relatively change PAN value for a channel on a AUX bus (PAN Range: -100 to 100). Not possible for mono AUX!',
+			options: [...OPTION_SETS.auxChannel, OPTIONS.panChangeField],
+			callback: (action) => {
+				const c = getAuxChannelFromOptions(action.options, conn)
+				const panValue = Number(action.options.value)
+				c.changePan(convertPanOffsetToLinearOffset(panValue))
 			},
 		},
 

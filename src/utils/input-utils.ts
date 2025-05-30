@@ -59,6 +59,11 @@ export const CHOICES = {
 		default: 'i',
 	},
 
+	masterPannableChannelTypes: {
+		choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.f, FADER_TYPES.s],
+		default: 'i',
+	},
+
 	masterDelayableChannelTypes: {
 		choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.a],
 		default: 'i',
@@ -231,6 +236,26 @@ export const OPTIONS = {
 			default: 0,
 		}
 	},
+	panValueSlider: {
+		type: 'number',
+		label: 'Pan (L = -100, Center = 0, R = 100)',
+		id: 'value',
+		range: true,
+		required: true,
+		default: 0,
+		step: 1,
+		min: -100,
+		max: 100,
+	} satisfies CompanionInputFieldNumber,
+	panChangeField: {
+		type: 'number',
+		label: 'Change value',
+		id: 'value',
+		required: true,
+		min: -200,
+		max: 200,
+		default: 10,
+	} satisfies CompanionInputFieldNumber,
 }
 
 /**
@@ -251,6 +276,15 @@ export const OPTION_SETS = {
 		OPTIONS.channelNumberField,
 		OPTIONS.delayTimeField(min, max),
 	],
+	pannableMasterChannel: [
+		{
+			type: 'dropdown',
+			label: 'Channel Type',
+			id: 'channelType',
+			...CHOICES.masterPannableChannelTypes,
+		},
+		OPTIONS.channelNumberField,
+	] satisfies SomeCompanionActionInputField[],
 	multiTrackMasterChannel: [
 		{
 			type: 'dropdown',

@@ -26,6 +26,14 @@ export function optionToChannelType(input: unknown): ChannelType {
 	}
 }
 
+export function convertPanToLinearValue(panValue: number): number {
+	return (panValue + 100) / 200
+}
+
+export function convertPanOffsetToLinearOffset(panOffset: number): number {
+	return panOffset / 200
+}
+
 /** Create array with specified amount of items, created by the transform callback. */
 export function createRangeArray<T>(amount: number, transform: (i: number) => T): T[] {
 	return new Array(Math.max(amount, 1)).fill(undefined).map((_, i) => transform(i))
