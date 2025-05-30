@@ -26,6 +26,18 @@ export function optionToChannelType(input: unknown): ChannelType {
 	}
 }
 
+export function convertPanToLinearValue(panValue: number): number {
+	return (panValue + 100) / 200
+}
+
+export function convertLinearToPanValue(linearValue: number): number {
+	return Math.round(linearValue * 200 - 100)
+}
+
+export function addPanToLinearValue(panValue: number, addValue: number): number {
+	return Math.round(((panValue + 100) / 200 + addValue) * 200 - 100)
+}
+
 /** Create array with specified amount of items, created by the transform callback. */
 export function createRangeArray<T>(amount: number, transform: (i: number) => T): T[] {
 	return new Array(Math.max(amount, 1)).fill(undefined).map((_, i) => transform(i))
