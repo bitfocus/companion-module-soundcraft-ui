@@ -11,6 +11,7 @@ import {
 	getVolumeBusFromOptions,
 } from './utils/channel-selection.js'
 import { patchDestinations, patchSources } from './utils/patch-parameters.js'
+import { convertPanToLinearValue } from './utils/utils.js'
 
 export enum ActionId {
 	// Master
@@ -24,6 +25,8 @@ export enum ActionId {
 	// Master Channels
 	MuteMasterChannel = 'mutemasterchannel',
 	SoloMasterChannel = 'solomasterchannel',
+	SetMasterChannelPan = 'setmasterchannelpan',
+	ChangeMasterChannelPan = 'changemasterchannelpan',
 	SetMasterChannelValue = 'setmasterchannelvalue',
 	ChangeMasterChannelValue = 'changemasterchannelvalue',
 	FadeMasterChannel = 'fademasterchannel',
@@ -270,6 +273,18 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					case 2:
 						return c.toggleSolo()
 				}
+			},
+		},
+
+		[ActionId.SetMasterChannelPan]: {
+			name: 'Master channels: Set PAN',
+			description: 'Set PAN value for a channel on the master bus',
+			options: [...OPTION_SETS.pannableMasterChannel],
+			callback: (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn)
+				const panValue = Number(action.options.value)
+				const value = convertPanToLinearValue(panValue)
+				c.setPan(value)
 			},
 		},
 
