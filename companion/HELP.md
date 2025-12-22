@@ -12,6 +12,7 @@ If you're missing a feature, feel free to [open an issue](https://github.com/bit
 | Change Fader Levels    | Relatively change the level of faders on master, AUX or FX buses |
 | Fade transitions       | Perform fade transitions on all channels                         |
 | Set channel delay      | Set delay for all faders and master                              |
+| Set/change PAN         | Set and relatively change PAN for channels on mastwer and AUX    |
 | PRE/POST               | Set PRE/POST for channels on AUX or FX buses                     |
 | PRE/POST PROC          | Set PRE/POST PROC for channels on AUX buses (Ui24R only)         |
 | SOLO/Headphone Volume  | Set and change the volume of SOLO and Headphone buses            |
