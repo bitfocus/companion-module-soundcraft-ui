@@ -1,3 +1,7 @@
+# 3.8.0 (2025-12-22)
+
+- feat: implement PAN set/change for master and AUX channels ([08b1e2a](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/08b1e2a1a8003865d2e205ba636bcf20a9080ba3))
+
 # 3.7.1 (2025-05-30)
 
 - chore: add release dates to changelog ([944a6ec](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/944a6ecbae949290737ad4b955c061ed972da111))
