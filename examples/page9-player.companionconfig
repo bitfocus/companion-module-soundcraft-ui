@@ -1,7 +1,9 @@
 {
-	"version": 4,
+	"version": 9,
 	"type": "page",
+	"companionBuild": "4.2.1+8738-stable-3edf7ecdf4",
 	"page": {
+		"id": "12GiGwTpZehsA-uglbSPg",
 		"name": "Player",
 		"controls": {
 			"0": {
@@ -24,9 +26,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -34,12 +36,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "ZefQBKZuCEa7EPesm5tNL",
-										"label": "GiXDbh3CB:mediaprev",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mediaprev",
+										"type": "action",
+										"id": "zr8JSfXyLdhZRV9wIs-bX",
+										"definitionId": "mediaprev",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -48,7 +50,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -66,36 +69,40 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "zfkq1_E63a_SNRhuqt59k",
-							"type": "mediaplayerstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "PQnF_nGOGTAjW_NSI_UY4",
+							"definitionId": "mediaplayerstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"state": "2"
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						},
 						{
-							"id": "FTiKIdeEpxXL46BMHdeTT",
-							"type": "mediaplayerstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "JyJWIPUxwQX-CMhGK06Yp",
+							"definitionId": "mediaplayerstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"state": "0"
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 65280,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -103,12 +110,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "LL4nW3PA4VSz-Hm8kicr4",
-										"label": "GiXDbh3CB:mediaplay",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mediaplay",
+										"type": "action",
+										"id": "6LZKNKA68cKAzFMuh5OSr",
+										"definitionId": "mediaplay",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -117,7 +124,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -135,23 +143,25 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "84ZCAUhxQJ37bLtijPIFw",
-							"type": "mediaplayerstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "HBRn3Svfn5w6XxuW4XJgq",
+							"definitionId": "mediaplayerstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"state": "3"
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 16750899,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -159,12 +169,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "R2k5fll9bHE8KQFPX9SGh",
-										"label": "GiXDbh3CB:mediapause",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mediapause",
+										"type": "action",
+										"id": "Rko3fQ4PU1bs7ZKs6FOYc",
+										"definitionId": "mediapause",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -173,7 +183,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -191,23 +202,25 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "jQU_2c1SmLe_wWep2r2c9",
-							"type": "mediaplayerstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "WKX3BBsmAw9UjYwhLqG9E",
+							"definitionId": "mediaplayerstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"state": 2
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -215,11 +228,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "uCSSGomP_94dubpwJsTkl",
-										"label": "GiXDbh3CB:mediastop",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mediastop",
-										"options": {}
+										"type": "action",
+										"id": "8hdc9thmdDgO3rFB3_TXs",
+										"definitionId": "mediastop",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -228,7 +242,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"5": {
 					"type": "button",
@@ -246,9 +261,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -256,11 +271,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "eVD-cLC1oBheklLBRa5dj",
-										"label": "GiXDbh3CB:medianext",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "medianext",
-										"options": {}
+										"type": "action",
+										"id": "WCLe2OCm4cfZGO00GzM3Z",
+										"definitionId": "medianext",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -269,7 +285,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"7": {
 					"type": "button",
@@ -287,36 +304,40 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "B78IoJ-DHpxKqsT6EXrl9",
-							"type": "dualtrackrecordstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "30DCP-wqmBKUe5vlMsjlL",
+							"definitionId": "dualtrackrecordstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"state": "rec"
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						},
 						{
-							"id": "7unsgdf7reaeEOZzHmfbP",
-							"type": "dualtrackrecordstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "06Q94JWKFzKYLlpJh-t3-",
+							"definitionId": "dualtrackrecordstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"state": "busy"
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 16750899,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -324,12 +345,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "85SPOFIJJHm6i95dWfGAI",
-										"label": "GiXDbh3CB:dualtrackrecordtoggle",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "dualtrackrecordtoggle",
+										"type": "action",
+										"id": "sxJtBa0FYjH7WdwTwl_OL",
+										"definitionId": "dualtrackrecordtoggle",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -338,7 +359,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"1": {
@@ -361,9 +383,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -371,14 +393,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "D27YIs7zOjKdYJPDk7lWO",
-										"label": "GiXDbh3CB:mediaswitchplist",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mediaswitchplist",
+										"type": "action",
+										"id": "84bCNvk_03BVjr70wp9ne",
+										"definitionId": "mediaswitchplist",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"playlist": "~all~"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -387,7 +409,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -405,9 +428,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -415,14 +438,15 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "LJ3a5g7yP06-0ahhBJpa0",
-										"action": "mediaswitchtrack",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "mAcFsChFUTcbjMELdQZ-w",
+										"definitionId": "mediaswitchtrack",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"playlist": "~all~",
 											"track": "Meetup/Music/Power_Shutoff.mp3"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -431,7 +455,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -449,9 +474,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -459,14 +484,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "3jJjWbJNJ6-GVxvng37ZC",
-										"label": "GiXDbh3CB:mediasetplaymode",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mediasetplaymode",
+										"type": "action",
+										"id": "iNslR7LDDTBsjYHSOhBMs",
+										"definitionId": "mediasetplaymode",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"mode": "manual"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -475,7 +500,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -493,9 +519,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -503,13 +529,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "HbaDDSPVuMNqLRmc_8-2f",
-										"label": "GiXDbh3CB:mediasetshuffle",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mediasetshuffle",
+										"type": "action",
+										"id": "B7PBSPDAbC6z_C6MgKNII",
+										"definitionId": "mediasetshuffle",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"shuffle": 1
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -518,7 +545,114 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Shuffle\\nOFF",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "bvTUZ_VTXcjH-SmZfp9fy",
+										"definitionId": "mediasetshuffle",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"shuffle": "0"
+										},
+										"upgradeIndex": 1
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Shuffle\\nToggle",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [
+						{
+							"type": "feedback",
+							"id": "idSXV-sUbvxN1S4tuGQDL",
+							"definitionId": "mediaplayershuffle",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"state": true
+							},
+							"upgradeIndex": 1,
+							"isInverted": false,
+							"style": {
+								"bgcolor": 10229317,
+								"color": 16777215
+							}
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "uCcummQLc4KsNm3Tjc7kj",
+										"definitionId": "mediasetshuffle",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"shuffle": "2"
+										},
+										"upgradeIndex": 1
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
 				},
 				"7": {
 					"type": "button",
@@ -534,9 +668,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -544,11 +678,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "AbUW-bfOEi3F-zKzhU6wT",
-										"action": "dualtrackrecordstart",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "DyvTJ8gFUmxq0j6MSPwv_",
+										"definitionId": "dualtrackrecordstart",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -557,7 +692,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"2": {
@@ -580,9 +716,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -590,14 +726,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "rOhMDAqyy8pMazJyhyR3x",
-										"label": "GiXDbh3CB:mediaswitchplist",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mediaswitchplist",
+										"type": "action",
+										"id": "c06Q4Hgb_xoohJjrEdXHp",
+										"definitionId": "mediaswitchplist",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"playlist": "Meetup"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -606,7 +742,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -624,9 +761,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -634,14 +771,15 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "QSko8cW8BkQVnlnd7eC2a",
-										"action": "mediaswitchtrack",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "t4EV-MPpVWJWYXB63Uotz",
+										"definitionId": "mediaswitchtrack",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"playlist": "~all~",
 											"track": "Meetup/Music/Thinking_About_The_Universe.mp3"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -650,7 +788,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -668,9 +807,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -678,14 +817,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "AT1ItN9_HWaf5uHzqgsOy",
-										"label": "GiXDbh3CB:mediasetplaymode",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mediasetplaymode",
+										"type": "action",
+										"id": "pJnLk9eITheTdIT5kKv0Q",
+										"definitionId": "mediasetplaymode",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"mode": "auto"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -694,50 +833,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
-				},
-				"4": {
-					"type": "button",
-					"style": {
-						"text": "Shuffle\\nOFF",
-						"textExpression": false,
-						"size": "14",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default",
-						"png": null,
-						"latch": false
 					},
-					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
-					},
-					"feedbacks": [],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"id": "hhj95hZBWV55BbgBgA_gS",
-										"label": "GiXDbh3CB:mediasetshuffle",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mediasetshuffle",
-										"options": {
-											"shuffle": "0"
-										}
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					}
+					"localVariables": []
 				},
 				"7": {
 					"type": "button",
@@ -753,9 +850,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -763,11 +860,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "MEdOAro-MCSVouzPTJUgR",
-										"action": "dualtrackrecordstop",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "ZHw1_UC10Ev5e1Z1PciDO",
+										"definitionId": "dualtrackrecordstop",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -776,14 +874,15 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"3": {
-				"4": {
+				"1": {
 					"type": "button",
 					"style": {
-						"text": "Shuffle\\nToggle",
+						"text": "Playlist\\n$(ui24:player_playlist)",
 						"textExpression": false,
 						"size": "14",
 						"png64": null,
@@ -791,52 +890,154 @@
 						"pngalignment": "center:center",
 						"color": 16777215,
 						"bgcolor": 0,
-						"show_topbar": "default",
-						"png": null,
-						"latch": false
+						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
-					"feedbacks": [
-						{
-							"id": "S-zBSTsR4UNomyMKRbJzp",
-							"type": "mediaplayershuffle",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
-							"options": {
-								"state": true
-							},
-							"style": {
-								"bgcolor": 10229317,
-								"color": 16777215
-							},
-							"isInverted": false
-						}
-					],
+					"feedbacks": [],
 					"steps": {
 						"0": {
 							"action_sets": {
-								"down": [
-									{
-										"id": "UikONbExQHrl0EU2d5X98",
-										"label": "GiXDbh3CB:mediasetshuffle",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mediasetshuffle",
-										"options": {
-											"shuffle": "2"
-										},
-										"delay": 0
-									}
-								],
+								"down": [],
 								"up": []
 							},
 							"options": {
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Track\\n$(ui24:player_track)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "Elapsed\\n$(ui24:player_elapsed)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "Remaining\\n$(ui24:player_remaining)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Length\\n$(ui24:player_length)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
 				}
 			}
 		},
@@ -855,12 +1056,17 @@
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
-				"host": "10.75.23.95",
+				"host": "10.23.23.95",
 				"import_to": "M56cJZPf5-"
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1
+			"lastUpgradeIndex": 1,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {}
 		}
 	},
-	"oldPageNumber": 94
+	"connectionCollections": [],
+	"oldPageNumber": 6
 }

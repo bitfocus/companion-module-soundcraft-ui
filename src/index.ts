@@ -6,12 +6,15 @@ import { instanceConfigFields, type UiConfig } from './config.js'
 import { GetFeedbacksList } from './feedback.js'
 import { UiFeedbackStore } from './feedback-store.js'
 import { upgradeLegacyFeedbackToBoolean, upgradeV2x0x0 } from './upgrades.js'
+import { createVariables } from './variables.js'
+import { UiVariablesStore } from './variables-store.js'
 
 /**
  * Companion instance class for the Soundcraft Ui Mixers.
  */
 class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	private feedbackStore = new UiFeedbackStore(this)
+	private variablesStore = new UiVariablesStore(this)
 	private conn?: SoundcraftUI
 
 	constructor(internal: unknown) {
@@ -32,6 +35,7 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	 * start connection and set things up
 	 */
 	private async createConnection(config: UiConfig) {
+		this.log('debug', 'Creating connection instance')
 		if (config.host) {
 			this.conn = new SoundcraftUI(config.host)
 			this.subscribeConnectionStatus()
@@ -42,7 +46,7 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 				this.updateStatus(InstanceStatus.ConnectionFailure, JSON.stringify(e))
 			}
 
-			this.updateCompanionBits()
+			await this.updateCompanionBits(config)
 		}
 	}
 
@@ -76,7 +80,7 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	 * set up all companion specific things for this module
 	 * such as actions, feedback and presets.
 	 */
-	private updateCompanionBits(): void {
+	private async updateCompanionBits(config: UiConfig) {
 		if (!this.conn) {
 			this.updateStatus(InstanceStatus.ConnectionFailure)
 			return
@@ -85,12 +89,16 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 		this.setActionDefinitions(GetActionsList(this.conn))
 		this.setFeedbackDefinitions(GetFeedbacksList(this.feedbackStore, this.conn))
 		this.subscribeFeedbacks()
+
+		const variableDefs = await createVariables(this.variablesStore, this.conn, config)
+		this.setVariableDefinitions(variableDefs)
 	}
 
 	/**
 	 * Process an updated configuration array.
 	 */
 	async configUpdated(config: UiConfig): Promise<void> {
+		this.log('debug', 'Config updated')
 		if (this.conn) {
 			// TODO: use real connection status and disconnect when connection is open
 			// currently blocked in connection lib
@@ -100,6 +108,8 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 			}*/
 			void this.conn.disconnect()
 		}
+		this.feedbackStore.unsubscribeAll()
+		this.variablesStore.unsubscribeAll()
 		void this.createConnection(config)
 	}
 
@@ -114,7 +124,9 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	 * Clean up the instance before it is destroyed.
 	 */
 	async destroy(): Promise<void> {
-		this.state.unsubscribeAll()
+		this.log('debug', 'Destroying instance')
+		this.feedbackStore.unsubscribeAll()
+		this.variablesStore.destroy()
 		if (this.conn) {
 			await this.conn.disconnect()
 		}

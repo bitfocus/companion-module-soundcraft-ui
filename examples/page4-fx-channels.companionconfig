@@ -1,7 +1,9 @@
 {
-	"version": 4,
+	"version": 9,
 	"type": "page",
+	"companionBuild": "4.2.1+8738-stable-3edf7ecdf4",
 	"page": {
+		"id": "12GiGwTpZehsA-uglbSPg",
 		"name": "FX CH",
 		"controls": {
 			"0": {
@@ -24,9 +26,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -34,16 +36,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "MU3JjuaqK4EFOII5xStI1",
-										"label": "GiXDbh3CB:mutefxchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutefxchannel",
+										"type": "action",
+										"id": "Y9i_9WS1pbDFKm1T-Ichk",
+										"definitionId": "mutefxchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 1,
 											"channelType": "i",
 											"channel": 3,
 											"mute": "0"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -52,7 +55,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -70,9 +74,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -80,16 +84,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Cpl5uloslZiB9JUOFvrXd",
-										"label": "GiXDbh3CB:setfxchannelpost",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setfxchannelpost",
+										"type": "action",
+										"id": "bvYVhupQMHfXjOVbc-XJK",
+										"definitionId": "setfxchannelpost",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 1,
 											"channelType": "i",
 											"channel": 3,
 											"post": "1"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -98,7 +103,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -116,9 +122,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -126,16 +132,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "nuBNN8RX3tgHPveYzEvB-",
-										"label": "GiXDbh3CB:setfxchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setfxchannelvalue",
+										"type": "action",
+										"id": "2zEDJVksCf82j0X4i4UkU",
+										"definitionId": "setfxchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 1,
 											"channelType": "i",
 											"channel": 3,
 											"value": 0
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -144,7 +151,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"5": {
 					"type": "button",
@@ -162,9 +170,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -172,10 +180,10 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "1Q1EW7Q91EeiT-hxE0nqI",
-										"label": "GiXDbh3CB:fadefxchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "fadefxchannel",
+										"type": "action",
+										"id": "F5pje1Za740y-AyQFtIGz",
+										"definitionId": "fadefxchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 1,
 											"channelType": "i",
@@ -183,7 +191,8 @@
 											"value": 0,
 											"fadeTime": 2000,
 											"easing": "1"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -192,7 +201,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"6": {
 					"type": "button",
@@ -210,9 +220,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -220,16 +230,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "4ZsJTFzpBz4ImX9CzQAwV",
-										"label": "GiXDbh3CB:changefxchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changefxchannelvalue",
+										"type": "action",
+										"id": "fsdaesUDMwI_-CmzcOEet",
+										"definitionId": "changefxchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 1,
 											"channelType": "i",
 											"channel": 3,
 											"value": 3
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -238,7 +249,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"1": {
@@ -261,9 +273,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -271,16 +283,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Te3SZ7Gk2RL6WD-9JFoua",
-										"label": "GiXDbh3CB:mutefxchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutefxchannel",
+										"type": "action",
+										"id": "zoB5fV3ZxNWv0Y8pFAGBN",
+										"definitionId": "mutefxchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 1,
 											"channelType": "i",
 											"channel": 3,
 											"mute": "1"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -289,7 +302,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -307,9 +321,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -317,16 +331,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "MyWqphB1vxO6Gsvsr0F4o",
-										"label": "GiXDbh3CB:setfxchannelpost",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setfxchannelpost",
+										"type": "action",
+										"id": "QZELf1PgMaMuFdoS-DT1w",
+										"definitionId": "setfxchannelpost",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 1,
 											"channelType": "i",
 											"channel": 3,
 											"post": "0"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -335,7 +350,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -353,9 +369,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -363,16 +379,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "hD_xDtu_8TAHr_DBAd5In",
-										"label": "GiXDbh3CB:setfxchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setfxchannelvalue",
+										"type": "action",
+										"id": "XBjlyvjC4vNdBXNijifjQ",
+										"definitionId": "setfxchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 1,
 											"channelType": "i",
 											"channel": 3,
 											"value": -12
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -381,7 +398,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"5": {
 					"type": "button",
@@ -399,9 +417,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -409,10 +427,10 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "S7adkL6c95h2RaIvC9KrC",
-										"label": "GiXDbh3CB:fadefxchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "fadefxchannel",
+										"type": "action",
+										"id": "1VW5Dos8WTgOhRp2v5WMj",
+										"definitionId": "fadefxchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 1,
 											"channelType": "i",
@@ -420,7 +438,8 @@
 											"value": -12,
 											"fadeTime": 2000,
 											"easing": "1"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -429,7 +448,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"6": {
 					"type": "button",
@@ -447,9 +467,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -457,16 +477,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "CW8Z70rPqVTT9GP4KIQj_",
-										"label": "GiXDbh3CB:changefxchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changefxchannelvalue",
+										"type": "action",
+										"id": "BDEqOPgAPAoaPLLy5cYpE",
+										"definitionId": "changefxchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 1,
 											"channelType": "i",
 											"channel": 3,
 											"value": -3
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -475,7 +496,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"2": {
@@ -498,26 +520,28 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "ZMxC_kSHVIt_9tv5CYj21",
-							"type": "mutefxchannel",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "UPnWsR-OsKKVZVM-0f35E",
+							"definitionId": "mutefxchannel",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"bus": 1,
 								"channelType": "i",
 								"channel": "3",
 								"state": true
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -525,17 +549,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "_3Qr3V8kn8YAFt5ja_B3b",
-										"label": "GiXDbh3CB:mutefxchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutefxchannel",
+										"type": "action",
+										"id": "fzJ5YjEaLJCRTdSN-D4uf",
+										"definitionId": "mutefxchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 1,
 											"channelType": "i",
 											"channel": 3,
 											"mute": 2
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -544,7 +568,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -562,26 +587,28 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "dVMwKsVmjRZnDQNo1r5Gv",
-							"type": "postfxchannel",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "ccJdwW8dtkTBrhCA1eghX",
+							"definitionId": "postfxchannel",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"bus": 1,
 								"channelType": "i",
 								"channel": "3",
 								"state": true
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 65280,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -589,17 +616,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "psaqkXSvqiaxiwsIzQCQ0",
-										"label": "GiXDbh3CB:setfxchannelpost",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setfxchannelpost",
+										"type": "action",
+										"id": "gOa1M8FHPaATx0d6e2Yeu",
+										"definitionId": "setfxchannelpost",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 1,
 											"channelType": "i",
 											"channel": 3,
 											"post": "2"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -608,7 +635,110 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "Bus Name:\\n$(ui24:m_fx1_name)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Ch Name:\\n$(ui24:m_input3_name)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Level:\\n$(ui24:fx1_input3_level) dB",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
 				}
 			}
 		},
@@ -627,12 +757,17 @@
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
-				"host": "10.75.23.95",
+				"host": "10.23.23.95",
 				"import_to": "M56cJZPf5-"
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1
+			"lastUpgradeIndex": 1,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {}
 		}
 	},
-	"oldPageNumber": 34
+	"connectionCollections": [],
+	"oldPageNumber": 6
 }

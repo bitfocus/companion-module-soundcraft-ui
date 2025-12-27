@@ -26,8 +26,36 @@ export function optionToChannelType(input: unknown): ChannelType {
 	}
 }
 
+/** Map -Infinity to -100 for fader level representation */
+export function mapInfinityToNumber(value: number): number {
+	return value === Number.NEGATIVE_INFINITY ? -100 : value
+}
+
+/** Convert PAN value 0..1 to string representation (L 100 .. C .. R 100) */
+/*export function convertPanLinearValueToString(value: number): string {
+	if (value === 0) {
+		return 'L 100'
+	} else if (value === 1) {
+		return 'R 100'
+	} else if (value === 0.5) {
+		return 'C'
+	} else if (value > 0.5) {
+		const right = Math.round((value - 0.5) * 200)
+		return `R ${right}`
+	} else {
+		const left = Math.round((0.5 - value) * 200)
+		return `L ${left}`
+	}
+}*/
+
+/** Convert PAN value -100..0..100 to internal range 0..1 */
 export function convertPanToLinearValue(panValue: number): number {
-	return (panValue + 100) / 200
+	return Math.round((panValue + 100) / 200)
+}
+
+/** Convert internal 0..1 value to PAN range -100..0..100 */
+export function convertLinearValueToPan(linearValue: number): number {
+	return Math.round(linearValue * 200 - 100)
 }
 
 export function convertPanOffsetToLinearOffset(panOffset: number): number {

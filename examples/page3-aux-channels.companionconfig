@@ -1,7 +1,9 @@
 {
-	"version": 4,
+	"version": 9,
 	"type": "page",
+	"companionBuild": "4.2.1+8738-stable-3edf7ecdf4",
 	"page": {
+		"id": "FvbfVgppyZnEg_g-Hu_OZ",
 		"name": "AUX CH",
 		"controls": {
 			"0": {
@@ -24,9 +26,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -35,17 +37,17 @@
 								"down": [],
 								"up": [
 									{
-										"id": "uQDk0ceEdyWYg-3yBuT8m",
-										"label": "GiXDbh3CB:muteauxchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "muteauxchannel",
+										"type": "action",
+										"id": "rJK88UGnWzti5HSDVPRqy",
+										"definitionId": "muteauxchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": "3",
 											"channelType": "i",
 											"channel": "3",
 											"mute": "0"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								]
 							},
@@ -53,7 +55,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -71,9 +74,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -82,16 +85,17 @@
 								"down": [],
 								"up": [
 									{
-										"id": "wWD67E3RWCxwvPSFfv5gj",
-										"label": "GiXDbh3CB:setauxchannelpost",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setauxchannelpost",
+										"type": "action",
+										"id": "MAjqRsTuciXk-bpzbySU_",
+										"definitionId": "setauxchannelpost",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": "3",
 											"channelType": "i",
 											"channel": "3",
 											"post": "1"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								]
 							},
@@ -99,7 +103,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -117,9 +122,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -128,16 +133,17 @@
 								"down": [],
 								"up": [
 									{
-										"id": "SwdNm8GlKhKEJwsmc0mPO",
-										"label": "GiXDbh3CB:setauxchannelpostproc",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setauxchannelpostproc",
+										"type": "action",
+										"id": "2i3Vs2mLcH4ne5y7CAf8F",
+										"definitionId": "setauxchannelpostproc",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": "3",
 											"channelType": "i",
 											"channel": "3",
 											"postproc": "0"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								]
 							},
@@ -145,7 +151,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -163,9 +170,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -174,16 +181,17 @@
 								"down": [],
 								"up": [
 									{
-										"id": "_Arfqub0HX2V3-DNLw4kh",
-										"label": "GiXDbh3CB:setauxchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setauxchannelvalue",
+										"type": "action",
+										"id": "0Cl0Y6MNVag5CpUCpKlB4",
+										"definitionId": "setauxchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": "3",
 											"channelType": "i",
 											"channel": "3",
 											"value": 0
-										}
+										},
+										"upgradeIndex": 1
 									}
 								]
 							},
@@ -191,7 +199,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"5": {
 					"type": "button",
@@ -209,9 +218,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -219,10 +228,10 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "cWPlFWKZOwTUbSWss4apU",
-										"label": "GiXDbh3CB:fadeauxchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "fadeauxchannel",
+										"type": "action",
+										"id": "KuBFYi7R0Tb4IJeTigBQl",
+										"definitionId": "fadeauxchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 3,
 											"channelType": "i",
@@ -230,7 +239,8 @@
 											"value": 0,
 											"fadeTime": 2000,
 											"easing": 0
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -239,7 +249,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"6": {
 					"type": "button",
@@ -257,9 +268,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -267,17 +278,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "fF-pDZ3IKM4AefGI0DjPu",
-										"label": "GiXDbh3CB:changeauxchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changeauxchannelvalue",
+										"type": "action",
+										"id": "OGIcnZtiwIZUS3IPVqnwr",
+										"definitionId": "changeauxchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 3,
 											"channelType": "i",
 											"channel": 3,
 											"value": 3
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -286,7 +297,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"1": {
@@ -309,9 +321,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -320,16 +332,17 @@
 								"down": [],
 								"up": [
 									{
-										"id": "O4J9RK5UpghD6EmToQcoI",
-										"label": "GiXDbh3CB:muteauxchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "muteauxchannel",
+										"type": "action",
+										"id": "tgOgI1CsaVwx83tyVxa_Z",
+										"definitionId": "muteauxchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": "3",
 											"channelType": "i",
 											"channel": "3",
 											"mute": "1"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								]
 							},
@@ -337,7 +350,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -355,9 +369,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -366,16 +380,17 @@
 								"down": [],
 								"up": [
 									{
-										"id": "ekTFqIB0VkY737spmkinR",
-										"label": "GiXDbh3CB:setauxchannelpost",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setauxchannelpost",
+										"type": "action",
+										"id": "rzelx_1qkez0ZOqzkD8t2",
+										"definitionId": "setauxchannelpost",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": "3",
 											"channelType": "i",
 											"channel": "3",
 											"post": "0"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								]
 							},
@@ -383,7 +398,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -401,9 +417,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -412,16 +428,17 @@
 								"down": [],
 								"up": [
 									{
-										"id": "1Yhoq4ywS1HUPrSxjqo-n",
-										"label": "GiXDbh3CB:setauxchannelpostproc",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setauxchannelpostproc",
+										"type": "action",
+										"id": "t0SCT8rXAg5aF2Iz-ZqCB",
+										"definitionId": "setauxchannelpostproc",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": "3",
 											"channelType": "i",
 											"channel": "3",
 											"postproc": 1
-										}
+										},
+										"upgradeIndex": 1
 									}
 								]
 							},
@@ -429,7 +446,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -447,9 +465,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -458,16 +476,17 @@
 								"down": [],
 								"up": [
 									{
-										"id": "YYwaJNyFZgChBDktou7tW",
-										"label": "GiXDbh3CB:setauxchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setauxchannelvalue",
+										"type": "action",
+										"id": "zVHiVlhCRURl6qJsBkKam",
+										"definitionId": "setauxchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": "3",
 											"channelType": "i",
 											"channel": "3",
 											"value": 1.4
-										}
+										},
+										"upgradeIndex": 1
 									}
 								]
 							},
@@ -475,7 +494,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"5": {
 					"type": "button",
@@ -493,9 +513,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -503,10 +523,10 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "OGqTdLwfbVaDBU7xMdJkE",
-										"label": "GiXDbh3CB:fadeauxchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "fadeauxchannel",
+										"type": "action",
+										"id": "j548_9YdiHLmJAOKQdV1V",
+										"definitionId": "fadeauxchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 3,
 											"channelType": "i",
@@ -515,7 +535,7 @@
 											"fadeTime": 2000,
 											"easing": 0
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -524,7 +544,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"6": {
 					"type": "button",
@@ -542,9 +563,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -552,17 +573,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "OjsMiDpQnN9ZdnfYMiuSv",
-										"label": "GiXDbh3CB:changeauxchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changeauxchannelvalue",
+										"type": "action",
+										"id": "2AW8KcRf6dULeLMRjLXeK",
+										"definitionId": "changeauxchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 3,
 											"channelType": "i",
 											"channel": 3,
 											"value": -3
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -571,7 +592,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"2": {
@@ -594,26 +616,28 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "ZVZmDM86CC6Q9EmJLr1Dk",
-							"type": "muteauxchannel",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "R3zg0a-vMd1XjqbpJNeHo",
+							"definitionId": "muteauxchannel",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"bus": "3",
 								"channelType": "i",
 								"channel": "3",
 								"state": true
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -621,17 +645,17 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "8mS1KTKF1it7g9743OBYc",
-										"label": "GiXDbh3CB:muteauxchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "muteauxchannel",
+										"type": "action",
+										"id": "XCz8qtl3bux-Q6ZMGtK03",
+										"definitionId": "muteauxchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": 3,
 											"channelType": "i",
 											"channel": 3,
 											"mute": 2
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -640,7 +664,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -658,26 +683,28 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "CdfVEgm6bSs3x0lcGf7KR",
-							"type": "postauxchannel",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "-E2rXQC_wCc-g6NFbLRJa",
+							"definitionId": "postauxchannel",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"bus": "3",
 								"channelType": "i",
 								"channel": "3",
 								"state": true
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 65280,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -686,17 +713,17 @@
 								"down": [],
 								"up": [
 									{
-										"id": "9PeEokJRBSQix_W9OsxVs",
-										"label": "GiXDbh3CB:setauxchannelpost",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setauxchannelpost",
+										"type": "action",
+										"id": "YEj6dmPLktC_B6JG-VA08",
+										"definitionId": "setauxchannelpost",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"bus": "3",
 											"channelType": "i",
 											"channel": "3",
 											"post": "2"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								]
 							},
@@ -704,7 +731,110 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "Bus Name:\\n$(ui24:m_aux3_name)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Ch Name:\\n$(ui24:m_input3_name)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Level:\\n$(ui24:aux3_input3_level) dB",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
 				}
 			}
 		},
@@ -723,12 +853,17 @@
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
-				"host": "10.75.23.95",
+				"host": "10.23.23.95",
 				"import_to": "M56cJZPf5-"
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1
+			"lastUpgradeIndex": 1,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {}
 		}
 	},
-	"oldPageNumber": 33
+	"connectionCollections": [],
+	"oldPageNumber": 5
 }
