@@ -87,7 +87,7 @@ export class UiFeedbackStore {
 		this.feedbackUnsubscribe$.next()
 		this.subscriptions.clear()
 		this.feedbackStreamMap.clear()
-		console.log('Unsubscribing all feedback streams')
+		this.instance.log('debug', 'Unsubscribing all feedback streams')
 	}
 
 	/**
