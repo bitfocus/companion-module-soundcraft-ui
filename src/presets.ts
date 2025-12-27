@@ -22,27 +22,14 @@ function makeMasterChannelMuteButton(
 		},
 		steps: [
 			{
-				down: [
-					{
-						actionId: ActionId.MuteMasterChannel,
-						options: {
-							channelType,
-							channel,
-							mute: 2,
-						},
-					},
-				],
+				down: [{ actionId: ActionId.MuteMasterChannel, options: { channelType, channel, mute: 2 } }],
 				up: [],
 			},
 		],
 		feedbacks: [
 			{
 				feedbackId: FeedbackId.MuteMasterChannel,
-				options: {
-					channelType,
-					channel,
-					state: true,
-				},
+				options: { channelType, channel, state: true },
 				style: feedbackDefaultStyles.mute,
 			},
 		],
@@ -67,27 +54,14 @@ function makeMasterChannelSoloButton(
 		},
 		steps: [
 			{
-				down: [
-					{
-						actionId: ActionId.SoloMasterChannel,
-						options: {
-							channelType,
-							channel,
-							mute: 2,
-						},
-					},
-				],
+				down: [{ actionId: ActionId.SoloMasterChannel, options: { channelType, channel, mute: 2 } }],
 				up: [],
 			},
 		],
 		feedbacks: [
 			{
 				feedbackId: FeedbackId.SoloMasterChannel,
-				options: {
-					channelType,
-					channel,
-					state: true,
-				},
+				options: { channelType, channel, state: true },
 				style: feedbackDefaultStyles.solo,
 			},
 		],
@@ -113,29 +87,14 @@ function makeAuxChannelMuteButton(
 		},
 		steps: [
 			{
-				down: [
-					{
-						actionId: ActionId.MuteAuxChannel,
-						options: {
-							bus,
-							channelType,
-							channel,
-							mute: 2,
-						},
-					},
-				],
+				down: [{ actionId: ActionId.MuteAuxChannel, options: { bus, channelType, channel, mute: 2 } }],
 				up: [],
 			},
 		],
 		feedbacks: [
 			{
 				feedbackId: FeedbackId.MuteAuxChannel,
-				options: {
-					bus,
-					channelType,
-					channel,
-					state: true,
-				},
+				options: { bus, channelType, channel, state: true },
 				style: feedbackDefaultStyles.mute,
 			},
 		],
@@ -161,29 +120,14 @@ function makeAuxChannelPrePostButton(
 		},
 		steps: [
 			{
-				down: [
-					{
-						actionId: ActionId.SetAuxChannelPost,
-						options: {
-							bus,
-							channelType,
-							channel,
-							post: 2,
-						},
-					},
-				],
+				down: [{ actionId: ActionId.SetAuxChannelPost, options: { bus, channelType, channel, post: 2 } }],
 				up: [],
 			},
 		],
 		feedbacks: [
 			{
 				feedbackId: FeedbackId.PostAuxChannel,
-				options: {
-					bus,
-					channelType,
-					channel,
-					state: true,
-				},
+				options: { bus, channelType, channel, state: true },
 				style: {
 					...feedbackDefaultStyles.post,
 					text: `AUX ${bus}\\nPOST\\n$(module:m_${variablePart}_name)`,
@@ -286,12 +230,7 @@ export async function createPresets(conn: SoundcraftUI): Promise<CompanionPreset
 		},
 		steps: [
 			{
-				down: [
-					{
-						actionId: ActionId.MediaPrev,
-						options: {},
-					},
-				],
+				down: [{ actionId: ActionId.MediaPrev, options: {} }],
 				up: [],
 			},
 		],
@@ -310,12 +249,7 @@ export async function createPresets(conn: SoundcraftUI): Promise<CompanionPreset
 		},
 		steps: [
 			{
-				down: [
-					{
-						actionId: ActionId.MediaNext,
-						options: {},
-					},
-				],
+				down: [{ actionId: ActionId.MediaNext, options: {} }],
 				up: [],
 			},
 		],
@@ -334,21 +268,14 @@ export async function createPresets(conn: SoundcraftUI): Promise<CompanionPreset
 		},
 		steps: [
 			{
-				down: [
-					{
-						actionId: ActionId.MediaPlay,
-						options: {},
-					},
-				],
+				down: [{ actionId: ActionId.MediaPlay, options: {} }],
 				up: [],
 			},
 		],
 		feedbacks: [
 			{
 				feedbackId: FeedbackId.MediaPlayerState,
-				options: {
-					state: PlayerState.Playing,
-				},
+				options: { state: PlayerState.Playing },
 				style: {
 					color: combineRgb(255, 255, 255),
 					bgcolor: combineRgb(255, 0, 0),
@@ -356,9 +283,7 @@ export async function createPresets(conn: SoundcraftUI): Promise<CompanionPreset
 			},
 			{
 				feedbackId: FeedbackId.MediaPlayerState,
-				options: {
-					state: PlayerState.Stopped,
-				},
+				options: { state: PlayerState.Stopped },
 				style: {
 					color: combineRgb(0, 0, 0),
 					bgcolor: combineRgb(0, 255, 0),
@@ -379,21 +304,14 @@ export async function createPresets(conn: SoundcraftUI): Promise<CompanionPreset
 		},
 		steps: [
 			{
-				down: [
-					{
-						actionId: ActionId.MediaStop,
-						options: {},
-					},
-				],
+				down: [{ actionId: ActionId.MediaStop, options: {} }],
 				up: [],
 			},
 		],
 		feedbacks: [
 			{
 				feedbackId: FeedbackId.MediaPlayerState,
-				options: {
-					state: PlayerState.Playing,
-				},
+				options: { state: PlayerState.Playing },
 				style: {
 					color: combineRgb(255, 255, 255),
 					bgcolor: combineRgb(255, 0, 0),
@@ -414,21 +332,14 @@ export async function createPresets(conn: SoundcraftUI): Promise<CompanionPreset
 		},
 		steps: [
 			{
-				down: [
-					{
-						actionId: ActionId.MediaPause,
-						options: {},
-					},
-				],
+				down: [{ actionId: ActionId.MediaPause, options: {} }],
 				up: [],
 			},
 		],
 		feedbacks: [
 			{
 				feedbackId: FeedbackId.MediaPlayerState,
-				options: {
-					state: PlayerState.Paused,
-				},
+				options: { state: PlayerState.Paused },
 				style: {
 					color: combineRgb(255, 255, 255),
 					bgcolor: combineRgb(255, 153, 51),
@@ -438,36 +349,31 @@ export async function createPresets(conn: SoundcraftUI): Promise<CompanionPreset
 	}
 
 	/****** Master DIM ******/
-	presets['master_dim'] = {
-		type: 'button',
-		category: 'Master',
-		name: `Master: DIM`,
-		style: {
-			text: `DIM Master`,
-			size: '18',
-			color: combineRgb(255, 255, 255),
-			bgcolor: combineRgb(0, 0, 0),
-		},
-		steps: [
-			{
-				down: [
-					{
-						actionId: ActionId.DimMaster,
-						options: { dim: 2 },
-					},
-				],
-				up: [],
+	if (capabilities.masterDim) {
+		presets['master_dim'] = {
+			type: 'button',
+			category: 'Master',
+			name: `Master: DIM`,
+			style: {
+				text: `DIM Master`,
+				size: '18',
+				color: combineRgb(255, 255, 255),
+				bgcolor: combineRgb(0, 0, 0),
 			},
-		],
-		feedbacks: [
-			{
-				feedbackId: FeedbackId.DimMaster,
-				options: {
-					state: true,
+			steps: [
+				{
+					down: [{ actionId: ActionId.DimMaster, options: { dim: 2 } }],
+					up: [],
 				},
-				style: feedbackDefaultStyles.dim,
-			},
-		],
+			],
+			feedbacks: [
+				{
+					feedbackId: FeedbackId.DimMaster,
+					options: { state: true },
+					style: feedbackDefaultStyles.dim,
+				},
+			],
+		}
 	}
 
 	return presets
