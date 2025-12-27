@@ -38,14 +38,22 @@ export enum FeedbackId {
 	PatchingRouteState = 'patchingroutestate',
 }
 
-const defaultStyles: { [key: string]: CompanionFeedbackButtonStyleResult } = {
+export const feedbackDefaultStyles: { [key: string]: CompanionFeedbackButtonStyleResult } = {
 	mute: {
 		color: combineRgb(255, 255, 255),
 		bgcolor: combineRgb(255, 0, 0),
 	},
 	post: {
-		bgcolor: combineRgb(0, 255, 0),
+		bgcolor: combineRgb(0, 120, 0),
 		color: combineRgb(255, 255, 255),
+	},
+	solo: {
+		bgcolor: combineRgb(255, 255, 0),
+		color: combineRgb(0, 0, 0),
+	},
+	dim: {
+		color: combineRgb(255, 255, 255),
+		bgcolor: combineRgb(0, 150, 255),
 	},
 }
 
@@ -55,7 +63,7 @@ export function GetFeedbacksList(store: UiFeedbackStore, conn: SoundcraftUI): Co
 			type: 'boolean',
 			name: 'Master channel: MUTE',
 			description: 'If the specified master channel is muted',
-			defaultStyle: defaultStyles.mute,
+			defaultStyle: feedbackDefaultStyles.mute,
 			options: [...OPTION_SETS.masterChannel, getStateCheckbox('Muted')],
 			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
@@ -70,7 +78,7 @@ export function GetFeedbacksList(store: UiFeedbackStore, conn: SoundcraftUI): Co
 			type: 'boolean',
 			name: 'Master channel: SOLO',
 			description: 'If the specified master channel has SOLO active',
-			defaultStyle: defaultStyles.post,
+			defaultStyle: feedbackDefaultStyles.solo,
 			options: [...OPTION_SETS.masterChannel, getStateCheckbox('Solo')],
 			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
@@ -103,10 +111,7 @@ export function GetFeedbacksList(store: UiFeedbackStore, conn: SoundcraftUI): Co
 			type: 'boolean',
 			name: 'Master: DIM',
 			description: 'If the master is dimmed',
-			defaultStyle: {
-				color: combineRgb(255, 255, 255),
-				bgcolor: combineRgb(0, 150, 255),
-			},
+			defaultStyle: feedbackDefaultStyles.dim,
 			options: [getStateCheckbox('Dimmed')],
 			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => store.connect(evt, conn.master.dim$, 'masterdim'),
@@ -117,7 +122,7 @@ export function GetFeedbacksList(store: UiFeedbackStore, conn: SoundcraftUI): Co
 			type: 'boolean',
 			name: 'AUX bus channel: MUTE',
 			description: 'If the specified channel on the AUX bus is muted',
-			defaultStyle: defaultStyles.mute,
+			defaultStyle: feedbackDefaultStyles.mute,
 			options: [...OPTION_SETS.auxChannel, getStateCheckbox('Muted')],
 			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
@@ -132,7 +137,7 @@ export function GetFeedbacksList(store: UiFeedbackStore, conn: SoundcraftUI): Co
 			type: 'boolean',
 			name: 'AUX bus channel: POST',
 			description: 'If the specified channel on the AUX bus has POST enabled',
-			defaultStyle: defaultStyles.post,
+			defaultStyle: feedbackDefaultStyles.post,
 			options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
 			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
@@ -147,7 +152,7 @@ export function GetFeedbacksList(store: UiFeedbackStore, conn: SoundcraftUI): Co
 			type: 'boolean',
 			name: 'FX bus channel: MUTE',
 			description: 'If the specified channel on the FX bus is muted',
-			defaultStyle: defaultStyles.mute,
+			defaultStyle: feedbackDefaultStyles.mute,
 			options: [...OPTION_SETS.fxChannel, getStateCheckbox('Muted')],
 			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
@@ -162,7 +167,7 @@ export function GetFeedbacksList(store: UiFeedbackStore, conn: SoundcraftUI): Co
 			type: 'boolean',
 			name: 'FX bus channel: POST',
 			description: 'If the specified channel on the FX bus has POST enabled',
-			defaultStyle: defaultStyles.post,
+			defaultStyle: feedbackDefaultStyles.post,
 			options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
 			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
@@ -339,7 +344,7 @@ export function GetFeedbacksList(store: UiFeedbackStore, conn: SoundcraftUI): Co
 			type: 'boolean',
 			name: 'MUTE group/ALL/FX state',
 			description: 'If the specified group is muted',
-			defaultStyle: defaultStyles.mute,
+			defaultStyle: feedbackDefaultStyles.mute,
 			options: [OPTIONS.muteGroupDropdown, getStateCheckbox('Muted')],
 			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
