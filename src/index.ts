@@ -4,14 +4,14 @@ import { SoundcraftUI, ConnectionStatus, type ConnectionErrorEvent } from 'sound
 import { GetActionsList } from './actions.js'
 import { instanceConfigFields, type UiConfig } from './config.js'
 import { GetFeedbacksList } from './feedback.js'
-import { UiFeedbackState } from './state.js'
+import { UiFeedbackStore } from './feedback-store.js'
 import { upgradeLegacyFeedbackToBoolean, upgradeV2x0x0 } from './upgrades.js'
 
 /**
  * Companion instance class for the Soundcraft Ui Mixers.
  */
 class SoundcraftUiInstance extends InstanceBase<UiConfig> {
-	private state = new UiFeedbackState(this)
+	private feedbackStore = new UiFeedbackStore(this)
 	private conn?: SoundcraftUI
 
 	constructor(internal: unknown) {
@@ -83,7 +83,7 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 		}
 
 		this.setActionDefinitions(GetActionsList(this.conn))
-		this.setFeedbackDefinitions(GetFeedbacksList(this.state, this.conn))
+		this.setFeedbackDefinitions(GetFeedbacksList(this.feedbackStore, this.conn))
 		this.subscribeFeedbacks()
 	}
 
