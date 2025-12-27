@@ -1,7 +1,9 @@
 {
-	"version": 4,
+	"version": 9,
 	"type": "page",
+	"companionBuild": "4.2.1+8738-stable-3edf7ecdf4",
 	"page": {
+		"id": "FvbfVgppyZnEg_g-Hu_OZ",
 		"name": "Master",
 		"controls": {
 			"0": {
@@ -24,25 +26,27 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "uvNK-CZkWgzeGUszwNJBQ",
-							"type": "dimmaster",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "ljrwuorZY2IIiD0rdgHQ7",
+							"definitionId": "dimmaster",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"channelType": "i",
 								"channel": 1,
 								"state": true
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 38655,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -50,14 +54,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "o1P6sIJDpNRSVzxh8JVc6",
-										"label": "GiXDbh3CB:dimmaster",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "dimmaster",
+										"type": "action",
+										"id": "V5CHg6ryGAKU8RJTIlXKe",
+										"definitionId": "dimmaster",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"dim": 2
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -66,7 +70,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -84,9 +89,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -94,14 +99,15 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "5W4L8_h-dhgLNkqqouX4F",
-										"label": "GiXDbh3CB:setmastervalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setmastervalue",
+										"type": "action",
+										"id": "zHFG1J7fMdbYaraaVxjlk",
+										"definitionId": "setmastervalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"value": 0,
 											"fad": -90
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -110,7 +116,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -128,9 +135,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -138,15 +145,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "AsihW9Bvzi6f7ihRfqQCD",
-										"label": "GiXDbh3CB:fademaster",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "fademaster",
+										"type": "action",
+										"id": "9z2owMp6JoRF2NQqmRijw",
+										"definitionId": "fademaster",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"value": 0,
 											"fadeTime": 2000,
 											"easing": "2"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -155,7 +163,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -173,9 +182,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -183,13 +192,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "kmbgkhZYuJOdr4wDZBfNF",
-										"label": "GiXDbh3CB:changemastervalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changemastervalue",
+										"type": "action",
+										"id": "5ECtoPsb4fxbar9NS9CZC",
+										"definitionId": "changemastervalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"value": 3
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -198,7 +208,40 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
+				},
+				"7": {
+					"type": "button",
+					"style": {
+						"text": "Level:\\n$(ui24:m_level) dB",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
 				}
 			},
 			"1": {
@@ -221,9 +264,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -231,13 +274,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "fY2eM3I8P433Nz9FkDc1q",
-										"label": "GiXDbh3CB:dimmaster",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "dimmaster",
+										"type": "action",
+										"id": "ZejdWpL3YU8JfLzomnOFU",
+										"definitionId": "dimmaster",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"dim": "1"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -246,7 +290,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -264,9 +309,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -274,13 +319,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "VFHpMYi1idZuQ2U6NJFDK",
-										"label": "GiXDbh3CB:setmastervalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setmastervalue",
+										"type": "action",
+										"id": "DmN6xQ7bqGFVtNrhyQw04",
+										"definitionId": "setmastervalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"value": 5
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -289,7 +335,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -307,9 +354,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -317,15 +364,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "5KyZBIvtgpY0SKunZSm7x",
-										"label": "GiXDbh3CB:fademaster",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "fademaster",
+										"type": "action",
+										"id": "FlOVZrKo40pNc9N9OtIER",
+										"definitionId": "fademaster",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"value": 5,
 											"fadeTime": 2000,
 											"easing": "2"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -334,7 +382,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -352,9 +401,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -362,13 +411,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "YGIizkjzp1EhRg1Nk1jcC",
-										"label": "GiXDbh3CB:changemastervalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changemastervalue",
+										"type": "action",
+										"id": "iQcKTrvio32yEwCz_e8Dm",
+										"definitionId": "changemastervalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"value": -3
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -377,7 +427,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"2": {
@@ -400,9 +451,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -410,13 +461,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Vc9F_DygG-0LYpGhFhRv3",
-										"label": "GiXDbh3CB:dimmaster",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "dimmaster",
+										"type": "action",
+										"id": "KnuKKFUA7pDGNNlMxoOY5",
+										"definitionId": "dimmaster",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"dim": "0"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -425,7 +477,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -443,9 +496,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -453,13 +506,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "So5ZkoskaJZ5bRLOIJ7v3",
-										"label": "GiXDbh3CB:setmastervalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setmastervalue",
+										"type": "action",
+										"id": "drmSe7s4jSZFGeBTzWQvU",
+										"definitionId": "setmastervalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"value": -50
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -468,7 +522,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -486,9 +541,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -496,15 +551,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "0HmiYgZXUFxMOL7Lr4DFb",
-										"label": "GiXDbh3CB:fademaster",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "fademaster",
+										"type": "action",
+										"id": "dCW1zU2H7rhKxRNmOJy0b",
+										"definitionId": "fademaster",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"value": -50,
 											"fadeTime": 2000,
 											"easing": "1"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -513,7 +569,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			}
 		},
@@ -532,12 +589,17 @@
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
-				"host": "10.75.23.95",
+				"host": "10.23.23.95",
 				"import_to": "M56cJZPf5-"
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1
+			"lastUpgradeIndex": 1,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {}
 		}
 	},
-	"oldPageNumber": 31
+	"connectionCollections": [],
+	"oldPageNumber": 5
 }
