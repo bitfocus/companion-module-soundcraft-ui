@@ -6,6 +6,7 @@ import { instanceConfigFields, type UiConfig } from './config.js'
 import { GetFeedbacksList } from './feedback.js'
 import { UiFeedbackStore } from './feedback-store.js'
 import { upgradeLegacyFeedbackToBoolean, upgradeV2x0x0 } from './upgrades.js'
+import { createPresets } from './presets.js'
 import { createVariables } from './variables.js'
 import { UiVariablesStore } from './variables-store.js'
 
@@ -92,6 +93,9 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 
 		const variableDefs = await createVariables(this.variablesStore, this.conn)
 		this.setVariableDefinitions(variableDefs)
+
+		const presetDefs = await createPresets(this.conn)
+		this.setPresetDefinitions(presetDefs)
 	}
 
 	/**
