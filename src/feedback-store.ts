@@ -9,7 +9,7 @@ interface UiFeedbackSubscription {
 	feedbacks: Map<string, FeedbackId>
 }
 
-export class UiFeedbackState {
+export class UiFeedbackStore {
 	private feedbackUnsubscribe$ = new Subject<string | void>()
 
 	/** Internal map of all subscriptions, current state and connected feedbacks */
@@ -87,6 +87,7 @@ export class UiFeedbackState {
 		this.feedbackUnsubscribe$.next()
 		this.subscriptions.clear()
 		this.feedbackStreamMap.clear()
+		console.log('Unsubscribing all feedback streams')
 	}
 
 	/**
