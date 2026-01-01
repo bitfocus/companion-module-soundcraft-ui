@@ -373,9 +373,10 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			name: 'AUX channels: Set fader value',
 			description: 'Set the fader value (dB) for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.faderValuesSlider],
-			callback: (action) => {
+			callback: async (action, ctx) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
-				const value = Number(action.options.value)
+				const parsedValue = await ctx.parseVariablesInString(action.options.value as string)
+				const value = Number(parsedValue)
 				return c.setFaderLevelDB(value)
 			},
 		},
