@@ -1,6 +1,7 @@
 import type {
 	CompanionInputFieldDropdown,
 	CompanionInputFieldNumber,
+	CompanionInputFieldTextInput,
 	DropdownChoice,
 	SomeCompanionActionInputField,
 } from '@companion-module/base'
@@ -155,16 +156,12 @@ export const OPTIONS = {
 		...CHOICES.onofftoggleDropdown,
 	} satisfies CompanionInputFieldDropdown,
 	faderValuesSlider: {
-		type: 'number',
+		type: 'textinput',
 		label: 'Fader Level dB (-100 = -∞)',
 		id: 'value',
-		range: true,
 		required: true,
-		default: 0,
-		step: 0.1,
-		min: -100,
-		max: 10,
-	} satisfies CompanionInputFieldNumber,
+		useVariables: true,
+	} satisfies CompanionInputFieldTextInput,
 	prepostDropdown: {
 		type: 'dropdown',
 		label: 'PRE/POST',
