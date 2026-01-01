@@ -1,7 +1,9 @@
 {
-	"version": 4,
+	"version": 9,
 	"type": "page",
+	"companionBuild": "4.2.1+8738-stable-3edf7ecdf4",
 	"page": {
+		"id": "FvbfVgppyZnEg_g-Hu_OZ",
 		"name": "Master CH",
 		"controls": {
 			"0": {
@@ -11,7 +13,7 @@
 				"1": {
 					"type": "button",
 					"style": {
-						"text": "Mute Input 3",
+						"text": "Mute $(ui24:m_input3_name)",
 						"textExpression": false,
 						"size": "18",
 						"png64": null,
@@ -24,9 +26,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -34,15 +36,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "RrYXuHRgCV3vc5mlmYJwy",
-										"label": "GiXDbh3CB:mutemasterchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutemasterchannel",
+										"type": "action",
+										"id": "6aWqJpN6EoDJEHPpgcH8y",
+										"definitionId": "mutemasterchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"mute": "1"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -51,12 +54,13 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
 					"style": {
-						"text": "Solo Input 3",
+						"text": "Solo $(ui24:m_input3_name)",
 						"textExpression": false,
 						"size": "18",
 						"png64": null,
@@ -69,9 +73,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -79,15 +83,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "HfwsimSFxXQWhU_iyBwaY",
-										"label": "GiXDbh3CB:solomasterchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "solomasterchannel",
+										"type": "action",
+										"id": "PvXbR4keizJrxpeozjsRf",
+										"definitionId": "solomasterchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"solo": "1"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -96,12 +101,13 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
 					"style": {
-						"text": "Input 3\\n1 dB",
+						"text": "$(ui24:m_input3_name)\\n1 dB",
 						"textExpression": false,
 						"size": "18",
 						"png64": null,
@@ -114,9 +120,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -124,15 +130,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "KCTaMgR0dInLkGNsfdj3m",
-										"label": "GiXDbh3CB:setmasterchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setmasterchannelvalue",
+										"type": "action",
+										"id": "yE6KkgT3tOwr4Cx8q8Z6a",
+										"definitionId": "setmasterchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"value": 1
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -141,7 +148,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -159,9 +167,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -169,17 +177,18 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "r3h-pReydzdooDx9gCrHP",
-										"label": "GiXDbh3CB:fademasterchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "fademasterchannel",
+										"type": "action",
+										"id": "rrhQFy2ocjulKEr-fUhi4",
+										"definitionId": "fademasterchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"value": 1,
 											"fadeTime": 2000,
 											"easing": "2"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -188,12 +197,13 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"5": {
 					"type": "button",
 					"style": {
-						"text": "Input 3\\n+ 3 dB",
+						"text": "$(ui24:m_input3_name)\\n+ 3 dB",
 						"textExpression": false,
 						"size": "18",
 						"png64": null,
@@ -206,9 +216,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -216,15 +226,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "QHx0uNBuNdYXbvPfhjZTP",
-										"label": "GiXDbh3CB:changemasterchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changemasterchannelvalue",
+										"type": "action",
+										"id": "YMcW12UviWzjm_LMv_FOF",
+										"definitionId": "changemasterchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"value": 3
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -233,12 +244,13 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"6": {
 					"type": "button",
 					"style": {
-						"text": "Input 3 Delay\\n0 ms",
+						"text": "$(ui24:m_input3_name) Delay\\n0 ms",
 						"textExpression": false,
 						"size": "auto",
 						"png64": null,
@@ -250,9 +262,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -260,15 +272,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "26onw0Oh2yd1BvvMPF86S",
-										"action": "setmasterchanneldelay",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "LimOKh3PW9Pb0dZHLbESM",
+										"definitionId": "setmasterchanneldelay",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"time": 0
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -277,14 +290,15 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"7": {
 					"type": "button",
 					"style": {
-						"text": "AUX 2 Delay\\n0 ms",
+						"text": "$(ui24:m_aux2_name)\\nDelay\\n0 ms",
 						"textExpression": false,
-						"size": "auto",
+						"size": "14",
 						"png64": null,
 						"alignment": "center:center",
 						"pngalignment": "center:center",
@@ -294,9 +308,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -304,15 +318,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "oZ5sRsCSVzNXOnybOn0Bm",
-										"action": "setmasterchanneldelay",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "0Z8nxL7pUYokevhlH1oIK",
+										"definitionId": "setmasterchanneldelay",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "a",
 											"channel": 2,
 											"time": 0
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -321,7 +336,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"1": {
@@ -331,7 +347,7 @@
 				"1": {
 					"type": "button",
 					"style": {
-						"text": "Unmute Input 3",
+						"text": "Unmute $(ui24:m_input3_name)",
 						"textExpression": false,
 						"size": "auto",
 						"png64": null,
@@ -344,9 +360,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -354,15 +370,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "hDC8AQMphzpXFWsDriyXl",
-										"label": "GiXDbh3CB:mutemasterchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutemasterchannel",
+										"type": "action",
+										"id": "OMJngFX6jBmTGM5c6JztK",
+										"definitionId": "mutemasterchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"mute": "0"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -371,12 +388,13 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
 					"style": {
-						"text": "Unsolo Input 3",
+						"text": "Unsolo $(ui24:m_input3_name)",
 						"textExpression": false,
 						"size": "18",
 						"png64": null,
@@ -389,9 +407,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -399,15 +417,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "em8oa-cVyQ2K8FYYhDr7b",
-										"label": "GiXDbh3CB:solomasterchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "solomasterchannel",
+										"type": "action",
+										"id": "6vJIOSvuigneSBkxVGw44",
+										"definitionId": "solomasterchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"solo": "0"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -416,12 +435,13 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
 					"style": {
-						"text": "Input 3\\n0 dB",
+						"text": "$(ui24:m_input3_name)\\n0 dB",
 						"textExpression": false,
 						"size": "18",
 						"png64": null,
@@ -434,9 +454,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -444,15 +464,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "OcSZpGIuxHleUsQLhDV7D",
-										"label": "GiXDbh3CB:setmasterchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setmasterchannelvalue",
+										"type": "action",
+										"id": "vov2KLSecBnN7LS8Z-tsh",
+										"definitionId": "setmasterchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"value": 0
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -461,7 +482,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -479,9 +501,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -489,17 +511,18 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "agmmxPYwYFw9S-QqVB_Oo",
-										"label": "GiXDbh3CB:fademasterchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "fademasterchannel",
+										"type": "action",
+										"id": "3l68wgGaAwN52ZA_FPau2",
+										"definitionId": "fademasterchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"value": 0,
 											"fadeTime": 2000,
 											"easing": "2"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -508,12 +531,13 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"5": {
 					"type": "button",
 					"style": {
-						"text": "Input 3\\n- 3 dB",
+						"text": "$(ui24:m_input3_name)\\n- 3 dB",
 						"textExpression": false,
 						"size": "18",
 						"png64": null,
@@ -526,9 +550,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -536,15 +560,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "jbsMY5Pg54v2CifQ6Igsf",
-										"label": "GiXDbh3CB:changemasterchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changemasterchannelvalue",
+										"type": "action",
+										"id": "rni3vs1F9u-KGBTWB5p_8",
+										"definitionId": "changemasterchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"value": -3
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -553,12 +578,13 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"6": {
 					"type": "button",
 					"style": {
-						"text": "Input 3 Delay\\n130 ms",
+						"text": "$(ui24:m_input3_name) Delay\\n130 ms",
 						"textExpression": false,
 						"size": "auto",
 						"png64": null,
@@ -570,9 +596,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -580,15 +606,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "0zmdfXJv-_0WQiBp_w_hO",
-										"action": "setmasterchanneldelay",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "0UOzajs7yK9vRRNpj9cgD",
+										"definitionId": "setmasterchanneldelay",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"time": 130
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -597,14 +624,15 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"7": {
 					"type": "button",
 					"style": {
-						"text": "AUX 2 Delay\\n310 ms",
+						"text": "$(ui24:m_aux2_name)\\nDelay\\n310 ms",
 						"textExpression": false,
-						"size": "auto",
+						"size": "14",
 						"png64": null,
 						"alignment": "center:center",
 						"pngalignment": "center:center",
@@ -614,9 +642,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -624,15 +652,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "jYtn1gtplE2Dmh_QKCjKh",
-										"action": "setmasterchanneldelay",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "1qqcN6rGY9vt5a51xwjRa",
+										"definitionId": "setmasterchanneldelay",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "a",
 											"channel": 2,
 											"time": 310
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -641,7 +670,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"2": {
@@ -651,7 +681,7 @@
 				"1": {
 					"type": "button",
 					"style": {
-						"text": "Toggle Mute\\nInput 3",
+						"text": "Toggle Mute\\n$(ui24:m_input3_name)",
 						"textExpression": false,
 						"size": "auto",
 						"png64": null,
@@ -664,25 +694,27 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "DcXP3BIgBSNzloqWCAtii",
-							"type": "mutemasterchannel",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "-OOWtCVD-7E8NLXO3YMFJ",
+							"definitionId": "mutemasterchannel",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"channelType": "i",
 								"channel": "3",
 								"state": true
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -690,16 +722,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "4bP7vN8UtG7uUxYNLJGHm",
-										"label": "GiXDbh3CB:mutemasterchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutemasterchannel",
+										"type": "action",
+										"id": "kVNkp3tstMCToNkRrnXc9",
+										"definitionId": "mutemasterchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"mute": "2"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -708,12 +740,13 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
 					"style": {
-						"text": "Toggle Solo\\nInput 3",
+						"text": "Toggle Solo\\n$(ui24:m_input3_name)",
 						"textExpression": false,
 						"size": "auto",
 						"png64": null,
@@ -726,25 +759,27 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "1Q0nbMv0JntcS3iHFXZlj",
-							"type": "solomasterchannel",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "0ULXc_wYYinHNRzB8vRDQ",
+							"definitionId": "solomasterchannel",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
 								"channelType": "i",
 								"channel": "3",
 								"state": true
 							},
+							"upgradeIndex": 1,
+							"isInverted": false,
 							"style": {
 								"bgcolor": 16776960,
 								"color": 0
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -752,16 +787,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "_uycVNKiDpyB1A2900y3T",
-										"label": "GiXDbh3CB:solomasterchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "solomasterchannel",
+										"type": "action",
+										"id": "sWL9lN1HJdYaCZpgTVoEb",
+										"definitionId": "solomasterchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"solo": 2
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -770,12 +805,13 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
 					"style": {
-						"text": "Input 3\\n-12 dB",
+						"text": "$(ui24:m_input3_name)\\n-12 dB",
 						"textExpression": false,
 						"size": "18",
 						"png64": null,
@@ -788,9 +824,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -798,15 +834,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "8OK3cd7wdL6T11S5kds5x",
-										"label": "GiXDbh3CB:setmasterchannelvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setmasterchannelvalue",
+										"type": "action",
+										"id": "gTHdWr20Oy_de9XXimkwb",
+										"definitionId": "setmasterchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"value": -12
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -815,7 +852,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -833,9 +871,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -843,17 +881,18 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "TmmXLeWmW1Xcb_Ee6UmPN",
-										"label": "GiXDbh3CB:fademasterchannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "fademasterchannel",
+										"type": "action",
+										"id": "EYRcMnrWqEZXp8ZBiIQcZ",
+										"definitionId": "fademasterchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"value": -12,
 											"fadeTime": 2000,
 											"easing": "0"
-										}
+										},
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -862,12 +901,13 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"6": {
 					"type": "button",
 					"style": {
-						"text": "Input 3 Delay\\n+25 ms",
+						"text": "$(ui24:m_input3_name)\\nDelay\\n+25 ms",
 						"textExpression": false,
 						"size": "auto",
 						"png64": null,
@@ -879,9 +919,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -889,15 +929,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Es-XBD7Kns_Wi18DHhpMP",
-										"action": "changemasterchanneldelay",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "EbY5as1hinwNF0b9SEcB3",
+										"definitionId": "changemasterchanneldelay",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"time": 25
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -906,14 +947,15 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"7": {
 					"type": "button",
 					"style": {
-						"text": "AUX 2 Delay\\n+30 ms",
+						"text": "$(ui24:m_aux2_name)\\nDelay\\n+30 ms",
 						"textExpression": false,
-						"size": "auto",
+						"size": "14",
 						"png64": null,
 						"alignment": "center:center",
 						"pngalignment": "center:center",
@@ -923,9 +965,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -933,15 +975,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "eshV2F23uj55y0cpTVo19",
-										"action": "changemasterchanneldelay",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "VyzAJWGP7RjurGWiP17WI",
+										"definitionId": "changemasterchanneldelay",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "a",
 											"channel": 2,
 											"time": 30
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -950,14 +993,79 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"3": {
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "Name:\\n$(ui24:m_input3_name)",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Level:\\n$(ui24:m_input3_level) dB",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
 				"6": {
 					"type": "button",
 					"style": {
-						"text": "Input 3 Delay\\n-25 ms",
+						"text": "$(ui24:m_input3_name)\\nDelay\\n-25 ms",
 						"textExpression": false,
 						"size": "auto",
 						"png64": null,
@@ -969,9 +1077,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -979,15 +1087,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Quv4EDlA-AQVsd7aJ821t",
-										"action": "changemasterchanneldelay",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "mqOz4O-rVATSTlkT3fLNd",
+										"definitionId": "changemasterchanneldelay",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "i",
 											"channel": 3,
 											"time": -25
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -996,14 +1105,15 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"7": {
 					"type": "button",
 					"style": {
-						"text": "AUX 2 Delay\\n-30 ms",
+						"text": "$(ui24:m_aux2_name)\\nDelay\\n-30 ms",
 						"textExpression": false,
-						"size": "auto",
+						"size": "14",
 						"png64": null,
 						"alignment": "center:center",
 						"pngalignment": "center:center",
@@ -1013,9 +1123,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -1023,15 +1133,16 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "p0KNvCEp947BW8NJWlo2W",
-										"action": "changemasterchanneldelay",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "jOp3r9VFgQtAcUWTtmmXe",
+										"definitionId": "changemasterchanneldelay",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"channelType": "a",
 											"channel": 2,
 											"time": -30
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -1040,7 +1151,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			}
 		},
@@ -1059,12 +1171,17 @@
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
-				"host": "10.75.23.95",
+				"host": "10.23.23.95",
 				"import_to": "M56cJZPf5-"
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1
+			"lastUpgradeIndex": 1,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {}
 		}
 	},
-	"oldPageNumber": 32
+	"connectionCollections": [],
+	"oldPageNumber": 5
 }

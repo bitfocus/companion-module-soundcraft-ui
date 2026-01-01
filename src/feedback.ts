@@ -6,7 +6,7 @@ import {
 import { MtkState, PlayerState, SoundcraftUI } from 'soundcraft-ui-connection'
 import { distinctUntilChanged, map } from 'rxjs'
 
-import { UiFeedbackState } from './state.js'
+import { UiFeedbackStore } from './feedback-store.js'
 import { getFeedbackFromBinaryState, getStateCheckbox } from './utils/feedback-utils.js'
 import { OPTION_SETS, OPTIONS } from './utils/input-utils.js'
 import {
@@ -38,47 +38,55 @@ export enum FeedbackId {
 	PatchingRouteState = 'patchingroutestate',
 }
 
-const defaultStyles: { [key: string]: CompanionFeedbackButtonStyleResult } = {
+export const feedbackDefaultStyles: { [key: string]: CompanionFeedbackButtonStyleResult } = {
 	mute: {
 		color: combineRgb(255, 255, 255),
 		bgcolor: combineRgb(255, 0, 0),
 	},
 	post: {
-		bgcolor: combineRgb(0, 255, 0),
+		bgcolor: combineRgb(0, 120, 0),
 		color: combineRgb(255, 255, 255),
+	},
+	solo: {
+		bgcolor: combineRgb(255, 255, 0),
+		color: combineRgb(0, 0, 0),
+	},
+	dim: {
+		color: combineRgb(255, 255, 255),
+		bgcolor: combineRgb(0, 150, 255),
 	},
 }
 
-export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI): CompanionFeedbackDefinitions {
+export function GetFeedbacksList(store: UiFeedbackStore, conn: SoundcraftUI): CompanionFeedbackDefinitions {
 	return {
 		[FeedbackId.MuteMasterChannel]: {
 			type: 'boolean',
 			name: 'Master channel: MUTE',
 			description: 'If the specified master channel is muted',
-			defaultStyle: defaultStyles.mute,
+			defaultStyle: feedbackDefaultStyles.mute,
 			options: [...OPTION_SETS.masterChannel, getStateCheckbox('Muted')],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
 				const c = getMasterChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-mute'
-				feedback.connect(evt, c.mute$, streamId)
+				store.connect(evt, c.mute$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.SoloMasterChannel]: {
 			type: 'boolean',
 			name: 'Master channel: SOLO',
 			description: 'If the specified master channel has SOLO active',
-			defaultStyle: defaultStyles.post,
+			defaultStyle: feedbackDefaultStyles.solo,
 			options: [...OPTION_SETS.masterChannel, getStateCheckbox('Solo')],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
 				const c = getMasterChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-solo'
-				feedback.connect(evt, c.solo$, streamId)
+				store.connect(evt, c.solo$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.MasterChannelMTKSelection]: {
@@ -90,87 +98,84 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 				bgcolor: combineRgb(153, 153, 0),
 			},
 			options: [...OPTION_SETS.multiTrackMasterChannel, getStateCheckbox('Selected')],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
 				const c = getMasterChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-mtkrec'
-				feedback.connect(evt, c.multiTrackSelected$, streamId)
+				store.connect(evt, c.multiTrackSelected$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.DimMaster]: {
 			type: 'boolean',
 			name: 'Master: DIM',
 			description: 'If the master is dimmed',
-			defaultStyle: {
-				color: combineRgb(255, 255, 255),
-				bgcolor: combineRgb(0, 150, 255),
-			},
+			defaultStyle: feedbackDefaultStyles.dim,
 			options: [getStateCheckbox('Dimmed')],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
-			subscribe: (evt) => feedback.connect(evt, conn.master.dim$, 'masterdim'),
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
+			subscribe: (evt) => store.connect(evt, conn.master.dim$, 'masterdim'),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.MuteAuxChannel]: {
 			type: 'boolean',
 			name: 'AUX bus channel: MUTE',
 			description: 'If the specified channel on the AUX bus is muted',
-			defaultStyle: defaultStyles.mute,
+			defaultStyle: feedbackDefaultStyles.mute,
 			options: [...OPTION_SETS.auxChannel, getStateCheckbox('Muted')],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
 				const c = getAuxChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-mute'
-				feedback.connect(evt, c.mute$, streamId)
+				store.connect(evt, c.mute$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.PostAuxChannel]: {
 			type: 'boolean',
 			name: 'AUX bus channel: POST',
 			description: 'If the specified channel on the AUX bus has POST enabled',
-			defaultStyle: defaultStyles.post,
+			defaultStyle: feedbackDefaultStyles.post,
 			options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
 				const c = getAuxChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-post'
-				feedback.connect(evt, c.post$, streamId)
+				store.connect(evt, c.post$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.MuteFxChannel]: {
 			type: 'boolean',
 			name: 'FX bus channel: MUTE',
 			description: 'If the specified channel on the FX bus is muted',
-			defaultStyle: defaultStyles.mute,
+			defaultStyle: feedbackDefaultStyles.mute,
 			options: [...OPTION_SETS.fxChannel, getStateCheckbox('Muted')],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
 				const c = getFxChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-mute'
-				feedback.connect(evt, c.mute$, streamId)
+				store.connect(evt, c.mute$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.PostFxChannel]: {
 			type: 'boolean',
 			name: 'FX bus channel: POST',
 			description: 'If the specified channel on the FX bus has POST enabled',
-			defaultStyle: defaultStyles.post,
+			defaultStyle: feedbackDefaultStyles.post,
 			options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
 				const c = getFxChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-post'
-				feedback.connect(evt, c.post$, streamId)
+				store.connect(evt, c.post$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.MediaPlayerState]: {
@@ -194,7 +199,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 					default: PlayerState.Playing,
 				},
 			],
-			callback: (evt) => !!feedback.get(evt.id),
+			callback: (evt) => !!store.get(evt.id),
 			subscribe: (evt) => {
 				const state = Number(evt.options.state)
 				const state$ = conn.player.state$.pipe(
@@ -202,9 +207,9 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 					distinctUntilChanged(),
 				)
 				const streamId = 'playerstate' + state
-				feedback.connect(evt, state$, streamId)
+				store.connect(evt, state$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.MediaPlayerShuffle]: {
@@ -216,9 +221,9 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 				bgcolor: combineRgb(156, 22, 69),
 			},
 			options: [getStateCheckbox('Shuffle')],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
-			subscribe: (evt) => feedback.connect(evt, conn.player.shuffle$, 'playershuffle'),
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
+			subscribe: (evt) => store.connect(evt, conn.player.shuffle$, 'playershuffle'),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.DTRecordState]: {
@@ -241,17 +246,17 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 					default: 'rec',
 				},
 			],
-			callback: (evt) => !!feedback.get(evt.id),
+			callback: (evt) => !!store.get(evt.id),
 			subscribe: (evt) => {
 				const recorder = conn.recorderDualTrack
 				switch (evt.options.state) {
 					case 'rec':
-						return feedback.connect(evt, recorder.recording$, 'dtrec-rec')
+						return store.connect(evt, recorder.recording$, 'dtrec-rec')
 					case 'busy':
-						return feedback.connect(evt, recorder.busy$, 'dtrec-busy')
+						return store.connect(evt, recorder.busy$, 'dtrec-busy')
 				}
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.MTKPlayerState]: {
@@ -275,7 +280,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 					default: PlayerState.Playing,
 				},
 			],
-			callback: (evt) => !!feedback.get(evt.id),
+			callback: (evt) => !!store.get(evt.id),
 			subscribe: (evt) => {
 				const state = Number(evt.options.state)
 				const state$ = conn.recorderMultiTrack.state$.pipe(
@@ -283,9 +288,9 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 					distinctUntilChanged(),
 				)
 				const streamId = 'mtkstate' + state
-				feedback.connect(evt, state$, streamId)
+				store.connect(evt, state$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.MTKRecordState]: {
@@ -308,17 +313,17 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 					default: 'rec',
 				},
 			],
-			callback: (evt) => !!feedback.get(evt.id),
+			callback: (evt) => !!store.get(evt.id),
 			subscribe: (evt) => {
 				const recorder = conn.recorderMultiTrack
 				switch (evt.options.state) {
 					case 'rec':
-						return feedback.connect(evt, recorder.recording$, 'mtk-rec')
+						return store.connect(evt, recorder.recording$, 'mtk-rec')
 					case 'busy':
-						return feedback.connect(evt, recorder.busy$, 'mtk-busy')
+						return store.connect(evt, recorder.busy$, 'mtk-busy')
 				}
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.MTKSoundcheckState]: {
@@ -330,18 +335,18 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 				color: combineRgb(255, 255, 255),
 			},
 			options: [getStateCheckbox('Active')],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
-			subscribe: (evt) => feedback.connect(evt, conn.recorderMultiTrack.soundcheck$, 'mtksoundcheck'),
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
+			subscribe: (evt) => store.connect(evt, conn.recorderMultiTrack.soundcheck$, 'mtksoundcheck'),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.MuteMuteGroup]: {
 			type: 'boolean',
 			name: 'MUTE group/ALL/FX state',
 			description: 'If the specified group is muted',
-			defaultStyle: defaultStyles.mute,
+			defaultStyle: feedbackDefaultStyles.mute,
 			options: [OPTIONS.muteGroupDropdown, getStateCheckbox('Muted')],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
 				const groupId = getMuteGroupIDFromOptions(evt.options)
 				if (groupId === -1) {
@@ -350,9 +355,9 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 				const group = conn.muteGroup(groupId)
 
 				const streamId = 'mgstate' + groupId
-				feedback.connect(evt, group.state$, streamId)
+				store.connect(evt, group.state$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.HwPhantomPower]: {
@@ -364,14 +369,14 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 				color: combineRgb(255, 255, 255),
 			},
 			options: [OPTIONS.hwChannelNumberField, getStateCheckbox('Phantom Power enabled')],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
 				const channelNo = Number(evt.options.hwchannel)
 				const channel = conn.hw(channelNo)
 				const streamId = 'hw' + channelNo + 'phantom'
-				feedback.connect(evt, channel.phantom$, streamId)
+				store.connect(evt, channel.phantom$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.AutomixGroupState]: {
@@ -395,7 +400,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 				},
 				getStateCheckbox('Group enabled'),
 			],
-			callback: (evt) => getFeedbackFromBinaryState(feedback, evt),
+			callback: (evt) => getFeedbackFromBinaryState(store, evt),
 			subscribe: (evt) => {
 				const groupId = evt.options.group
 
@@ -404,9 +409,9 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 					group = conn.automix.groups.b
 				}
 				const streamId = 'amixgroupstate' + groupId
-				feedback.connect(evt, group.state$, streamId)
+				store.connect(evt, group.state$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		[FeedbackId.PatchingRouteState]: {
@@ -433,7 +438,7 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 					default: 'i.0.src',
 				},
 			],
-			callback: (evt) => !!feedback.get(evt.id),
+			callback: (evt) => !!store.get(evt.id),
 			subscribe: (evt) => {
 				const source = evt.options.source as string
 				const destination = evt.options.destination as string
@@ -444,9 +449,9 @@ export function GetFeedbacksList(feedback: UiFeedbackState, conn: SoundcraftUI):
 				)
 
 				const streamId = `patchroute-${source}-${destination}`
-				feedback.connect(evt, feedback$, streamId)
+				store.connect(evt, feedback$, streamId)
 			},
-			unsubscribe: (evt) => feedback.unsubscribe(evt.id),
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 	}
 }
