@@ -1,6 +1,6 @@
 import type { CompanionFeedbackBooleanEvent, CompanionInputFieldCheckbox } from '@companion-module/base'
 
-import { UiFeedbackState } from '../state.js'
+import { UiFeedbackStore } from '../feedback-store.js'
 import { intToBool } from './utils.js'
 
 export function getStateCheckbox(label: string): CompanionInputFieldCheckbox {
@@ -12,7 +12,7 @@ export function getStateCheckbox(label: string): CompanionInputFieldCheckbox {
 	}
 }
 
-export function getFeedbackFromBinaryState(feedback: UiFeedbackState, evt: CompanionFeedbackBooleanEvent): boolean {
+export function getFeedbackFromBinaryState(feedback: UiFeedbackStore, evt: CompanionFeedbackBooleanEvent): boolean {
 	const state = intToBool(Number(feedback.get(evt.id)))
 	return evt.options.state === state
 }

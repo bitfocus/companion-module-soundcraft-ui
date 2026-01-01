@@ -1,7 +1,9 @@
 {
-	"version": 4,
+	"version": 9,
 	"type": "page",
+	"companionBuild": "4.2.1+8738-stable-3edf7ecdf4",
 	"page": {
+		"id": "FvbfVgppyZnEg_g-Hu_OZ",
 		"name": "Show, Snapshots, Cues",
 		"controls": {
 			"0": {
@@ -24,9 +26,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -34,14 +36,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "0_CshEWKnmOeBIwQ-AJmp",
-										"label": "GiXDbh3CB:loadshow",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "loadshow",
+										"type": "action",
+										"id": "nMz3-VZ9ckkvlutVFfSZ4",
+										"definitionId": "loadshow",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"show": "Default"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -50,7 +52,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -68,9 +71,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -78,15 +81,15 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "jR9jWsM42h1szMoQy0Cr8",
-										"label": "GiXDbh3CB:loadsnapshot",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "loadsnapshot",
+										"type": "action",
+										"id": "fgEL9Vai5x8MrQXl3Dnx-",
+										"definitionId": "loadsnapshot",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"show": "Default",
 											"snapshot": "* Init *"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -95,7 +98,104 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Show:\\n$(ui24:show_show)",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Snap:\\n$(ui24:show_snapshot)",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"7": {
+					"type": "button",
+					"style": {
+						"text": "Cue:\\n$(ui24:show_cue)",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
 				}
 			},
 			"1": {
@@ -118,9 +218,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -128,14 +228,14 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "5985FHzudxpSqAQyHZ6Go",
-										"label": "GiXDbh3CB:loadshow",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "loadshow",
+										"type": "action",
+										"id": "YtwtuSDMGEGK3I64zmKVc",
+										"definitionId": "loadshow",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"show": "testshow"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -144,7 +244,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -162,9 +263,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -172,15 +273,15 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Et_3wzVEyOHmRNK0kZ7JA",
-										"label": "GiXDbh3CB:loadsnapshot",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "loadsnapshot",
+										"type": "action",
+										"id": "YQQWlKCHMnAZ_fXvFnL__",
+										"definitionId": "loadsnapshot",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"show": "testshow",
 											"snapshot": "testsnapshot1"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -189,7 +290,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -207,9 +309,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -217,15 +319,15 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "DSlhW3OYBhUOQIUa0D7yY",
-										"label": "GiXDbh3CB:loadsnapshot",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "loadsnapshot",
+										"type": "action",
+										"id": "y9ovxG66vSdN4SIegUh7q",
+										"definitionId": "loadsnapshot",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"show": "testshow",
 											"snapshot": "testsnapshot2"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -234,7 +336,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -252,9 +355,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -262,15 +365,15 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "7yHqy1iLdp3Zj0-2QcKII",
-										"label": "GiXDbh3CB:loadcue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "loadcue",
+										"type": "action",
+										"id": "y3HA8G80w3T3B1yCSF_Bd",
+										"definitionId": "loadcue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"show": "testshow",
 											"cue": "testcue1"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -279,7 +382,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"5": {
 					"type": "button",
@@ -297,9 +401,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -307,15 +411,15 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Yz-Uc5d6FG4WIuDhiZ14W",
-										"label": "GiXDbh3CB:loadcue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "loadcue",
+										"type": "action",
+										"id": "Rif_XOYS_fEB0nd2aUAfi",
+										"definitionId": "loadcue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"show": "testshow",
 											"cue": "testcue2"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -324,7 +428,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"2": {
@@ -347,9 +452,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -357,14 +462,15 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "cC2UezZU7iALBtDxqbBGj",
-										"action": "savesnapshot",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "Sr46nmQTmm7Y-ryzskuR2",
+										"definitionId": "savesnapshot",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"show": "testshow",
 											"snapshot": "testsnapshot1"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -373,7 +479,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -391,9 +498,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -401,14 +508,15 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "82KNc7lISxc0EBFnNyQuG",
-										"action": "savesnapshot",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "2t3oS3vKyjlPMXWhSvWDP",
+										"definitionId": "savesnapshot",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"show": "testshow",
 											"snapshot": "testsnapshot2"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -417,7 +525,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -435,9 +544,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -445,14 +554,15 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "0y1UKtzDXcHgbWVIEQudd",
-										"action": "savecue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "SSjJVjEtM1AKCdaRoUkHO",
+										"definitionId": "savecue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"show": "testshow",
 											"cue": "testcue1"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -461,7 +571,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"5": {
 					"type": "button",
@@ -479,9 +590,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -489,14 +600,15 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "NsmEDIS4vwblb5Vsmksrt",
-										"action": "savecue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "wT-NMOanPbJXONl89Fb3Y",
+										"definitionId": "savecue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
 											"show": "testshow",
 											"cue": "testcue2"
 										},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -505,7 +617,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"3": {
@@ -523,9 +636,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -533,11 +646,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "1xMtyCu28myvbtSw_kRey",
-										"action": "updatecurrentsnapshot",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "VBt8A41X1wQr2c7skLVfa",
+										"definitionId": "updatecurrentsnapshot",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -546,7 +660,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -562,9 +677,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -572,11 +687,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "fTaBdKTRYWGuPQ3l9iLbS",
-										"action": "updatecurrentcue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "wP-IF9Ck1mobL7e-y2nOA",
+										"definitionId": "updatecurrentcue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 1
 									}
 								],
 								"up": []
@@ -585,7 +701,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			}
 		},
@@ -604,12 +721,17 @@
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
-				"host": "10.75.23.95",
+				"host": "10.23.23.95",
 				"import_to": "M56cJZPf5-"
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1
+			"lastUpgradeIndex": 1,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {}
 		}
 	},
-	"oldPageNumber": 98
+	"connectionCollections": [],
+	"oldPageNumber": 5
 }
