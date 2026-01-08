@@ -1,3 +1,15 @@
+# 3.9.0 (2026-01-08)
+
+- feat: add support for variables ([12fa2cf](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/12fa2cf07cf5a4a55360aa6625f8525766fe20d2))
+- feat: add support for presets ([0f54e97](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/0f54e97fdca12765afb84f5e6f172b2cce857ef5))
+- refactor: rename `UiFeedbackState` to `UiFeedbackStore` ([4552bbd](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/4552bbd4accb82057413d3a81f026ab835b967d3))
+- chore: update connection lib to 4.1.1 ([8bdf517](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/8bdf5178f1ac48c6e1ddd8f417f0a41affa404ba))
+- chore: update dependencies ([f8d639b](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/f8d639b6965498136420dbb6a7ffa3e536cd6c1e))
+- chore: bump runtime to `node22` ([f93b63c](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/f93b63cc57a0775a7235ae666bd8c0a71be848f5))
+- docs: add note about PAN feature to HELP.md ([ca13911](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/ca13911766b874f540e50e28ca4dde0e46c5286e))
+- chore: add manual issue templates marker ([2b39b93](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/2b39b939ad0016fe1c1928eb81fe8c1623ff4312))
+- chore: add issue templates ([2b3c827](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/2b3c8278ff4accd065c15201768d846039e7ef19))
+
 # 3.8.0 (2025-12-22)
 
 - feat: implement PAN set/change for master and AUX channels ([08b1e2a](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/08b1e2a1a8003865d2e205ba636bcf20a9080ba3))
