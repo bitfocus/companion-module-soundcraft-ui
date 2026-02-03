@@ -1,5 +1,40 @@
 import { type CompanionStaticUpgradeScript, CreateConvertToBooleanFeedbackUpgradeScript } from '@companion-module/base'
 import { FeedbackId } from './feedback.js'
+import { ActionId } from './actions.js'
+
+/** Convert actions with numeric `value` option to string */
+export const upgradeNumberInputsToText: CompanionStaticUpgradeScript<unknown> = function (_context, props) {
+	const upgradableActionsIds: string[] = [
+		ActionId.SetMasterValue,
+		ActionId.SetMasterChannelValue,
+		ActionId.SetAuxChannelValue,
+		ActionId.SetVolumeBusValue,
+		ActionId.SetFxChannelValue,
+		ActionId.FadeMaster,
+		ActionId.FadeMasterChannel,
+		ActionId.FadeAuxChannel,
+		ActionId.FadeFxChannel,
+		ActionId.SetMasterChannelPan,
+		ActionId.SetAuxChannelPan,
+	]
+
+	const result = {
+		updatedConfig: null,
+		updatedFeedbacks: [],
+		updatedActions: props.actions
+			.filter((action) => upgradableActionsIds.includes(action.actionId))
+			.filter((action) => Object.hasOwn(action.options, 'value') && typeof action.options.value !== 'string')
+			.map((action) => ({
+				...action,
+				options: {
+					...action.options,
+					value: action.options.value?.toString(),
+				},
+			})),
+	}
+
+	return result
+}
 
 export const upgradeLegacyFeedbackToBoolean = CreateConvertToBooleanFeedbackUpgradeScript({
 	[FeedbackId.MuteMasterChannel]: true,
