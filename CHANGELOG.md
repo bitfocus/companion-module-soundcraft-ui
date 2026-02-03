@@ -1,3 +1,11 @@
+# 3.10.0 (2026-02-03)
+
+- feat: add fader level percentage variables ([64eccbe](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/64eccbe2fca3a0eb0a57f237fdda800dd8cd7f55))
+- fix: remove PAN rounding to 3 decimal places ([fd49364](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/fd493645f73f3cc482a91666bb0bdb206f8d568e))
+- fix: correct PAN value conversion with 3 decimal places ([8c9b7f0](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/8c9b7f0626580abbf3c971fca7a2baece2d0514e))
+- chore(deps): update @companion-module/tools to ^2.6.1 ([346d2db](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/346d2dbfadf3473757ea5109fd927ac88e88265e))
+- chore: remove accidental manual issue templates marker ([2009e0e](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/2009e0ebc83abf2708f5a9c20798fd2d5c1a7a16))
+
 # 3.9.0 (2026-01-08)
 
 - feat: add support for variables ([12fa2cf](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/12fa2cf07cf5a4a55360aa6625f8525766fe20d2))
