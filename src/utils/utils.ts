@@ -55,7 +55,7 @@ export function convertLinearValueToPercent(linearValue: number): number {
 
 /** Convert PAN value -100..0..100 to internal range 0..1 */
 export function convertPanToLinearValue(panValue: number): number {
-	return Math.round(((panValue + 100) / 200) * 1000) / 1000
+	return (panValue + 100) / 200
 }
 
 /** Convert internal 0..1 value to PAN range -100..0..100 */
