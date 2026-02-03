@@ -5,7 +5,7 @@ import { GetActionsList } from './actions.js'
 import { instanceConfigFields, type UiConfig } from './config.js'
 import { GetFeedbacksList } from './feedback.js'
 import { UiFeedbackStore } from './feedback-store.js'
-import { upgradeLegacyFeedbackToBoolean, upgradeV2x0x0 } from './upgrades.js'
+import { upgradeLegacyFeedbackToBoolean, upgradeNumberInputsToText, upgradeV2x0x0 } from './upgrades.js'
 import { createPresets } from './presets.js'
 import { createVariables } from './variables.js'
 import { UiVariablesStore } from './variables-store.js'
@@ -137,4 +137,4 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 	}
 }
 
-runEntrypoint(SoundcraftUiInstance, [upgradeV2x0x0, upgradeLegacyFeedbackToBoolean])
+runEntrypoint(SoundcraftUiInstance, [upgradeV2x0x0, upgradeLegacyFeedbackToBoolean, upgradeNumberInputsToText])
