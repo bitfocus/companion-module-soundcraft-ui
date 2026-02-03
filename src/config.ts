@@ -3,6 +3,7 @@ import { type SomeCompanionConfigField, Regex } from '@companion-module/base'
 export interface UiConfig {
 	host: string
 	enableFaderLevelVars?: boolean
+	enableFaderLevelVarsPct?: boolean
 	enablePanVars?: boolean
 }
 
@@ -26,7 +27,14 @@ export const instanceConfigFields: SomeCompanionConfigField[] = [
 	{
 		type: 'checkbox',
 		id: 'enableFaderLevelVars',
-		label: 'Enable Fader Level variables',
+		label: 'Enable Fader Level variables (dB)',
+		width: 12,
+		default: false,
+	},
+	{
+		type: 'checkbox',
+		id: 'enableFaderLevelVarsPct',
+		label: 'Enable Fader Level variables (%)',
 		width: 12,
 		default: false,
 	},

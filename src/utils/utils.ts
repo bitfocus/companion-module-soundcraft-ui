@@ -31,6 +31,11 @@ export function mapInfinityToNumber(value: number): number {
 	return value === Number.NEGATIVE_INFINITY ? -100 : value
 }
 
+/** Convert internal 0..1 value to percent range (0..100) */
+export function convertLinearValueToPercent(linearValue: number): number {
+	return Math.round(linearValue * 100)
+}
+
 /** Convert PAN value 0..1 to string representation (L 100 .. C .. R 100) */
 /*export function convertPanLinearValueToString(value: number): string {
 	if (value === 0) {
