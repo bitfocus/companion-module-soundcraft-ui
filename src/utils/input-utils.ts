@@ -1,6 +1,7 @@
 import type {
 	CompanionInputFieldDropdown,
 	CompanionInputFieldNumber,
+	CompanionInputFieldTextInput,
 	DropdownChoice,
 	SomeCompanionActionInputField,
 } from '@companion-module/base'
@@ -154,17 +155,13 @@ export const OPTIONS = {
 		id: 'solo',
 		...CHOICES.onofftoggleDropdown,
 	} satisfies CompanionInputFieldDropdown,
-	faderValuesSlider: {
-		type: 'number',
+	faderValueDBInput: {
+		type: 'textinput',
 		label: 'Fader Level dB (-100 = -∞)',
 		id: 'value',
-		range: true,
 		required: true,
-		default: 0,
-		step: 0.1,
-		min: -100,
-		max: 10,
-	} satisfies CompanionInputFieldNumber,
+		useVariables: true,
+	} satisfies CompanionInputFieldTextInput,
 	prepostDropdown: {
 		type: 'dropdown',
 		label: 'PRE/POST',
@@ -188,7 +185,7 @@ export const OPTIONS = {
 		],
 		default: Easings.Linear,
 	} satisfies CompanionInputFieldDropdown,
-	fadeTimeField: {
+	fadeTimeInput: {
 		type: 'number',
 		label: 'Fade time (ms)',
 		id: 'fadeTime',
@@ -196,7 +193,7 @@ export const OPTIONS = {
 		max: 60000,
 		default: 2000,
 	} satisfies CompanionInputFieldNumber,
-	faderChangeField: {
+	faderChangeInput: {
 		type: 'number',
 		label: 'Change value (dB)',
 		id: 'value',
@@ -226,7 +223,7 @@ export const OPTIONS = {
 		],
 		default: 'both',
 	} satisfies CompanionInputFieldDropdown,
-	delayTimeField: (min: number, max: number): CompanionInputFieldNumber => {
+	delayTimeInput: (min: number, max: number): CompanionInputFieldNumber => {
 		return {
 			type: 'number',
 			label: 'Delay time (ms)',
@@ -236,18 +233,14 @@ export const OPTIONS = {
 			default: 0,
 		}
 	},
-	panValueSlider: {
-		type: 'number',
+	panValueInput: {
+		type: 'textinput',
 		label: 'Pan (L = -100, Center = 0, R = 100)',
 		id: 'value',
-		range: true,
 		required: true,
-		default: 0,
-		step: 1,
-		min: -100,
-		max: 100,
-	} satisfies CompanionInputFieldNumber,
-	panChangeField: {
+		useVariables: true,
+	} satisfies CompanionInputFieldTextInput,
+	panChangeInput: {
 		type: 'number',
 		label: 'Change value',
 		id: 'value',
@@ -265,7 +258,7 @@ export const OPTION_SETS = {
 	masterChannel: [OPTIONS.masterChannelTypeDropdown, OPTIONS.channelNumberField],
 	auxChannel: [OPTIONS.busNumberField, OPTIONS.auxChannelTypeDropdown, OPTIONS.channelNumberField],
 	fxChannel: [OPTIONS.busNumberField, OPTIONS.fxChannelTypeDropdown, OPTIONS.channelNumberField],
-	fadeTransition: [OPTIONS.faderValuesSlider, OPTIONS.fadeTimeField, OPTIONS.easingsDropdown],
+	fadeTransition: [OPTIONS.faderValueDBInput, OPTIONS.fadeTimeInput, OPTIONS.easingsDropdown],
 	delayableMasterChannel: (min: number, max: number): SomeCompanionActionInputField[] => [
 		{
 			type: 'dropdown',
@@ -274,7 +267,7 @@ export const OPTION_SETS = {
 			...CHOICES.masterDelayableChannelTypes,
 		},
 		OPTIONS.channelNumberField,
-		OPTIONS.delayTimeField(min, max),
+		OPTIONS.delayTimeInput(min, max),
 	],
 	pannableMasterChannel: [
 		{
