@@ -27,7 +27,7 @@
 		"*.{css,json,md,scss}": [
 			"run prettier --write"
 		],
-		"*.{ts,tsx,js,jsx}": [
+		"*.{ts,tsx,js,jsx,mjs}": [
 			"run lint:raw --fix"
 		]
 	},
