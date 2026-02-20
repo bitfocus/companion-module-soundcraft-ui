@@ -36,10 +36,8 @@
 	},
 	"dependencies": {
 		"@companion-module/base": "~1.13.5",
-		"bufferutil": "^4.0.7",
 		"rxjs": "^7.8.2",
-		"soundcraft-ui-connection": "^4.1.1",
-		"utf-8-validate": "^6.0.3"
+		"soundcraft-ui-connection": "^5.0.0"
 	},
 	"devDependencies": {
 		"@companion-module/tools": "^2.6.1",
