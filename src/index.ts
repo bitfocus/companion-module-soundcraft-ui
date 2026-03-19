@@ -1,4 +1,4 @@
-import { InstanceBase, InstanceStatus, runEntrypoint, type SomeCompanionConfigField } from '@companion-module/base'
+import { InstanceBase, InstanceStatus, type SomeCompanionConfigField } from '@companion-module/base'
 import { SoundcraftUI, ConnectionStatus, type ConnectionErrorEvent } from 'soundcraft-ui-connection'
 
 import { GetActionsList } from './actions.js'
@@ -9,11 +9,15 @@ import { upgradeLegacyFeedbackToBoolean, upgradeV2x0x0 } from './upgrades.js'
 import { createPresets } from './presets.js'
 import { createVariables } from './variables.js'
 import { UiVariablesStore } from './variables-store.js'
+import type { UiSchema } from './schema.js'
+
+/** upgrade scripts should be exported as a named UpgradeScripts constant */
+export const UpgradeScripts = [upgradeV2x0x0, upgradeLegacyFeedbackToBoolean]
 
 /**
  * Companion instance class for the Soundcraft Ui Mixers.
  */
-class SoundcraftUiInstance extends InstanceBase<UiConfig> {
+export default class SoundcraftUiInstance extends InstanceBase<UiSchema> {
 	private feedbackStore = new UiFeedbackStore(this)
 	private variablesStore = new UiVariablesStore(this)
 	private conn?: SoundcraftUI
@@ -89,13 +93,12 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 
 		this.setActionDefinitions(GetActionsList(this.conn))
 		this.setFeedbackDefinitions(GetFeedbacksList(this.feedbackStore, this.conn))
-		this.subscribeFeedbacks()
 
 		const variableDefs = await createVariables(this.variablesStore, this.conn, config)
 		this.setVariableDefinitions(variableDefs)
 
-		const presetDefs = await createPresets(this.conn)
-		this.setPresetDefinitions(presetDefs)
+		const [sections, presetDefs] = await createPresets(this.conn)
+		this.setPresetDefinitions(sections, presetDefs)
 	}
 
 	/**
@@ -136,5 +139,3 @@ class SoundcraftUiInstance extends InstanceBase<UiConfig> {
 		}
 	}
 }
-
-runEntrypoint(SoundcraftUiInstance, [upgradeV2x0x0, upgradeLegacyFeedbackToBoolean])

@@ -1,18 +1,21 @@
-import { type CompanionStaticUpgradeScript, CreateConvertToBooleanFeedbackUpgradeScript } from '@companion-module/base'
-import { FeedbackId } from './feedback.js'
+import {
+	type CompanionStaticUpgradeScript,
+	CreateConvertToBooleanFeedbackUpgradeScript,
+	type JsonObject,
+} from '@companion-module/base'
 
 export const upgradeLegacyFeedbackToBoolean = CreateConvertToBooleanFeedbackUpgradeScript({
-	[FeedbackId.MuteMasterChannel]: true,
-	[FeedbackId.SoloMasterChannel]: true,
-	[FeedbackId.DimMaster]: true,
-	[FeedbackId.MuteAuxChannel]: true,
-	[FeedbackId.PostAuxChannel]: true,
-	[FeedbackId.MuteFxChannel]: true,
-	[FeedbackId.PostFxChannel]: true,
-	[FeedbackId.MediaPlayerState]: true,
-	[FeedbackId.MediaPlayerShuffle]: true,
-	[FeedbackId.DTRecordState]: true,
-	[FeedbackId.MuteMuteGroup]: true,
+	mutemasterchannel: true,
+	solomasterchannel: true,
+	dimmaster: true,
+	muteauxchannel: true,
+	postauxchannel: true,
+	mutefxchannel: true,
+	postfxchannel: true,
+	mediaplayerstate: true,
+	mediaplayershuffle: true,
+	dualtrackrecordstate: true,
+	mutemutegroup: true,
 })
 
 /**
@@ -25,6 +28,6 @@ export const upgradeLegacyFeedbackToBoolean = CreateConvertToBooleanFeedbackUpgr
  * > have run 2, some will report that they have run 1. When you add a new upgrade script,
  * > all those whose db says 2 will think they have already run it."
  */
-export const upgradeV2x0x0: CompanionStaticUpgradeScript<unknown> = function (_context, _props) {
+export const upgradeV2x0x0: CompanionStaticUpgradeScript<JsonObject> = function (_context, _props) {
 	return { updatedActions: [], updatedConfig: null, updatedFeedbacks: [] }
 }

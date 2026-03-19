@@ -1,12 +1,12 @@
 import { type CompanionFeedbackInfo, InstanceBase } from '@companion-module/base'
 import { Subject, Observable, takeUntil, filter } from 'rxjs'
 
-import { type UiConfig } from './config.js'
-import { FeedbackId } from './feedback.js'
+import type { UiSchema } from './schema.js'
+import type { UiFeedbackSchemas } from './feedback.js'
 
 interface UiFeedbackSubscription {
 	state: unknown
-	feedbacks: Map<string, FeedbackId>
+	feedbacks: Map<string, string>
 }
 
 export class UiFeedbackStore {
@@ -18,7 +18,7 @@ export class UiFeedbackStore {
 	/** Simple inverted map of feedback IDs to stream IDs for faster lookup */
 	private feedbackStreamMap = new Map<string, string>() // <FeedbackId, StreamId>
 
-	constructor(private instance: InstanceBase<UiConfig>) {}
+	constructor(private instance: InstanceBase<UiSchema>) {}
 
 	/**
 	 * Register a stream of feedback values from the mixer.
@@ -29,7 +29,7 @@ export class UiFeedbackStore {
 	 * @param streamId Internal identifier for the stream. Used to group multiple subscriptions to the same stream
 	 */
 	connect(evt: CompanionFeedbackInfo, stream$: Observable<unknown>, streamId: string): void {
-		// Already subscribed to this exact stream — nothing to do
+		// already subscribed to this stream, nothing to do
 		if (this.feedbackStreamMap.get(evt.id) === streamId) {
 			return
 		}
@@ -43,7 +43,7 @@ export class UiFeedbackStore {
 		if (!this.subscriptions.get(streamId)) {
 			const sub = {
 				state: null,
-				feedbacks: new Map<string, FeedbackId>(),
+				feedbacks: new Map<string, string>(),
 			}
 			this.subscriptions.set(streamId, sub)
 
@@ -52,7 +52,7 @@ export class UiFeedbackStore {
 		}
 
 		// register new feedback subscription
-		this.addFeedbackSubscription(streamId, evt.id, evt.feedbackId as FeedbackId)
+		this.addFeedbackSubscription(streamId, evt.id, evt.feedbackId)
 	}
 
 	/**
@@ -110,7 +110,7 @@ export class UiFeedbackStore {
 
 		// get distinct feedback types for this streamId and refresh them
 		this.getFeedbackIds(streamId).forEach((fb) => {
-			this.instance.checkFeedbacks(fb)
+			this.instance.checkFeedbacks(fb as keyof UiFeedbackSchemas)
 		})
 	}
 
@@ -119,13 +119,13 @@ export class UiFeedbackStore {
 	 * Used to update feedbacks accordingly when the state changes.
 	 * @param streamId
 	 */
-	private getFeedbackIds(streamId: string): FeedbackId[] {
+	private getFeedbackIds(streamId: string): string[] {
 		const feedbacks = this.subscriptions.get(streamId)?.feedbacks
-		if (feedbacks) {
-			return Array.from(new Set(feedbacks.values()))
-		} else {
+		if (!feedbacks) {
 			return []
 		}
+
+		return Array.from(new Set(feedbacks.values()))
 	}
 
 	/**
@@ -147,7 +147,7 @@ export class UiFeedbackStore {
 	 * @param feedbackUniqueId
 	 * @param feedbackId
 	 */
-	private addFeedbackSubscription(streamId: string, feedbackUniqueId: string, feedbackId: FeedbackId): void {
+	private addFeedbackSubscription(streamId: string, feedbackUniqueId: string, feedbackId: string): void {
 		const sub = this.subscriptions.get(streamId)
 		if (!sub) {
 			return

@@ -1,6 +1,5 @@
 import {
 	type ChannelType,
-	type MuteGroupID,
 	MasterBus,
 	AuxBus,
 	FxBus,
@@ -12,6 +11,7 @@ import {
 } from 'soundcraft-ui-connection'
 
 import { type CompanionOptionValues } from '@companion-module/base'
+import type { AuxChannelOpts, FxChannelOpts, MasterChannelOpts } from './option-types.js'
 import { optionToChannelType } from './utils.js'
 
 /** Master Channels */
@@ -36,10 +36,9 @@ export function getMasterChannel(source: MasterBus, type: ChannelType, channel: 
 	}
 }
 
-export function getMasterChannelFromOptions(options: CompanionOptionValues, conn: SoundcraftUI): MasterChannel {
+export function getMasterChannelFromOptions(options: MasterChannelOpts, conn: SoundcraftUI): MasterChannel {
 	const channelType = optionToChannelType(options.channelType)
-	const channel = Number(options.channel)
-	return getMasterChannel(conn.master, channelType, channel)
+	return getMasterChannel(conn.master, channelType, options.channel)
 }
 
 /** AUX Channels */
@@ -58,11 +57,9 @@ export function getAuxChannel(source: AuxBus, type: ChannelType, channel: number
 	}
 }
 
-export function getAuxChannelFromOptions(options: CompanionOptionValues, conn: SoundcraftUI): AuxChannel {
-	const bus = Number(options.bus)
-	const channel = Number(options.channel)
+export function getAuxChannelFromOptions(options: AuxChannelOpts, conn: SoundcraftUI): AuxChannel {
 	const channelType = optionToChannelType(options.channelType)
-	return getAuxChannel(conn.aux(bus), channelType, channel)
+	return getAuxChannel(conn.aux(options.bus), channelType, options.channel)
 }
 
 /** FX Channels */
@@ -81,25 +78,9 @@ export function getFxChannel(source: FxBus, type: ChannelType, channel: number):
 	}
 }
 
-export function getFxChannelFromOptions(options: CompanionOptionValues, conn: SoundcraftUI): FxChannel {
-	const bus = Number(options.bus)
-	const channel = Number(options.channel)
+export function getFxChannelFromOptions(options: FxChannelOpts, conn: SoundcraftUI): FxChannel {
 	const channelType = optionToChannelType(options.channelType)
-	return getFxChannel(conn.fx(bus), channelType, channel)
-}
-
-export function getMuteGroupIDFromOptions(options: CompanionOptionValues): MuteGroupID {
-	const group = options.group
-	if (group === 'all' || group === 'fx') {
-		return group
-	}
-
-	const groupAsNum = Number(group)
-	if (groupAsNum) {
-		return groupAsNum
-	}
-
-	return 'all'
+	return getFxChannel(conn.fx(options.bus), channelType, options.channel)
 }
 
 export function getVolumeBusFromOptions(options: CompanionOptionValues, conn: SoundcraftUI): VolumeBus | undefined {

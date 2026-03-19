@@ -1,14 +1,14 @@
 import { InstanceBase } from '@companion-module/base'
 import { bufferTime, filter, map, mergeMap, Observable, Subject, takeUntil } from 'rxjs'
 
-import { type UiConfig } from './config.js'
+import type { UiSchema } from './schema.js'
 
 export class UiVariablesStore {
 	private variableStreams$ = new Subject<{ variableId: string; stream$: Observable<string | number> }>()
 	private destroyVariableStreams$ = new Subject<void>()
 	private destroy$ = new Subject<void>()
 
-	constructor(private instance: InstanceBase<UiConfig>) {
+	constructor(private instance: InstanceBase<UiSchema>) {
 		// Subscribe to all variable streams and batch update Companion variables
 		this.variableStreams$
 			.pipe(
