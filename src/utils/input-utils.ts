@@ -14,7 +14,7 @@ import { type ChannelType, Easings } from 'soundcraft-ui-connection'
 /**
  * All possible fader types as dropdown choices
  */
-export const FADER_TYPES: { [key in ChannelType]: DropdownChoice } = {
+export const FADER_TYPES: Record<ChannelType, DropdownChoice<string>> = {
 	i: { id: 'i', label: 'Input' },
 	l: { id: 'l', label: 'Line Input' },
 	p: { id: 'p', label: 'Player' },
@@ -35,6 +35,7 @@ export const CHOICES = {
 			{ id: 0, label: 'Unmute' },
 		],
 		default: 2,
+		disableAutoExpression: true,
 	},
 
 	onofftoggleDropdown: {
@@ -44,6 +45,7 @@ export const CHOICES = {
 			{ id: 0, label: 'Off' },
 		],
 		default: 2,
+		disableAutoExpression: true,
 	},
 
 	onoffDropdown: {
@@ -52,31 +54,37 @@ export const CHOICES = {
 			{ id: 0, label: 'Off' },
 		],
 		default: 1,
+		disableAutoExpression: true,
 	},
 
 	masterChannelTypes: {
 		choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.f, FADER_TYPES.s, FADER_TYPES.a, FADER_TYPES.v],
 		default: 'i',
+		disableAutoExpression: true,
 	},
 
 	masterPannableChannelTypes: {
 		choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.f, FADER_TYPES.s],
 		default: 'i',
+		disableAutoExpression: true,
 	},
 
 	masterDelayableChannelTypes: {
 		choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.a],
 		default: 'i',
+		disableAutoExpression: true,
 	},
 
 	auxChannelTypes: {
 		choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.f],
 		default: 'i',
+		disableAutoExpression: true,
 	},
 
 	fxChannelTypes: {
 		choices: [FADER_TYPES.i, FADER_TYPES.l, FADER_TYPES.p, FADER_TYPES.s],
 		default: 'i',
+		disableAutoExpression: true,
 	},
 }
 
@@ -89,19 +97,19 @@ export const OPTIONS = {
 		label: 'Channel Type',
 		id: 'channelType',
 		...CHOICES.masterChannelTypes,
-	} satisfies CompanionInputFieldDropdown,
+	} satisfies CompanionInputFieldDropdown<'channelType'>,
 	auxChannelTypeDropdown: {
 		type: 'dropdown',
 		label: 'Channel Type',
 		id: 'channelType',
 		...CHOICES.auxChannelTypes,
-	} satisfies CompanionInputFieldDropdown,
+	} satisfies CompanionInputFieldDropdown<'channelType'>,
 	fxChannelTypeDropdown: {
 		type: 'dropdown',
 		label: 'Channel Type',
 		id: 'channelType',
 		...CHOICES.fxChannelTypes,
-	} satisfies CompanionInputFieldDropdown,
+	} satisfies CompanionInputFieldDropdown<'channelType'>,
 	busNumberField: {
 		type: 'number',
 		label: 'Bus number',
@@ -109,7 +117,8 @@ export const OPTIONS = {
 		min: 1,
 		max: 10,
 		default: 1,
-	} satisfies CompanionInputFieldNumber,
+		disableAutoExpression: true,
+	} satisfies CompanionInputFieldNumber<'bus'>,
 	channelNumberField: {
 		type: 'number',
 		label: 'Channel number',
@@ -117,7 +126,8 @@ export const OPTIONS = {
 		min: 1,
 		max: 24,
 		default: 1,
-	} satisfies CompanionInputFieldNumber,
+		disableAutoExpression: true,
+	} satisfies CompanionInputFieldNumber<'channel'>,
 	hwChannelNumberField: {
 		type: 'number',
 		label: 'HW Channel number',
@@ -125,13 +135,14 @@ export const OPTIONS = {
 		min: 1,
 		max: 20,
 		default: 1,
-	} satisfies CompanionInputFieldNumber,
+		disableAutoExpression: true,
+	} satisfies CompanionInputFieldNumber<'hwchannel'>,
 	muteDropdown: {
 		type: 'dropdown',
 		label: 'Mute',
 		id: 'mute',
 		...CHOICES.mute,
-	} satisfies CompanionInputFieldDropdown,
+	} satisfies CompanionInputFieldDropdown<'mute'>,
 	muteGroupDropdown: {
 		type: 'dropdown',
 		label: 'Group',
@@ -147,24 +158,24 @@ export const OPTIONS = {
 			{ id: 'fx', label: 'MUTE FX' },
 		],
 		default: 1,
-	} satisfies CompanionInputFieldDropdown,
+		disableAutoExpression: true,
+	} satisfies CompanionInputFieldDropdown<'group'>,
 	soloDropdown: {
 		type: 'dropdown',
 		label: 'Solo',
 		id: 'solo',
 		...CHOICES.onofftoggleDropdown,
-	} satisfies CompanionInputFieldDropdown,
+	} satisfies CompanionInputFieldDropdown<'solo'>,
 	faderValuesSlider: {
 		type: 'number',
 		label: 'Fader Level dB (-100 = -∞)',
 		id: 'value',
 		range: true,
-		required: true,
 		default: 0,
 		step: 0.1,
 		min: -100,
 		max: 10,
-	} satisfies CompanionInputFieldNumber,
+	} satisfies CompanionInputFieldNumber<'value'>,
 	prepostDropdown: {
 		type: 'dropdown',
 		label: 'PRE/POST',
@@ -175,19 +186,21 @@ export const OPTIONS = {
 			{ id: 2, label: 'Toggle' },
 		],
 		default: 2,
-	} satisfies CompanionInputFieldDropdown,
+		disableAutoExpression: true,
+	} satisfies CompanionInputFieldDropdown<'post'>,
 	easingsDropdown: {
 		type: 'dropdown',
 		label: 'Easing',
 		id: 'easing',
 		choices: [
-			{ id: Easings.Linear, label: 'Linear / None' },
+			{ id: Easings.Linear, label: 'Linear/None' },
 			{ id: Easings.EaseIn, label: 'Ease In' },
 			{ id: Easings.EaseOut, label: 'Ease Out' },
 			{ id: Easings.EaseInOut, label: 'Ease In Out' },
 		],
 		default: Easings.Linear,
-	} satisfies CompanionInputFieldDropdown,
+		disableAutoExpression: true,
+	} satisfies CompanionInputFieldDropdown<'easing'>,
 	fadeTimeField: {
 		type: 'number',
 		label: 'Fade time (ms)',
@@ -195,7 +208,7 @@ export const OPTIONS = {
 		min: 100,
 		max: 60000,
 		default: 2000,
-	} satisfies CompanionInputFieldNumber,
+	} satisfies CompanionInputFieldNumber<'fadeTime'>,
 	faderChangeField: {
 		type: 'number',
 		label: 'Change value (dB)',
@@ -203,7 +216,7 @@ export const OPTIONS = {
 		min: -100,
 		max: 100,
 		default: 3,
-	} satisfies CompanionInputFieldNumber,
+	} satisfies CompanionInputFieldNumber<'value'>,
 	volumeBusesDropdown: {
 		type: 'dropdown',
 		label: 'Bus',
@@ -214,7 +227,8 @@ export const OPTIONS = {
 			{ id: 'hp2', label: 'Headphone 2' },
 		],
 		default: 'solo',
-	} satisfies CompanionInputFieldDropdown,
+		disableAutoExpression: true,
+	} satisfies CompanionInputFieldDropdown<'bus'>,
 	masterDelayDropdown: {
 		type: 'dropdown',
 		label: 'Delay side',
@@ -225,8 +239,9 @@ export const OPTIONS = {
 			{ id: 'right', label: 'Right' },
 		],
 		default: 'both',
-	} satisfies CompanionInputFieldDropdown,
-	delayTimeField: (min: number, max: number): CompanionInputFieldNumber => {
+		disableAutoExpression: true,
+	} satisfies CompanionInputFieldDropdown<'side'>,
+	delayTimeField: (min: number, max: number): CompanionInputFieldNumber<'time'> => {
 		return {
 			type: 'number',
 			label: 'Delay time (ms)',
@@ -241,21 +256,19 @@ export const OPTIONS = {
 		label: 'Pan (L = -100, Center = 0, R = 100)',
 		id: 'value',
 		range: true,
-		required: true,
 		default: 0,
 		step: 1,
 		min: -100,
 		max: 100,
-	} satisfies CompanionInputFieldNumber,
+	} satisfies CompanionInputFieldNumber<'value'>,
 	panChangeField: {
 		type: 'number',
 		label: 'Change value',
 		id: 'value',
-		required: true,
 		min: -200,
 		max: 200,
 		default: 10,
-	} satisfies CompanionInputFieldNumber,
+	} satisfies CompanionInputFieldNumber<'value'>,
 }
 
 /**
@@ -266,13 +279,16 @@ export const OPTION_SETS = {
 	auxChannel: [OPTIONS.busNumberField, OPTIONS.auxChannelTypeDropdown, OPTIONS.channelNumberField],
 	fxChannel: [OPTIONS.busNumberField, OPTIONS.fxChannelTypeDropdown, OPTIONS.channelNumberField],
 	fadeTransition: [OPTIONS.faderValuesSlider, OPTIONS.fadeTimeField, OPTIONS.easingsDropdown],
-	delayableMasterChannel: (min: number, max: number): SomeCompanionActionInputField[] => [
+	delayableMasterChannel: (
+		min: number,
+		max: number,
+	): SomeCompanionActionInputField<'channelType' | 'channel' | 'time'>[] => [
 		{
 			type: 'dropdown',
 			label: 'Channel Type',
 			id: 'channelType',
 			...CHOICES.masterDelayableChannelTypes,
-		},
+		} satisfies CompanionInputFieldDropdown<'channelType'>,
 		OPTIONS.channelNumberField,
 		OPTIONS.delayTimeField(min, max),
 	],
@@ -282,9 +298,9 @@ export const OPTION_SETS = {
 			label: 'Channel Type',
 			id: 'channelType',
 			...CHOICES.masterPannableChannelTypes,
-		},
+		} satisfies CompanionInputFieldDropdown<'channelType'>,
 		OPTIONS.channelNumberField,
-	] satisfies SomeCompanionActionInputField[],
+	],
 	multiTrackMasterChannel: [
 		{
 			type: 'dropdown',
@@ -292,7 +308,8 @@ export const OPTION_SETS = {
 			id: 'channelType',
 			choices: [FADER_TYPES.i, FADER_TYPES.l],
 			default: 'i',
-		},
+			disableAutoExpression: true,
+		} satisfies CompanionInputFieldDropdown<'channelType'>,
 		OPTIONS.channelNumberField,
-	] satisfies SomeCompanionActionInputField[],
+	],
 }

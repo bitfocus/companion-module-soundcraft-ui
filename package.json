@@ -35,12 +35,12 @@
 		"node": "^22.2"
 	},
 	"dependencies": {
-		"@companion-module/base": "~1.13.5",
+		"@companion-module/base": "~2.0.0",
 		"rxjs": "^7.8.2",
 		"soundcraft-ui-connection": "^5.0.0"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^2.6.1",
+		"@companion-module/tools": "^3.0.0",
 		"@types/node": "^22.19.3",
 		"eslint": "^9.39.2",
 		"husky": "^9.1.7",

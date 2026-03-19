@@ -1,6 +1,6 @@
 import { type SomeCompanionConfigField, Regex } from '@companion-module/base'
 
-export interface UiConfig {
+export type UiConfig = {
 	host: string
 	enableFaderLevelVars?: boolean
 	enableFaderLevelVarsPct?: boolean
@@ -14,7 +14,7 @@ export const instanceConfigFields: SomeCompanionConfigField[] = [
 		label: 'Target IP',
 		width: 12,
 		regex: Regex.IP,
-		required: true,
+		minLength: 1,
 	},
 	{
 		type: 'static-text',

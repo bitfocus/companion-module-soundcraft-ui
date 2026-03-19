@@ -1,4 +1,4 @@
-import type { CompanionVariableDefinition } from '@companion-module/base'
+import type { CompanionVariableDefinitions } from '@companion-module/base'
 import { playerTimeToString, type SoundcraftUI } from 'soundcraft-ui-connection'
 import { firstValueFrom, map, Observable, share } from 'rxjs'
 
@@ -10,12 +10,12 @@ export async function createVariables(
 	store: UiVariablesStore,
 	conn: SoundcraftUI,
 	config: UiConfig,
-): Promise<CompanionVariableDefinition[]> {
-	const variables: CompanionVariableDefinition[] = []
+): Promise<CompanionVariableDefinitions> {
+	const variables: CompanionVariableDefinitions = {}
 
 	// Helper to add variable and connect stream. Closure to capture `variables` and `store`
 	function addVar(data: { id: string; name: string }, stream: Observable<string | number>) {
-		variables.push({ variableId: data.id, name: data.name })
+		variables[data.id] = { name: data.name }
 		store.connect(data.id, stream)
 	}
 

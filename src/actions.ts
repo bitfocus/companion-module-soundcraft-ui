@@ -1,5 +1,5 @@
-import { type CompanionActionDefinitions, Regex } from '@companion-module/base'
-import type { AutomixGroupId, DelayableMasterChannel, SoundcraftUI } from 'soundcraft-ui-connection'
+import type { CompanionActionDefinitions } from '@companion-module/base'
+import type { AutomixGroupId, DelayableMasterChannel, MuteGroupID, SoundcraftUI } from 'soundcraft-ui-connection'
 
 import { CHOICES, OPTIONS, OPTION_SETS } from './utils/input-utils.js'
 import {
@@ -7,146 +7,135 @@ import {
 	getFxChannelFromOptions,
 	getMasterChannel,
 	getMasterChannelFromOptions,
-	getMuteGroupIDFromOptions,
 	getVolumeBusFromOptions,
 } from './utils/channel-selection.js'
 import { patchDestinations, patchSources } from './utils/patch-parameters.js'
 import { convertPanOffsetToLinearOffset, convertPanToLinearValue } from './utils/utils.js'
+import type { AuxChannelOpts, FadeOpts, FxChannelOpts, MasterChannelOpts } from './utils/option-types.js'
 
-export enum ActionId {
+export type UiActionSchemas = {
 	// Master
-	SetMasterValue = 'setmastervalue',
-	ChangeMasterValue = 'changemastervalue',
-	FadeMaster = 'fademaster',
-	DimMaster = 'dimmaster',
-	SetMasterDelay = 'setmasterdelay',
-	ChangeMasterDelay = 'changemasterdelay',
+	setmastervalue: { options: { value: number } }
+	changemastervalue: { options: { value: number } }
+	fademaster: { options: FadeOpts }
+	dimmaster: { options: { dim: number } }
+	setmasterdelay: { options: { time: number; side: string } }
+	changemasterdelay: { options: { time: number; side: string } }
 
 	// Master Channels
-	MuteMasterChannel = 'mutemasterchannel',
-	SoloMasterChannel = 'solomasterchannel',
-	SetMasterChannelPan = 'setmasterchannelpan',
-	ChangeMasterChannelPan = 'changemasterchannelpan',
-	SetMasterChannelValue = 'setmasterchannelvalue',
-	ChangeMasterChannelValue = 'changemasterchannelvalue',
-	FadeMasterChannel = 'fademasterchannel',
-	SetMasterChannelDelay = 'setmasterchanneldelay',
-	ChangeMasterChannelDelay = 'changemasterchanneldelay',
-	MasterChannelSelectMTK = 'masterchannelselectmtk',
+	mutemasterchannel: { options: MasterChannelOpts & { mute: number } }
+	solomasterchannel: { options: MasterChannelOpts & { solo: number } }
+	setmasterchannelpan: { options: MasterChannelOpts & { value: number } }
+	changemasterchannelpan: { options: MasterChannelOpts & { value: number } }
+	setmasterchannelvalue: { options: MasterChannelOpts & { value: number } }
+	changemasterchannelvalue: { options: MasterChannelOpts & { value: number } }
+	fademasterchannel: { options: MasterChannelOpts & FadeOpts }
+	setmasterchanneldelay: { options: MasterChannelOpts & { time: number } }
+	changemasterchanneldelay: { options: MasterChannelOpts & { time: number } }
+	masterchannelselectmtk: { options: MasterChannelOpts & { select: number } }
 
 	// AUX Channels
-	MuteAuxChannel = 'muteauxchannel',
-	SetAuxChannelValue = 'setauxchannelvalue',
-	ChangeAuxChannelValue = 'changeauxchannelvalue',
-	FadeAuxChannel = 'fadeauxchannel',
-	SetAuxChannelPost = 'setauxchannelpost',
-	SetAuxChannelPostProc = 'setauxchannelpostproc',
-	SetAuxChannelPan = 'setauxchannelpan',
-	ChangeAuxChannelPan = 'changeauxchannelpan',
+	muteauxchannel: { options: AuxChannelOpts & { mute: number } }
+	setauxchannelvalue: { options: AuxChannelOpts & { value: number } }
+	changeauxchannelvalue: { options: AuxChannelOpts & { value: number } }
+	fadeauxchannel: { options: AuxChannelOpts & FadeOpts }
+	setauxchannelpost: { options: AuxChannelOpts & { post: number } }
+	setauxchannelpostproc: { options: AuxChannelOpts & { postproc: number } }
+	setauxchannelpan: { options: AuxChannelOpts & { value: number } }
+	changeauxchannelpan: { options: AuxChannelOpts & { value: number } }
 
 	// FX Channels
-	MuteFxChannel = 'mutefxchannel',
-	SetFxChannelPost = 'setfxchannelpost',
-	SetFxChannelValue = 'setfxchannelvalue',
-	ChangeFxChannelValue = 'changefxchannelvalue',
-	FadeFxChannel = 'fadefxchannel',
+	mutefxchannel: { options: FxChannelOpts & { mute: number } }
+	setfxchannelvalue: { options: FxChannelOpts & { value: number } }
+	changefxchannelvalue: { options: FxChannelOpts & { value: number } }
+	fadefxchannel: { options: FxChannelOpts & FadeOpts }
+	setfxchannelpost: { options: FxChannelOpts & { post: number } }
 
 	// FX Settings
-	SetFxBPM = 'setfxbpm',
-	SetFxParam = 'setfxparam',
+	setfxbpm: { options: { fx: number[]; bpm: number } }
+	setfxparam: { options: { fx: number; param: number; value: number } }
 
 	// Volume Buses (SOLO, Headphone)
-	SetVolumeBusValue = 'setvolumebusvalue',
-	ChangeVolumeBusValue = 'changevolumebusvalue',
+	setvolumebusvalue: { options: { bus: string; value: number } }
+	changevolumebusvalue: { options: { bus: string; value: number } }
 
 	// Media Player
-	MediaPlay = 'mediaplay',
-	MediaStop = 'mediastop',
-	MediaPause = 'mediapause',
-	MediaNext = 'medianext',
-	MediaPrev = 'mediaprev',
-	MediaSwitchPlist = 'mediaswitchplist',
-	MediaSwitchTrack = 'mediaswitchtrack',
-	MediaSetPlayMode = 'mediasetplaymode',
-	MediaSetShuffle = 'mediasetshuffle',
+	mediaplay: { options: Record<string, never> }
+	mediastop: { options: Record<string, never> }
+	mediapause: { options: Record<string, never> }
+	medianext: { options: Record<string, never> }
+	mediaprev: { options: Record<string, never> }
+	mediaswitchplist: { options: { playlist: string } }
+	mediaswitchtrack: { options: { playlist: string; track: string } }
+	mediasetplaymode: { options: { mode: string } }
+	mediasetshuffle: { options: { shuffle: number } }
 
 	// 2-Track Recorder
-	DTRecordToggle = 'dualtrackrecordtoggle',
-	DTRecordStart = 'dualtrackrecordstart',
-	DTRecordStop = 'dualtrackrecordstop',
+	dualtrackrecordtoggle: { options: Record<string, never> }
+	dualtrackrecordstart: { options: Record<string, never> }
+	dualtrackrecordstop: { options: Record<string, never> }
 
 	// Multitrack Recorder
-	MTKPlay = 'mtkplay',
-	MTKPause = 'mtkstop',
-	MTKStop = 'mtkpause',
-	MTKRecordToggle = 'mtkrecordtoggle',
-	MTKRecordStart = 'mtkrecordstart',
-	MTKRecordStop = 'mtkrecordstop',
-	MTKSoundcheck = 'mtksoundcheck',
+	mtkplay: { options: Record<string, never> }
+	mtkstop: { options: Record<string, never> }
+	mtkpause: { options: Record<string, never> }
+	mtkrecordtoggle: { options: Record<string, never> }
+	mtkrecordstart: { options: Record<string, never> }
+	mtkrecordstop: { options: Record<string, never> }
+	mtksoundcheck: { options: { state: number } }
 
 	// MUTE Groups / ALL / FX
-	MuteGroupMute = 'mutegroupmute',
-	MuteGroupClear = 'mutegroupclear',
+	mutegroupmute: { options: { group: number | string; mute: number } }
+	mutegroupclear: { options: Record<string, never> }
 
 	// Shows / Snapshots / Cues
-	LoadShow = 'loadshow',
-	LoadSnapshot = 'loadsnapshot',
-	LoadCue = 'loadcue',
-	SaveSnapshot = 'savesnapshot',
-	UpdateCurrentSnapshot = 'updatecurrentsnapshot',
-	SaveCue = 'savecue',
-	UpdateCurrentCue = 'updatecurrentcue',
+	loadshow: { options: { show: string } }
+	loadsnapshot: { options: { show: string; snapshot: string } }
+	loadcue: { options: { show: string; cue: string } }
+	savesnapshot: { options: { show: string; snapshot: string } }
+	updatecurrentsnapshot: { options: Record<string, never> }
+	savecue: { options: { show: string; cue: string } }
+	updatecurrentcue: { options: Record<string, never> }
 
 	// Hardware Channels / Phantom Power
-	HwSetPhantomPower = 'hwsetphantompower',
+	hwsetphantompower: { options: { hwchannel: number; power: number } }
 
 	// Automix
-	AutomixAssignGroupToChannel = 'automixassigngrouptochannel',
-	AutomixEnableGroup = 'automixenablegroup',
+	automixassigngrouptochannel: { options: { channel: number; group: string } }
+	automixenablegroup: { options: { group: string; state: number } }
 
-	// Patching
-	PatchingSetRoute = 'patchingsetroute',
+	// Patching / Routing
+	patchingsetroute: { options: { source: string; destination: string } }
 }
 
-export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
+export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<UiActionSchemas> {
 	return {
 		/**
 		 * MASTER
 		 */
-		[ActionId.SetMasterValue]: {
+		setmastervalue: {
 			name: 'Master: Set fader value',
 			description: 'Set the fader value (dB) for the master fader',
 			options: [OPTIONS.faderValuesSlider],
-			callback: (action) => {
-				const value = Number(action.options.value)
-				return conn.master.setFaderLevelDB(value)
-			},
+			callback: (action) => conn.master.setFaderLevelDB(action.options.value),
 		},
 
-		[ActionId.FadeMaster]: {
+		fademaster: {
 			name: 'Master: Fade transition',
 			description: 'Perform a timed fade transition on the master fader',
 			options: [...OPTION_SETS.fadeTransition],
-			callback: async (action) => {
-				return conn.master.fadeToDB(
-					Number(action.options.value),
-					Number(action.options.fadeTime),
-					Number(action.options.easing),
-				)
-			},
+			callback: async (action) =>
+				conn.master.fadeToDB(action.options.value, action.options.fadeTime, action.options.easing),
 		},
 
-		[ActionId.ChangeMasterValue]: {
+		changemastervalue: {
 			name: 'Master: Change fader value (relative)',
 			description: 'Relatively change the fader value (dB) for the master fader',
 			options: [OPTIONS.faderChangeField],
-			callback: (action) => {
-				const value = Number(action.options.value)
-				return conn.master.changeFaderLevelDB(value)
-			},
+			callback: (action) => conn.master.changeFaderLevelDB(action.options.value),
 		},
 
-		[ActionId.DimMaster]: {
+		dimmaster: {
 			name: 'Master: Dim',
 			description: 'Dim the master fader (Ui24R only)',
 			options: [
@@ -158,7 +147,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 				},
 			],
 			callback: (action) => {
-				switch (Number(action.options.dim)) {
+				switch (action.options.dim) {
 					case 0:
 						return conn.master.undim()
 					case 1:
@@ -169,40 +158,38 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
-		[ActionId.SetMasterDelay]: {
+		setmasterdelay: {
 			name: 'Master: Set output delay',
 			description: 'Set delay for the master output (left, right or both)',
 			options: [OPTIONS.delayTimeField(0, 500), OPTIONS.masterDelayDropdown],
 			callback: (action) => {
-				const time = Number(action.options.time)
 				switch (action.options.side) {
 					case 'left':
-						return conn.master.setDelayL(time)
+						return conn.master.setDelayL(action.options.time)
 					case 'right':
-						return conn.master.setDelayR(time)
+						return conn.master.setDelayR(action.options.time)
 					default: {
-						conn.master.setDelayL(time)
-						conn.master.setDelayR(time)
+						conn.master.setDelayL(action.options.time)
+						conn.master.setDelayR(action.options.time)
 						return
 					}
 				}
 			},
 		},
 
-		[ActionId.ChangeMasterDelay]: {
+		changemasterdelay: {
 			name: 'Master: Change output delay (relative)',
 			description: 'Relatively change delay for the master output (left, right or both)',
 			options: [OPTIONS.delayTimeField(-500, 500), OPTIONS.masterDelayDropdown],
 			callback: (action) => {
-				const time = Number(action.options.time)
 				switch (action.options.side) {
 					case 'left':
-						return conn.master.changeDelayL(time)
+						return conn.master.changeDelayL(action.options.time)
 					case 'right':
-						return conn.master.changeDelayR(time)
+						return conn.master.changeDelayR(action.options.time)
 					default: {
-						conn.master.changeDelayL(time)
-						conn.master.changeDelayR(time)
+						conn.master.changeDelayL(action.options.time)
+						conn.master.changeDelayR(action.options.time)
 						return
 					}
 				}
@@ -212,13 +199,13 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		/**
 		 * Master Channels
 		 */
-		[ActionId.MuteMasterChannel]: {
+		mutemasterchannel: {
 			name: 'Master channels: Mute',
 			description: 'Set or toggle MUTE for a channel on the master bus',
 			options: [...OPTION_SETS.masterChannel, OPTIONS.muteDropdown],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
-				switch (Number(action.options.mute)) {
+				switch (action.options.mute) {
 					case 0:
 						return c.unmute()
 					case 1:
@@ -229,45 +216,43 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
-		[ActionId.SetMasterChannelValue]: {
+		setmasterchannelvalue: {
 			name: 'Master channels: Set fader value',
 			description: 'Set the fader value (dB) for a channel on the master bus',
 			options: [...OPTION_SETS.masterChannel, OPTIONS.faderValuesSlider],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
-				const value = Number(action.options.value)
-				return c.setFaderLevelDB(value)
+				return c.setFaderLevelDB(action.options.value)
 			},
 		},
 
-		[ActionId.FadeMasterChannel]: {
+		fademasterchannel: {
 			name: 'Master channels: Fade transition',
 			description: 'Perform a timed fade transition for a channel on the master bus',
 			options: [...OPTION_SETS.masterChannel, ...OPTION_SETS.fadeTransition],
 			callback: async (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
-				return c.fadeToDB(Number(action.options.value), Number(action.options.fadeTime), Number(action.options.easing))
+				return c.fadeToDB(action.options.value, action.options.fadeTime, action.options.easing)
 			},
 		},
 
-		[ActionId.ChangeMasterChannelValue]: {
+		changemasterchannelvalue: {
 			name: 'Master channels: Change fader value (relative)',
 			description: 'Relatively change the fader value (dB) for a channel on the master bus',
 			options: [...OPTION_SETS.masterChannel, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
-				const value = Number(action.options.value)
-				return c.changeFaderLevelDB(value)
+				return c.changeFaderLevelDB(action.options.value)
 			},
 		},
 
-		[ActionId.SoloMasterChannel]: {
+		solomasterchannel: {
 			name: 'Master channels: Solo',
 			description: 'Set or toggle SOLO for a channel on the master bus',
 			options: [...OPTION_SETS.masterChannel, OPTIONS.soloDropdown],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
-				switch (Number(action.options.solo)) {
+				switch (action.options.solo) {
 					case 0:
 						return c.unsolo()
 					case 1:
@@ -278,53 +263,49 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
-		[ActionId.SetMasterChannelPan]: {
+		setmasterchannelpan: {
 			name: 'Master channels: Set PAN',
 			description: 'Set PAN value for a channel on the master bus',
 			options: [...OPTION_SETS.pannableMasterChannel, OPTIONS.panValueSlider],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
-				const panValue = Number(action.options.value)
-				c.setPan(convertPanToLinearValue(panValue))
+				c.setPan(convertPanToLinearValue(action.options.value))
 			},
 		},
 
-		[ActionId.ChangeMasterChannelPan]: {
+		changemasterchannelpan: {
 			name: 'Master channels: Change PAN (relative)',
 			description: 'Relatively change PAN value for a channel on the master bus (PAN Range: -100 to 100)',
 			options: [...OPTION_SETS.pannableMasterChannel, OPTIONS.panChangeField],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
-				const panValue = Number(action.options.value)
-				c.changePan(convertPanOffsetToLinearOffset(panValue))
+				c.changePan(convertPanOffsetToLinearOffset(action.options.value))
 			},
 		},
 
-		[ActionId.SetMasterChannelDelay]: {
+		setmasterchanneldelay: {
 			name: 'Master channels: Set output delay',
 			description:
 				'Set output delay for a channel on the master bus. Input and Line channels allow for max. 250 ms, AUX master faders can be delayed by max. 500ms.',
 			options: [...OPTION_SETS.delayableMasterChannel(0, 500)],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn) as DelayableMasterChannel
-				const time = Number(action.options.time)
-				c.setDelay(time)
+				c.setDelay(action.options.time)
 			},
 		},
 
-		[ActionId.ChangeMasterChannelDelay]: {
+		changemasterchanneldelay: {
 			name: 'Master channels: Change output delay (relative)',
 			description:
 				'Relatively change output delay for a channel on the master bus. Input and Line channels allow for max. 250 ms, AUX master faders can be delayed by max. 500ms.',
 			options: [...OPTION_SETS.delayableMasterChannel(-500, 500)],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn) as DelayableMasterChannel
-				const time = Number(action.options.time)
-				c.changeDelay(time)
+				c.changeDelay(action.options.time)
 			},
 		},
 
-		[ActionId.MasterChannelSelectMTK]: {
+		masterchannelselectmtk: {
 			name: 'Master channels: Select for multitrack recording',
 			description: 'Include or remove an input or line channel for multitrack recording',
 			options: [
@@ -338,7 +319,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
-				switch (Number(action.options.select)) {
+				switch (action.options.select) {
 					case 0:
 						return c.multiTrackUnselect()
 					case 1:
@@ -352,13 +333,13 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		/**
 		 * AUX Channels
 		 */
-		[ActionId.MuteAuxChannel]: {
+		muteauxchannel: {
 			name: 'AUX channels: Mute',
 			description: 'Set or toggle MUTE for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.muteDropdown],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
-				switch (Number(action.options.mute)) {
+				switch (action.options.mute) {
 					case 0:
 						return c.unmute()
 					case 1:
@@ -369,45 +350,43 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
-		[ActionId.SetAuxChannelValue]: {
+		setauxchannelvalue: {
 			name: 'AUX channels: Set fader value',
 			description: 'Set the fader value (dB) for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.faderValuesSlider],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
-				const value = Number(action.options.value)
-				return c.setFaderLevelDB(value)
+				return c.setFaderLevelDB(action.options.value)
 			},
 		},
 
-		[ActionId.FadeAuxChannel]: {
+		fadeauxchannel: {
 			name: 'AUX channels: Fade transition',
 			description: 'Perform a timed fade transition for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, ...OPTION_SETS.fadeTransition],
 			callback: async (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
-				return c.fadeToDB(Number(action.options.value), Number(action.options.fadeTime), Number(action.options.easing))
+				return c.fadeToDB(action.options.value, action.options.fadeTime, action.options.easing)
 			},
 		},
 
-		[ActionId.ChangeAuxChannelValue]: {
+		changeauxchannelvalue: {
 			name: 'AUX channels: Change fader value (relative)',
 			description: 'Relatively change the fader value (dB) for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
-				const value = Number(action.options.value)
-				return c.changeFaderLevelDB(value)
+				return c.changeFaderLevelDB(action.options.value)
 			},
 		},
 
-		[ActionId.SetAuxChannelPost]: {
+		setauxchannelpost: {
 			name: 'AUX channels: Set PRE/POST',
 			description: 'Set or toggle PRE/POST for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.prepostDropdown],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
-				switch (Number(action.options.post)) {
+				switch (action.options.post) {
 					case 0:
 						return c.pre()
 					case 1:
@@ -418,7 +397,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
-		[ActionId.SetAuxChannelPostProc]: {
+		setauxchannelpostproc: {
 			name: 'AUX channels: Set POST PROC',
 			description: 'Set POST PROC/PRE PROC for a channel on an AUX bus (Ui24R only)',
 			options: [
@@ -432,69 +411,64 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
-				const value = Number(action.options.postproc)
-				return c.setPostProc(value)
+				return c.setPostProc(action.options.postproc)
 			},
 		},
 
-		[ActionId.SetAuxChannelPan]: {
+		setauxchannelpan: {
 			name: 'AUX channels: Set PAN',
 			description: 'Set PAN value for a channel on a AUX bus. Not possible for mono AUX!',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.panValueSlider],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
-				const panValue = Number(action.options.value)
-				c.setPan(convertPanToLinearValue(panValue))
+				c.setPan(convertPanToLinearValue(action.options.value))
 			},
 		},
 
-		[ActionId.ChangeAuxChannelPan]: {
+		changeauxchannelpan: {
 			name: 'AUX channels: Change PAN (relative)',
 			description:
 				'Relatively change PAN value for a channel on a AUX bus (PAN Range: -100 to 100). Not possible for mono AUX!',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.panChangeField],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
-				const panValue = Number(action.options.value)
-				c.changePan(convertPanOffsetToLinearOffset(panValue))
+				c.changePan(convertPanOffsetToLinearOffset(action.options.value))
 			},
 		},
 
 		/**
 		 * Volume Buses (SOLO and Headphone)
 		 */
-		[ActionId.SetVolumeBusValue]: {
+		setvolumebusvalue: {
 			name: 'SOLO/Headphone Bus: Set volume',
 			description: 'Set the fader value (dB) for a SOLO or headphone bus (Ui24R only)',
 			options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderValuesSlider],
 			callback: (action) => {
 				const bus = getVolumeBusFromOptions(action.options, conn)
-				const value = Number(action.options.value)
-				return bus && bus.setFaderLevelDB(value)
+				return bus && bus.setFaderLevelDB(action.options.value)
 			},
 		},
 
-		[ActionId.ChangeVolumeBusValue]: {
+		changevolumebusvalue: {
 			name: 'SOLO/Headphone Bus: Change volume (relative)',
 			description: 'Relatively change the fader value (dB) for a SOLO or headphone bus (Ui24R only)',
 			options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const bus = getVolumeBusFromOptions(action.options, conn)
-				const value = Number(action.options.value)
-				return bus && bus.changeFaderLevelDB(value)
+				return bus && bus.changeFaderLevelDB(action.options.value)
 			},
 		},
 
 		/**
 		 * FX channels
 		 */
-		[ActionId.MuteFxChannel]: {
+		mutefxchannel: {
 			name: 'FX channels: Mute',
 			description: 'Mute/unmute a channel on an FX bus',
 			options: [...OPTION_SETS.fxChannel, OPTIONS.muteDropdown],
 			callback: (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
-				switch (Number(action.options.mute)) {
+				switch (action.options.mute) {
 					case 0:
 						return c.unmute()
 					case 1:
@@ -505,45 +479,43 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
-		[ActionId.SetFxChannelValue]: {
+		setfxchannelvalue: {
 			name: 'FX channels: Set fader value',
 			description: 'Set the fader value (dB) for a channel on an FX bus',
 			options: [...OPTION_SETS.fxChannel, OPTIONS.faderValuesSlider],
 			callback: (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
-				const value = Number(action.options.value)
-				return c.setFaderLevelDB(value)
+				return c.setFaderLevelDB(action.options.value)
 			},
 		},
 
-		[ActionId.FadeFxChannel]: {
+		fadefxchannel: {
 			name: 'FX channels: Fade transition',
 			description: 'Perform a timed fade transition for a channel on an FX bus',
 			options: [...OPTION_SETS.fxChannel, ...OPTION_SETS.fadeTransition],
 			callback: async (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
-				return c.fadeToDB(Number(action.options.value), Number(action.options.fadeTime), Number(action.options.easing))
+				return c.fadeToDB(action.options.value, action.options.fadeTime, action.options.easing)
 			},
 		},
 
-		[ActionId.ChangeFxChannelValue]: {
+		changefxchannelvalue: {
 			name: 'FX channels: Change fader value (relative)',
 			description: 'Relatively change the fader value (dB) for a channel on an FX bus',
 			options: [...OPTION_SETS.fxChannel, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
-				const value = Number(action.options.value)
-				return c.changeFaderLevelDB(value)
+				return c.changeFaderLevelDB(action.options.value)
 			},
 		},
 
-		[ActionId.SetFxChannelPost]: {
+		setfxchannelpost: {
 			name: 'FX channels: Set PRE/POST',
 			description: 'Set or toggle PRE/POST for a channel on an FX bus',
 			options: [...OPTION_SETS.fxChannel, OPTIONS.prepostDropdown],
 			callback: (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
-				switch (Number(action.options.post)) {
+				switch (action.options.post) {
 					case 0:
 						return c.pre()
 					case 1:
@@ -557,7 +529,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		/**
 		 * FX Settings
 		 */
-		[ActionId.SetFxBPM]: {
+		setfxbpm: {
 			name: 'FX: Set BPM',
 			description: 'Set BPM value for FX processors',
 			options: [
@@ -573,6 +545,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					],
 					default: [2, 3, 4],
 					minSelection: 1,
+					disableAutoExpression: true,
 				},
 				{
 					type: 'number',
@@ -584,15 +557,13 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 				},
 			],
 			callback: (action) => {
-				const bpm = Number(action.options.bpm)
-				const chosenFx = action.options.fx as number[]
-				chosenFx.forEach((fxNo) => {
-					conn.fx(fxNo).setBpm(bpm)
+				action.options.fx.forEach((fxNo) => {
+					conn.fx(fxNo).setBpm(action.options.bpm)
 				})
 			},
 		},
 
-		[ActionId.SetFxParam]: {
+		setfxparam: {
 			name: 'FX: Set FX Parameter',
 			description:
 				'Set parameter for an FX processor. Not every FX uses all of the 6 available parameters. There are no units and number conversion available: The value represents the fader range in percent.',
@@ -608,6 +579,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 						{ id: 4, label: 'FX 4' },
 					],
 					default: 1,
+					disableAutoExpression: true,
 				},
 				{
 					type: 'dropdown',
@@ -622,13 +594,13 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 						{ id: 6, label: '6' },
 					],
 					default: 1,
+					disableAutoExpression: true,
 				},
 				{
 					type: 'number',
 					label: 'Parameter Fader Level (%)',
 					id: 'value',
 					range: true,
-					required: true,
 					default: 0,
 					step: 1,
 					min: 0,
@@ -636,47 +608,47 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 				},
 			],
 			callback: (action) => {
-				const normalizedValue = Number(action.options.value) / 100
+				const normalizedValue = action.options.value / 100
 
-				const fx = conn.fx(Number(action.options.fx))
-				fx.setParam(Number(action.options.param), normalizedValue)
+				const fx = conn.fx(action.options.fx)
+				fx.setParam(action.options.param, normalizedValue)
 			},
 		},
 
 		/**
 		 * Media Player
 		 */
-		[ActionId.MediaPlay]: {
+		mediaplay: {
 			name: 'Media Player: Play/Stop',
 			options: [],
 			callback: () => conn.player.play(),
 		},
 
-		[ActionId.MediaStop]: {
+		mediastop: {
 			name: 'Media Player: Stop',
 			options: [],
 			callback: () => conn.player.stop(),
 		},
 
-		[ActionId.MediaPause]: {
+		mediapause: {
 			name: 'Media Player: Pause',
 			options: [],
 			callback: () => conn.player.pause(),
 		},
 
-		[ActionId.MediaNext]: {
+		medianext: {
 			name: 'Media Player: Next track',
 			options: [],
 			callback: () => conn.player.next(),
 		},
 
-		[ActionId.MediaPrev]: {
+		mediaprev: {
 			name: 'Media Player: Previous track',
 			options: [],
 			callback: () => conn.player.prev(),
 		},
 
-		[ActionId.MediaSwitchPlist]: {
+		mediaswitchplist: {
 			name: 'Media Player: Switch Playlist',
 			options: [
 				{
@@ -684,15 +656,13 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					label: 'Playlist',
 					id: 'playlist',
 					default: '~all~',
-					regex: Regex.SOMETHING,
+					minLength: 1,
 				},
 			],
-			callback: (action) => {
-				conn.player.loadPlaylist(action.options.playlist as string)
-			},
+			callback: (action) => conn.player.loadPlaylist(action.options.playlist),
 		},
 
-		[ActionId.MediaSwitchTrack]: {
+		mediaswitchtrack: {
 			name: 'Media Player: Switch Track',
 			options: [
 				{
@@ -700,21 +670,19 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					label: 'Playlist',
 					id: 'playlist',
 					default: '~all~',
-					regex: Regex.SOMETHING,
+					minLength: 1,
 				},
 				{
 					type: 'textinput',
 					label: 'Track/File',
 					id: 'track',
-					regex: Regex.SOMETHING,
+					minLength: 1,
 				},
 			],
-			callback: (action) => {
-				conn.player.loadTrack(action.options.playlist as string, action.options.track as string)
-			},
+			callback: (action) => conn.player.loadTrack(action.options.playlist, action.options.track),
 		},
 
-		[ActionId.MediaSetPlayMode]: {
+		mediasetplaymode: {
 			name: 'Media Player: Set play mode (MANUAL/AUTO)',
 			options: [
 				{
@@ -726,6 +694,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 						{ id: 'auto', label: 'AUTO' },
 					],
 					default: 'manual',
+					disableAutoExpression: true,
 				},
 			],
 			callback: (action) => {
@@ -738,7 +707,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
-		[ActionId.MediaSetShuffle]: {
+		mediasetshuffle: {
 			name: 'Media Player: Set shuffle',
 			options: [
 				{
@@ -749,7 +718,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 				},
 			],
 			callback: (action) => {
-				switch (Number(action.options.shuffle)) {
+				switch (action.options.shuffle) {
 					case 0:
 						return conn.player.setShuffle(0)
 					case 1:
@@ -763,19 +732,19 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		/**
 		 * 2-track Recorder
 		 */
-		[ActionId.DTRecordStart]: {
+		dualtrackrecordstart: {
 			name: '2-Track Recording: Record Start',
 			options: [],
 			callback: () => conn.recorderDualTrack.recordStart(),
 		},
 
-		[ActionId.DTRecordStop]: {
+		dualtrackrecordstop: {
 			name: '2-Track Recording: Record Stop',
 			options: [],
 			callback: () => conn.recorderDualTrack.recordStop(),
 		},
 
-		[ActionId.DTRecordToggle]: {
+		dualtrackrecordtoggle: {
 			name: '2-Track Recording: Record Toggle',
 			options: [],
 			callback: () => conn.recorderDualTrack.recordToggle(),
@@ -784,7 +753,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		/**
 		 * Multitrack Recorder
 		 */
-		[ActionId.MTKPlay]: {
+		mtkplay: {
 			name: 'Multitrack: Play/Pause Playback',
 			description:
 				'Play or pause playback in the multitrack recorder. If playback is running, it will be paused. If playback is stopped or paused, it will be started.',
@@ -792,7 +761,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			callback: () => conn.recorderMultiTrack.play(),
 		},
 
-		[ActionId.MTKStop]: {
+		mtkstop: {
 			name: 'Multitrack: Stop Playback',
 			description:
 				'Stop playback in the multitrack recorder. This will not stop recording, please use the "Multitrack: Stop Recording" action for this use-case.',
@@ -800,31 +769,31 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			callback: () => conn.recorderMultiTrack.stop(),
 		},
 
-		[ActionId.MTKPause]: {
+		mtkpause: {
 			name: 'Multitrack: Pause Playback',
 			options: [],
 			callback: () => conn.recorderMultiTrack.pause(),
 		},
 
-		[ActionId.MTKRecordStart]: {
+		mtkrecordstart: {
 			name: 'Multitrack: Start Recording',
 			options: [],
 			callback: () => conn.recorderMultiTrack.recordStart(),
 		},
 
-		[ActionId.MTKRecordStop]: {
+		mtkrecordstop: {
 			name: 'Multitrack: Stop Recording',
 			options: [],
 			callback: () => conn.recorderMultiTrack.recordStop(),
 		},
 
-		[ActionId.MTKRecordToggle]: {
+		mtkrecordtoggle: {
 			name: 'Multitrack: Toggle Recording',
 			options: [],
 			callback: () => conn.recorderMultiTrack.recordToggle(),
 		},
 
-		[ActionId.MTKSoundcheck]: {
+		mtksoundcheck: {
 			name: 'Multitrack: Activate/deactivate soundcheck',
 			description: 'Activate, deactivate or toggle soundcheck in the multitrack recorder',
 			options: [
@@ -838,7 +807,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			callback: (action) => {
 				const recorder = conn.recorderMultiTrack
 
-				switch (Number(action.options.state)) {
+				switch (action.options.state) {
 					case 0:
 						return recorder.deactivateSoundcheck()
 					case 1:
@@ -852,18 +821,13 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		/**
 		 * MUTE Groups / ALL / FX
 		 */
-		[ActionId.MuteGroupMute]: {
+		mutegroupmute: {
 			name: 'MUTE Groups/ALL/FX: Mute',
 			description: 'Mute/unmute a mute group or ALL/FX',
 			options: [OPTIONS.muteGroupDropdown, OPTIONS.muteDropdown],
 			callback: (action) => {
-				const groupId = getMuteGroupIDFromOptions(action.options)
-				if (groupId === -1) {
-					return
-				}
-
-				const group = conn.muteGroup(groupId)
-				switch (Number(action.options.mute)) {
+				const group = conn.muteGroup(action.options.group as MuteGroupID)
+				switch (action.options.mute) {
 					case 0:
 						return group.unmute()
 					case 1:
@@ -874,7 +838,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
-		[ActionId.MuteGroupClear]: {
+		mutegroupclear: {
 			name: 'MUTE Groups/ALL/FX: Clear',
 			description: 'Unmute all mute groups',
 			options: [],
@@ -884,7 +848,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		/**
 		 * Shows / Snapshots / Cues
 		 */
-		[ActionId.LoadShow]: {
+		loadshow: {
 			name: 'Shows: Load Show',
 			options: [
 				{
@@ -892,17 +856,13 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					label: 'Show Name',
 					id: 'show',
 					default: 'Default',
-					regex: Regex.SOMETHING,
+					minLength: 1,
 				},
 			],
-			callback: (action) => {
-				if (action.options.show) {
-					conn.shows.loadShow(action.options.show as string)
-				}
-			},
+			callback: (action) => conn.shows.loadShow(action.options.show),
 		},
 
-		[ActionId.LoadSnapshot]: {
+		loadsnapshot: {
 			name: 'Shows: Load Snapshot',
 			options: [
 				{
@@ -910,24 +870,20 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					label: 'Show Name',
 					id: 'show',
 					default: 'Default',
-					regex: Regex.SOMETHING,
+					minLength: 1,
 				},
 				{
 					type: 'textinput',
 					label: 'Snapshot Name',
 					id: 'snapshot',
 					default: '* Init *',
-					regex: Regex.SOMETHING,
+					minLength: 1,
 				},
 			],
-			callback: (action) => {
-				if (action.options.show && action.options.snapshot) {
-					conn.shows.loadSnapshot(action.options.show as string, action.options.snapshot as string)
-				}
-			},
+			callback: (action) => conn.shows.loadSnapshot(action.options.show, action.options.snapshot),
 		},
 
-		[ActionId.LoadCue]: {
+		loadcue: {
 			name: 'Shows: Load Cue',
 			options: [
 				{
@@ -935,24 +891,20 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					label: 'Show Name',
 					id: 'show',
 					default: 'Default',
-					regex: Regex.SOMETHING,
+					minLength: 1,
 				},
 				{
 					type: 'textinput',
 					label: 'Cue Name',
 					id: 'cue',
 					default: '',
-					regex: Regex.SOMETHING,
+					minLength: 1,
 				},
 			],
-			callback: (action) => {
-				if (action.options.show && action.options.cue) {
-					conn.shows.loadCue(action.options.show as string, action.options.cue as string)
-				}
-			},
+			callback: (action) => conn.shows.loadCue(action.options.show, action.options.cue),
 		},
 
-		[ActionId.SaveSnapshot]: {
+		savesnapshot: {
 			name: 'Shows: Save Snapshot',
 			description: 'Save or overwrite a snapshot in a show. This action will not ask for confirmation!',
 			options: [
@@ -961,31 +913,27 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					label: 'Show Name',
 					id: 'show',
 					default: '',
-					regex: Regex.SOMETHING,
+					minLength: 1,
 				},
 				{
 					type: 'textinput',
 					label: 'Snapshot Name',
 					id: 'snapshot',
 					default: '',
-					regex: Regex.SOMETHING,
+					minLength: 1,
 				},
 			],
-			callback: (action) => {
-				if (action.options.show && action.options.snapshot) {
-					conn.shows.saveSnapshot(action.options.show as string, action.options.snapshot as string)
-				}
-			},
+			callback: (action) => conn.shows.saveSnapshot(action.options.show, action.options.snapshot),
 		},
 
-		[ActionId.UpdateCurrentSnapshot]: {
+		updatecurrentsnapshot: {
 			name: 'Shows: Update Current Snapshot',
 			description: 'Update the currently loaded show snapshot. This action will not ask for confirmation!',
 			options: [],
 			callback: () => conn.shows.updateCurrentSnapshot(),
 		},
 
-		[ActionId.SaveCue]: {
+		savecue: {
 			name: 'Shows: Save Cue',
 			description: 'Save or overwrite a cue in a show. This action will not ask for confirmation!',
 			options: [
@@ -994,24 +942,20 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					label: 'Show Name',
 					id: 'show',
 					default: '',
-					regex: Regex.SOMETHING,
+					minLength: 1,
 				},
 				{
 					type: 'textinput',
 					label: 'Cue Name',
 					id: 'cue',
 					default: '',
-					regex: Regex.SOMETHING,
+					minLength: 1,
 				},
 			],
-			callback: (action) => {
-				if (action.options.show && action.options.cue) {
-					conn.shows.saveCue(action.options.show as string, action.options.cue as string)
-				}
-			},
+			callback: (action) => conn.shows.saveCue(action.options.show, action.options.cue),
 		},
 
-		[ActionId.UpdateCurrentCue]: {
+		updatecurrentcue: {
 			name: 'Shows: Update Current Cue',
 			description: 'Update the currently loaded show cue. This action will not ask for confirmation!',
 			options: [],
@@ -1021,7 +965,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		/**
 		 * HW Channels / Phantom Power
 		 */
-		[ActionId.HwSetPhantomPower]: {
+		hwsetphantompower: {
 			name: 'HW Channel: Set Phantom Power',
 			description:
 				'Set or toggle phantom power for a physical input. Be aware that input and HW channel numbers can be different when patching is enabled (Ui24R only). Use with care! Phantom power can destroy some microphones.',
@@ -1035,10 +979,9 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 				},
 			],
 			callback: (action) => {
-				const channelNo = Number(action.options.hwchannel)
-				const channel = conn.hw(channelNo)
+				const channel = conn.hw(action.options.hwchannel)
 
-				switch (Number(action.options.power)) {
+				switch (action.options.power) {
 					case 0:
 						return channel.phantomOff()
 					case 1:
@@ -1052,7 +995,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 		/**
 		 * Automix
 		 */
-		[ActionId.AutomixAssignGroupToChannel]: {
+		automixassigngrouptochannel: {
 			name: 'Automix: Assign channel to automix group',
 			description: 'Assign a master input channel to an automix group',
 			options: [
@@ -1067,10 +1010,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 						{ id: 'none', label: 'None / Remove' },
 					],
 					default: 'none',
+					disableAutoExpression: true,
 				},
 			],
 			callback: (action) => {
-				const channel = getMasterChannel(conn.master, 'i', Number(action.options.channel))
+				const channel = getMasterChannel(conn.master, 'i', action.options.channel)
 				let group: AutomixGroupId | 'none' = 'none'
 				switch (action.options.group) {
 					case 'a':
@@ -1087,7 +1031,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
-		[ActionId.AutomixEnableGroup]: {
+		automixenablegroup: {
 			name: 'Automix: Enable/disable automix group',
 			description: 'Enable, disable or toggle an automix group',
 			options: [
@@ -1100,6 +1044,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 						{ id: 'b', label: 'B' },
 					],
 					default: 'a',
+					disableAutoExpression: true,
 				},
 				{
 					type: 'dropdown',
@@ -1114,7 +1059,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					group = conn.automix.groups.b
 				}
 
-				switch (Number(action.options.state)) {
+				switch (action.options.state) {
 					case 0:
 						return group.disable()
 					case 1:
@@ -1125,7 +1070,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 			},
 		},
 
-		[ActionId.PatchingSetRoute]: {
+		patchingsetroute: {
 			name: 'Patching: Configure patch route (Ui24R only)',
 			description:
 				'Configure patch from source to destination. USB-A inputs cannot be patched to HW OUTS and CASCADE OUTS.',
@@ -1136,6 +1081,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					id: 'source',
 					choices: patchSources,
 					default: 'none',
+					disableAutoExpression: true,
 				},
 				{
 					type: 'dropdown',
@@ -1143,11 +1089,12 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions {
 					id: 'destination',
 					choices: patchDestinations,
 					default: 'i.0.src',
+					disableAutoExpression: true,
 				},
 			],
 			callback: (action) => {
-				const source = action.options.source as string
-				const destination = action.options.destination as string
+				const source = action.options.source
+				const destination = action.options.destination
 
 				// USB-A source cannot be patched to HW OUTS or CASCADE OUTS
 				if (source.startsWith('ua') && (destination.startsWith('hwout') || destination.startsWith('casc'))) {
