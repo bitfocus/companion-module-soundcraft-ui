@@ -5,14 +5,14 @@ import { GetActionsList } from './actions.js'
 import { instanceConfigFields, type UiConfig } from './config.js'
 import { GetFeedbacksList } from './feedback.js'
 import { UiFeedbackStore } from './feedback-store.js'
-import { upgradeLegacyFeedbackToBoolean, upgradeV2x0x0 } from './upgrades.js'
+import { upgradeLegacyFeedbackToBoolean, upgradeRemoveStateFeedbackOption, upgradeV2x0x0 } from './upgrades.js'
 import { createPresets } from './presets.js'
 import { createVariables } from './variables.js'
 import { UiVariablesStore } from './variables-store.js'
 import type { UiSchema } from './schema.js'
 
 /** upgrade scripts should be exported as a named UpgradeScripts constant */
-export const UpgradeScripts = [upgradeV2x0x0, upgradeLegacyFeedbackToBoolean]
+export const UpgradeScripts = [upgradeV2x0x0, upgradeLegacyFeedbackToBoolean, upgradeRemoveStateFeedbackOption]
 
 /**
  * Companion instance class for the Soundcraft Ui Mixers.

@@ -33,7 +33,7 @@ function makeMasterChannelMuteButton(
 		feedbacks: [
 			{
 				feedbackId: 'mutemasterchannel',
-				options: { channelType, channel, state: true },
+				options: { channelType, channel },
 				style: feedbackDefaultStyles.mute,
 			},
 		],
@@ -64,7 +64,7 @@ function makeMasterChannelSoloButton(
 		feedbacks: [
 			{
 				feedbackId: 'solomasterchannel',
-				options: { channelType, channel, state: true },
+				options: { channelType, channel },
 				style: feedbackDefaultStyles.solo,
 			},
 		],
@@ -96,7 +96,7 @@ function makeAuxChannelMuteButton(
 		feedbacks: [
 			{
 				feedbackId: 'muteauxchannel',
-				options: { bus, channelType, channel, state: true },
+				options: { bus, channelType, channel },
 				style: feedbackDefaultStyles.mute,
 			},
 		],
@@ -128,7 +128,7 @@ function makeAuxChannelPrePostButton(
 		feedbacks: [
 			{
 				feedbackId: 'postauxchannel',
-				options: { bus, channelType, channel, state: true },
+				options: { bus, channelType, channel },
 				style: {
 					...feedbackDefaultStyles.post,
 					text: `AUX ${bus}\\nPOST\\n$(module:m_${variablePart}_name)`,
@@ -441,7 +441,7 @@ export async function createPresets(
 			feedbacks: [
 				{
 					feedbackId: 'dimmaster',
-					options: { state: true },
+					options: {},
 					style: feedbackDefaultStyles.dim,
 				},
 			],

@@ -11,7 +11,7 @@ import {
 } from './utils/channel-selection.js'
 import { patchDestinations, patchSources } from './utils/patch-parameters.js'
 import { convertPanOffsetToLinearOffset, convertPanToLinearValue } from './utils/utils.js'
-import type { AuxChannelOpts, FadeOpts, FxChannelOpts, MasterChannelOpts } from './utils/option-types.js'
+import type { AuxChannelOpts, FadeOpts, FxChannelOpts, MasterChannelOpts, NoOpts } from './utils/option-types.js'
 
 export type UiActionSchemas = {
 	// Master
@@ -60,42 +60,42 @@ export type UiActionSchemas = {
 	changevolumebusvalue: { options: { bus: string; value: number } }
 
 	// Media Player
-	mediaplay: { options: Record<string, never> }
-	mediastop: { options: Record<string, never> }
-	mediapause: { options: Record<string, never> }
-	medianext: { options: Record<string, never> }
-	mediaprev: { options: Record<string, never> }
+	mediaplay: { options: NoOpts }
+	mediastop: { options: NoOpts }
+	mediapause: { options: NoOpts }
+	medianext: { options: NoOpts }
+	mediaprev: { options: NoOpts }
 	mediaswitchplist: { options: { playlist: string } }
 	mediaswitchtrack: { options: { playlist: string; track: string } }
 	mediasetplaymode: { options: { mode: string } }
 	mediasetshuffle: { options: { shuffle: number } }
 
 	// 2-Track Recorder
-	dualtrackrecordtoggle: { options: Record<string, never> }
-	dualtrackrecordstart: { options: Record<string, never> }
-	dualtrackrecordstop: { options: Record<string, never> }
+	dualtrackrecordtoggle: { options: NoOpts }
+	dualtrackrecordstart: { options: NoOpts }
+	dualtrackrecordstop: { options: NoOpts }
 
 	// Multitrack Recorder
-	mtkplay: { options: Record<string, never> }
-	mtkstop: { options: Record<string, never> }
-	mtkpause: { options: Record<string, never> }
-	mtkrecordtoggle: { options: Record<string, never> }
-	mtkrecordstart: { options: Record<string, never> }
-	mtkrecordstop: { options: Record<string, never> }
+	mtkplay: { options: NoOpts }
+	mtkstop: { options: NoOpts }
+	mtkpause: { options: NoOpts }
+	mtkrecordtoggle: { options: NoOpts }
+	mtkrecordstart: { options: NoOpts }
+	mtkrecordstop: { options: NoOpts }
 	mtksoundcheck: { options: { state: number } }
 
 	// MUTE Groups / ALL / FX
 	mutegroupmute: { options: { group: number | string; mute: number } }
-	mutegroupclear: { options: Record<string, never> }
+	mutegroupclear: { options: NoOpts }
 
 	// Shows / Snapshots / Cues
 	loadshow: { options: { show: string } }
 	loadsnapshot: { options: { show: string; snapshot: string } }
 	loadcue: { options: { show: string; cue: string } }
 	savesnapshot: { options: { show: string; snapshot: string } }
-	updatecurrentsnapshot: { options: Record<string, never> }
+	updatecurrentsnapshot: { options: NoOpts }
 	savecue: { options: { show: string; cue: string } }
-	updatecurrentcue: { options: Record<string, never> }
+	updatecurrentcue: { options: NoOpts }
 
 	// Hardware Channels / Phantom Power
 	hwsetphantompower: { options: { hwchannel: number; power: number } }
@@ -286,7 +286,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		setmasterchanneldelay: {
 			name: 'Master channels: Set output delay',
 			description:
-				'Set output delay for a channel on the master bus. Input and Line channels allow for max. 250 ms, AUX master faders can be delayed by max. 500ms.',
+				'Set output delay for a channel on the master bus. Input and Line channels allow for max. 250 ms, AUX master faders can be delayed by max. 500 ms.',
 			options: [...OPTION_SETS.delayableMasterChannel(0, 500)],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn) as DelayableMasterChannel
@@ -297,7 +297,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		changemasterchanneldelay: {
 			name: 'Master channels: Change output delay (relative)',
 			description:
-				'Relatively change output delay for a channel on the master bus. Input and Line channels allow for max. 250 ms, AUX master faders can be delayed by max. 500ms.',
+				'Relatively change output delay for a channel on the master bus. Input and Line channels allow for max. 250 ms, AUX master faders can be delayed by max. 500 ms.',
 			options: [...OPTION_SETS.delayableMasterChannel(-500, 500)],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn) as DelayableMasterChannel

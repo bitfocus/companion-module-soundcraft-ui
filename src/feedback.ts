@@ -7,7 +7,6 @@ import { type MuteGroupID, MtkState, PlayerState, SoundcraftUI } from 'soundcraf
 import { distinctUntilChanged, map } from 'rxjs'
 
 import { UiFeedbackStore } from './feedback-store.js'
-import { getFeedbackFromBinaryState, getStateCheckbox } from './utils/feedback-utils.js'
 import { OPTION_SETS, OPTIONS } from './utils/input-utils.js'
 import {
 	getAuxChannelFromOptions,
@@ -15,28 +14,26 @@ import {
 	getMasterChannelFromOptions,
 } from './utils/channel-selection.js'
 import { patchDestinations, patchSources } from './utils/patch-parameters.js'
-import type { AuxChannelOpts, FxChannelOpts, MasterChannelOpts } from './utils/option-types.js'
-
-type StateOpts = { state: boolean }
+import type { AuxChannelOpts, FxChannelOpts, MasterChannelOpts, NoOpts } from './utils/option-types.js'
 
 export type UiFeedbackSchemas = {
-	mutemasterchannel: { type: 'boolean'; options: MasterChannelOpts & StateOpts }
-	solomasterchannel: { type: 'boolean'; options: MasterChannelOpts & StateOpts }
-	masterchannelmtkselection: { type: 'boolean'; options: MasterChannelOpts & StateOpts }
-	dimmaster: { type: 'boolean'; options: StateOpts }
-	muteauxchannel: { type: 'boolean'; options: AuxChannelOpts & StateOpts }
-	postauxchannel: { type: 'boolean'; options: AuxChannelOpts & StateOpts }
-	mutefxchannel: { type: 'boolean'; options: FxChannelOpts & StateOpts }
-	postfxchannel: { type: 'boolean'; options: FxChannelOpts & StateOpts }
+	mutemasterchannel: { type: 'boolean'; options: MasterChannelOpts }
+	solomasterchannel: { type: 'boolean'; options: MasterChannelOpts }
+	masterchannelmtkselection: { type: 'boolean'; options: MasterChannelOpts }
+	dimmaster: { type: 'boolean'; options: NoOpts }
+	muteauxchannel: { type: 'boolean'; options: AuxChannelOpts }
+	postauxchannel: { type: 'boolean'; options: AuxChannelOpts }
+	mutefxchannel: { type: 'boolean'; options: FxChannelOpts }
+	postfxchannel: { type: 'boolean'; options: FxChannelOpts }
 	mediaplayerstate: { type: 'boolean'; options: { state: number } }
-	mediaplayershuffle: { type: 'boolean'; options: StateOpts }
+	mediaplayershuffle: { type: 'boolean'; options: NoOpts }
 	dualtrackrecordstate: { type: 'boolean'; options: { state: string } }
 	mtkplayerstate: { type: 'boolean'; options: { state: number } }
 	mtkrecordstate: { type: 'boolean'; options: { state: string } }
-	mtksoundcheckstate: { type: 'boolean'; options: StateOpts }
-	mutemutegroup: { type: 'boolean'; options: { group: number | string; state: boolean } }
-	hwphantompower: { type: 'boolean'; options: { hwchannel: number; state: boolean } }
-	automixgroupstate: { type: 'boolean'; options: { group: string; state: boolean } }
+	mtksoundcheckstate: { type: 'boolean'; options: NoOpts }
+	mutemutegroup: { type: 'boolean'; options: { group: number | string } }
+	hwphantompower: { type: 'boolean'; options: { hwchannel: number } }
+	automixgroupstate: { type: 'boolean'; options: { group: string } }
 	patchingroutestate: { type: 'boolean'; options: { source: string; destination: string } }
 }
 
@@ -69,12 +66,12 @@ export function GetFeedbacksList(
 			name: 'Master channel: MUTE',
 			description: 'If the specified master channel is muted',
 			defaultStyle: feedbackDefaultStyles.mute,
-			options: [...OPTION_SETS.masterChannel, getStateCheckbox('Muted')],
+			options: [...OPTION_SETS.masterChannel],
 			callback: (evt) => {
 				const c = getMasterChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-mute'
 				store.connect(evt, c.mute$, streamId)
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -84,12 +81,12 @@ export function GetFeedbacksList(
 			name: 'Master channel: SOLO',
 			description: 'If the specified master channel has SOLO active',
 			defaultStyle: feedbackDefaultStyles.solo,
-			options: [...OPTION_SETS.masterChannel, getStateCheckbox('Solo')],
+			options: [...OPTION_SETS.masterChannel],
 			callback: (evt) => {
 				const c = getMasterChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-solo'
 				store.connect(evt, c.solo$, streamId)
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -102,25 +99,25 @@ export function GetFeedbacksList(
 				color: combineRgb(255, 255, 255),
 				bgcolor: combineRgb(153, 153, 0),
 			},
-			options: [...OPTION_SETS.multiTrackMasterChannel, getStateCheckbox('Selected')],
+			options: [...OPTION_SETS.multiTrackMasterChannel],
 			callback: (evt) => {
 				const c = getMasterChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-mtkrec'
 				store.connect(evt, c.multiTrackSelected$, streamId)
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
 		dimmaster: {
 			type: 'boolean',
-			name: 'Master: DIM',
+			name: 'Master: DIM (Ui24R only)',
 			description: 'If the master is dimmed',
 			defaultStyle: feedbackDefaultStyles.dim,
-			options: [getStateCheckbox('Dimmed')],
+			options: [],
 			callback: (evt) => {
 				store.connect(evt, conn.master.dim$, 'masterdim')
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -130,12 +127,12 @@ export function GetFeedbacksList(
 			name: 'AUX bus channel: MUTE',
 			description: 'If the specified channel on the AUX bus is muted',
 			defaultStyle: feedbackDefaultStyles.mute,
-			options: [...OPTION_SETS.auxChannel, getStateCheckbox('Muted')],
+			options: [...OPTION_SETS.auxChannel],
 			callback: (evt) => {
 				const c = getAuxChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-mute'
 				store.connect(evt, c.mute$, streamId)
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -145,12 +142,12 @@ export function GetFeedbacksList(
 			name: 'AUX bus channel: POST',
 			description: 'If the specified channel on the AUX bus has POST enabled',
 			defaultStyle: feedbackDefaultStyles.post,
-			options: [...OPTION_SETS.auxChannel, getStateCheckbox('POST')],
+			options: [...OPTION_SETS.auxChannel],
 			callback: (evt) => {
 				const c = getAuxChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-post'
 				store.connect(evt, c.post$, streamId)
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -160,12 +157,12 @@ export function GetFeedbacksList(
 			name: 'FX bus channel: MUTE',
 			description: 'If the specified channel on the FX bus is muted',
 			defaultStyle: feedbackDefaultStyles.mute,
-			options: [...OPTION_SETS.fxChannel, getStateCheckbox('Muted')],
+			options: [...OPTION_SETS.fxChannel],
 			callback: (evt) => {
 				const c = getFxChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-mute'
 				store.connect(evt, c.mute$, streamId)
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -175,12 +172,12 @@ export function GetFeedbacksList(
 			name: 'FX bus channel: POST',
 			description: 'If the specified channel on the FX bus has POST enabled',
 			defaultStyle: feedbackDefaultStyles.post,
-			options: [...OPTION_SETS.fxChannel, getStateCheckbox('POST')],
+			options: [...OPTION_SETS.fxChannel],
 			callback: (evt) => {
 				const c = getFxChannelFromOptions(evt.options, conn)
 				const streamId = c.fullChannelId + '-post'
 				store.connect(evt, c.post$, streamId)
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -223,15 +220,15 @@ export function GetFeedbacksList(
 		mediaplayershuffle: {
 			type: 'boolean',
 			name: 'Media Player: Shuffle',
-			description: 'If the shuffle setting of the media player has the specified state',
+			description: 'If the shuffle setting of the media player is active',
 			defaultStyle: {
 				color: combineRgb(255, 255, 255),
 				bgcolor: combineRgb(156, 22, 69),
 			},
-			options: [getStateCheckbox('Shuffle')],
+			options: [],
 			callback: (evt) => {
 				store.connect(evt, conn.player.shuffle$, 'playershuffle')
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -348,15 +345,15 @@ export function GetFeedbacksList(
 		mtksoundcheckstate: {
 			type: 'boolean',
 			name: 'Multitrack Recording: Soundcheck State',
-			description: 'If soundcheck in the multitrack recorder has the specified state',
+			description: 'If soundcheck in the multitrack recorder is active',
 			defaultStyle: {
 				bgcolor: combineRgb(0, 255, 0),
 				color: combineRgb(255, 255, 255),
 			},
-			options: [getStateCheckbox('Active')],
+			options: [],
 			callback: (evt) => {
 				store.connect(evt, conn.recorderMultiTrack.soundcheck$, 'mtksoundcheck')
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -366,13 +363,13 @@ export function GetFeedbacksList(
 			name: 'MUTE group/ALL/FX state',
 			description: 'If the specified group is muted',
 			defaultStyle: feedbackDefaultStyles.mute,
-			options: [OPTIONS.muteGroupDropdown, getStateCheckbox('Muted')],
+			options: [OPTIONS.muteGroupDropdown],
 			callback: (evt) => {
 				const groupId = evt.options.group as MuteGroupID
 				const streamId = 'mgstate' + groupId
 				const group = conn.muteGroup(groupId)
 				store.connect(evt, group.state$, streamId)
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -385,12 +382,12 @@ export function GetFeedbacksList(
 				bgcolor: combineRgb(51, 102, 255),
 				color: combineRgb(255, 255, 255),
 			},
-			options: [OPTIONS.hwChannelNumberField, getStateCheckbox('Phantom Power enabled')],
+			options: [OPTIONS.hwChannelNumberField],
 			callback: (evt) => {
 				const streamId = 'hw' + evt.options.hwchannel + 'phantom'
 				const channel = conn.hw(evt.options.hwchannel)
 				store.connect(evt, channel.phantom$, streamId)
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -398,7 +395,7 @@ export function GetFeedbacksList(
 		automixgroupstate: {
 			type: 'boolean',
 			name: 'Automix: Group State',
-			description: 'If an automix group is enabled/disabled',
+			description: 'If an automix group is enabled',
 			defaultStyle: {
 				bgcolor: combineRgb(30, 150, 50),
 				color: combineRgb(255, 255, 255),
@@ -415,17 +412,22 @@ export function GetFeedbacksList(
 					default: 'a',
 					disableAutoExpression: true,
 				},
-				getStateCheckbox('Group enabled'),
 			],
 			callback: (evt) => {
-				const groupId = evt.options.group
-				let group = conn.automix.groups.a
-				if (groupId === 'b') {
-					group = conn.automix.groups.b
+				let group
+				switch (evt.options.group) {
+					case 'a':
+						group = conn.automix.groups.a
+						break
+					case 'b':
+						group = conn.automix.groups.b
+						break
+					default:
+						return false
 				}
-				const streamId = 'amixgroupstate' + groupId
+				const streamId = 'amixgroupstate' + evt.options.group
 				store.connect(evt, group.state$, streamId)
-				return getFeedbackFromBinaryState(store, evt)
+				return !!store.get(evt.id)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
