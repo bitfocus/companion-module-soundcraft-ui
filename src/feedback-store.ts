@@ -22,13 +22,22 @@ export class UiFeedbackStore {
 
 	/**
 	 * Register a stream of feedback values from the mixer.
-	 * Must be called from the feedback subscribe callback to connect the mixer state with companion.
+	 * Must be called from the feedback callback to connect the mixer state with companion.
 	 * The stream will be subscribed until we call `unsubscribeFeedback` with the internal feedback ID.
 	 * @param evt The feedback metadata from Companion
 	 * @param stream$ The observable stream of values for this feedback
-	 * @param streamId Internal identifier for the stream. Used to group similar streams
+	 * @param streamId Internal identifier for the stream. Used to group multiple subscriptions to the same stream
 	 */
 	connect(evt: CompanionFeedbackInfo, stream$: Observable<unknown>, streamId: string): void {
+		// Already subscribed to this exact stream — nothing to do
+		if (this.feedbackStreamMap.get(evt.id) === streamId) {
+			return
+		}
+
+		// Stream changed (e.g. options were updated): unsubscribe the old stream
+		// before re-connecting. No-op if this is the first connect.
+		this.unsubscribe(evt.id)
+
 		// if there is NO subscription to this observable yet,
 		// create an entry and subscribe the stream
 		if (!this.subscriptions.get(streamId)) {
