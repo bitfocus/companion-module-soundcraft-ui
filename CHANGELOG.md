@@ -1,3 +1,17 @@
+# 3.10.1 (2026-03-25)
+
+- fix: move feedback subscribe logic into callback ([fb08ca0](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/fb08ca0052a53e94dedf042a3308a26089f31e0b))
+- feat: add changelog generation script ([fc21202](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/fc212023413239dc1fec85dda807bc8340de5785))
+
+## Dependency updates
+
+- chore(deps): bump flatted from 3.3.1 to 3.4.2 (#134) ([bf8d583](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/bf8d583deb2acc2069d46c8caec8528e03d437d8))
+- chore(deps): bump tar from 7.5.10 to 7.5.11 (#131) ([c0a0599](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/c0a0599693975fd130d9e2474f5e33b0b52e5fc6))
+- chore(deps): bump tar from 7.5.9 to 7.5.10 (#130) ([f29148f](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/f29148fefa767e5cdd7d5dcee86d3179cd0ba841))
+- chore(deps): bump ajv from 6.12.6 to 6.14.0 ([a2bdfc9](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/a2bdfc96be893c2b75b33eb1bc20eb88b52b619b))
+- chore(deps): bump tar from 7.5.7 to 7.5.9 ([10f89ed](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/10f89ed1ccc398dae81df3a095ba8cd893e11b71))
+- chore(deps): bump soundcraft-ui-connection to v5.0.0 ([cdc8ad1](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/cdc8ad148a5a6dca266c603c185bb07c298c3359))
+
 # 3.10.0 (2026-02-03)
 
 - feat: add fader level percentage variables ([64eccbe](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/64eccbe2fca3a0eb0a57f237fdda800dd8cd7f55))
