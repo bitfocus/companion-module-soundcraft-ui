@@ -1,7 +1,9 @@
 {
-	"version": 4,
+	"version": 11,
 	"type": "page",
+	"companionBuild": "4.3.0+9084-main-63dc80dee5",
 	"page": {
+		"id": "WW-95_l2dtqCrtiBY9kGe",
 		"name": "Multitrack",
 		"controls": {
 			"0": {
@@ -24,36 +26,52 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "ieB_drW6XE2VnoZrQ60yu",
-							"type": "mtkplayerstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "FyZFEisZ5fqDOe_hjxIOE",
+							"definitionId": "mtkplayerstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"state": 2
+								"state": {
+									"isExpression": false,
+									"value": 2
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"color": 16777215,
 								"bgcolor": 16711680
-							},
-							"isInverted": false
+							}
 						},
 						{
-							"id": "xqWFb-Kstrg0f4ngceA2S",
-							"type": "mtkplayerstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "bBcDihNETtWSMUv-RXKFm",
+							"definitionId": "mtkplayerstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"state": 0
+								"state": {
+									"isExpression": false,
+									"value": 0
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"color": 16777215,
 								"bgcolor": 65280
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -61,11 +79,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "1OF6l9mdikzvkkSUEOGrg",
-										"action": "mtkplay",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "JNy__bpGklcRCAvEXvpjQ",
+										"definitionId": "mtkplay",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -74,7 +93,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -92,23 +112,31 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "IHtSSTP4b32vRZEw_izTB",
-							"type": "mtkplayerstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "rPnmjwSj-mwYotXq4WPNT",
+							"definitionId": "mtkplayerstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"state": 1
+								"state": {
+									"isExpression": false,
+									"value": 1
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"color": 16777215,
 								"bgcolor": 16750899
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -116,11 +144,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "bBRFyJbUrbPq6-EjUCMPQ",
-										"action": "mtkstop",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"id": "BZ-kts9urS9bpatDj3AtW",
+										"definitionId": "mtkpause",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 2,
+										"type": "action"
 									}
 								],
 								"up": []
@@ -129,7 +158,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -147,23 +177,31 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "qDLTzGZnr6qG_FLz-6clC",
-							"type": "mtkplayerstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "HJN79ePLQbY-pqcp2yXDD",
+							"definitionId": "mtkplayerstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"state": 2
+								"state": {
+									"isExpression": false,
+									"value": 2
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"color": 16777215,
 								"bgcolor": 16711680
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -171,11 +209,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "hjb_KinCQX1fCxUxpRH60",
-										"action": "mtkpause",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"id": "qCkXLSfe1wllOdrtczX17",
+										"definitionId": "mtkstop",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 2,
+										"type": "action"
 									}
 								],
 								"up": []
@@ -184,19 +223,15 @@
 								"runWhileHeld": []
 							}
 						}
-					}
-				}
-			},
-			"1": {
-				"0": {
-					"type": "pagenum"
+					},
+					"localVariables": []
 				},
-				"1": {
+				"5": {
 					"type": "button",
 					"style": {
-						"text": "Sound\\ncheck",
+						"text": "Elapsed\\n$(ui24:mtk_elapsed)",
 						"textExpression": false,
-						"size": "18",
+						"size": "14",
 						"png64": null,
 						"alignment": "center:center",
 						"pngalignment": "center:center",
@@ -205,48 +240,94 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
-					"feedbacks": [
-						{
-							"id": "bz9DDlrWC2JO--4AryVOI",
-							"type": "mtksoundcheckstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
-							"options": {
-								"state": true
-							},
-							"style": {
-								"bgcolor": 65280,
-								"color": 16777215
-							},
-							"isInverted": false
-						}
-					],
+					"feedbacks": [],
 					"steps": {
 						"0": {
 							"action_sets": {
-								"down": [
-									{
-										"id": "fD3TKOpJyJTcrZpbUqUxQ",
-										"action": "mtksoundcheck",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {
-											"state": 2
-										},
-										"delay": 0
-									}
-								],
+								"down": [],
 								"up": []
 							},
 							"options": {
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
-				"2": {
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Remaining\\n$(ui24:mtk_remaining)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"7": {
+					"type": "button",
+					"style": {
+						"text": "Length\\n$(ui24:mtk_length)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				}
+			},
+			"1": {
+				"0": {
+					"type": "pagenum"
+				},
+				"1": {
 					"type": "button",
 					"style": {
 						"text": "REC",
@@ -262,36 +343,52 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "hxwKphso3PUaCh_ZP0aIl",
-							"type": "mtkrecordstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "X4ohNSeFUs7d4L-PJc2Qf",
+							"definitionId": "mtkrecordstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"state": "rec"
+								"state": {
+									"isExpression": false,
+									"value": "rec"
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"color": 16777215,
 								"bgcolor": 16711680
-							},
-							"isInverted": false
+							}
 						},
 						{
-							"id": "2XD1zLA3gHk6lX0vSKLAR",
-							"type": "mtkrecordstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "31BSQWA743RHZ5fg06XDZ",
+							"definitionId": "mtkrecordstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"state": "busy"
+								"state": {
+									"isExpression": false,
+									"value": "busy"
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"color": 16777215,
 								"bgcolor": 16750899
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -299,11 +396,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "QoAlIUAj0HbhuoORZu-Kf",
-										"action": "mtkrecordtoggle",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "uigNdLC02Y4EYz9x-Eu8H",
+										"definitionId": "mtkrecordtoggle",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -312,230 +410,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
-				},
-				"4": {
-					"type": "button",
-					"style": {
-						"text": "Input 1 Toggle",
-						"textExpression": false,
-						"size": "18",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default"
 					},
-					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
-					},
-					"feedbacks": [
-						{
-							"id": "hEso_0eYn8VcsaCTq15-O",
-							"type": "masterchannelmtkselection",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
-							"options": {
-								"channelType": "i",
-								"channel": 1,
-								"state": true
-							},
-							"style": {
-								"color": 16777215,
-								"bgcolor": 10066176
-							},
-							"isInverted": false
-						}
-					],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"id": "jouW161ad4IfTm7u5fRz7",
-										"action": "masterchannelselectmtk",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {
-											"channelType": "i",
-											"channel": 1,
-											"select": 2
-										},
-										"delay": 0
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					}
-				},
-				"5": {
-					"type": "button",
-					"style": {
-						"text": "Input 5 Toggle",
-						"textExpression": false,
-						"size": "18",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default"
-					},
-					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
-					},
-					"feedbacks": [
-						{
-							"id": "QlcPBmLVsJtsMxKLIyw-C",
-							"type": "masterchannelmtkselection",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
-							"options": {
-								"channelType": "i",
-								"channel": 5,
-								"state": true
-							},
-							"style": {
-								"color": 16777215,
-								"bgcolor": 10066176
-							},
-							"isInverted": false
-						}
-					],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"id": "bLq3waQ5AOwDNCHMjwNn6",
-										"action": "masterchannelselectmtk",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {
-											"channelType": "i",
-											"channel": 5,
-											"select": 2
-										},
-										"delay": 0
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					}
-				},
-				"6": {
-					"type": "button",
-					"style": {
-						"text": "Line 1 Toggle",
-						"textExpression": false,
-						"size": "18",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default"
-					},
-					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
-					},
-					"feedbacks": [
-						{
-							"id": "qOQrF8zBw81NxzOOF5RR3",
-							"type": "masterchannelmtkselection",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
-							"options": {
-								"channelType": "l",
-								"channel": 1,
-								"state": true
-							},
-							"style": {
-								"color": 16777215,
-								"bgcolor": 10066176
-							},
-							"isInverted": false
-						}
-					],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"id": "m2t2r_5d6nn5Jr8z90u--",
-										"action": "masterchannelselectmtk",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {
-											"channelType": "l",
-											"channel": 1,
-											"select": 2
-										},
-										"delay": 0
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					}
-				}
-			},
-			"2": {
-				"0": {
-					"type": "pagedown"
-				},
-				"1": {
-					"type": "button",
-					"style": {
-						"text": "SC ON",
-						"textExpression": false,
-						"size": "24",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default"
-					},
-					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
-					},
-					"feedbacks": [],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"id": "MuNnJGyOjPaLC7lRM26Co",
-										"action": "mtksoundcheck",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {
-											"state": 1
-										},
-										"delay": 0
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					}
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -551,9 +427,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -561,11 +437,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Rou1h1w_NI2nuOLVeevFn",
-										"action": "mtkrecordstart",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "5QOqPckGNRAtgj_qxbMy4",
+										"definitionId": "mtkrecordstart",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -574,181 +451,10 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
-				"4": {
-					"type": "button",
-					"style": {
-						"text": "Input 1\\nOn",
-						"textExpression": false,
-						"size": "18",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default"
-					},
-					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
-					},
-					"feedbacks": [],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"id": "RiXEGsF09re9ph4D05Y-n",
-										"action": "masterchannelselectmtk",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {
-											"channelType": "i",
-											"channel": 1,
-											"select": 1
-										},
-										"delay": 0
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					}
-				},
-				"5": {
-					"type": "button",
-					"style": {
-						"text": "Input 5\\nOn",
-						"textExpression": false,
-						"size": "18",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default"
-					},
-					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
-					},
-					"feedbacks": [],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"id": "Y9Ly6_YPbRRmcWw2446aW",
-										"action": "masterchannelselectmtk",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {
-											"channelType": "i",
-											"channel": 5,
-											"select": 1
-										},
-										"delay": 0
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					}
-				},
-				"6": {
-					"type": "button",
-					"style": {
-						"text": "Line 1\\nOn",
-						"textExpression": false,
-						"size": "18",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default"
-					},
-					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
-					},
-					"feedbacks": [],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"id": "dQJGORZU4rSaVJ-lhKva5",
-										"action": "masterchannelselectmtk",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {
-											"channelType": "l",
-											"channel": 1,
-											"select": 1
-										},
-										"delay": 0
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					}
-				}
-			},
-			"3": {
-				"1": {
-					"type": "button",
-					"style": {
-						"text": "SC OFF",
-						"textExpression": false,
-						"size": "24",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default"
-					},
-					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
-					},
-					"feedbacks": [],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"id": "5DnSZemjZ_er_7J2qpTJR",
-										"action": "mtksoundcheck",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {
-											"state": 0
-										},
-										"delay": 0
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					}
-				},
-				"2": {
+				"3": {
 					"type": "button",
 					"style": {
 						"text": "REC Stop",
@@ -762,9 +468,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -772,11 +478,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "ZGXw6p2dZDq3kq1Ii11qO",
-										"action": "mtkrecordstop",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "fFOTyrk6Y7zON9EX89M9g",
+										"definitionId": "mtkrecordstop",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -785,9 +492,638 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
-				"4": {
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Input 1 Toggle",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [
+						{
+							"type": "feedback",
+							"id": "VKESGcEQ7zkwe2NWpsa-c",
+							"definitionId": "masterchannelmtkselection",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"channelType": {
+									"isExpression": false,
+									"value": "i"
+								},
+								"channel": {
+									"isExpression": false,
+									"value": 1
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 10066176
+							}
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "L9pZQmQL77vRdYhIK7Wxm",
+										"definitionId": "masterchannelselectmtk",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 1
+											},
+											"select": {
+												"isExpression": false,
+												"value": 2
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Input 5 Toggle",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [
+						{
+							"type": "feedback",
+							"id": "9tC8R-uzBAoJbtM1j-Kfk",
+							"definitionId": "masterchannelmtkselection",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"channelType": {
+									"isExpression": false,
+									"value": "i"
+								},
+								"channel": {
+									"isExpression": false,
+									"value": 5
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 10066176
+							}
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "cq0dJurdjwOo5LMzWgopk",
+										"definitionId": "masterchannelselectmtk",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 5
+											},
+											"select": {
+												"isExpression": false,
+												"value": 2
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"7": {
+					"type": "button",
+					"style": {
+						"text": "Line 1 Toggle",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [
+						{
+							"type": "feedback",
+							"id": "MLq33dvePAj-_zy-fzDiW",
+							"definitionId": "masterchannelmtkselection",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"channelType": {
+									"isExpression": false,
+									"value": "l"
+								},
+								"channel": {
+									"isExpression": false,
+									"value": 1
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
+							"style": {
+								"color": 16777215,
+								"bgcolor": 10066176
+							}
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "nM1XCvsPK7dhPWrvKdanG",
+										"definitionId": "masterchannelselectmtk",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": {
+												"isExpression": false,
+												"value": "l"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 1
+											},
+											"select": {
+												"isExpression": false,
+												"value": 2
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				}
+			},
+			"2": {
+				"0": {
+					"type": "pagedown"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "REC Time\\n$(ui24:mtk_rectime)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "Session\\n$(ui24:mtk_session)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "Input 1\\nOn",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "i_j2tTJhFfaeoRarzrLkP",
+										"definitionId": "masterchannelselectmtk",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 1
+											},
+											"select": {
+												"isExpression": false,
+												"value": 1
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Input 5\\nOn",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "I_GZSycwQuFS2tX3VmXVj",
+										"definitionId": "masterchannelselectmtk",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 5
+											},
+											"select": {
+												"isExpression": false,
+												"value": 1
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"7": {
+					"type": "button",
+					"style": {
+						"text": "Line 1\\nOn",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "2OL6nDffaRejw5hyqKMKS",
+										"definitionId": "masterchannelselectmtk",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": {
+												"isExpression": false,
+												"value": "l"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 1
+											},
+											"select": {
+												"isExpression": false,
+												"value": 1
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				}
+			},
+			"3": {
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "Sound\\ncheck",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [
+						{
+							"type": "feedback",
+							"id": "N6MO0NOoMlKkRziKgshZ1",
+							"definitionId": "mtksoundcheckstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
+							"style": {
+								"bgcolor": 65280,
+								"color": 16777215
+							}
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "k_f51wc9auK327QJWXINl",
+										"definitionId": "mtksoundcheck",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"state": {
+												"isExpression": false,
+												"value": 2
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "SC ON",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "QbwIMxa_1NjjwvB0BH2gt",
+										"definitionId": "mtksoundcheck",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"state": {
+												"isExpression": false,
+												"value": 1
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "SC OFF",
+						"textExpression": false,
+						"size": "24",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "IPa4AvvhS91vtC91VxPDT",
+										"definitionId": "mtksoundcheck",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"state": {
+												"isExpression": false,
+												"value": 0
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
 					"type": "button",
 					"style": {
 						"text": "Input 1\\nOff",
@@ -801,9 +1137,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -811,15 +1147,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "IG9-oh2ARFMHXdOcM46kY",
-										"action": "masterchannelselectmtk",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "SgDrYAEoFigcLxcZ1Mbt2",
+										"definitionId": "masterchannelselectmtk",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 1,
-											"select": 0
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 1
+											},
+											"select": {
+												"isExpression": false,
+												"value": 0
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -828,9 +1174,10 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
-				"5": {
+				"6": {
 					"type": "button",
 					"style": {
 						"text": "Input 5\\nOff",
@@ -844,9 +1191,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -854,15 +1201,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "2z3sqBkX_AAec1zA0O4K3",
-										"action": "masterchannelselectmtk",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "LW3_rDbvIjPjPtDIvoR50",
+										"definitionId": "masterchannelselectmtk",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 5,
-											"select": 0
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 5
+											},
+											"select": {
+												"isExpression": false,
+												"value": 0
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -871,9 +1228,10 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
-				"6": {
+				"7": {
 					"type": "button",
 					"style": {
 						"text": "Line 1\\nOff",
@@ -887,9 +1245,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -897,15 +1255,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "Silztmnrii2I4HZ20mf5z",
-										"action": "masterchannelselectmtk",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "NiUse42DsoW6PtZP8gDuk",
+										"definitionId": "masterchannelselectmtk",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "l",
-											"channel": 1,
-											"select": 0
+											"channelType": {
+												"isExpression": false,
+												"value": "l"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 1
+											},
+											"select": {
+												"isExpression": false,
+												"value": 0
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -914,7 +1282,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			}
 		},
@@ -927,18 +1296,27 @@
 	},
 	"instances": {
 		"K5mVTsGHIPgqYkyqYxEWS": {
-			"instance_type": "soundcraft-ui",
 			"sortOrder": 2,
 			"label": "ui24",
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
-				"host": "10.75.23.95",
-				"import_to": "M56cJZPf5-"
+				"host": "10.23.23.95",
+				"import_to": "M56cJZPf5-",
+				"disablePanVars": true,
+				"enableFaderLevelVars": true,
+				"enablePanVars": true,
+				"enableFaderLevelVarsPct": true
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1
+			"lastUpgradeIndex": 2,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {},
+			"moduleId": "soundcraft-ui"
 		}
 	},
-	"oldPageNumber": 93
+	"connectionCollections": [],
+	"oldPageNumber": 40
 }

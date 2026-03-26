@@ -1,7 +1,9 @@
 {
-	"version": 4,
+	"version": 11,
 	"type": "page",
+	"companionBuild": "4.3.0+9084-main-63dc80dee5",
 	"page": {
+		"id": "x45vGQCwgARGoF2bZ5dfF",
 		"name": "SOLO/HP",
 		"controls": {
 			"0": {
@@ -24,9 +26,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -34,14 +36,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "MeRPDsv2XmeXhmwNCF5d6",
-										"label": "GiXDbh3CB:setvolumebusvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setvolumebusvalue",
+										"type": "action",
+										"id": "FAfDZPdZ5SZe41uBSowa3",
+										"definitionId": "setvolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"bus": "solo",
-											"value": 5
-										}
+											"bus": {
+												"isExpression": false,
+												"value": "solo"
+											},
+											"value": {
+												"isExpression": false,
+												"value": 5
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -50,7 +59,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -68,9 +78,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -78,14 +88,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "tdxMhLIv49XG9CEXHrvBt",
-										"label": "GiXDbh3CB:setvolumebusvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setvolumebusvalue",
+										"type": "action",
+										"id": "rtUokAdHt6pInKWPUhfQi",
+										"definitionId": "setvolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"bus": "hp1",
-											"value": 5
-										}
+											"bus": {
+												"isExpression": false,
+												"value": "hp1"
+											},
+											"value": {
+												"isExpression": false,
+												"value": 5
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -94,7 +111,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -112,9 +130,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -122,14 +140,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "OyFkiNg5T2lI1DRqVKEtQ",
-										"label": "GiXDbh3CB:setvolumebusvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setvolumebusvalue",
+										"type": "action",
+										"id": "7Mt2w0Vxi3sjpnK-oCT0b",
+										"definitionId": "setvolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"bus": "hp2",
-											"value": 5
-										}
+											"bus": {
+												"isExpression": false,
+												"value": "hp2"
+											},
+											"value": {
+												"isExpression": false,
+												"value": 5
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -138,7 +163,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"1": {
@@ -161,9 +187,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -171,14 +197,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "kMgN9yqHO-QLNIzSwkCf-",
-										"label": "GiXDbh3CB:setvolumebusvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setvolumebusvalue",
+										"type": "action",
+										"id": "KAZUCkBFbMC3MNTXEpLVt",
+										"definitionId": "setvolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"bus": "solo",
-											"value": -20
-										}
+											"bus": {
+												"isExpression": false,
+												"value": "solo"
+											},
+											"value": {
+												"isExpression": false,
+												"value": -20
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -187,7 +220,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -205,9 +239,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -215,14 +249,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "hvTv9dKsZBRT3jsQATqRx",
-										"label": "GiXDbh3CB:setvolumebusvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setvolumebusvalue",
+										"type": "action",
+										"id": "2Fin6u817Ti8EYybwqHVT",
+										"definitionId": "setvolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"bus": "hp1",
-											"value": -20
-										}
+											"bus": {
+												"isExpression": false,
+												"value": "hp1"
+											},
+											"value": {
+												"isExpression": false,
+												"value": -20
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -231,7 +272,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -249,9 +291,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -259,14 +301,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "mDVzlmY18eKgz3eCaz8k2",
-										"label": "GiXDbh3CB:setvolumebusvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "setvolumebusvalue",
+										"type": "action",
+										"id": "kAMSA5KR4VODrTjbk06AT",
+										"definitionId": "setvolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"bus": "hp2",
-											"value": -20
-										}
+											"bus": {
+												"isExpression": false,
+												"value": "hp2"
+											},
+											"value": {
+												"isExpression": false,
+												"value": -20
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -275,7 +324,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"2": {
@@ -298,9 +348,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -308,14 +358,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "_oDTLbbuXXntpzD7-VBLn",
-										"label": "GiXDbh3CB:changevolumebusvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changevolumebusvalue",
+										"type": "action",
+										"id": "W1clL_im_NL6lquWmEfWq",
+										"definitionId": "changevolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"bus": "solo",
-											"value": 3
-										}
+											"bus": {
+												"isExpression": false,
+												"value": "solo"
+											},
+											"value": {
+												"isExpression": false,
+												"value": 3
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -324,7 +381,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -342,9 +400,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -352,14 +410,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "AoLwuPh--0o3rv1ZDZNCN",
-										"label": "GiXDbh3CB:changevolumebusvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changevolumebusvalue",
+										"type": "action",
+										"id": "R9jMh9MiFip4TWdnXYd4C",
+										"definitionId": "changevolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"bus": "hp1",
-											"value": 3
-										}
+											"bus": {
+												"isExpression": false,
+												"value": "hp1"
+											},
+											"value": {
+												"isExpression": false,
+												"value": 3
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -368,7 +433,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -386,9 +452,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -396,14 +462,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "-b-ERA4fKfMrGswmZ0LeB",
-										"label": "GiXDbh3CB:changevolumebusvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changevolumebusvalue",
+										"type": "action",
+										"id": "d85nv5mCv1in4Pck4KpcN",
+										"definitionId": "changevolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"bus": "hp2",
-											"value": 3
-										}
+											"bus": {
+												"isExpression": false,
+												"value": "hp2"
+											},
+											"value": {
+												"isExpression": false,
+												"value": 3
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -412,7 +485,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"3": {
@@ -432,9 +506,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -442,14 +516,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "7ZdJBAsVJ4LAI1yJCHbxg",
-										"label": "GiXDbh3CB:changevolumebusvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changevolumebusvalue",
+										"type": "action",
+										"id": "0ubkrXWlWXBEt_YigNU18",
+										"definitionId": "changevolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"bus": "solo",
-											"value": -6
-										}
+											"bus": {
+												"isExpression": false,
+												"value": "solo"
+											},
+											"value": {
+												"isExpression": false,
+												"value": -6
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -458,7 +539,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -476,9 +558,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -486,14 +568,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "t5rWinSGhSSXw040T_nBi",
-										"label": "GiXDbh3CB:changevolumebusvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changevolumebusvalue",
+										"type": "action",
+										"id": "OQw_naAZpwEQVEZNMHnz3",
+										"definitionId": "changevolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"bus": "hp1",
-											"value": -6
-										}
+											"bus": {
+												"isExpression": false,
+												"value": "hp1"
+											},
+											"value": {
+												"isExpression": false,
+												"value": -6
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -502,7 +591,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -520,9 +610,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -530,14 +620,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "yeyNZWX80guNyWGbXfn4K",
-										"label": "GiXDbh3CB:changevolumebusvalue",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "changevolumebusvalue",
+										"type": "action",
+										"id": "bKq4ACOrOfIaVT6ozbY-6",
+										"definitionId": "changevolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"bus": "hp2",
-											"value": -6
-										}
+											"bus": {
+												"isExpression": false,
+												"value": "hp2"
+											},
+											"value": {
+												"isExpression": false,
+												"value": -6
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -546,7 +643,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			}
 		},
@@ -559,18 +657,27 @@
 	},
 	"instances": {
 		"K5mVTsGHIPgqYkyqYxEWS": {
-			"instance_type": "soundcraft-ui",
 			"sortOrder": 2,
 			"label": "ui24",
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
-				"host": "10.75.23.95",
-				"import_to": "M56cJZPf5-"
+				"host": "10.23.23.95",
+				"import_to": "M56cJZPf5-",
+				"disablePanVars": true,
+				"enableFaderLevelVars": true,
+				"enablePanVars": true,
+				"enableFaderLevelVarsPct": true
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1
+			"lastUpgradeIndex": 2,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {},
+			"moduleId": "soundcraft-ui"
 		}
 	},
+	"connectionCollections": [],
 	"oldPageNumber": 36
 }

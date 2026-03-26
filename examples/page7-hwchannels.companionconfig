@@ -1,7 +1,9 @@
 {
-	"version": 4,
+	"version": 11,
 	"type": "page",
+	"companionBuild": "4.3.0+9084-main-63dc80dee5",
 	"page": {
+		"id": "wfckWbwavoo08VXP-kq29",
 		"name": "HW Channels",
 		"controls": {
 			"0": {
@@ -24,9 +26,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -34,15 +36,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "zsBPr0Dui_-EGcwFHhZe_",
-										"label": "GiXDbh3CB:hwsetphantompower",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "hwsetphantompower",
+										"type": "action",
+										"id": "CpFYqeCXEEVpnruNS5ZHp",
+										"definitionId": "hwsetphantompower",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"hwchannel": 5,
-											"power": 1
+											"hwchannel": {
+												"isExpression": false,
+												"value": 5
+											},
+											"power": {
+												"isExpression": false,
+												"value": 1
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -51,7 +59,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -69,9 +78,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -79,16 +88,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "16kfvQbya3kSasngzCdKA",
-										"label": "GiXDbh3CB:hwsetphantompower",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "hwsetphantompower",
+										"type": "action",
+										"id": "fDpDryWu3jxJ2anNqlUG7",
+										"definitionId": "hwsetphantompower",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"hwchannel": 5,
-											"power": 0,
-											"bestoption": "1dfsdfsdf"
+											"hwchannel": {
+												"isExpression": false,
+												"value": 5
+											},
+											"power": {
+												"isExpression": false,
+												"value": 0
+											},
+											"bestoption": {
+												"isExpression": false,
+												"value": "1dfsdfsdf"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -97,7 +115,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -115,24 +134,31 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "95avfCTSRosXSXjHoBcFw",
-							"type": "hwphantompower",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "J5BvcejdGxqhNeokeS9MO",
+							"definitionId": "hwphantompower",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"hwchannel": 5,
-								"state": true
+								"hwchannel": {
+									"isExpression": false,
+									"value": 5
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"bgcolor": 3368703,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -140,15 +166,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "6OghMa48rZgAEAJQv_iTc",
-										"label": "GiXDbh3CB:hwsetphantompower",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "hwsetphantompower",
+										"type": "action",
+										"id": "h1eXAZPdZ46rDoNNmF8g_",
+										"definitionId": "hwsetphantompower",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"hwchannel": 5,
-											"power": 2
+											"hwchannel": {
+												"isExpression": false,
+												"value": 5
+											},
+											"power": {
+												"isExpression": false,
+												"value": 2
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -157,7 +189,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"1": {
@@ -180,9 +213,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -190,15 +223,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "jUxi6jAWqfLwvGYxEM2KY",
-										"label": "GiXDbh3CB:hwsetphantompower",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "hwsetphantompower",
+										"type": "action",
+										"id": "XJEHPeJeQREtE8evR6uKN",
+										"definitionId": "hwsetphantompower",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"hwchannel": 6,
-											"power": 1
+											"hwchannel": {
+												"isExpression": false,
+												"value": 6
+											},
+											"power": {
+												"isExpression": false,
+												"value": 1
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -207,7 +246,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -225,9 +265,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -235,16 +275,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "_VqyPiAI_nL5DQPEd1BUo",
-										"label": "GiXDbh3CB:hwsetphantompower",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "hwsetphantompower",
+										"type": "action",
+										"id": "fGzj9tG_-pS3XKUSY0jta",
+										"definitionId": "hwsetphantompower",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"hwchannel": 6,
-											"power": 0,
-											"bestoption": "1dfsdfsdf"
+											"hwchannel": {
+												"isExpression": false,
+												"value": 6
+											},
+											"power": {
+												"isExpression": false,
+												"value": 0
+											},
+											"bestoption": {
+												"isExpression": false,
+												"value": "1dfsdfsdf"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -253,7 +302,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -271,24 +321,31 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "0TiAGgSffMRGs1c7VedvQ",
-							"type": "hwphantompower",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "i768aTb2hvc9ACTPZXfo8",
+							"definitionId": "hwphantompower",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"hwchannel": 6,
-								"state": true
+								"hwchannel": {
+									"isExpression": false,
+									"value": 6
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"bgcolor": 3368703,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -296,15 +353,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "h_hOPW6pmxkpU_oUGKUpA",
-										"label": "GiXDbh3CB:hwsetphantompower",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "hwsetphantompower",
+										"type": "action",
+										"id": "ccZx3uWTu-ZrvhjcXcFus",
+										"definitionId": "hwsetphantompower",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"hwchannel": 6,
-											"power": 2
+											"hwchannel": {
+												"isExpression": false,
+												"value": 6
+											},
+											"power": {
+												"isExpression": false,
+												"value": 2
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -313,7 +376,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"2": {
@@ -331,18 +395,27 @@
 	},
 	"instances": {
 		"K5mVTsGHIPgqYkyqYxEWS": {
-			"instance_type": "soundcraft-ui",
 			"sortOrder": 2,
 			"label": "ui24",
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
-				"host": "10.75.23.95",
-				"import_to": "M56cJZPf5-"
+				"host": "10.23.23.95",
+				"import_to": "M56cJZPf5-",
+				"disablePanVars": true,
+				"enableFaderLevelVars": true,
+				"enablePanVars": true,
+				"enableFaderLevelVarsPct": true
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1
+			"lastUpgradeIndex": 2,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {},
+			"moduleId": "soundcraft-ui"
 		}
 	},
+	"connectionCollections": [],
 	"oldPageNumber": 37
 }

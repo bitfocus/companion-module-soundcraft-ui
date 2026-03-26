@@ -1,9 +1,9 @@
 {
-	"version": 9,
+	"version": 11,
 	"type": "page",
-	"companionBuild": "4.2.1+8738-stable-3edf7ecdf4",
+	"companionBuild": "4.3.0+9084-main-63dc80dee5",
 	"page": {
-		"id": "FvbfVgppyZnEg_g-Hu_OZ",
+		"id": "zGMi3P2nLzYJ_py_kKLXh",
 		"name": "Master",
 		"controls": {
 			"0": {
@@ -33,16 +33,24 @@
 					"feedbacks": [
 						{
 							"type": "feedback",
-							"id": "ljrwuorZY2IIiD0rdgHQ7",
+							"id": "cwchXMQjThl1a-ZS6oLFP",
 							"definitionId": "dimmaster",
 							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"channelType": "i",
-								"channel": 1,
-								"state": true
+								"channelType": {
+									"isExpression": false,
+									"value": "i"
+								},
+								"channel": {
+									"isExpression": false,
+									"value": 1
+								}
 							},
-							"upgradeIndex": 1,
-							"isInverted": false,
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
 							"style": {
 								"bgcolor": 38655,
 								"color": 16777215
@@ -55,13 +63,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "V5CHg6ryGAKU8RJTIlXKe",
+										"id": "dM4g6pUb7rCkFZR-avP0K",
 										"definitionId": "dimmaster",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"dim": 2
+											"dim": {
+												"isExpression": false,
+												"value": 2
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -100,14 +111,20 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "zHFG1J7fMdbYaraaVxjlk",
+										"id": "X8umWBBK8q3BhR5rFo_S9",
 										"definitionId": "setmastervalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"value": 0,
-											"fad": -90
+											"value": {
+												"isExpression": false,
+												"value": 0
+											},
+											"fad": {
+												"isExpression": false,
+												"value": -90
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -146,15 +163,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "9z2owMp6JoRF2NQqmRijw",
+										"id": "FyXTfbGBS-7ktXeHsPgfj",
 										"definitionId": "fademaster",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"value": 0,
-											"fadeTime": 2000,
-											"easing": "2"
+											"value": {
+												"isExpression": false,
+												"value": 0
+											},
+											"fadeTime": {
+												"isExpression": false,
+												"value": 2000
+											},
+											"easing": {
+												"isExpression": false,
+												"value": "2"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -193,13 +219,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "5ECtoPsb4fxbar9NS9CZC",
+										"id": "zzKLI4kYzl54cdM0d8jSU",
 										"definitionId": "changemastervalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"value": 3
+											"value": {
+												"isExpression": false,
+												"value": 3
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -275,13 +304,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "ZejdWpL3YU8JfLzomnOFU",
+										"id": "bO3mMqgbGT2KGjkKcwdwh",
 										"definitionId": "dimmaster",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"dim": "1"
+											"dim": {
+												"isExpression": false,
+												"value": "1"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -320,13 +352,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "DmN6xQ7bqGFVtNrhyQw04",
+										"id": "kzhJFL2G_pSuaolOgdqX1",
 										"definitionId": "setmastervalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"value": 5
+											"value": {
+												"isExpression": false,
+												"value": 5
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -365,15 +400,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "FlOVZrKo40pNc9N9OtIER",
+										"id": "Y1WGWNXXkWBJ0q1K0a6g0",
 										"definitionId": "fademaster",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"value": 5,
-											"fadeTime": 2000,
-											"easing": "2"
+											"value": {
+												"isExpression": false,
+												"value": 5
+											},
+											"fadeTime": {
+												"isExpression": false,
+												"value": 2000
+											},
+											"easing": {
+												"isExpression": false,
+												"value": "2"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -412,13 +456,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "iQcKTrvio32yEwCz_e8Dm",
+										"id": "MxdTjV8OAK6LFEpDEuS9c",
 										"definitionId": "changemastervalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"value": -3
+											"value": {
+												"isExpression": false,
+												"value": -3
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -462,13 +509,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "KnuKKFUA7pDGNNlMxoOY5",
+										"id": "KUqe0dZ_kgpgwC9gd_Bbo",
 										"definitionId": "dimmaster",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"dim": "0"
+											"dim": {
+												"isExpression": false,
+												"value": "0"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -507,13 +557,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "drmSe7s4jSZFGeBTzWQvU",
+										"id": "LtwXUFI3Azo5Nqr91dlvM",
 										"definitionId": "setmastervalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"value": -50
+											"value": {
+												"isExpression": false,
+												"value": -50
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -552,15 +605,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "dCW1zU2H7rhKxRNmOJy0b",
+										"id": "eWU90WFkr5pY62D1J9Jf5",
 										"definitionId": "fademaster",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"value": -50,
-											"fadeTime": 2000,
-											"easing": "1"
+											"value": {
+												"isExpression": false,
+												"value": -50
+											},
+											"fadeTime": {
+												"isExpression": false,
+												"value": 2000
+											},
+											"easing": {
+												"isExpression": false,
+												"value": "1"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -583,23 +645,27 @@
 	},
 	"instances": {
 		"K5mVTsGHIPgqYkyqYxEWS": {
-			"instance_type": "soundcraft-ui",
 			"sortOrder": 2,
 			"label": "ui24",
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
 				"host": "10.23.23.95",
-				"import_to": "M56cJZPf5-"
+				"import_to": "M56cJZPf5-",
+				"disablePanVars": true,
+				"enableFaderLevelVars": true,
+				"enablePanVars": true,
+				"enableFaderLevelVarsPct": true
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1,
+			"lastUpgradeIndex": 2,
 			"moduleVersionId": "dev",
 			"updatePolicy": "stable",
 			"moduleInstanceType": "connection",
-			"secrets": {}
+			"secrets": {},
+			"moduleId": "soundcraft-ui"
 		}
 	},
 	"connectionCollections": [],
-	"oldPageNumber": 5
+	"oldPageNumber": 31
 }
