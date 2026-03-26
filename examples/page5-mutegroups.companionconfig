@@ -1,7 +1,9 @@
 {
-	"version": 4,
+	"version": 11,
 	"type": "page",
+	"companionBuild": "4.3.0+9084-main-63dc80dee5",
 	"page": {
+		"id": "IgSjrZaLUMO5whmROu0zM",
 		"name": "MUTE Groups",
 		"controls": {
 			"0": {
@@ -24,9 +26,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -34,15 +36,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "ctq9ocZYrb35BGfcv_NS7",
-										"label": "GiXDbh3CB:mutegroupmute",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupmute",
+										"type": "action",
+										"id": "RxqHnb3ycjNV4Rbm3Lg3s",
+										"definitionId": "mutegroupmute",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": 1,
-											"mute": "1"
+											"group": {
+												"isExpression": false,
+												"value": 1
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "1"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -51,7 +59,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -69,9 +78,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -79,14 +88,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "sDPYD3B1Ts2kyGbTqURmp",
-										"label": "GiXDbh3CB:mutegroupmute",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupmute",
+										"type": "action",
+										"id": "GY_m0uVlPN9MWDQ7XCsWE",
+										"definitionId": "mutegroupmute",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "2",
-											"mute": "1"
-										}
+											"group": {
+												"isExpression": false,
+												"value": "2"
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "1"
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -95,7 +111,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -113,9 +130,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -123,14 +140,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "9JWj0aHHDQTsLgh0MSsvy",
-										"label": "GiXDbh3CB:mutegroupmute",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupmute",
+										"type": "action",
+										"id": "AQH5-eHZ8N8ot9uBfBQCO",
+										"definitionId": "mutegroupmute",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "all",
-											"mute": "1"
-										}
+											"group": {
+												"isExpression": false,
+												"value": "all"
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "1"
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -139,7 +163,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -157,9 +182,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -167,14 +192,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "WbsXOfFx8CAVNYV7yk6CQ",
-										"label": "GiXDbh3CB:mutegroupmute",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupmute",
+										"type": "action",
+										"id": "xYi4dHB91I9uL7EdhI5ya",
+										"definitionId": "mutegroupmute",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "fx",
-											"mute": "1"
-										}
+											"group": {
+												"isExpression": false,
+												"value": "fx"
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "1"
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -183,7 +215,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"1": {
@@ -206,9 +239,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -216,14 +249,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "bO-mG7O8blRF1x1RrPyRB",
-										"label": "GiXDbh3CB:mutegroupmute",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupmute",
+										"type": "action",
+										"id": "d9HdLKhQvEj5AcRcHBAR8",
+										"definitionId": "mutegroupmute",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": 1,
-											"mute": "0"
-										}
+											"group": {
+												"isExpression": false,
+												"value": 1
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "0"
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -232,7 +272,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -250,9 +291,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -260,14 +301,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "VTcj2nIsiFXIuUvvYj1TB",
-										"label": "GiXDbh3CB:mutegroupmute",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupmute",
+										"type": "action",
+										"id": "S-DUXiMk0lgTYQfl-61mX",
+										"definitionId": "mutegroupmute",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "2",
-											"mute": "0"
-										}
+											"group": {
+												"isExpression": false,
+												"value": "2"
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "0"
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -276,7 +324,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -294,9 +343,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -304,14 +353,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "QNyFd21enA-MI_kHhvEtk",
-										"label": "GiXDbh3CB:mutegroupmute",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupmute",
+										"type": "action",
+										"id": "v5dj7TwOcPhcwU9dPUwBP",
+										"definitionId": "mutegroupmute",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "all",
-											"mute": "0"
-										}
+											"group": {
+												"isExpression": false,
+												"value": "all"
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "0"
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -320,7 +376,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -338,9 +395,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -348,14 +405,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "iZ7FInFKs6jVueXYujDyn",
-										"label": "GiXDbh3CB:mutegroupmute",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupmute",
+										"type": "action",
+										"id": "yqCXVLZp9YAzLrEKIRpD3",
+										"definitionId": "mutegroupmute",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "fx",
-											"mute": "0"
-										}
+											"group": {
+												"isExpression": false,
+												"value": "fx"
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "0"
+											}
+										},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -364,7 +428,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"2": {
@@ -387,24 +452,31 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "zPdgTebN0s9MxY50PSmLX",
-							"type": "mutemutegroup",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "I7xiK98qAK67tzpDUG4or",
+							"definitionId": "mutemutegroup",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"group": 1,
-								"state": true
+								"group": {
+									"isExpression": false,
+									"value": 1
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -412,15 +484,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "SL6US_mx-iicVcnDL4UQu",
-										"label": "GiXDbh3CB:mutegroupmute",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupmute",
+										"type": "action",
+										"id": "2J3f2oS03-s7263BqRXWT",
+										"definitionId": "mutegroupmute",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "1",
-											"mute": "2"
+											"group": {
+												"isExpression": false,
+												"value": "1"
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "2"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -429,7 +507,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -447,24 +526,31 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "oODjNKm3TFrQSjE6SAHvD",
-							"type": "mutemutegroup",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "qulEAtvJM-V_VRl3O2_3i",
+							"definitionId": "mutemutegroup",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"group": "2",
-								"state": true
+								"group": {
+									"isExpression": false,
+									"value": "2"
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -472,15 +558,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "s_SmIMpVkuaBm8dI97VSs",
-										"label": "GiXDbh3CB:mutegroupmute",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupmute",
+										"type": "action",
+										"id": "pM5Tg0R_85vSZCWQoLihP",
+										"definitionId": "mutegroupmute",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "2",
-											"mute": "2"
+											"group": {
+												"isExpression": false,
+												"value": "2"
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "2"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -489,7 +581,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -507,24 +600,31 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "KJh3_jEWaZUocSj2gJ-0h",
-							"type": "mutemutegroup",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "9qQzUTCCr2QMUYj4azX_n",
+							"definitionId": "mutemutegroup",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"group": "all",
-								"state": true
+								"group": {
+									"isExpression": false,
+									"value": "all"
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -532,15 +632,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "IvVU7mCshPMw2i5AIrhKE",
-										"label": "GiXDbh3CB:mutegroupmute",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupmute",
+										"type": "action",
+										"id": "ZxelpBdrHHf-TLRj0pmfx",
+										"definitionId": "mutegroupmute",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "all",
-											"mute": "2"
+											"group": {
+												"isExpression": false,
+												"value": "all"
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "2"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -549,7 +655,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -567,24 +674,31 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "1sEJR_UWWQSlRkiVrLAAu",
-							"type": "mutemutegroup",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "jUI7rDqfZGN9pzdGaGmIw",
+							"definitionId": "mutemutegroup",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"group": "fx",
-								"state": true
+								"group": {
+									"isExpression": false,
+									"value": "fx"
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -592,15 +706,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "2H2StgJJ37cRbyAbNhYsj",
-										"label": "GiXDbh3CB:mutegroupmute",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupmute",
+										"type": "action",
+										"id": "cZ40fPduchIAtV03G24pA",
+										"definitionId": "mutegroupmute",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "fx",
-											"mute": "2"
+											"group": {
+												"isExpression": false,
+												"value": "fx"
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "2"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -609,7 +729,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"3": {
@@ -629,9 +750,9 @@
 						"latch": false
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -639,11 +760,12 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "rUrYxiPhhD46qdI5kqaYa",
-										"label": "GiXDbh3CB:mutegroupclear",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
-										"action": "mutegroupclear",
-										"options": {}
+										"type": "action",
+										"id": "I_4YFeXksCcj01S42mu6B",
+										"definitionId": "mutegroupclear",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {},
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -652,7 +774,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			}
 		},
@@ -665,18 +788,27 @@
 	},
 	"instances": {
 		"K5mVTsGHIPgqYkyqYxEWS": {
-			"instance_type": "soundcraft-ui",
 			"sortOrder": 2,
 			"label": "ui24",
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
-				"host": "10.75.23.95",
-				"import_to": "M56cJZPf5-"
+				"host": "10.23.23.95",
+				"import_to": "M56cJZPf5-",
+				"disablePanVars": true,
+				"enableFaderLevelVars": true,
+				"enablePanVars": true,
+				"enableFaderLevelVarsPct": true
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1
+			"lastUpgradeIndex": 2,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {},
+			"moduleId": "soundcraft-ui"
 		}
 	},
+	"connectionCollections": [],
 	"oldPageNumber": 35
 }

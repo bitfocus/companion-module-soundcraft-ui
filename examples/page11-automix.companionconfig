@@ -1,7 +1,9 @@
 {
-	"version": 4,
+	"version": 11,
 	"type": "page",
+	"companionBuild": "4.3.0+9084-main-63dc80dee5",
 	"page": {
+		"id": "fbKsm2-n7bb9xPUlq6bx1",
 		"name": "Automix",
 		"controls": {
 			"0": {
@@ -23,24 +25,31 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "5G-_-csJNji2_O0ftOqc2",
-							"type": "automixgroupstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "5ILMyI5udoAm8xd1OskxP",
+							"definitionId": "automixgroupstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"group": "a",
-								"state": true
+								"group": {
+									"isExpression": false,
+									"value": "a"
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"bgcolor": 2004530,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -48,14 +57,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "CrqkE62ZRBx7G8R4HZtbU",
-										"action": "automixenablegroup",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "jyfQZ4uxeT_0kqGPdt_--",
+										"definitionId": "automixenablegroup",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "a",
-											"state": 2
+											"group": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"state": {
+												"isExpression": false,
+												"value": 2
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -64,7 +80,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -81,24 +98,31 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [
 						{
-							"id": "hTcSCIAZuGW-Vk4VrRwbv",
-							"type": "automixgroupstate",
-							"instance_id": "K5mVTsGHIPgqYkyqYxEWS",
+							"type": "feedback",
+							"id": "3eqbIQn8XxuIeftJ2R2CM",
+							"definitionId": "automixgroupstate",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"group": "b",
-								"state": true
+								"group": {
+									"isExpression": false,
+									"value": "b"
+								}
+							},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
 							"style": {
 								"bgcolor": 2004530,
 								"color": 16777215
-							},
-							"isInverted": false
+							}
 						}
 					],
 					"steps": {
@@ -106,14 +130,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "pnCZKkIWD2P3_IZHuI9Vu",
-										"action": "automixenablegroup",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "SX2HCdDu_gP8kVrVFOXjw",
+										"definitionId": "automixenablegroup",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "b",
-											"state": 2
+											"group": {
+												"isExpression": false,
+												"value": "b"
+											},
+											"state": {
+												"isExpression": false,
+												"value": 2
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -122,7 +153,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -139,9 +171,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -149,14 +181,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "4V_oAKMO1eGjAioWncNnA",
-										"action": "automixassigngrouptochannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "bGhlEthve4k4xCQndN78G",
+										"definitionId": "automixassigngrouptochannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channel": 1,
-											"group": "a"
+											"channel": {
+												"isExpression": false,
+												"value": 1
+											},
+											"group": {
+												"isExpression": false,
+												"value": "a"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -165,7 +204,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"5": {
 					"type": "button",
@@ -182,9 +222,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -192,14 +232,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "U_0_d-mTBR4i9bvcq2phX",
-										"action": "automixassigngrouptochannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "-HKfEF9utE8JT6jb7wBrO",
+										"definitionId": "automixassigngrouptochannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channel": 3,
-											"group": "a"
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"group": {
+												"isExpression": false,
+												"value": "a"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -208,7 +255,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"1": {
@@ -230,9 +278,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -240,14 +288,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "EGOpAc4_5-hl-xcQ4IVof",
-										"action": "automixenablegroup",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "qOQOLtbf15psiphNHQfy5",
+										"definitionId": "automixenablegroup",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "a",
-											"state": 1
+											"group": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"state": {
+												"isExpression": false,
+												"value": 1
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -256,7 +311,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -273,9 +329,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -283,14 +339,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "QQMpWWPCDiGA2Mk_e-P6n",
-										"action": "automixenablegroup",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "ysSlIwy3RB26eT3jnc_yM",
+										"definitionId": "automixenablegroup",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "b",
-											"state": 1
+											"group": {
+												"isExpression": false,
+												"value": "b"
+											},
+											"state": {
+												"isExpression": false,
+												"value": 1
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -299,7 +362,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -316,9 +380,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -326,14 +390,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "eT0sYn7242J4rQt6cHrrL",
-										"action": "automixassigngrouptochannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "GkCEmQNsCVNse1OK4MNOd",
+										"definitionId": "automixassigngrouptochannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channel": 1,
-											"group": "b"
+											"channel": {
+												"isExpression": false,
+												"value": 1
+											},
+											"group": {
+												"isExpression": false,
+												"value": "b"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -342,7 +413,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"5": {
 					"type": "button",
@@ -359,9 +431,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -369,14 +441,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "bGeEysgKEoXmsS3uGPwBl",
-										"action": "automixassigngrouptochannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "M6S3IUCz2_wCaeYQRhACq",
+										"definitionId": "automixassigngrouptochannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channel": 3,
-											"group": "b"
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"group": {
+												"isExpression": false,
+												"value": "b"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -385,7 +464,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"2": {
@@ -407,9 +487,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -417,14 +497,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "g0tASgFhSUXGA1jOcWYBO",
-										"action": "automixenablegroup",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "EUiy7RYEdLlDBHIXpJ2Mj",
+										"definitionId": "automixenablegroup",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "a",
-											"state": 0
+											"group": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"state": {
+												"isExpression": false,
+												"value": 0
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -433,7 +520,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -450,9 +538,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -460,14 +548,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "mfN_XquYFP1JTweH90tRK",
-										"action": "automixenablegroup",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "zyqfI7jr89DzLVVGBJk5D",
+										"definitionId": "automixenablegroup",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"group": "b",
-											"state": 0
+											"group": {
+												"isExpression": false,
+												"value": "b"
+											},
+											"state": {
+												"isExpression": false,
+												"value": 0
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -476,7 +571,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -493,9 +589,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -503,14 +599,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "BprkKRRIlWxDJN4HcPXhi",
-										"action": "automixassigngrouptochannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "9D9JfNEvWVgftTnd76Prf",
+										"definitionId": "automixassigngrouptochannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channel": 1,
-											"group": "none"
+											"channel": {
+												"isExpression": false,
+												"value": 1
+											},
+											"group": {
+												"isExpression": false,
+												"value": "none"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -519,7 +622,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"5": {
 					"type": "button",
@@ -536,9 +640,9 @@
 						"png": null
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -546,14 +650,21 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "yu8KqHHrsyPWFIsq5A_Er",
-										"action": "automixassigngrouptochannel",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "q5uzCxJUgTVru3NQNg3_P",
+										"definitionId": "automixassigngrouptochannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channel": 3,
-											"group": "none"
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"group": {
+												"isExpression": false,
+												"value": "none"
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -562,7 +673,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			}
 		},
@@ -575,18 +687,27 @@
 	},
 	"instances": {
 		"K5mVTsGHIPgqYkyqYxEWS": {
-			"instance_type": "soundcraft-ui",
 			"sortOrder": 2,
 			"label": "ui24",
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
-				"host": "10.75.23.95",
-				"import_to": "M56cJZPf5-"
+				"host": "10.23.23.95",
+				"import_to": "M56cJZPf5-",
+				"disablePanVars": true,
+				"enableFaderLevelVars": true,
+				"enablePanVars": true,
+				"enableFaderLevelVarsPct": true
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1
+			"lastUpgradeIndex": 2,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {},
+			"moduleId": "soundcraft-ui"
 		}
 	},
+	"connectionCollections": [],
 	"oldPageNumber": 41
 }

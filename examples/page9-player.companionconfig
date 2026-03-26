@@ -1,9 +1,9 @@
 {
-	"version": 9,
+	"version": 11,
 	"type": "page",
-	"companionBuild": "4.2.1+8738-stable-3edf7ecdf4",
+	"companionBuild": "4.3.0+9084-main-63dc80dee5",
 	"page": {
-		"id": "12GiGwTpZehsA-uglbSPg",
+		"id": "qWkXCCQy44NAyxkT_jzxV",
 		"name": "Player",
 		"controls": {
 			"0": {
@@ -37,11 +37,11 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "zr8JSfXyLdhZRV9wIs-bX",
+										"id": "X8Te-PBFovUWFUL7LFAk7",
 										"definitionId": "mediaprev",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -76,14 +76,20 @@
 					"feedbacks": [
 						{
 							"type": "feedback",
-							"id": "PQnF_nGOGTAjW_NSI_UY4",
+							"id": "X_8zsbwWU6Nx2QoCTeF-_",
 							"definitionId": "mediaplayerstate",
 							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"state": "2"
+								"state": {
+									"isExpression": false,
+									"value": "2"
+								}
 							},
-							"upgradeIndex": 1,
-							"isInverted": false,
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
@@ -91,14 +97,20 @@
 						},
 						{
 							"type": "feedback",
-							"id": "JyJWIPUxwQX-CMhGK06Yp",
+							"id": "s4-EPEBaFE_1v70ljlWhM",
 							"definitionId": "mediaplayerstate",
 							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"state": "0"
+								"state": {
+									"isExpression": false,
+									"value": "0"
+								}
 							},
-							"upgradeIndex": 1,
-							"isInverted": false,
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
 							"style": {
 								"bgcolor": 65280,
 								"color": 16777215
@@ -111,11 +123,11 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "6LZKNKA68cKAzFMuh5OSr",
+										"id": "3wwhnHG0FG96cx9R-YsZL",
 										"definitionId": "mediaplay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -150,14 +162,20 @@
 					"feedbacks": [
 						{
 							"type": "feedback",
-							"id": "HBRn3Svfn5w6XxuW4XJgq",
+							"id": "P6DPiqYVqAfV0qN6-wHDh",
 							"definitionId": "mediaplayerstate",
 							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"state": "3"
+								"state": {
+									"isExpression": false,
+									"value": "3"
+								}
 							},
-							"upgradeIndex": 1,
-							"isInverted": false,
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
 							"style": {
 								"bgcolor": 16750899,
 								"color": 16777215
@@ -170,11 +188,11 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "Rko3fQ4PU1bs7ZKs6FOYc",
+										"id": "qAL864apRjn_ucWRROXJ9",
 										"definitionId": "mediapause",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -209,14 +227,20 @@
 					"feedbacks": [
 						{
 							"type": "feedback",
-							"id": "WKX3BBsmAw9UjYwhLqG9E",
+							"id": "2ay1HTuO5I5POLEL-GDi4",
 							"definitionId": "mediaplayerstate",
 							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"state": 2
+								"state": {
+									"isExpression": false,
+									"value": 2
+								}
 							},
-							"upgradeIndex": 1,
-							"isInverted": false,
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
@@ -229,11 +253,11 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "8hdc9thmdDgO3rFB3_TXs",
+										"id": "OZHfSokqhENHaVQYheFcB",
 										"definitionId": "mediastop",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -272,11 +296,11 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "WCLe2OCm4cfZGO00GzM3Z",
+										"id": "k9Hw04ovG7rNWaM_AiwBh",
 										"definitionId": "medianext",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -311,14 +335,20 @@
 					"feedbacks": [
 						{
 							"type": "feedback",
-							"id": "30DCP-wqmBKUe5vlMsjlL",
+							"id": "60BX8pqgm-1V53vTkuFC3",
 							"definitionId": "dualtrackrecordstate",
 							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"state": "rec"
+								"state": {
+									"isExpression": false,
+									"value": "rec"
+								}
 							},
-							"upgradeIndex": 1,
-							"isInverted": false,
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
@@ -326,14 +356,20 @@
 						},
 						{
 							"type": "feedback",
-							"id": "06Q94JWKFzKYLlpJh-t3-",
+							"id": "ffll3uNGSkVSqc5f8k-8k",
 							"definitionId": "dualtrackrecordstate",
 							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"state": "busy"
+								"state": {
+									"isExpression": false,
+									"value": "busy"
+								}
 							},
-							"upgradeIndex": 1,
-							"isInverted": false,
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
 							"style": {
 								"bgcolor": 16750899,
 								"color": 16777215
@@ -346,11 +382,11 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "sxJtBa0FYjH7WdwTwl_OL",
+										"id": "frMa5wRmAv4yb_PAM2_aZ",
 										"definitionId": "dualtrackrecordtoggle",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -394,13 +430,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "84bCNvk_03BVjr70wp9ne",
+										"id": "G_bxGU__0Mou32-2GoKRC",
 										"definitionId": "mediaswitchplist",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"playlist": "~all~"
+											"playlist": {
+												"isExpression": false,
+												"value": "~all~"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -439,14 +478,20 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "mAcFsChFUTcbjMELdQZ-w",
+										"id": "2whfvXFadIcZfNiqD0ScY",
 										"definitionId": "mediaswitchtrack",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"playlist": "~all~",
-											"track": "Meetup/Music/Power_Shutoff.mp3"
+											"playlist": {
+												"isExpression": false,
+												"value": "~all~"
+											},
+											"track": {
+												"isExpression": false,
+												"value": "Meetup/Music/Power_Shutoff.mp3"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -485,13 +530,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "iNslR7LDDTBsjYHSOhBMs",
+										"id": "KJ-PG76v4wdg1j2_2x5BR",
 										"definitionId": "mediasetplaymode",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"mode": "manual"
+											"mode": {
+												"isExpression": false,
+												"value": "manual"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -530,13 +578,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "B7PBSPDAbC6z_C6MgKNII",
+										"id": "LaP1DyyWWwTC2Ozd43qa4",
 										"definitionId": "mediasetshuffle",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"shuffle": 1
+											"shuffle": {
+												"isExpression": false,
+												"value": 1
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -575,13 +626,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "bvTUZ_VTXcjH-SmZfp9fy",
+										"id": "tXIUdSZmmzEuIGupdx61k",
 										"definitionId": "mediasetshuffle",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"shuffle": "0"
+											"shuffle": {
+												"isExpression": false,
+												"value": "0"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -616,14 +670,15 @@
 					"feedbacks": [
 						{
 							"type": "feedback",
-							"id": "idSXV-sUbvxN1S4tuGQDL",
+							"id": "CyA3aWLKiw1UEdMQJcri1",
 							"definitionId": "mediaplayershuffle",
 							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
-							"options": {
-								"state": true
+							"options": {},
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
 							},
-							"upgradeIndex": 1,
-							"isInverted": false,
 							"style": {
 								"bgcolor": 10229317,
 								"color": 16777215
@@ -636,13 +691,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "uCcummQLc4KsNm3Tjc7kj",
+										"id": "M14trrpGUMvkatI6B7qV8",
 										"definitionId": "mediasetshuffle",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"shuffle": "2"
+											"shuffle": {
+												"isExpression": false,
+												"value": "2"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -679,11 +737,11 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "DyvTJ8gFUmxq0j6MSPwv_",
+										"id": "lXcn7Tp0v6pwuX8La9HVY",
 										"definitionId": "dualtrackrecordstart",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -727,13 +785,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "c06Q4Hgb_xoohJjrEdXHp",
+										"id": "1IG5anQ0U8_c9BSUXKaVu",
 										"definitionId": "mediaswitchplist",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"playlist": "Meetup"
+											"playlist": {
+												"isExpression": false,
+												"value": "Meetup"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -772,14 +833,20 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "t4EV-MPpVWJWYXB63Uotz",
+										"id": "eKvBTkLJxSOb9WLdFCkE0",
 										"definitionId": "mediaswitchtrack",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"playlist": "~all~",
-											"track": "Meetup/Music/Thinking_About_The_Universe.mp3"
+											"playlist": {
+												"isExpression": false,
+												"value": "~all~"
+											},
+											"track": {
+												"isExpression": false,
+												"value": "Meetup/Music/Thinking_About_The_Universe.mp3"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -818,13 +885,16 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "pJnLk9eITheTdIT5kKv0Q",
+										"id": "mgTb-xGHzVMf0-o7EJOk9",
 										"definitionId": "mediasetplaymode",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"mode": "auto"
+											"mode": {
+												"isExpression": false,
+												"value": "auto"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -861,11 +931,11 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "ZHw1_UC10Ev5e1Z1PciDO",
+										"id": "wnayRdb1JUw7hU_l9223l",
 										"definitionId": "dualtrackrecordstop",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -1050,23 +1120,27 @@
 	},
 	"instances": {
 		"K5mVTsGHIPgqYkyqYxEWS": {
-			"instance_type": "soundcraft-ui",
 			"sortOrder": 2,
 			"label": "ui24",
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
 				"host": "10.23.23.95",
-				"import_to": "M56cJZPf5-"
+				"import_to": "M56cJZPf5-",
+				"disablePanVars": true,
+				"enableFaderLevelVars": true,
+				"enablePanVars": true,
+				"enableFaderLevelVarsPct": true
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1,
+			"lastUpgradeIndex": 2,
 			"moduleVersionId": "dev",
 			"updatePolicy": "stable",
 			"moduleInstanceType": "connection",
-			"secrets": {}
+			"secrets": {},
+			"moduleId": "soundcraft-ui"
 		}
 	},
 	"connectionCollections": [],
-	"oldPageNumber": 6
+	"oldPageNumber": 39
 }

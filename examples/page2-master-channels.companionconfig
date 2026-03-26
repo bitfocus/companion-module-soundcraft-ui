@@ -1,9 +1,9 @@
 {
-	"version": 9,
+	"version": 11,
 	"type": "page",
-	"companionBuild": "4.2.1+8738-stable-3edf7ecdf4",
+	"companionBuild": "4.3.0+9084-main-63dc80dee5",
 	"page": {
-		"id": "FvbfVgppyZnEg_g-Hu_OZ",
+		"id": "IDdfbhIs18m97VtFEsVe5",
 		"name": "Master CH",
 		"controls": {
 			"0": {
@@ -37,15 +37,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "6aWqJpN6EoDJEHPpgcH8y",
+										"id": "IZqO8Ih0dbkjy_oBweO7h",
 										"definitionId": "mutemasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"mute": "1"
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "1"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -84,15 +93,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "PvXbR4keizJrxpeozjsRf",
+										"id": "S6NCa1nmmK27mWie7f5vv",
 										"definitionId": "solomasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"solo": "1"
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"solo": {
+												"isExpression": false,
+												"value": "1"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -131,15 +149,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "yE6KkgT3tOwr4Cx8q8Z6a",
+										"id": "THpBld3KYxOed3eTNDgzP",
 										"definitionId": "setmasterchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"value": 1
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"isExpression": false,
+												"value": 1
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -178,17 +205,32 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "rrhQFy2ocjulKEr-fUhi4",
+										"id": "fKuUs2PR-nhZsTzSih41V",
 										"definitionId": "fademasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"value": 1,
-											"fadeTime": 2000,
-											"easing": "2"
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"isExpression": false,
+												"value": 1
+											},
+											"fadeTime": {
+												"isExpression": false,
+												"value": 2000
+											},
+											"easing": {
+												"isExpression": false,
+												"value": "2"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -227,15 +269,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "YMcW12UviWzjm_LMv_FOF",
+										"id": "UTXhP6B6s8Fe901tLqK4E",
 										"definitionId": "changemasterchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"value": 3
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"isExpression": false,
+												"value": 3
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -273,15 +324,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "LimOKh3PW9Pb0dZHLbESM",
+										"id": "UAhRx1MXlXBmfmhn1hIll",
 										"definitionId": "setmasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"time": 0
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"time": {
+												"isExpression": false,
+												"value": 0
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -319,15 +379,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "0Z8nxL7pUYokevhlH1oIK",
+										"id": "XB6VcDQzSubbfYLqAwoIf",
 										"definitionId": "setmasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "a",
-											"channel": 2,
-											"time": 0
+											"channelType": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 2
+											},
+											"time": {
+												"isExpression": false,
+												"value": 0
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -371,15 +440,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "OMJngFX6jBmTGM5c6JztK",
+										"id": "ovV1Yt60490oqMj527iRA",
 										"definitionId": "mutemasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"mute": "0"
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "0"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -418,15 +496,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "6vJIOSvuigneSBkxVGw44",
+										"id": "8MS3ttMHZ-Jo6xoOcEFut",
 										"definitionId": "solomasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"solo": "0"
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"solo": {
+												"isExpression": false,
+												"value": "0"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -465,15 +552,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "vov2KLSecBnN7LS8Z-tsh",
+										"id": "5VtEUZq6qQ0K8zEz4SLNP",
 										"definitionId": "setmasterchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"value": 0
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"isExpression": false,
+												"value": 0
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -512,17 +608,32 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "3l68wgGaAwN52ZA_FPau2",
+										"id": "1ZqdgWZ3uGldqh5fQCCk5",
 										"definitionId": "fademasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"value": 0,
-											"fadeTime": 2000,
-											"easing": "2"
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"isExpression": false,
+												"value": 0
+											},
+											"fadeTime": {
+												"isExpression": false,
+												"value": 2000
+											},
+											"easing": {
+												"isExpression": false,
+												"value": "2"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -561,15 +672,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "rni3vs1F9u-KGBTWB5p_8",
+										"id": "lP-j8eggbZFTdFh0GDBDE",
 										"definitionId": "changemasterchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"value": -3
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"isExpression": false,
+												"value": -3
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -607,15 +727,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "0UOzajs7yK9vRRNpj9cgD",
+										"id": "hnjChLmi0XqxZO6hgH4Gm",
 										"definitionId": "setmasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"time": 130
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"time": {
+												"isExpression": false,
+												"value": 130
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -653,15 +782,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "1qqcN6rGY9vt5a51xwjRa",
+										"id": "UrvzBkjTV1040-OC3ajM9",
 										"definitionId": "setmasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "a",
-											"channel": 2,
-											"time": 310
+											"channelType": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 2
+											},
+											"time": {
+												"isExpression": false,
+												"value": 310
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -701,16 +839,24 @@
 					"feedbacks": [
 						{
 							"type": "feedback",
-							"id": "-OOWtCVD-7E8NLXO3YMFJ",
+							"id": "EITWshbpQLZ6J_wncolKC",
 							"definitionId": "mutemasterchannel",
 							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"channelType": "i",
-								"channel": "3",
-								"state": true
+								"channelType": {
+									"isExpression": false,
+									"value": "i"
+								},
+								"channel": {
+									"isExpression": false,
+									"value": "3"
+								}
 							},
-							"upgradeIndex": 1,
-							"isInverted": false,
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
 							"style": {
 								"bgcolor": 16711680,
 								"color": 16777215
@@ -723,15 +869,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "kVNkp3tstMCToNkRrnXc9",
+										"id": "rdtfvwbf_mZOyijM-vP6T",
 										"definitionId": "mutemasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"mute": "2"
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"mute": {
+												"isExpression": false,
+												"value": "2"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -766,16 +921,24 @@
 					"feedbacks": [
 						{
 							"type": "feedback",
-							"id": "0ULXc_wYYinHNRzB8vRDQ",
+							"id": "9SvQvgimg7nweFuOhUxSn",
 							"definitionId": "solomasterchannel",
 							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 							"options": {
-								"channelType": "i",
-								"channel": "3",
-								"state": true
+								"channelType": {
+									"isExpression": false,
+									"value": "i"
+								},
+								"channel": {
+									"isExpression": false,
+									"value": "3"
+								}
 							},
-							"upgradeIndex": 1,
-							"isInverted": false,
+							"upgradeIndex": 2,
+							"isInverted": {
+								"isExpression": false,
+								"value": false
+							},
 							"style": {
 								"bgcolor": 16776960,
 								"color": 0
@@ -788,15 +951,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "sWL9lN1HJdYaCZpgTVoEb",
+										"id": "WItIeyrfWlYGmZNGU33V8",
 										"definitionId": "solomasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"solo": 2
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"solo": {
+												"isExpression": false,
+												"value": 2
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -835,15 +1007,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "gTHdWr20Oy_de9XXimkwb",
+										"id": "WfO_D0sFoiPFbOVeQP0YY",
 										"definitionId": "setmasterchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"value": -12
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"isExpression": false,
+												"value": -12
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -882,17 +1063,32 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "EYRcMnrWqEZXp8ZBiIQcZ",
+										"id": "RFhzADeYtQ_WPD3NsAzVK",
 										"definitionId": "fademasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"value": -12,
-											"fadeTime": 2000,
-											"easing": "0"
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"isExpression": false,
+												"value": -12
+											},
+											"fadeTime": {
+												"isExpression": false,
+												"value": 2000
+											},
+											"easing": {
+												"isExpression": false,
+												"value": "0"
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -930,15 +1126,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "EbY5as1hinwNF0b9SEcB3",
+										"id": "5ULcsM-4X2gJXxSv09OQn",
 										"definitionId": "changemasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"time": 25
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"time": {
+												"isExpression": false,
+												"value": 25
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -976,15 +1181,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "VyzAJWGP7RjurGWiP17WI",
+										"id": "exvM3-g3jXhjTUTNlVZ9p",
 										"definitionId": "changemasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "a",
-											"channel": 2,
-											"time": 30
+											"channelType": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 2
+											},
+											"time": {
+												"isExpression": false,
+												"value": 30
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -1062,6 +1276,70 @@
 					},
 					"localVariables": []
 				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "Input 3\\nFade\\nsame as CH 4",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 153,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "cmRDp6i6y60tmsasgBGr0",
+										"definitionId": "fademasterchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"value": "$(ui24:m_input4_level)",
+												"isExpression": true
+											},
+											"fadeTime": {
+												"isExpression": false,
+												"value": 2000
+											},
+											"easing": {
+												"isExpression": false,
+												"value": "0"
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
 				"6": {
 					"type": "button",
 					"style": {
@@ -1088,15 +1366,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "mqOz4O-rVATSTlkT3fLNd",
+										"id": "JdF6ZiasjGMwZSNQrMzso",
 										"definitionId": "changemasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "i",
-											"channel": 3,
-											"time": -25
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 3
+											},
+											"time": {
+												"isExpression": false,
+												"value": -25
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -1134,15 +1421,24 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "jOp3r9VFgQtAcUWTtmmXe",
+										"id": "qJ5cESYDqE4NpMxuqECzc",
 										"definitionId": "changemasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"channelType": "a",
-											"channel": 2,
-											"time": -30
+											"channelType": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"channel": {
+												"isExpression": false,
+												"value": 2
+											},
+											"time": {
+												"isExpression": false,
+												"value": -30
+											}
 										},
-										"upgradeIndex": 1
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -1165,23 +1461,27 @@
 	},
 	"instances": {
 		"K5mVTsGHIPgqYkyqYxEWS": {
-			"instance_type": "soundcraft-ui",
 			"sortOrder": 2,
 			"label": "ui24",
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
 				"host": "10.23.23.95",
-				"import_to": "M56cJZPf5-"
+				"import_to": "M56cJZPf5-",
+				"disablePanVars": true,
+				"enableFaderLevelVars": true,
+				"enablePanVars": true,
+				"enableFaderLevelVarsPct": true
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1,
+			"lastUpgradeIndex": 2,
 			"moduleVersionId": "dev",
 			"updatePolicy": "stable",
 			"moduleInstanceType": "connection",
-			"secrets": {}
+			"secrets": {},
+			"moduleId": "soundcraft-ui"
 		}
 	},
 	"connectionCollections": [],
-	"oldPageNumber": 5
+	"oldPageNumber": 32
 }

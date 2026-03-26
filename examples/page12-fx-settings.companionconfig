@@ -1,7 +1,9 @@
 {
-	"version": 4,
+	"version": 11,
 	"type": "page",
+	"companionBuild": "4.3.0+9084-main-63dc80dee5",
 	"page": {
+		"id": "GtYpJtm0BFqzjV8yP0KK4",
 		"name": "FX Settings",
 		"controls": {
 			"0": {
@@ -22,9 +24,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -32,16 +34,23 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "UTgS7ob8TRE7nk5gOPsC5",
-										"action": "setfxbpm",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "2g1qk7xpfNW1FNYuTGiIM",
+										"definitionId": "setfxbpm",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": [
-												1
-											],
-											"bpm": 30
+											"fx": {
+												"isExpression": false,
+												"value": [
+													1
+												]
+											},
+											"bpm": {
+												"isExpression": false,
+												"value": 30
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -50,7 +59,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -66,9 +76,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -76,16 +86,23 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "VDd81R1RXwS19SWTVahwi",
-										"action": "setfxbpm",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "TNYWxypn4xA8zNx-XAylD",
+										"definitionId": "setfxbpm",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": [
-												2
-											],
-											"bpm": 180
+											"fx": {
+												"isExpression": false,
+												"value": [
+													2
+												]
+											},
+											"bpm": {
+												"isExpression": false,
+												"value": 180
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -94,7 +111,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -110,9 +128,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -120,16 +138,23 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "YYPIz5BL2opF6x84x9VIX",
-										"action": "setfxbpm",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "KlKYN8AmZPBgbAbZq6cKM",
+										"definitionId": "setfxbpm",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": [
-												3
-											],
-											"bpm": 100
+											"fx": {
+												"isExpression": false,
+												"value": [
+													3
+												]
+											},
+											"bpm": {
+												"isExpression": false,
+												"value": 100
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -138,7 +163,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -154,9 +180,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -164,16 +190,23 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "TQS54cQ8UDbp8u2TNzDGo",
-										"action": "setfxbpm",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "wMZQlvLndVkJvYkLRDoto",
+										"definitionId": "setfxbpm",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": [
-												4
-											],
-											"bpm": 80
+											"fx": {
+												"isExpression": false,
+												"value": [
+													4
+												]
+											},
+											"bpm": {
+												"isExpression": false,
+												"value": 80
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -182,7 +215,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"6": {
 					"type": "button",
@@ -198,9 +232,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -208,18 +242,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "OARPe-Gg6irO-VAkLJbRH",
-										"action": "setfxbpm",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "BdN0NVScgNj5WGNypGJ0O",
+										"definitionId": "setfxbpm",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": [
-												2,
-												3,
-												4
-											],
-											"bpm": 120
+											"fx": {
+												"isExpression": false,
+												"value": [
+													2,
+													3,
+													4
+												]
+											},
+											"bpm": {
+												"isExpression": false,
+												"value": 120
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -228,7 +269,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"7": {
 					"type": "button",
@@ -244,9 +286,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -254,18 +296,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "lFiVLFdmrjX8IckLqnsqR",
-										"action": "setfxbpm",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "_rdayqRdAm-LXat-w0imZ",
+										"definitionId": "setfxbpm",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": [
-												2,
-												3,
-												4
-											],
-											"bpm": 60
+											"fx": {
+												"isExpression": false,
+												"value": [
+													2,
+													3,
+													4
+												]
+											},
+											"bpm": {
+												"isExpression": false,
+												"value": 60
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -274,7 +323,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"1": {
@@ -295,9 +345,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -305,15 +355,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "9ZWjUhGQke9s-mwOXDrns",
-										"action": "setfxparam",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "TZqqSDCCv-_-QfoAr-M29",
+										"definitionId": "setfxparam",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": 1,
-											"param": 2,
-											"value": 80
+											"fx": {
+												"isExpression": false,
+												"value": 1
+											},
+											"param": {
+												"isExpression": false,
+												"value": 2
+											},
+											"value": {
+												"isExpression": false,
+												"value": 80
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -322,7 +382,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -338,9 +399,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -348,15 +409,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "gEfXHsixkpnpeCx4Q5fQv",
-										"action": "setfxparam",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "9fwCig3yXjAfYFQbWFRmi",
+										"definitionId": "setfxparam",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": 2,
-											"param": 3,
-											"value": 60
+											"fx": {
+												"isExpression": false,
+												"value": 2
+											},
+											"param": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"isExpression": false,
+												"value": 60
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -365,7 +436,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -381,9 +453,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -391,15 +463,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "RntQBYjPiXG3lFZapzcu9",
-										"action": "setfxparam",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "sUXUdRzwM8zVVeMJGNjuy",
+										"definitionId": "setfxparam",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": 3,
-											"param": 4,
-											"value": 20
+											"fx": {
+												"isExpression": false,
+												"value": 3
+											},
+											"param": {
+												"isExpression": false,
+												"value": 4
+											},
+											"value": {
+												"isExpression": false,
+												"value": 20
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -408,7 +490,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -424,9 +507,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -434,15 +517,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "r8eMny7b6gm_KWUAsZIgH",
-										"action": "setfxparam",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "0jmyluF5pnBWjUaUjDeY6",
+										"definitionId": "setfxparam",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": 4,
-											"param": 1,
-											"value": 80
+											"fx": {
+												"isExpression": false,
+												"value": 4
+											},
+											"param": {
+												"isExpression": false,
+												"value": 1
+											},
+											"value": {
+												"isExpression": false,
+												"value": 80
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -451,7 +544,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"2": {
@@ -472,9 +566,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -482,15 +576,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "3LR7ssY07MlFCXeL1nqLv",
-										"action": "setfxparam",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "xsjP7R2F850GgbSJGKSea",
+										"definitionId": "setfxparam",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": 1,
-											"param": 2,
-											"value": 50
+											"fx": {
+												"isExpression": false,
+												"value": 1
+											},
+											"param": {
+												"isExpression": false,
+												"value": 2
+											},
+											"value": {
+												"isExpression": false,
+												"value": 50
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -499,7 +603,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -515,9 +620,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -525,15 +630,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "1m7vGzmPF36YsKT0e2q8o",
-										"action": "setfxparam",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "pv21BTES-mfoY1b8DYhgV",
+										"definitionId": "setfxparam",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": 2,
-											"param": 3,
-											"value": 100
+											"fx": {
+												"isExpression": false,
+												"value": 2
+											},
+											"param": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"isExpression": false,
+												"value": 100
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -542,7 +657,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -558,9 +674,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -568,15 +684,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "XlF_urOlF0okOVhzxGDWH",
-										"action": "setfxparam",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "BR-KYudFjqJIJGMty2TsU",
+										"definitionId": "setfxparam",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": 3,
-											"param": 4,
-											"value": 90
+											"fx": {
+												"isExpression": false,
+												"value": 3
+											},
+											"param": {
+												"isExpression": false,
+												"value": 4
+											},
+											"value": {
+												"isExpression": false,
+												"value": 90
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -585,7 +711,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -601,9 +728,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -611,15 +738,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "ZDKd0UDgI68O64Ch0Nwog",
-										"action": "setfxparam",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "u6rt_QICPdfPVwdsXfjee",
+										"definitionId": "setfxparam",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": 4,
-											"param": 1,
-											"value": 35
+											"fx": {
+												"isExpression": false,
+												"value": 4
+											},
+											"param": {
+												"isExpression": false,
+												"value": 1
+											},
+											"value": {
+												"isExpression": false,
+												"value": 35
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -628,7 +765,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			},
 			"3": {
@@ -646,9 +784,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -656,15 +794,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "_MlubS7ORUtN-EQ3YdDpW",
-										"action": "setfxparam",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "_-qNshykFqMO4mcYZMmd9",
+										"definitionId": "setfxparam",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": 1,
-											"param": 3,
-											"value": 30
+											"fx": {
+												"isExpression": false,
+												"value": 1
+											},
+											"param": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"isExpression": false,
+												"value": 30
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -673,7 +821,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"2": {
 					"type": "button",
@@ -689,9 +838,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -699,15 +848,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "5YB8N0V1wpwdh8fVwWNfu",
-										"action": "setfxparam",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "vfig_NTB71l5YiEg89CgO",
+										"definitionId": "setfxparam",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": 2,
-											"param": 4,
-											"value": 0
+											"fx": {
+												"isExpression": false,
+												"value": 2
+											},
+											"param": {
+												"isExpression": false,
+												"value": 4
+											},
+											"value": {
+												"isExpression": false,
+												"value": 0
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -716,7 +875,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"3": {
 					"type": "button",
@@ -732,9 +892,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -742,15 +902,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "jVY_U355Mbg-D6rT3V6Nf",
-										"action": "setfxparam",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "b1ZLM4_mhK3b6H-NVqT9J",
+										"definitionId": "setfxparam",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": 3,
-											"param": 1,
-											"value": 80
+											"fx": {
+												"isExpression": false,
+												"value": 3
+											},
+											"param": {
+												"isExpression": false,
+												"value": 1
+											},
+											"value": {
+												"isExpression": false,
+												"value": 80
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -759,7 +929,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				},
 				"4": {
 					"type": "button",
@@ -775,9 +946,9 @@
 						"show_topbar": "default"
 					},
 					"options": {
-						"relativeDelay": false,
-						"rotaryActions": false,
-						"stepAutoProgress": true
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
 					},
 					"feedbacks": [],
 					"steps": {
@@ -785,15 +956,25 @@
 							"action_sets": {
 								"down": [
 									{
-										"id": "c05AxYUrimP6Ej0fjTrHq",
-										"action": "setfxparam",
-										"instance": "K5mVTsGHIPgqYkyqYxEWS",
+										"type": "action",
+										"id": "U4G6c6VLbcQrZ2azFOOw2",
+										"definitionId": "setfxparam",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
-											"fx": 4,
-											"param": 3,
-											"value": 10
+											"fx": {
+												"isExpression": false,
+												"value": 4
+											},
+											"param": {
+												"isExpression": false,
+												"value": 3
+											},
+											"value": {
+												"isExpression": false,
+												"value": 10
+											}
 										},
-										"delay": 0
+										"upgradeIndex": 2
 									}
 								],
 								"up": []
@@ -802,7 +983,8 @@
 								"runWhileHeld": []
 							}
 						}
-					}
+					},
+					"localVariables": []
 				}
 			}
 		},
@@ -815,18 +997,27 @@
 	},
 	"instances": {
 		"K5mVTsGHIPgqYkyqYxEWS": {
-			"instance_type": "soundcraft-ui",
 			"sortOrder": 2,
 			"label": "ui24",
 			"isFirstInit": false,
 			"config": {
 				"product": "UI24",
-				"host": "10.75.23.95",
-				"import_to": "M56cJZPf5-"
+				"host": "10.23.23.95",
+				"import_to": "M56cJZPf5-",
+				"disablePanVars": true,
+				"enableFaderLevelVars": true,
+				"enablePanVars": true,
+				"enableFaderLevelVarsPct": true
 			},
 			"enabled": true,
-			"lastUpgradeIndex": 1
+			"lastUpgradeIndex": 2,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {},
+			"moduleId": "soundcraft-ui"
 		}
 	},
-	"oldPageNumber": 96
+	"connectionCollections": [],
+	"oldPageNumber": 42
 }
