@@ -1,5 +1,6 @@
 import type { CompanionActionDefinitions } from '@companion-module/base'
 import type { AutomixGroupId, DelayableMasterChannel, MuteGroupID, SoundcraftUI } from 'soundcraft-ui-connection'
+import { firstValueFrom } from 'rxjs'
 
 import { CHOICES, OPTIONS, OPTION_SETS } from './utils/input-utils.js'
 import {
@@ -10,7 +11,7 @@ import {
 	getVolumeBusFromOptions,
 } from './utils/channel-selection.js'
 import { patchDestinations, patchSources } from './utils/patch-parameters.js'
-import { convertPanOffsetToLinearOffset, convertPanToLinearValue } from './utils/utils.js'
+import { convertLinearValueToPan, convertPanOffsetToLinearOffset, convertPanToLinearValue } from './utils/utils.js'
 import type { AuxChannelOpts, FadeOpts, FxChannelOpts, MasterChannelOpts, NoOpts } from './utils/option-types.js'
 
 export type UiActionSchemas = {
@@ -118,6 +119,9 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			description: 'Set the fader value (dB) for the master fader',
 			options: [OPTIONS.faderValuesSlider],
 			callback: (action) => conn.master.setFaderLevelDB(action.options.value),
+			learn: async () => ({
+				value: await firstValueFrom(conn.master.faderLevelDB$),
+			}),
 		},
 
 		fademaster: {
@@ -126,6 +130,9 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			options: [...OPTION_SETS.fadeTransition],
 			callback: async (action) =>
 				conn.master.fadeToDB(action.options.value, action.options.fadeTime, action.options.easing),
+			learn: async () => ({
+				value: await firstValueFrom(conn.master.faderLevelDB$),
+			}),
 		},
 
 		changemastervalue: {
@@ -224,6 +231,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 				const c = getMasterChannelFromOptions(action.options, conn)
 				return c.setFaderLevelDB(action.options.value)
 			},
+			learn: async (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn)
+				const value = await firstValueFrom(c.faderLevelDB$)
+				return { value }
+			},
 		},
 
 		fademasterchannel: {
@@ -233,6 +245,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			callback: async (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
 				return c.fadeToDB(action.options.value, action.options.fadeTime, action.options.easing)
+			},
+			learn: async (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn)
+				const value = await firstValueFrom(c.faderLevelDB$)
+				return { value }
 			},
 		},
 
@@ -271,6 +288,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 				const c = getMasterChannelFromOptions(action.options, conn)
 				c.setPan(convertPanToLinearValue(action.options.value))
 			},
+			learn: async (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn)
+				const value = convertLinearValueToPan(await firstValueFrom(c.pan$))
+				return { value }
+			},
 		},
 
 		changemasterchannelpan: {
@@ -291,6 +313,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn) as DelayableMasterChannel
 				c.setDelay(action.options.time)
+			},
+			learn: async (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn) as DelayableMasterChannel
+				const time = await firstValueFrom(c.delay$)
+				return { time }
 			},
 		},
 
@@ -358,6 +385,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 				const c = getAuxChannelFromOptions(action.options, conn)
 				return c.setFaderLevelDB(action.options.value)
 			},
+			learn: async (action) => {
+				const c = getAuxChannelFromOptions(action.options, conn)
+				const value = await firstValueFrom(c.faderLevelDB$)
+				return { value }
+			},
 		},
 
 		fadeauxchannel: {
@@ -367,6 +399,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			callback: async (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
 				return c.fadeToDB(action.options.value, action.options.fadeTime, action.options.easing)
+			},
+			learn: async (action) => {
+				const c = getAuxChannelFromOptions(action.options, conn)
+				const value = await firstValueFrom(c.faderLevelDB$)
+				return { value }
 			},
 		},
 
@@ -423,6 +460,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 				const c = getAuxChannelFromOptions(action.options, conn)
 				c.setPan(convertPanToLinearValue(action.options.value))
 			},
+			learn: async (action) => {
+				const c = getAuxChannelFromOptions(action.options, conn)
+				const value = convertLinearValueToPan(await firstValueFrom(c.pan$))
+				return { value }
+			},
 		},
 
 		changeauxchannelpan: {
@@ -446,6 +488,14 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			callback: (action) => {
 				const bus = getVolumeBusFromOptions(action.options, conn)
 				return bus && bus.setFaderLevelDB(action.options.value)
+			},
+			learn: async (action) => {
+				const bus = getVolumeBusFromOptions(action.options, conn)
+				if (!bus) {
+					return undefined
+				}
+				const value = await firstValueFrom(bus.faderLevelDB$)
+				return { value }
 			},
 		},
 
@@ -487,6 +537,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 				const c = getFxChannelFromOptions(action.options, conn)
 				return c.setFaderLevelDB(action.options.value)
 			},
+			learn: async (action) => {
+				const c = getFxChannelFromOptions(action.options, conn)
+				const value = await firstValueFrom(c.faderLevelDB$)
+				return { value }
+			},
 		},
 
 		fadefxchannel: {
@@ -496,6 +551,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			callback: async (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
 				return c.fadeToDB(action.options.value, action.options.fadeTime, action.options.easing)
+			},
+			learn: async (action) => {
+				const c = getFxChannelFromOptions(action.options, conn)
+				const value = await firstValueFrom(c.faderLevelDB$)
+				return { value }
 			},
 		},
 
@@ -613,6 +673,12 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 				const fx = conn.fx(action.options.fx)
 				fx.setParam(action.options.param, normalizedValue)
 			},
+			learn: async (action) => {
+				const fx = conn.fx(action.options.fx)
+				const normalizedValue = await firstValueFrom(fx.getParam(action.options.param))
+				const value = Math.round(normalizedValue * 100)
+				return { value }
+			},
 		},
 
 		/**
@@ -660,6 +726,9 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 				},
 			],
 			callback: (action) => conn.player.loadPlaylist(action.options.playlist),
+			learn: async () => ({
+				playlist: await firstValueFrom(conn.player.playlist$),
+			}),
 		},
 
 		mediaswitchtrack: {
@@ -677,9 +746,19 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 					label: 'Track/File',
 					id: 'track',
 					minLength: 1,
+					allowInvalidValues: true, // default is empty, but learn only works if options are valid
 				},
 			],
-			callback: (action) => conn.player.loadTrack(action.options.playlist, action.options.track),
+			callback: (action) => {
+				// check necessary because we allowed invalid values for this option
+				if (action.options.track) {
+					conn.player.loadTrack(action.options.playlist, action.options.track)
+				}
+			},
+			learn: async () => ({
+				playlist: await firstValueFrom(conn.player.playlist$),
+				track: await firstValueFrom(conn.player.track$),
+			}),
 		},
 
 		mediasetplaymode: {
@@ -860,6 +939,9 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 				},
 			],
 			callback: (action) => conn.shows.loadShow(action.options.show),
+			learn: async () => ({
+				show: await firstValueFrom(conn.shows.currentShow$),
+			}),
 		},
 
 		loadsnapshot: {
@@ -881,6 +963,10 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 				},
 			],
 			callback: (action) => conn.shows.loadSnapshot(action.options.show, action.options.snapshot),
+			learn: async () => ({
+				show: await firstValueFrom(conn.shows.currentShow$),
+				snapshot: await firstValueFrom(conn.shows.currentSnapshot$),
+			}),
 		},
 
 		loadcue: {
@@ -914,6 +1000,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 					id: 'show',
 					default: '',
 					minLength: 1,
+					allowInvalidValues: true,
 				},
 				{
 					type: 'textinput',
@@ -921,9 +1008,19 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 					id: 'snapshot',
 					default: '',
 					minLength: 1,
+					allowInvalidValues: true,
 				},
 			],
-			callback: (action) => conn.shows.saveSnapshot(action.options.show, action.options.snapshot),
+			callback: (action) => {
+				// check necessary because we allowed invalid values for these options
+				if (action.options.show && action.options.snapshot) {
+					conn.shows.saveSnapshot(action.options.show, action.options.snapshot)
+				}
+			},
+			learn: async () => ({
+				show: await firstValueFrom(conn.shows.currentShow$),
+				snapshot: await firstValueFrom(conn.shows.currentSnapshot$),
+			}),
 		},
 
 		updatecurrentsnapshot: {
