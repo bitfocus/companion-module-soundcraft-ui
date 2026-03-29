@@ -63,7 +63,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "dM4g6pUb7rCkFZR-avP0K",
+										"id": "q21XmvxI4IC50PZCCX7N6",
 										"definitionId": "dimmaster",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -111,7 +111,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "X8umWBBK8q3BhR5rFo_S9",
+										"id": "Nw2KNYV8UAZypLnNN9PG3",
 										"definitionId": "setmastervalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -139,6 +139,54 @@
 				"3": {
 					"type": "button",
 					"style": {
+						"text": "Master\\n10 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "Q_YkOAAULlS9huIjtSxXZ",
+										"definitionId": "setmastervaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"value": {
+												"value": 10,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"4": {
+					"type": "button",
+					"style": {
 						"text": "Master\\nFade\\n0 dB",
 						"textExpression": false,
 						"size": "auto",
@@ -163,7 +211,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "FyXTfbGBS-7ktXeHsPgfj",
+										"id": "Tow6ifWuwzriS9Ek2vkGs",
 										"definitionId": "fademaster",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -192,7 +240,7 @@
 					},
 					"localVariables": []
 				},
-				"4": {
+				"5": {
 					"type": "button",
 					"style": {
 						"text": "Master\\n+ 3 dB",
@@ -219,7 +267,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "zzKLI4kYzl54cdM0d8jSU",
+										"id": "lUZqwpLj-Fn2Q7MOS-_0z",
 										"definitionId": "changemastervalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -240,12 +288,60 @@
 					},
 					"localVariables": []
 				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Master\\n+ 5 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "ICv7xVDR2SvR5xDJaavo-",
+										"definitionId": "changemastervaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"value": {
+												"value": 5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
 				"7": {
 					"type": "button",
 					"style": {
-						"text": "Level:\\n$(ui24:m_level) dB",
+						"text": "Level:\\n$(ui24:m_level) dB\\n$(ui24:m_level_pct) %",
 						"textExpression": false,
-						"size": "18",
+						"size": "14",
 						"png64": null,
 						"alignment": "center:center",
 						"pngalignment": "center:center",
@@ -304,7 +400,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "bO3mMqgbGT2KGjkKcwdwh",
+										"id": "sTwYrz1mKFj9VW65NiK0q",
 										"definitionId": "dimmaster",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -352,7 +448,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "kzhJFL2G_pSuaolOgdqX1",
+										"id": "RNI_bxV6gZdoTeZh8nDpz",
 										"definitionId": "setmastervalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -374,6 +470,54 @@
 					"localVariables": []
 				},
 				"3": {
+					"type": "button",
+					"style": {
+						"text": "Master\\n57.9 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "mhT3VOuE1qmvjiJmdBl9p",
+										"definitionId": "setmastervaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"value": {
+												"value": 57.9,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"4": {
 					"type": "button",
 					"style": {
 						"text": "Master\\nFade\\n5 dB",
@@ -400,7 +544,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "Y1WGWNXXkWBJ0q1K0a6g0",
+										"id": "63Idf4bh-WoYLdVRlbgMW",
 										"definitionId": "fademaster",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -429,7 +573,7 @@
 					},
 					"localVariables": []
 				},
-				"4": {
+				"5": {
 					"type": "button",
 					"style": {
 						"text": "Master\\n- 3 dB",
@@ -456,7 +600,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "MxdTjV8OAK6LFEpDEuS9c",
+										"id": "tTwjOe71WeQq44Mhc2QhA",
 										"definitionId": "changemastervalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -466,6 +610,54 @@
 											}
 										},
 										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "Master\\n- 5 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "PkfXEQTMzi5ZfxEvs92Y1",
+										"definitionId": "changemastervaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"value": {
+												"value": -5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
 									}
 								],
 								"up": []
@@ -509,7 +701,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "KUqe0dZ_kgpgwC9gd_Bbo",
+										"id": "8E6Tk8EQbcHTRMlj-Emi5",
 										"definitionId": "dimmaster",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -557,7 +749,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "LtwXUFI3Azo5Nqr91dlvM",
+										"id": "C-jVABIJ5VA9F_v12dGWv",
 										"definitionId": "setmastervalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -579,6 +771,54 @@
 					"localVariables": []
 				},
 				"3": {
+					"type": "button",
+					"style": {
+						"text": "Master\\n100 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "pLErOhl3G5XCxviyFuCDD",
+										"definitionId": "setmastervaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"value": {
+												"value": 100,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"4": {
 					"type": "button",
 					"style": {
 						"text": "Master\\nFade\\n-50 dB",
@@ -605,7 +845,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "eWU90WFkr5pY62D1J9Jf5",
+										"id": "sJbT8iYD_Y8JGnboFd0RR",
 										"definitionId": "fademaster",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {

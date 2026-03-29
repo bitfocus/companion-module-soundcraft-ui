@@ -37,7 +37,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "Z4OGuByM7a4XseT63Mw4e",
+										"id": "Xrt5kxz4Cgdpy_arEoBfG",
 										"definitionId": "mutefxchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -97,7 +97,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "6AJH8xF6lDrPh7jfR4dRP",
+										"id": "HwcNe_ogvUAQedI5ecM5X",
 										"definitionId": "setfxchannelpost",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -157,7 +157,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "HtaZOD0pPnuEYHihZE8Er",
+										"id": "8PFDlsu7qk5YgfDYZYY6n",
 										"definitionId": "setfxchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -217,7 +217,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "p7UfilZMHmxS3WC_4dHuY",
+										"id": "9Y0I7PNYPfiTvOOsBnV_Y",
 										"definitionId": "fadefxchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -285,7 +285,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "--wB-2xBrp5ed9J91Ra5e",
+										"id": "OdbHsYtAC_rdgm1PvWJhN",
 										"definitionId": "changefxchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -350,7 +350,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "WQGup1GspDSDLzFbyhwjI",
+										"id": "NfPgJkYue4ZeFuDmYCZoV",
 										"definitionId": "mutefxchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -410,7 +410,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "jSDOdvFxH4IgbIal-RKyX",
+										"id": "8jouWRsCwm8HgnmfvNTq0",
 										"definitionId": "setfxchannelpost",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -470,7 +470,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "iqnDiNgbsAXMofXhR2BGA",
+										"id": "__uDjN4RjbW_cWBcQgiNA",
 										"definitionId": "setfxchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -530,7 +530,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "IdgGWwPOsuSKL7SLTuJK7",
+										"id": "J7vXW2Dmp7jKb4wPWW_dr",
 										"definitionId": "fadefxchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -598,7 +598,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "DcvpKQ9qHumCQnSugA92f",
+										"id": "o9WpfP_I0u-q20Gud5hNc",
 										"definitionId": "changefxchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -693,7 +693,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "zVEB0D8xImcOdxJTuOOUB",
+										"id": "UhxHRwocROEKBNeybAhX2",
 										"definitionId": "mutefxchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -783,7 +783,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "0th2ohIf4ZJrscVOtqWOC",
+										"id": "ljGOZs5soBx2BfcaWibGo",
 										"definitionId": "setfxchannelpost",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -819,6 +819,128 @@
 				"4": {
 					"type": "button",
 					"style": {
+						"text": "FX 1\\nInput 3\\n34 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "v4OrGWlYp6ZmQ-JKAeFNQ",
+										"definitionId": "setfxchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"isExpression": false,
+												"value": 1
+											},
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"value": 34,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "FX 1\\nInput 3\\n+ 5 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "23M1BKP_jqOKRbUIt8S7r",
+										"definitionId": "changefxchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"isExpression": false,
+												"value": 1
+											},
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"value": 5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				}
+			},
+			"3": {
+				"0": {
+					"type": "button",
+					"style": {
 						"text": "Bus Name:\\n$(ui24:m_fx1_name)",
 						"textExpression": false,
 						"size": "14",
@@ -850,7 +972,7 @@
 					},
 					"localVariables": []
 				},
-				"5": {
+				"1": {
 					"type": "button",
 					"style": {
 						"text": "Ch Name:\\n$(ui24:m_input3_name)",
@@ -884,10 +1006,10 @@
 					},
 					"localVariables": []
 				},
-				"6": {
+				"2": {
 					"type": "button",
 					"style": {
-						"text": "Level:\\n$(ui24:fx1_input3_level) dB",
+						"text": "Level:\\n$(ui24:fx1_input3_level) dB\\n$(ui24:fx1_input3_level_pct) %",
 						"textExpression": false,
 						"size": "14",
 						"png64": null,
@@ -909,6 +1031,66 @@
 						"0": {
 							"action_sets": {
 								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "FX 1\\nInput 3\\n- 5 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "hOmzyF-uVXQMgFLjIQguF",
+										"definitionId": "changefxchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"isExpression": false,
+												"value": 1
+											},
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"value": -5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
 								"up": []
 							},
 							"options": {

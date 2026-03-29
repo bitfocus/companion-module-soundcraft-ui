@@ -176,6 +176,16 @@ export const OPTIONS = {
 		min: -100,
 		max: 10,
 	} satisfies CompanionInputFieldNumber<'value'>,
+	faderValuesSliderPct: {
+		type: 'number',
+		label: 'Fader Level %',
+		id: 'value',
+		range: true,
+		default: 0,
+		step: 0.1,
+		min: 0,
+		max: 100,
+	} satisfies CompanionInputFieldNumber<'value'>,
 	prepostDropdown: {
 		type: 'dropdown',
 		label: 'PRE/POST',
@@ -216,6 +226,14 @@ export const OPTIONS = {
 		min: -100,
 		max: 100,
 		default: 3,
+	} satisfies CompanionInputFieldNumber<'value'>,
+	faderChangeFieldPct: {
+		type: 'number',
+		label: 'Change value (%)',
+		id: 'value',
+		min: -100,
+		max: 100,
+		default: 1,
 	} satisfies CompanionInputFieldNumber<'value'>,
 	volumeBusesDropdown: {
 		type: 'dropdown',

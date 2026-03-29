@@ -37,7 +37,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "IZqO8Ih0dbkjy_oBweO7h",
+										"id": "mvnlBdmJRX15DXOsHFBLb",
 										"definitionId": "mutemasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -93,7 +93,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "S6NCa1nmmK27mWie7f5vv",
+										"id": "n3mZUc1DwYZUUOlGYsUfr",
 										"definitionId": "solomasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -149,7 +149,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "THpBld3KYxOed3eTNDgzP",
+										"id": "M8s4v7kzznXttE1Lwi8wS",
 										"definitionId": "setmasterchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -205,7 +205,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "fKuUs2PR-nhZsTzSih41V",
+										"id": "BX-U7L8t0toOD1T62qwe3",
 										"definitionId": "fademasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -269,7 +269,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "UTXhP6B6s8Fe901tLqK4E",
+										"id": "XauWLE4KYzZjPoqGG6T6d",
 										"definitionId": "changemasterchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -324,7 +324,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "UAhRx1MXlXBmfmhn1hIll",
+										"id": "kj1ueDbVW7mctsL3DDdfl",
 										"definitionId": "setmasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -379,7 +379,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "XB6VcDQzSubbfYLqAwoIf",
+										"id": "5qaQp7mW-MKal1v5ktxXR",
 										"definitionId": "setmasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -440,7 +440,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "ovV1Yt60490oqMj527iRA",
+										"id": "mVcTluQ3sc1x8CfUtPL18",
 										"definitionId": "mutemasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -496,7 +496,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "8MS3ttMHZ-Jo6xoOcEFut",
+										"id": "HhqiFiyPUGJ_3S1GzmcMO",
 										"definitionId": "solomasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -552,7 +552,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "5VtEUZq6qQ0K8zEz4SLNP",
+										"id": "PEmp_yQNUK1c3WFnB1Olm",
 										"definitionId": "setmasterchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -608,7 +608,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "1ZqdgWZ3uGldqh5fQCCk5",
+										"id": "qNS-1VG3CL1RuyxQP7c_P",
 										"definitionId": "fademasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -672,7 +672,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "lP-j8eggbZFTdFh0GDBDE",
+										"id": "zZLw4ERVfWfHTmk3OwQGY",
 										"definitionId": "changemasterchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -727,7 +727,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "hnjChLmi0XqxZO6hgH4Gm",
+										"id": "sbinuIjth6HB3au6yujw3",
 										"definitionId": "setmasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -782,7 +782,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "UrvzBkjTV1040-OC3ajM9",
+										"id": "Lg0Vyrwb8iQu6leNyz2VB",
 										"definitionId": "setmasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -869,7 +869,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "rdtfvwbf_mZOyijM-vP6T",
+										"id": "G34BjYAdh9nubS5EDKBJz",
 										"definitionId": "mutemasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -951,7 +951,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "WItIeyrfWlYGmZNGU33V8",
+										"id": "gP5gtiIaPAKThhnGjt-1d",
 										"definitionId": "solomasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -1007,7 +1007,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "WfO_D0sFoiPFbOVeQP0YY",
+										"id": "brucW91KDmkd-LuqypZvV",
 										"definitionId": "setmasterchannelvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -1063,7 +1063,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "RFhzADeYtQ_WPD3NsAzVK",
+										"id": "gM9NKtcCvRUNOlnjiFHRv",
 										"definitionId": "fademasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -1089,6 +1089,62 @@
 											}
 										},
 										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "$(ui24:m_input3_name)\\n+ 5 %",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "FR5LWEKNf-4Ka7GcywYSO",
+										"definitionId": "changemasterchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"value": 5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
 									}
 								],
 								"up": []
@@ -1126,7 +1182,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "5ULcsM-4X2gJXxSv09OQn",
+										"id": "9s8oLPy5n3EcAz1FSpy75",
 										"definitionId": "changemasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -1181,7 +1237,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "exvM3-g3jXhjTUTNlVZ9p",
+										"id": "FLdH7kLi30RdC3J7yhyhG",
 										"definitionId": "changemasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -1247,9 +1303,9 @@
 				"2": {
 					"type": "button",
 					"style": {
-						"text": "Level:\\n$(ui24:m_input3_level) dB",
+						"text": "Level:\\n$(ui24:m_input3_level) dB\\n$(ui24:m_input3_level_pct) %",
 						"textExpression": false,
-						"size": "18",
+						"size": "14",
 						"png64": null,
 						"alignment": "center:center",
 						"pngalignment": "center:center",
@@ -1267,6 +1323,62 @@
 						"0": {
 							"action_sets": {
 								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "$(ui24:m_input3_name)\\n44 %",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "6SrLjm3ZoevKBKPke5cd4",
+										"definitionId": "setmasterchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"value": 44,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
 								"up": []
 							},
 							"options": {
@@ -1303,7 +1415,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "cmRDp6i6y60tmsasgBGr0",
+										"id": "ZdR91h3GQ84KAaZI2_6oi",
 										"definitionId": "fademasterchannel",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -1329,6 +1441,62 @@
 											}
 										},
 										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "$(ui24:m_input3_name)\\n- 5 %",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "xYBh4hEn7q-SwOyik9TKY",
+										"definitionId": "changemasterchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": {
+												"isExpression": false,
+												"value": "i"
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"value": -5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
 									}
 								],
 								"up": []
@@ -1366,7 +1534,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "JdF6ZiasjGMwZSNQrMzso",
+										"id": "yYYQXc8cLTYVNnsJ1nIH0",
 										"definitionId": "changemasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -1421,7 +1589,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "qJ5cESYDqE4NpMxuqECzc",
+										"id": "-P9vMlEvs_bczXQEKM1JW",
 										"definitionId": "changemasterchanneldelay",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {

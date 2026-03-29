@@ -11,13 +11,20 @@ import {
 	getVolumeBusFromOptions,
 } from './utils/channel-selection.js'
 import { patchDestinations, patchSources } from './utils/patch-parameters.js'
-import { convertLinearValueToPan, convertPanOffsetToLinearOffset, convertPanToLinearValue } from './utils/utils.js'
+import {
+	convertLinearValueToPan,
+	convertLinearValueToPercent,
+	convertPanOffsetToLinearOffset,
+	convertPanToLinearValue,
+} from './utils/utils.js'
 import type { AuxChannelOpts, FadeOpts, FxChannelOpts, MasterChannelOpts, NoOpts } from './utils/option-types.js'
 
 export type UiActionSchemas = {
 	// Master
 	setmastervalue: { options: { value: number } }
+	setmastervaluepct: { options: { value: number } }
 	changemastervalue: { options: { value: number } }
+	changemastervaluepct: { options: { value: number } }
 	fademaster: { options: FadeOpts }
 	dimmaster: { options: { dim: number } }
 	setmasterdelay: { options: { time: number; side: string } }
@@ -29,7 +36,9 @@ export type UiActionSchemas = {
 	setmasterchannelpan: { options: MasterChannelOpts & { value: number } }
 	changemasterchannelpan: { options: MasterChannelOpts & { value: number } }
 	setmasterchannelvalue: { options: MasterChannelOpts & { value: number } }
+	setmasterchannelvaluepct: { options: MasterChannelOpts & { value: number } }
 	changemasterchannelvalue: { options: MasterChannelOpts & { value: number } }
+	changemasterchannelvaluepct: { options: MasterChannelOpts & { value: number } }
 	fademasterchannel: { options: MasterChannelOpts & FadeOpts }
 	setmasterchanneldelay: { options: MasterChannelOpts & { time: number } }
 	changemasterchanneldelay: { options: MasterChannelOpts & { time: number } }
@@ -38,7 +47,9 @@ export type UiActionSchemas = {
 	// AUX Channels
 	muteauxchannel: { options: AuxChannelOpts & { mute: number } }
 	setauxchannelvalue: { options: AuxChannelOpts & { value: number } }
+	setauxchannelvaluepct: { options: AuxChannelOpts & { value: number } }
 	changeauxchannelvalue: { options: AuxChannelOpts & { value: number } }
+	changeauxchannelvaluepct: { options: AuxChannelOpts & { value: number } }
 	fadeauxchannel: { options: AuxChannelOpts & FadeOpts }
 	setauxchannelpost: { options: AuxChannelOpts & { post: number } }
 	setauxchannelpostproc: { options: AuxChannelOpts & { postproc: number } }
@@ -48,7 +59,9 @@ export type UiActionSchemas = {
 	// FX Channels
 	mutefxchannel: { options: FxChannelOpts & { mute: number } }
 	setfxchannelvalue: { options: FxChannelOpts & { value: number } }
+	setfxchannelvaluepct: { options: FxChannelOpts & { value: number } }
 	changefxchannelvalue: { options: FxChannelOpts & { value: number } }
+	changefxchannelvaluepct: { options: FxChannelOpts & { value: number } }
 	fadefxchannel: { options: FxChannelOpts & FadeOpts }
 	setfxchannelpost: { options: FxChannelOpts & { post: number } }
 
@@ -58,7 +71,9 @@ export type UiActionSchemas = {
 
 	// Volume Buses (SOLO, Headphone)
 	setvolumebusvalue: { options: { bus: string; value: number } }
+	setvolumebusvaluepct: { options: { bus: string; value: number } }
 	changevolumebusvalue: { options: { bus: string; value: number } }
+	changevolumebusvaluepct: { options: { bus: string; value: number } }
 
 	// Media Player
 	mediaplay: { options: NoOpts }
@@ -115,12 +130,22 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		 * MASTER
 		 */
 		setmastervalue: {
-			name: 'Master: Set fader value',
+			name: 'Master: Set fader value (dB)',
 			description: 'Set the fader value (dB) for the master fader',
 			options: [OPTIONS.faderValuesSlider],
 			callback: (action) => conn.master.setFaderLevelDB(action.options.value),
 			learn: async () => ({
 				value: await firstValueFrom(conn.master.faderLevelDB$),
+			}),
+		},
+
+		setmastervaluepct: {
+			name: 'Master: Set fader value (%)',
+			description: 'Set the fader value (%) for the master fader',
+			options: [OPTIONS.faderValuesSliderPct],
+			callback: (action) => conn.master.setFaderLevel(action.options.value / 100),
+			learn: async () => ({
+				value: convertLinearValueToPercent(await firstValueFrom(conn.master.faderLevel$)),
 			}),
 		},
 
@@ -136,10 +161,17 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		changemastervalue: {
-			name: 'Master: Change fader value (relative)',
+			name: 'Master: Change fader value (dB)',
 			description: 'Relatively change the fader value (dB) for the master fader',
 			options: [OPTIONS.faderChangeField],
 			callback: (action) => conn.master.changeFaderLevelDB(action.options.value),
+		},
+
+		changemastervaluepct: {
+			name: 'Master: Change fader value (%)',
+			description: 'Relatively change the fader value (%) for the master fader',
+			options: [OPTIONS.faderChangeFieldPct],
+			callback: (action) => conn.master.changeFaderLevel(action.options.value / 100),
 		},
 
 		dimmaster: {
@@ -224,7 +256,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		setmasterchannelvalue: {
-			name: 'Master channels: Set fader value',
+			name: 'Master channels: Set fader value (dB)',
 			description: 'Set the fader value (dB) for a channel on the master bus',
 			options: [...OPTION_SETS.masterChannel, OPTIONS.faderValuesSlider],
 			callback: (action) => {
@@ -234,6 +266,21 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			learn: async (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
 				const value = await firstValueFrom(c.faderLevelDB$)
+				return { value }
+			},
+		},
+
+		setmasterchannelvaluepct: {
+			name: 'Master channels: Set fader value (%)',
+			description: 'Set the fader value (%) for a channel on the master bus',
+			options: [...OPTION_SETS.masterChannel, OPTIONS.faderValuesSliderPct],
+			callback: (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn)
+				return c.setFaderLevel(action.options.value / 100)
+			},
+			learn: async (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn)
+				const value = convertLinearValueToPercent(await firstValueFrom(c.faderLevel$))
 				return { value }
 			},
 		},
@@ -254,12 +301,22 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		changemasterchannelvalue: {
-			name: 'Master channels: Change fader value (relative)',
+			name: 'Master channels: Change fader value (dB)',
 			description: 'Relatively change the fader value (dB) for a channel on the master bus',
 			options: [...OPTION_SETS.masterChannel, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const c = getMasterChannelFromOptions(action.options, conn)
 				return c.changeFaderLevelDB(action.options.value)
+			},
+		},
+
+		changemasterchannelvaluepct: {
+			name: 'Master channels: Change fader value (%)',
+			description: 'Relatively change the fader value (%) for a channel on the master bus',
+			options: [...OPTION_SETS.masterChannel, OPTIONS.faderChangeFieldPct],
+			callback: (action) => {
+				const c = getMasterChannelFromOptions(action.options, conn)
+				return c.changeFaderLevel(action.options.value / 100)
 			},
 		},
 
@@ -378,7 +435,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		setauxchannelvalue: {
-			name: 'AUX channels: Set fader value',
+			name: 'AUX channels: Set fader value (dB)',
 			description: 'Set the fader value (dB) for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.faderValuesSlider],
 			callback: (action) => {
@@ -388,6 +445,21 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			learn: async (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
 				const value = await firstValueFrom(c.faderLevelDB$)
+				return { value }
+			},
+		},
+
+		setauxchannelvaluepct: {
+			name: 'AUX channels: Set fader value (%)',
+			description: 'Set the fader value (%) for a channel on an AUX bus',
+			options: [...OPTION_SETS.auxChannel, OPTIONS.faderValuesSliderPct],
+			callback: (action) => {
+				const c = getAuxChannelFromOptions(action.options, conn)
+				return c.setFaderLevel(action.options.value / 100)
+			},
+			learn: async (action) => {
+				const c = getAuxChannelFromOptions(action.options, conn)
+				const value = convertLinearValueToPercent(await firstValueFrom(c.faderLevel$))
 				return { value }
 			},
 		},
@@ -408,12 +480,22 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		changeauxchannelvalue: {
-			name: 'AUX channels: Change fader value (relative)',
+			name: 'AUX channels: Change fader value (dB)',
 			description: 'Relatively change the fader value (dB) for a channel on an AUX bus',
 			options: [...OPTION_SETS.auxChannel, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
 				return c.changeFaderLevelDB(action.options.value)
+			},
+		},
+
+		changeauxchannelvaluepct: {
+			name: 'AUX channels: Change fader value (%)',
+			description: 'Relatively change the fader value (%) for a channel on an AUX bus',
+			options: [...OPTION_SETS.auxChannel, OPTIONS.faderChangeFieldPct],
+			callback: (action) => {
+				const c = getAuxChannelFromOptions(action.options, conn)
+				return c.changeFaderLevel(action.options.value / 100)
 			},
 		},
 
@@ -482,7 +564,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		 * Volume Buses (SOLO and Headphone)
 		 */
 		setvolumebusvalue: {
-			name: 'SOLO/Headphone Bus: Set volume',
+			name: 'SOLO/Headphone Bus: Set volume (dB)',
 			description: 'Set the fader value (dB) for a SOLO or headphone bus (Ui24R only)',
 			options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderValuesSlider],
 			callback: (action) => {
@@ -499,13 +581,41 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			},
 		},
 
+		setvolumebusvaluepct: {
+			name: 'SOLO/Headphone Bus: Set volume (%)',
+			description: 'Set the fader value (%) for a SOLO or headphone bus (Ui24R only)',
+			options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderValuesSliderPct],
+			callback: (action) => {
+				const bus = getVolumeBusFromOptions(action.options, conn)
+				return bus && bus.setFaderLevel(action.options.value / 100)
+			},
+			learn: async (action) => {
+				const bus = getVolumeBusFromOptions(action.options, conn)
+				if (!bus) {
+					return undefined
+				}
+				const value = convertLinearValueToPercent(await firstValueFrom(bus.faderLevel$))
+				return { value }
+			},
+		},
+
 		changevolumebusvalue: {
-			name: 'SOLO/Headphone Bus: Change volume (relative)',
+			name: 'SOLO/Headphone Bus: Change volume (dB)',
 			description: 'Relatively change the fader value (dB) for a SOLO or headphone bus (Ui24R only)',
 			options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const bus = getVolumeBusFromOptions(action.options, conn)
 				return bus && bus.changeFaderLevelDB(action.options.value)
+			},
+		},
+
+		changevolumebusvaluepct: {
+			name: 'SOLO/Headphone Bus: Change volume (%)',
+			description: 'Relatively change the fader value (%) for a SOLO or headphone bus (Ui24R only)',
+			options: [OPTIONS.volumeBusesDropdown, OPTIONS.faderChangeFieldPct],
+			callback: (action) => {
+				const bus = getVolumeBusFromOptions(action.options, conn)
+				return bus && bus.changeFaderLevel(action.options.value / 100)
 			},
 		},
 
@@ -530,7 +640,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		setfxchannelvalue: {
-			name: 'FX channels: Set fader value',
+			name: 'FX channels: Set fader value (dB)',
 			description: 'Set the fader value (dB) for a channel on an FX bus',
 			options: [...OPTION_SETS.fxChannel, OPTIONS.faderValuesSlider],
 			callback: (action) => {
@@ -540,6 +650,21 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			learn: async (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
 				const value = await firstValueFrom(c.faderLevelDB$)
+				return { value }
+			},
+		},
+
+		setfxchannelvaluepct: {
+			name: 'FX channels: Set fader value (%)',
+			description: 'Set the fader value (%) for a channel on an FX bus',
+			options: [...OPTION_SETS.fxChannel, OPTIONS.faderValuesSliderPct],
+			callback: (action) => {
+				const c = getFxChannelFromOptions(action.options, conn)
+				return c.setFaderLevel(action.options.value / 100)
+			},
+			learn: async (action) => {
+				const c = getFxChannelFromOptions(action.options, conn)
+				const value = convertLinearValueToPercent(await firstValueFrom(c.faderLevel$))
 				return { value }
 			},
 		},
@@ -560,12 +685,22 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		changefxchannelvalue: {
-			name: 'FX channels: Change fader value (relative)',
+			name: 'FX channels: Change fader value (dB)',
 			description: 'Relatively change the fader value (dB) for a channel on an FX bus',
 			options: [...OPTION_SETS.fxChannel, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const c = getFxChannelFromOptions(action.options, conn)
 				return c.changeFaderLevelDB(action.options.value)
+			},
+		},
+
+		changefxchannelvaluepct: {
+			name: 'FX channels: Change fader value (%)',
+			description: 'Relatively change the fader value (%) for a channel on an FX bus',
+			options: [...OPTION_SETS.fxChannel, OPTIONS.faderChangeFieldPct],
+			callback: (action) => {
+				const c = getFxChannelFromOptions(action.options, conn)
+				return c.changeFaderLevel(action.options.value / 100)
 			},
 		},
 
