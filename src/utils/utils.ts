@@ -33,7 +33,7 @@ export function mapInfinityToNumber(value: number): number {
 
 /** Convert internal 0..1 value to percent range (0..100) */
 export function convertLinearValueToPercent(linearValue: number): number {
-	return Math.round(linearValue * 100)
+	return Math.round(linearValue * 1000) / 10
 }
 
 /** Convert PAN value 0..1 to string representation (L 100 .. C .. R 100) */

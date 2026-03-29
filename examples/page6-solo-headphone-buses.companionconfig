@@ -37,7 +37,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "FAfDZPdZ5SZe41uBSowa3",
+										"id": "JFXHbTDsJJmJX3RxlTElA",
 										"definitionId": "setvolumebusvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -89,7 +89,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "rtUokAdHt6pInKWPUhfQi",
+										"id": "XM7WQhwSUstJ4wt0nYLyW",
 										"definitionId": "setvolumebusvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -141,7 +141,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "7Mt2w0Vxi3sjpnK-oCT0b",
+										"id": "2pbiQuG-QCyFeDRHWhEmb",
 										"definitionId": "setvolumebusvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -152,6 +152,162 @@
 											"value": {
 												"isExpression": false,
 												"value": 5
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "SOLO Volume\\nCH +3 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "Dkpqm9J-6AGw_BlZsoi0G",
+										"definitionId": "changevolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"isExpression": false,
+												"value": "solo"
+											},
+											"value": {
+												"isExpression": false,
+												"value": 3
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "HP 1 Volume\\nCH +3 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "h7Gmip9FE4WVO1hcQgO25",
+										"definitionId": "changevolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"isExpression": false,
+												"value": "hp1"
+											},
+											"value": {
+												"isExpression": false,
+												"value": 3
+											}
+										},
+										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "HP 2 Volume\\nCH +3 dB",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"type": "action",
+										"id": "SFPOohbSU3YpncQ62wcXY",
+										"definitionId": "changevolumebusvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"isExpression": false,
+												"value": "hp2"
+											},
+											"value": {
+												"isExpression": false,
+												"value": 3
 											}
 										},
 										"upgradeIndex": 2
@@ -198,7 +354,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "KAZUCkBFbMC3MNTXEpLVt",
+										"id": "-J3rMdl0z6cdPeVrtfEwY",
 										"definitionId": "setvolumebusvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -250,7 +406,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "2Fin6u817Ti8EYybwqHVT",
+										"id": "fosunZc_dClFReoOXQCrY",
 										"definitionId": "setvolumebusvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -302,7 +458,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "kAMSA5KR4VODrTjbk06AT",
+										"id": "lhwX8BtX9jYOswsYGjaze",
 										"definitionId": "setvolumebusvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -326,171 +482,8 @@
 						}
 					},
 					"localVariables": []
-				}
-			},
-			"2": {
-				"0": {
-					"type": "pagedown"
 				},
-				"1": {
-					"type": "button",
-					"style": {
-						"text": "SOLO Volume\\nCH +3 dB",
-						"textExpression": false,
-						"size": "auto",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default",
-						"png": null,
-						"latch": false
-					},
-					"options": {
-						"stepProgression": "auto",
-						"stepExpression": "",
-						"rotaryActions": false
-					},
-					"feedbacks": [],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"type": "action",
-										"id": "W1clL_im_NL6lquWmEfWq",
-										"definitionId": "changevolumebusvalue",
-										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {
-											"bus": {
-												"isExpression": false,
-												"value": "solo"
-											},
-											"value": {
-												"isExpression": false,
-												"value": 3
-											}
-										},
-										"upgradeIndex": 2
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					},
-					"localVariables": []
-				},
-				"2": {
-					"type": "button",
-					"style": {
-						"text": "HP 1 Volume\\nCH +3 dB",
-						"textExpression": false,
-						"size": "auto",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default",
-						"png": null,
-						"latch": false
-					},
-					"options": {
-						"stepProgression": "auto",
-						"stepExpression": "",
-						"rotaryActions": false
-					},
-					"feedbacks": [],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"type": "action",
-										"id": "R9jMh9MiFip4TWdnXYd4C",
-										"definitionId": "changevolumebusvalue",
-										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {
-											"bus": {
-												"isExpression": false,
-												"value": "hp1"
-											},
-											"value": {
-												"isExpression": false,
-												"value": 3
-											}
-										},
-										"upgradeIndex": 2
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					},
-					"localVariables": []
-				},
-				"3": {
-					"type": "button",
-					"style": {
-						"text": "HP 2 Volume\\nCH +3 dB",
-						"textExpression": false,
-						"size": "auto",
-						"png64": null,
-						"alignment": "center:center",
-						"pngalignment": "center:center",
-						"color": 16777215,
-						"bgcolor": 0,
-						"show_topbar": "default",
-						"png": null,
-						"latch": false
-					},
-					"options": {
-						"stepProgression": "auto",
-						"stepExpression": "",
-						"rotaryActions": false
-					},
-					"feedbacks": [],
-					"steps": {
-						"0": {
-							"action_sets": {
-								"down": [
-									{
-										"type": "action",
-										"id": "d85nv5mCv1in4Pck4KpcN",
-										"definitionId": "changevolumebusvalue",
-										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
-										"options": {
-											"bus": {
-												"isExpression": false,
-												"value": "hp2"
-											},
-											"value": {
-												"isExpression": false,
-												"value": 3
-											}
-										},
-										"upgradeIndex": 2
-									}
-								],
-								"up": []
-							},
-							"options": {
-								"runWhileHeld": []
-							}
-						}
-					},
-					"localVariables": []
-				}
-			},
-			"3": {
-				"1": {
+				"4": {
 					"type": "button",
 					"style": {
 						"text": "SOLO Volume\\nCH -6 dB",
@@ -517,7 +510,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "0ubkrXWlWXBEt_YigNU18",
+										"id": "X9xZ8s3L8jrDMAT9ZAVTq",
 										"definitionId": "changevolumebusvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -542,7 +535,7 @@
 					},
 					"localVariables": []
 				},
-				"2": {
+				"5": {
 					"type": "button",
 					"style": {
 						"text": "HP 1 Volume\\nCH -6 dB",
@@ -569,7 +562,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "OQw_naAZpwEQVEZNMHnz3",
+										"id": "68FT-OLRsOkZlirDzw7KW",
 										"definitionId": "changevolumebusvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -594,7 +587,7 @@
 					},
 					"localVariables": []
 				},
-				"3": {
+				"6": {
 					"type": "button",
 					"style": {
 						"text": "HP 2 Volume\\nCH -6 dB",
@@ -621,7 +614,7 @@
 								"down": [
 									{
 										"type": "action",
-										"id": "bKq4ACOrOfIaVT6ozbY-6",
+										"id": "56ntn0ofQbnGH1MlUnMXb",
 										"definitionId": "changevolumebusvalue",
 										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
 										"options": {
@@ -635,6 +628,481 @@
 											}
 										},
 										"upgradeIndex": 2
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				}
+			},
+			"2": {
+				"0": {
+					"type": "pagedown"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "SOLO Volume\\n50 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "VqMzDzoDw-KN_oDJWVCsw",
+										"definitionId": "setvolumebusvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"isExpression": false,
+												"value": "solo"
+											},
+											"value": {
+												"value": 50,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "HP 1 Volume\\n50 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "G8i6rhX0BBtDdoiqgTNm_",
+										"definitionId": "setvolumebusvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": "hp1",
+												"isExpression": false
+											},
+											"value": {
+												"value": 50,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "HP 2 Volume\\n50 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "S79qLTgOCAXRKr2zHDE50",
+										"definitionId": "setvolumebusvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": "hp2",
+												"isExpression": false
+											},
+											"value": {
+												"value": 50,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "SOLO Volume\\nCH +5 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "J0zoXPdrbjnDaDP6Nsuv7",
+										"definitionId": "changevolumebusvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"isExpression": false,
+												"value": "solo"
+											},
+											"value": {
+												"value": 5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "HP 1 Volume\\nCH +5 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "TE91LhFt2Yv2Ly25d3wgy",
+										"definitionId": "changevolumebusvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": "hp1",
+												"isExpression": false
+											},
+											"value": {
+												"value": 5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "HP 2 Volume\\nCH +5 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "hfGiIAuo1_xdTMQ42cxE0",
+										"definitionId": "changevolumebusvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": "hp2",
+												"isExpression": false
+											},
+											"value": {
+												"value": 5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				}
+			},
+			"3": {
+				"4": {
+					"type": "button",
+					"style": {
+						"text": "SOLO Volume\\nCH -5 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "j5S1lCKPq6c71oIO5kE1r",
+										"definitionId": "changevolumebusvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"isExpression": false,
+												"value": "solo"
+											},
+											"value": {
+												"value": -5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button",
+					"style": {
+						"text": "HP 1 Volume\\nCH -5 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "r8aGLz1AayXv44zwKM4PX",
+										"definitionId": "changevolumebusvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": "hp1",
+												"isExpression": false
+											},
+											"value": {
+												"value": -5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button",
+					"style": {
+						"text": "HP 2 Volume\\nCH -5 %",
+						"textExpression": false,
+						"size": "auto",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default",
+						"png": null,
+						"latch": false
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "Joayqbkf9uL7EXr_WtnUo",
+										"definitionId": "changevolumebusvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": "hp2",
+												"isExpression": false
+											},
+											"value": {
+												"value": -5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
 									}
 								],
 								"up": []
