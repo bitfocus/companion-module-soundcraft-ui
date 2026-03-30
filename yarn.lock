@@ -1807,10 +1807,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"soundcraft-ui-connection@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "soundcraft-ui-connection@npm:5.0.0"
-  checksum: 10c0/b2781d4fd8f8db142ea7300699a02cfc826fd3aa035ee7bf95f5f6b2eab91cacc7645f719b5ea344501735e5d38f8b30b37ea843e67b3eca72c9c67b1d0431e3
+"soundcraft-ui-connection@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "soundcraft-ui-connection@npm:6.0.1"
+  checksum: 10c0/5324ed20a66befd70a1cce05fdfc65707150a7ccf526d4c3f50206c59f47c2bde7a7608c6c7c134d943ac83aed022e1be97dd64907281110968fe6f1213ef070
   languageName: node
   linkType: hard
 
@@ -1827,7 +1827,7 @@ __metadata:
     prettier: "npm:^3.7.4"
     rimraf: "npm:^6.1.2"
     rxjs: "npm:^7.8.2"
-    soundcraft-ui-connection: "npm:^5.0.0"
+    soundcraft-ui-connection: "npm:^6.0.1"
     typescript: "npm:~5.9.3"
     typescript-eslint: "npm:^8.50.0"
   languageName: unknown
