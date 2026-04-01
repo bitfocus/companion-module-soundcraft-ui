@@ -1,3 +1,20 @@
+# 4.0.0 (2026-04-01)
+
+This is a large update that migrates the module to the v2 Companion API (`@companion-module/base` v2). It is compatible with Companion >= 4.3.0. Along with the API migration, this release includes new features such as learn callbacks for actions and percent counterparts for all fader value actions. One of the greatest improvements is that expressions are now allowed in feedback and action options.
+
+- feat: migrate to @companion-module/base v2 ([9063384](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/9063384135c56c3988dc551657916cf04b1586f7))
+- refactor: remove state checkbox from boolean feedbacks ([3a22ed7](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/3a22ed7efc2dbf04b9e0f368a1c9d16c41aadc87))
+- refactor: rework feedback store for targeted updates ([d8e17d5](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/d8e17d542386217c7d90e745229a6e18f464e664))
+- chore: update example pages ([bee862f](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/bee862f0df4c9a304c57e53339d06246080b90ad))
+- feat: add learn callbacks to actions ([f93e400](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/f93e4009a62cc410e4146098bc93f89e9886b0cb))
+- chore: update connection lib to 6.0.1 ([f84e6d1](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/f84e6d176e0743a3699b7799017c37edd45f74ac))
+- feat: add percent (%) counterparts for all fader value actions ([c6b702f](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/c6b702fa7d3191198e1b0bdcd7dfac08a4458420))
+- feat: fetch tags and group dependency updates in changelog script ([fc9ebfc](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/fc9ebfcf49052d81a7713a4b04b3f7653335626e))
+
+## Dependency updates
+
+- chore(deps): bump picomatch from 2.3.1 to 2.3.2 (#136) ([fd90f9a](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/fd90f9a90f6a21cc8cc498a2a4685d7468ea90ba))
+
 # 3.10.1 (2026-03-25)
 
 - fix: move feedback subscribe logic into callback ([fb08ca0](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/fb08ca0052a53e94dedf042a3308a26089f31e0b))
