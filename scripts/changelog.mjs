@@ -27,6 +27,9 @@ function git(cmd) {
 	return execSync(cmd, { cwd: ROOT, encoding: 'utf-8' }).trim()
 }
 
+// Ensure all tags are fetched from the remote
+git('git fetch origin --tags')
+
 // Find the latest tag to use as the base for the changelog
 const latestTag = git('git describe --tags --abbrev=0')
 console.log(`Collecting commits since ${latestTag} ...`)
@@ -38,16 +41,35 @@ if (!log) {
 	throw new Error('No commits found since the last tag.')
 }
 
-const lines = log.split('\n').map((line) => {
+function formatLine(line) {
 	const spaceIndex = line.indexOf(' ')
 	const hash = line.slice(0, spaceIndex)
 	const message = line.slice(spaceIndex + 1)
 	const shortHash = hash.slice(0, 7)
 	return `- ${message} ([${shortHash}](${REPO_URL}/commit/${hash}))`
-})
+}
+
+const commits = log.split('\n').reverse()
+const depLines = []
+const otherLines = []
+
+for (const line of commits) {
+	const message = line.slice(line.indexOf(' ') + 1)
+	if (message.startsWith('chore(deps):')) {
+		depLines.push(formatLine(line))
+	} else {
+		otherLines.push(formatLine(line))
+	}
+}
 
 const today = new Date().toISOString().slice(0, 10)
-const section = `# ${version} (${today})\n\n${lines.join('\n')}`
+const parts = [`# ${version} (${today})`, '', otherLines.join('\n')]
+
+if (depLines.length > 0) {
+	parts.push('', '## Dependency updates', '', depLines.join('\n'))
+}
+
+const section = parts.join('\n')
 
 const existingChangelog = readFileSync(CHANGELOG_PATH, 'utf-8')
 writeFileSync(CHANGELOG_PATH, `${section}\n\n${existingChangelog}`)
