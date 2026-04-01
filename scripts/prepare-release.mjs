@@ -1,11 +1,11 @@
 /**
- * Creates a new changelog section from git commits since the last tag.
+ * Prepares a new release by updating version numbers and generating a changelog section.
  *
  * Usage:
- *   node scripts/changelog.mjs <version>
+ *   node scripts/prepare-release.mjs <version>
  *
  * Example:
- *   node scripts/changelog.mjs 3.11.0
+ *   node scripts/prepare-release.mjs 3.11.0
  */
 
 import { execSync } from 'node:child_process'
@@ -16,12 +16,25 @@ import { fileURLToPath } from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(__dirname, '..')
 const CHANGELOG_PATH = resolve(ROOT, 'CHANGELOG.md')
+const PACKAGE_JSON_PATH = resolve(ROOT, 'package.json')
+const MANIFEST_PATH = resolve(ROOT, 'companion', 'manifest.json')
 const REPO_URL = 'https://github.com/bitfocus/companion-module-soundcraft-ui'
 
 const version = process.argv[2]
 if (!version) {
-	throw new Error('Usage: node scripts/changelog.mjs <version>')
+	throw new Error('Usage: node scripts/prepare-release.mjs <version>')
 }
+
+function updateJsonVersion(filePath) {
+	const json = JSON.parse(readFileSync(filePath, 'utf-8'))
+	json.version = version
+	writeFileSync(filePath, JSON.stringify(json, null, '\t') + '\n')
+}
+
+// Update version in package.json and manifest.json
+updateJsonVersion(PACKAGE_JSON_PATH)
+updateJsonVersion(MANIFEST_PATH)
+console.log(`Updated version to ${version} in package.json and companion/manifest.json`)
 
 function git(cmd) {
 	return execSync(cmd, { cwd: ROOT, encoding: 'utf-8' }).trim()
