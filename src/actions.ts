@@ -1,6 +1,6 @@
 import type { CompanionActionDefinitions } from '@companion-module/base'
 import type { AutomixGroupId, DelayableMasterChannel, MuteGroupID, SoundcraftUI } from 'soundcraft-ui-connection'
-import { firstValueFrom } from 'rxjs'
+import { firstValueFrom, map } from 'rxjs'
 
 import { CHOICES, OPTIONS, OPTION_SETS } from './utils/input-utils.js'
 import {
@@ -122,6 +122,10 @@ export type UiActionSchemas = {
 
 	// Patching / Routing
 	patchingsetroute: { options: { source: string; destination: string } }
+
+	// Other
+	setrawvaluedecimal: { options: { key: string; value: number } }
+	setrawvaluestring: { options: { key: string; value: string } }
 }
 
 export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<UiActionSchemas> {
@@ -1334,6 +1338,51 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 				}
 
 				conn.conn.sendMessage(`SETS^${destination}^${source}`)
+			},
+		},
+
+		// Raw values
+		setrawvaluedecimal: {
+			name: 'Raw value: Set raw decimal value SETD (advanced)',
+			description:
+				'ADVANCED! USE WITH CAUTION! Send a raw message to the mixer to set a decimal value (SETD). Values are not checked or sanitized. Always prefer the existing actions to set state.',
+			options: [
+				OPTIONS.stateKeyField,
+				{
+					type: 'number',
+					label: 'Value',
+					id: 'value',
+					default: 0,
+					min: -1,
+					max: 2,
+					allowInvalidValues: true,
+				},
+			],
+			callback: (action) => conn.conn.sendMessage(`SETD^${action.options.key}^${action.options.value}`),
+			learn: async (action) => {
+				const value = await firstValueFrom(conn.store.state$.pipe(map((state) => state[action.options.key])))
+				return value !== undefined ? { value: Number(value) } : {}
+			},
+		},
+
+		setrawvaluestring: {
+			name: 'Raw value: Set raw string value SETS (advanced)',
+			description:
+				'ADVANCED! USE WITH CAUTION! Send a raw message to the mixer to set a string value (SETS). Values are not checked or sanitized. Always prefer the existing actions to set state.',
+			options: [
+				OPTIONS.stateKeyField,
+				{
+					type: 'textinput',
+					label: 'Value',
+					id: 'value',
+					default: '',
+					allowInvalidValues: true,
+				},
+			],
+			callback: (action) => conn.conn.sendMessage(`SETS^${action.options.key}^${action.options.value}`),
+			learn: async (action) => {
+				const value = await firstValueFrom(conn.store.state$.pipe(map((state) => state[action.options.key])))
+				return value !== undefined ? { value: String(value) } : {}
 			},
 		},
 	}

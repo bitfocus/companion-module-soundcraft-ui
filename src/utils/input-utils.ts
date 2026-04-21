@@ -1,6 +1,7 @@
 import type {
 	CompanionInputFieldDropdown,
 	CompanionInputFieldNumber,
+	CompanionInputFieldTextInput,
 	DropdownChoice,
 	SomeCompanionActionInputField,
 } from '@companion-module/base'
@@ -287,6 +288,13 @@ export const OPTIONS = {
 		max: 200,
 		default: 10,
 	} satisfies CompanionInputFieldNumber<'value'>,
+	stateKeyField: {
+		type: 'textinput',
+		label: 'State Key',
+		id: 'key',
+		default: '',
+		minLength: 1,
+	} satisfies CompanionInputFieldTextInput<'key'>,
 }
 
 /**
