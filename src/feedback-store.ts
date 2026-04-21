@@ -6,8 +6,8 @@ import type { UiSchema } from './schema.js'
 export class UiFeedbackStore {
 	private feedbackUnsubscribe$ = new Subject<string | void>()
 
-	/** Latest boolean value per stream */
-	private streamStates = new Map<string, boolean>()
+	/** Latest value per stream */
+	private streamStates = new Map<string, unknown>()
 
 	/** Which feedback unique IDs use each stream (for checkFeedbacksById) */
 	private streamFeedbackIds = new Map<string, Set<string>>()
@@ -48,7 +48,7 @@ export class UiFeedbackStore {
 
 		// subscribe to stream if not yet subscribed
 		if (!this.streamStates.has(streamId)) {
-			this.streamStates.set(streamId, false)
+			this.streamStates.set(streamId, undefined)
 
 			const unsubscribe$ = this.feedbackUnsubscribe$.pipe(filter((sid) => sid === streamId || !sid))
 			stream$.pipe(takeUntil(unsubscribe$)).subscribe((state) => this.handleStateUpdate(streamId, state))
@@ -56,12 +56,19 @@ export class UiFeedbackStore {
 	}
 
 	/**
-	 * Get the current boolean state for a given stream ID.
-	 * Returns false if the stream is not subscribed or the state is falsy.
+	 * Get the current state for a given stream ID.
 	 * @param streamId Internal identifier of the stream
 	 */
-	getState(streamId: string): boolean {
-		return this.streamStates.get(streamId) ?? false
+	getState<T = unknown>(streamId: string): T | undefined {
+		return this.streamStates.get(streamId) as T | undefined
+	}
+
+	/**
+	 * Get the current state for a given stream ID as a boolean.
+	 * @param streamId Internal identifier of the stream
+	 */
+	getBooleanState(streamId: string): boolean {
+		return !!this.getState(streamId)
 	}
 
 	/**
@@ -105,14 +112,12 @@ export class UiFeedbackStore {
 	 * @param value the new state value
 	 */
 	private handleStateUpdate(streamId: string, value: unknown): void {
-		const booleanValue = !!value
-
 		// only update if the value has actually changed
-		if (this.streamStates.get(streamId) === booleanValue) {
+		if (this.streamStates.get(streamId) === value) {
 			return
 		}
 
-		this.streamStates.set(streamId, booleanValue)
+		this.streamStates.set(streamId, value)
 
 		const feedbackIds = this.streamFeedbackIds.get(streamId)
 		if (feedbackIds) {
