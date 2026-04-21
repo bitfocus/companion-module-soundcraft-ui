@@ -35,7 +35,7 @@ export type UiFeedbackSchemas = {
 	hwphantompower: { type: 'boolean'; options: { hwchannel: number } }
 	automixgroupstate: { type: 'boolean'; options: { group: string } }
 	patchingroutestate: { type: 'boolean'; options: { source: string; destination: string } }
-	rawvaluedecimal: { type: 'value'; options: { key: string } }
+	rawvalue: { type: 'value'; options: { key: string } }
 }
 
 export const feedbackDefaultStyles: Record<string, CompanionFeedbackButtonStyleResult> = {
@@ -469,25 +469,18 @@ export function GetFeedbacksList(
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
 
-		rawvaluedecimal: {
+		// Raw values
+		rawvalue: {
 			type: 'value',
-			name: 'SETD: Raw decimal value (advanced)',
-			description: '',
-			options: [
-				{
-					type: 'textinput',
-					label: 'State Key',
-					id: 'key',
-					default: '',
-					minLength: 1,
-				},
-			],
-			callback: (evt) => {
-				const value$ = conn.store.state$.pipe(map((state) => Number(state[evt.options.key])))
-
+			name: 'Raw value: Get raw state value (advanced)',
+			description:
+				'ADVANCED! USE WITH CAUTION! Read a raw value from the mixer. Always prefer the existing feedbacks and variables to read state.',
+			options: [OPTIONS.stateKeyField],
+			callback: async (evt) => {
+				const value$ = conn.store.state$.pipe(map((state) => state[evt.options.key]))
 				const streamId = `rawd-${evt.options.key}`
 				store.ensureSubscription(evt.id, value$, streamId)
-				return store.getState<number>(streamId) ?? 0
+				return store.getState(streamId) ?? ''
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
