@@ -10,8 +10,11 @@ import { UiFeedbackStore } from './feedback-store.js'
 import { OPTION_SETS, OPTIONS } from './utils/input-utils.js'
 import {
 	getAuxChannelFromOptions,
+	getAuxChannelId,
 	getFxChannelFromOptions,
+	getFxChannelId,
 	getMasterChannelFromOptions,
+	getMasterChannelId,
 } from './utils/channel-selection.js'
 import { patchDestinations, patchSources } from './utils/patch-parameters.js'
 import type { AuxChannelOpts, FxChannelOpts, MasterChannelOpts, NoOpts } from './utils/option-types.js'
@@ -69,7 +72,7 @@ export function GetFeedbacksList(
 			options: [...OPTION_SETS.masterChannel],
 			callback: (evt) => {
 				const c = getMasterChannelFromOptions(evt.options, conn)
-				const streamId = c.fullChannelId + '-mute'
+				const streamId = getMasterChannelId(evt.options) + '-mute'
 				store.ensureSubscription(evt.id, c.mute$, streamId)
 				return store.getState(streamId)
 			},
@@ -84,7 +87,7 @@ export function GetFeedbacksList(
 			options: [...OPTION_SETS.masterChannel],
 			callback: (evt) => {
 				const c = getMasterChannelFromOptions(evt.options, conn)
-				const streamId = c.fullChannelId + '-solo'
+				const streamId = getMasterChannelId(evt.options) + '-solo'
 				store.ensureSubscription(evt.id, c.solo$, streamId)
 				return store.getState(streamId)
 			},
@@ -102,7 +105,7 @@ export function GetFeedbacksList(
 			options: [...OPTION_SETS.multiTrackMasterChannel],
 			callback: (evt) => {
 				const c = getMasterChannelFromOptions(evt.options, conn)
-				const streamId = c.fullChannelId + '-mtkrec'
+				const streamId = getMasterChannelId(evt.options) + '-mtkrec'
 				store.ensureSubscription(evt.id, c.multiTrackSelected$, streamId)
 				return store.getState(streamId)
 			},
@@ -131,7 +134,7 @@ export function GetFeedbacksList(
 			options: [...OPTION_SETS.auxChannel],
 			callback: (evt) => {
 				const c = getAuxChannelFromOptions(evt.options, conn)
-				const streamId = c.fullChannelId + '-mute'
+				const streamId = getAuxChannelId(evt.options) + '-mute'
 				store.ensureSubscription(evt.id, c.mute$, streamId)
 				return store.getState(streamId)
 			},
@@ -146,7 +149,7 @@ export function GetFeedbacksList(
 			options: [...OPTION_SETS.auxChannel],
 			callback: (evt) => {
 				const c = getAuxChannelFromOptions(evt.options, conn)
-				const streamId = c.fullChannelId + '-post'
+				const streamId = getAuxChannelId(evt.options) + '-post'
 				store.ensureSubscription(evt.id, c.post$, streamId)
 				return store.getState(streamId)
 			},
@@ -161,7 +164,7 @@ export function GetFeedbacksList(
 			options: [...OPTION_SETS.fxChannel],
 			callback: (evt) => {
 				const c = getFxChannelFromOptions(evt.options, conn)
-				const streamId = c.fullChannelId + '-mute'
+				const streamId = getFxChannelId(evt.options) + '-mute'
 				store.ensureSubscription(evt.id, c.mute$, streamId)
 				return store.getState(streamId)
 			},
@@ -176,7 +179,7 @@ export function GetFeedbacksList(
 			options: [...OPTION_SETS.fxChannel],
 			callback: (evt) => {
 				const c = getFxChannelFromOptions(evt.options, conn)
-				const streamId = c.fullChannelId + '-post'
+				const streamId = getFxChannelId(evt.options) + '-post'
 				store.ensureSubscription(evt.id, c.post$, streamId)
 				return store.getState(streamId)
 			},
