@@ -530,7 +530,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			],
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
-				return c.setPostProc(action.options.postproc)
+				return c.setPostProc(action.options.postproc === 1)
 			},
 		},
 
@@ -934,9 +934,9 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			callback: (action) => {
 				switch (action.options.shuffle) {
 					case 0:
-						return conn.player.setShuffle(0)
+						return conn.player.setShuffle(false)
 					case 1:
-						return conn.player.setShuffle(1)
+						return conn.player.setShuffle(true)
 					case 2:
 						return conn.player.toggleShuffle()
 				}
@@ -1333,7 +1333,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 					return
 				}
 
-				conn.conn.sendMessage(`SETS^${destination}^${source}`)
+				conn.conn.sets(destination, source)
 			},
 		},
 	}

@@ -41,6 +41,11 @@ export function getMasterChannelFromOptions(options: MasterChannelOpts, conn: So
 	return getMasterChannel(conn.master, channelType, options.channel)
 }
 
+/** Unique identifier for a master channel, used to group feedback subscriptions */
+export function getMasterChannelId(options: MasterChannelOpts): string {
+	return `master.${options.channelType}.${options.channel}`
+}
+
 /** AUX Channels */
 
 export function getAuxChannel(source: AuxBus, type: ChannelType, channel: number): AuxChannel {
@@ -62,6 +67,11 @@ export function getAuxChannelFromOptions(options: AuxChannelOpts, conn: Soundcra
 	return getAuxChannel(conn.aux(options.bus), channelType, options.channel)
 }
 
+/** Unique identifier for an AUX bus channel, used to group feedback subscriptions */
+export function getAuxChannelId(options: AuxChannelOpts): string {
+	return `aux.${options.bus}.${options.channelType}.${options.channel}`
+}
+
 /** FX Channels */
 
 export function getFxChannel(source: FxBus, type: ChannelType, channel: number): FxChannel {
@@ -81,6 +91,11 @@ export function getFxChannel(source: FxBus, type: ChannelType, channel: number):
 export function getFxChannelFromOptions(options: FxChannelOpts, conn: SoundcraftUI): FxChannel {
 	const channelType = optionToChannelType(options.channelType)
 	return getFxChannel(conn.fx(options.bus), channelType, options.channel)
+}
+
+/** Unique identifier for an FX bus channel, used to group feedback subscriptions */
+export function getFxChannelId(options: FxChannelOpts): string {
+	return `fx.${options.bus}.${options.channelType}.${options.channel}`
 }
 
 export function getVolumeBusFromOptions(options: CompanionOptionValues, conn: SoundcraftUI): VolumeBus | undefined {
