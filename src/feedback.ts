@@ -74,7 +74,7 @@ export function GetFeedbacksList(
 				const c = getMasterChannelFromOptions(evt.options, conn)
 				const streamId = getMasterChannelId(evt.options) + '-mute'
 				store.ensureSubscription(evt.id, c.mute$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -89,7 +89,7 @@ export function GetFeedbacksList(
 				const c = getMasterChannelFromOptions(evt.options, conn)
 				const streamId = getMasterChannelId(evt.options) + '-solo'
 				store.ensureSubscription(evt.id, c.solo$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -107,7 +107,7 @@ export function GetFeedbacksList(
 				const c = getMasterChannelFromOptions(evt.options, conn)
 				const streamId = getMasterChannelId(evt.options) + '-mtkrec'
 				store.ensureSubscription(evt.id, c.multiTrackSelected$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -121,7 +121,7 @@ export function GetFeedbacksList(
 			callback: (evt) => {
 				const streamId = 'masterdim'
 				store.ensureSubscription(evt.id, conn.master.dim$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -136,7 +136,7 @@ export function GetFeedbacksList(
 				const c = getAuxChannelFromOptions(evt.options, conn)
 				const streamId = getAuxChannelId(evt.options) + '-mute'
 				store.ensureSubscription(evt.id, c.mute$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -151,7 +151,7 @@ export function GetFeedbacksList(
 				const c = getAuxChannelFromOptions(evt.options, conn)
 				const streamId = getAuxChannelId(evt.options) + '-post'
 				store.ensureSubscription(evt.id, c.post$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -166,7 +166,7 @@ export function GetFeedbacksList(
 				const c = getFxChannelFromOptions(evt.options, conn)
 				const streamId = getFxChannelId(evt.options) + '-mute'
 				store.ensureSubscription(evt.id, c.mute$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -181,7 +181,7 @@ export function GetFeedbacksList(
 				const c = getFxChannelFromOptions(evt.options, conn)
 				const streamId = getFxChannelId(evt.options) + '-post'
 				store.ensureSubscription(evt.id, c.post$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -213,7 +213,7 @@ export function GetFeedbacksList(
 				const state$ = conn.player.state$.pipe(map((s) => s === state))
 				const streamId = 'playerstate' + state
 				store.ensureSubscription(evt.id, state$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -230,7 +230,7 @@ export function GetFeedbacksList(
 			callback: (evt) => {
 				const streamId = 'playershuffle'
 				store.ensureSubscription(evt.id, conn.player.shuffle$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -267,7 +267,7 @@ export function GetFeedbacksList(
 						store.ensureSubscription(evt.id, recorder.busy$, streamId)
 						break
 				}
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -299,7 +299,7 @@ export function GetFeedbacksList(
 				const state$ = conn.recorderMultiTrack.state$.pipe(map((s) => s === state))
 				const streamId = 'mtkstate' + state
 				store.ensureSubscription(evt.id, state$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -336,7 +336,7 @@ export function GetFeedbacksList(
 						store.ensureSubscription(evt.id, recorder.busy$, streamId)
 						break
 				}
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -353,7 +353,7 @@ export function GetFeedbacksList(
 			callback: (evt) => {
 				const streamId = 'mtksoundcheck'
 				store.ensureSubscription(evt.id, conn.recorderMultiTrack.soundcheck$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -369,7 +369,7 @@ export function GetFeedbacksList(
 				const streamId = 'mgstate' + groupId
 				const group = conn.muteGroup(groupId)
 				store.ensureSubscription(evt.id, group.state$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -387,7 +387,7 @@ export function GetFeedbacksList(
 				const streamId = 'hw' + evt.options.hwchannel + 'phantom'
 				const channel = conn.hw(evt.options.hwchannel)
 				store.ensureSubscription(evt.id, channel.phantom$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -427,7 +427,7 @@ export function GetFeedbacksList(
 				}
 				const streamId = 'amixgroupstate' + evt.options.group
 				store.ensureSubscription(evt.id, group.state$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
@@ -466,7 +466,7 @@ export function GetFeedbacksList(
 
 				const streamId = `patchroute-${source}-${destination}`
 				store.ensureSubscription(evt.id, feedback$, streamId)
-				return store.getState(streamId)
+				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
