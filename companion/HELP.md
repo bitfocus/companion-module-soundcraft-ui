@@ -22,10 +22,11 @@ If you're missing a feature, feel free to [open an issue](https://github.com/bit
 | Multitrack Recording   | Control the multitrack recorder (Ui24R only)                     |
 | Dim Master             | Dim the master bus (incl. feedback) (Ui24R only)                 |
 | Shows, Snapshots, Cues | Load shows, snapshots and cues. Save snapshots and cues          |
-| Phantom Power          | Switch phantom power on hardware channels                        |
+| Gain and Phantom Power | Switch phantom power and adjust gain on hardware channels        |
 | Automix                | Enable/disable automix groups, assign channels to groups         |
 | FX Settings            | Set parameters and BPM for FX processors                         |
 | Patching               | Change patch config (Ui24R only)                                 |
+| Raw messages           | Read and write raw state from the mixer (advanced)               |
 
 This module supports variables and feedback for most functions.
 Fader levels, channel names, PAN values and player status are available as variables.

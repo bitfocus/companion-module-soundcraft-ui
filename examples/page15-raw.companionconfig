@@ -1,0 +1,361 @@
+{
+	"version": 12,
+	"type": "page",
+	"companionBuild": "4.3.4+9244-stable-c14e5e3334",
+	"page": {
+		"id": "ek0EueGdxaghiKiWYMCmY",
+		"name": "Raw",
+		"controls": {
+			"0": {
+				"0": {
+					"type": "pageup"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "m.mix = \\n$(local:mmix)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 102,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": [
+						{
+							"id": "vmJczA5Ddolb-KRMY1L1r",
+							"definitionId": "rawvalue",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"key": {
+									"value": "m.mix",
+									"isExpression": false
+								}
+							},
+							"upgradeIndex": 2,
+							"type": "feedback",
+							"style": {},
+							"isInverted": {
+								"value": false,
+								"isExpression": false
+							},
+							"variableName": "mmix"
+						}
+					]
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "m.mix => 0.5",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "9jjyBRQJmWgeVZXG2pnrw",
+										"definitionId": "setrawvaluedecimal",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"key": {
+												"value": "m.mix",
+												"isExpression": false
+											},
+											"value": {
+												"value": 0.5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "m.mix => 0.7",
+						"textExpression": false,
+						"size": "18",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "MPLf5hvJun4z3lRABDkGC",
+										"definitionId": "setrawvaluedecimal",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"key": {
+												"value": "m.mix",
+												"isExpression": false
+											},
+											"value": {
+												"value": 0.7,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				}
+			},
+			"1": {
+				"0": {
+					"type": "pagenum"
+				},
+				"1": {
+					"type": "button",
+					"style": {
+						"text": "i.0.name =\\n$(local:i0name)",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 102,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": [
+						{
+							"id": "OxMtlEbJjvgfygH5bBER9",
+							"definitionId": "rawvalue",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"key": {
+									"value": "i.0.name",
+									"isExpression": false
+								}
+							},
+							"upgradeIndex": 2,
+							"type": "feedback",
+							"style": {},
+							"isInverted": {
+								"value": false,
+								"isExpression": false
+							},
+							"variableName": "i0name"
+						}
+					]
+				},
+				"2": {
+					"type": "button",
+					"style": {
+						"text": "i.0.name => TEST 1",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "mNnyUj3DA8ZnsV78NI9t0",
+										"definitionId": "setrawvaluestring",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"key": {
+												"value": "i.0.name",
+												"isExpression": false
+											},
+											"value": {
+												"value": "TEST 1",
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"3": {
+					"type": "button",
+					"style": {
+						"text": "i.0.name => XYZ",
+						"textExpression": false,
+						"size": "14",
+						"png64": null,
+						"alignment": "center:center",
+						"pngalignment": "center:center",
+						"color": 16777215,
+						"bgcolor": 0,
+						"show_topbar": "default"
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "wqAgCWucY7eBHrwFac0Vm",
+										"definitionId": "setrawvaluestring",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"key": {
+												"value": "i.0.name",
+												"isExpression": false
+											},
+											"value": {
+												"value": "XYZ",
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				}
+			},
+			"2": {
+				"0": {
+					"type": "pagedown"
+				}
+			}
+		},
+		"gridSize": {
+			"minColumn": 0,
+			"maxColumn": 8,
+			"minRow": 0,
+			"maxRow": 5
+		}
+	},
+	"instances": {
+		"K5mVTsGHIPgqYkyqYxEWS": {
+			"sortOrder": 2,
+			"label": "ui24",
+			"isFirstInit": false,
+			"config": {
+				"product": "UI24",
+				"host": "10.23.23.95",
+				"import_to": "M56cJZPf5-",
+				"disablePanVars": true,
+				"enableFaderLevelVars": true,
+				"enablePanVars": true,
+				"enableFaderLevelVarsPct": true
+			},
+			"enabled": true,
+			"lastUpgradeIndex": 2,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {},
+			"moduleId": "soundcraft-ui"
+		}
+	},
+	"connectionCollections": [],
+	"oldPageNumber": 45
+}
