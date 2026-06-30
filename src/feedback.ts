@@ -38,6 +38,7 @@ export type UiFeedbackSchemas = {
 	hwphantompower: { type: 'boolean'; options: { hwchannel: number } }
 	automixgroupstate: { type: 'boolean'; options: { group: string } }
 	patchingroutestate: { type: 'boolean'; options: { source: string; destination: string } }
+	rawvalue: { type: 'value'; options: { key: string } }
 }
 
 export const feedbackDefaultStyles: Record<string, CompanionFeedbackButtonStyleResult> = {
@@ -467,6 +468,22 @@ export function GetFeedbacksList(
 				const streamId = `patchroute-${source}-${destination}`
 				store.ensureSubscription(evt.id, feedback$, streamId)
 				return store.getBooleanState(streamId)
+			},
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
+		},
+
+		// Raw values
+		rawvalue: {
+			type: 'value',
+			name: 'Raw value: Get raw state value (advanced)',
+			description:
+				'ADVANCED! USE WITH CAUTION! Read a raw value from the mixer. Always prefer the existing feedbacks and variables to read state.',
+			options: [OPTIONS.stateKeyField],
+			callback: async (evt) => {
+				const value$ = conn.store.state$.pipe(map((state) => state[evt.options.key]))
+				const streamId = `rawvalue-${evt.options.key}`
+				store.ensureSubscription(evt.id, value$, streamId)
+				return store.getState(streamId) ?? ''
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},
