@@ -8,10 +8,12 @@ import {
 	FxChannel,
 	MasterChannel,
 	VolumeBus,
+	vuValueToDB,
 } from 'soundcraft-ui-connection'
+import { auditTime, distinctUntilChanged, map, Observable } from 'rxjs'
 
 import { type CompanionOptionValues } from '@companion-module/base'
-import type { AuxChannelOpts, FxChannelOpts, MasterChannelOpts } from './option-types.js'
+import type { AuxChannelOpts, FxChannelOpts, MasterChannelOpts, VuOpts } from './option-types.js'
 import { optionToChannelType } from './utils.js'
 
 /** Master Channels */
@@ -109,4 +111,71 @@ export function getVolumeBusFromOptions(options: CompanionOptionValues, conn: So
 		default:
 			return
 	}
+}
+
+/** VU metering */
+
+/** Stereo channel types (VU) that expose separate L/R values */
+const VU_STEREO_TYPES = new Set(['f', 's', 'master'])
+
+/** Unique identifier for a VU stream, used to group feedback subscriptions */
+export function getVuChannelId(options: VuOpts): string {
+	const { channelType, channel, point, side } = options
+	if (channelType === 'master') {
+		return `vu.master.${point}.${side}`
+	}
+	if (VU_STEREO_TYPES.has(channelType)) {
+		return `vu.${channelType}.${channel}.${point}.${side}`
+	}
+	return `vu.${channelType}.${channel}.${point}`
+}
+
+/**
+ * Observable of the VU meter level in dB (-80..0) for the given options.
+ * Throttled to ~10 updates/sec; `vuValueToDB` already clamps to -80..0 and rounds to 0.1 dB.
+ */
+export function getVuValue$(conn: SoundcraftUI, options: VuOpts): Observable<number> {
+	const { channelType, channel, point, side } = options
+	const vu = conn.vuProcessor
+	const isRight = side === 'right'
+
+	const mono = (d: { vuPost: number; vuPostFader: number }): number => (point === 'post' ? d.vuPost : d.vuPostFader)
+	const stereo = (d: { vuPostL: number; vuPostR: number; vuPostFaderL: number; vuPostFaderR: number }): number => {
+		if (point === 'post') {
+			return isRight ? d.vuPostR : d.vuPostL
+		}
+		return isRight ? d.vuPostFaderR : d.vuPostFaderL
+	}
+
+	let linear$: Observable<number>
+	switch (channelType) {
+		case 'l':
+			linear$ = vu.line(channel).pipe(map(mono))
+			break
+		case 'p':
+			linear$ = vu.player(channel).pipe(map(mono))
+			break
+		case 'a':
+			linear$ = vu.aux(channel).pipe(map(mono))
+			break
+		case 'f':
+			linear$ = vu.fx(channel).pipe(map(stereo))
+			break
+		case 's':
+			linear$ = vu.sub(channel).pipe(map(stereo))
+			break
+		case 'master':
+			linear$ = vu.master().pipe(map(stereo))
+			break
+		default:
+		case 'i':
+			linear$ = vu.input(channel).pipe(map(mono))
+			break
+	}
+
+	return linear$.pipe(
+		auditTime(100),
+		map((linear) => vuValueToDB(linear)),
+		distinctUntilChanged(),
+	)
 }

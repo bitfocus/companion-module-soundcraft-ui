@@ -87,6 +87,20 @@ export const CHOICES = {
 		default: 'i',
 		disableAutoExpression: true,
 	},
+
+	vuChannelTypes: {
+		choices: [
+			FADER_TYPES.i,
+			FADER_TYPES.l,
+			FADER_TYPES.p,
+			FADER_TYPES.a,
+			FADER_TYPES.f,
+			FADER_TYPES.s,
+			{ id: 'master', label: 'Master' },
+		],
+		default: 'i',
+		disableAutoExpression: true,
+	},
 }
 
 /**
@@ -292,6 +306,33 @@ export const OPTIONS = {
 		default: '',
 		minLength: 1,
 	} satisfies CompanionInputFieldTextInput<'key'>,
+	vuChannelTypeDropdown: {
+		type: 'dropdown',
+		label: 'Channel Type',
+		id: 'channelType',
+		...CHOICES.vuChannelTypes,
+	} satisfies CompanionInputFieldDropdown<'channelType'>,
+	vuPointDropdown: {
+		type: 'dropdown',
+		label: 'Metering point',
+		id: 'point',
+		choices: [
+			{ id: 'post', label: 'Post' },
+			{ id: 'postfader', label: 'Post-fader' },
+		],
+		default: 'postfader',
+		disableAutoExpression: true,
+	} satisfies CompanionInputFieldDropdown<'point'>,
+	vuSideDropdown: {
+		type: 'dropdown',
+		label: 'Side (L/R, stereo channels only)',
+		id: 'side',
+		choices: [
+			{ id: 'left', label: 'Left' },
+			{ id: 'right', label: 'Right' },
+		],
+		default: 'left',
+	} satisfies CompanionInputFieldDropdown<'side'>,
 }
 
 /**
@@ -301,6 +342,7 @@ export const OPTION_SETS = {
 	masterChannel: [OPTIONS.masterChannelTypeDropdown, OPTIONS.channelNumberField],
 	auxChannel: [OPTIONS.busNumberField, OPTIONS.auxChannelTypeDropdown, OPTIONS.channelNumberField],
 	fxChannel: [OPTIONS.busNumberField, OPTIONS.fxChannelTypeDropdown, OPTIONS.channelNumberField],
+	vuMeter: [OPTIONS.vuChannelTypeDropdown, OPTIONS.channelNumberField, OPTIONS.vuPointDropdown, OPTIONS.vuSideDropdown],
 	fadeTransition: [OPTIONS.faderValuesSlider, OPTIONS.fadeTimeField, OPTIONS.easingsDropdown],
 	delayableMasterChannel: (
 		min: number,
