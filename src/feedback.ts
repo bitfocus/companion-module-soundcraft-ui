@@ -15,9 +15,11 @@ import {
 	getFxChannelId,
 	getMasterChannelFromOptions,
 	getMasterChannelId,
+	getVuChannelId,
+	getVuValue$,
 } from './utils/channel-selection.js'
 import { patchDestinations, patchSources } from './utils/patch-parameters.js'
-import type { AuxChannelOpts, FxChannelOpts, MasterChannelOpts, NoOpts } from './utils/option-types.js'
+import type { AuxChannelOpts, FxChannelOpts, MasterChannelOpts, NoOpts, VuOpts } from './utils/option-types.js'
 
 export type UiFeedbackSchemas = {
 	mutemasterchannel: { type: 'boolean'; options: MasterChannelOpts }
@@ -38,6 +40,7 @@ export type UiFeedbackSchemas = {
 	hwphantompower: { type: 'boolean'; options: { hwchannel: number } }
 	automixgroupstate: { type: 'boolean'; options: { group: string } }
 	patchingroutestate: { type: 'boolean'; options: { source: string; destination: string } }
+	vumeter: { type: 'value'; options: VuOpts }
 	rawvalue: { type: 'value'; options: { key: string } }
 }
 
@@ -468,6 +471,21 @@ export function GetFeedbacksList(
 				const streamId = `patchroute-${source}-${destination}`
 				store.ensureSubscription(evt.id, feedback$, streamId)
 				return store.getBooleanState(streamId)
+			},
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
+		},
+
+		// VU metering
+		vumeter: {
+			type: 'value',
+			name: 'VU meter: Level (dB)',
+			description:
+				'Live meter level (−80…0 dB) at the selected point (Post / Post-fader). Side (L/R) applies to stereo channels (Master/FX/Sub) only. Master does not need a channel number.',
+			options: [...OPTION_SETS.vuMeter],
+			callback: (evt) => {
+				const streamId = getVuChannelId(evt.options)
+				store.ensureSubscription(evt.id, getVuValue$(conn, evt.options), streamId)
+				return store.getState<number>(streamId) ?? -80
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
 		},

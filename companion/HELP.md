@@ -32,4 +32,6 @@ This module supports variables and feedback for most functions.
 Fader levels, channel names, PAN values and player status are available as variables.
 Some variable types have to be enabled in the module config.
 
+VU meter levels are available as value feedbacks that can be used to write to local variables.
+
 Boolean feedback is available for MUTE, SOLO, PRE/POST, and more.
