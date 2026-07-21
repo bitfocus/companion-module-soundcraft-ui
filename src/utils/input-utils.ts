@@ -118,7 +118,6 @@ export const OPTIONS = {
 		min: 1,
 		max: 10,
 		default: 1,
-		disableAutoExpression: true,
 	} satisfies CompanionInputFieldNumber<'bus'>,
 	channelNumberField: {
 		type: 'number',
@@ -127,7 +126,6 @@ export const OPTIONS = {
 		min: 1,
 		max: 24,
 		default: 1,
-		disableAutoExpression: true,
 	} satisfies CompanionInputFieldNumber<'channel'>,
 	hwChannelNumberField: {
 		type: 'number',
@@ -136,7 +134,6 @@ export const OPTIONS = {
 		min: 1,
 		max: 20,
 		default: 1,
-		disableAutoExpression: true,
 	} satisfies CompanionInputFieldNumber<'hwchannel'>,
 	muteDropdown: {
 		type: 'dropdown',
