@@ -1248,7 +1248,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			],
 			callback: (action) => {
 				const channel = getMasterChannel(conn.master, 'i', action.options.channel)
-				let group: AutomixGroupId | 'none' = 'none'
+				let group: AutomixGroupId | 'none'
 				switch (action.options.group) {
 					case 'a':
 						group = 'a'

@@ -35,20 +35,20 @@
 		"node": "^22.2"
 	},
 	"dependencies": {
-		"@companion-module/base": "~2.0.0",
+		"@companion-module/base": "~2.1.2",
 		"rxjs": "^7.8.2",
-		"soundcraft-ui-connection": "^7.0.1"
+		"soundcraft-ui-connection": "^7.0.2"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^3.0.0",
+		"@companion-module/tools": "^3.0.2",
 		"@types/node": "^22.19.3",
-		"eslint": "^9.39.2",
+		"eslint": "^10.2.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.2.7",
-		"prettier": "^3.7.4",
+		"prettier": "^3.8.1",
 		"rimraf": "^6.1.2",
 		"typescript": "~5.9.3",
-		"typescript-eslint": "^8.50.0"
+		"typescript-eslint": "^8.56.1"
 	},
 	"packageManager": "yarn@4.12.0"
 }
