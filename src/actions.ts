@@ -744,7 +744,6 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 					],
 					default: [2, 3, 4],
 					minSelection: 1,
-					disableAutoExpression: true,
 				},
 				{
 					type: 'number',
@@ -778,7 +777,6 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 						{ id: 4, label: 'FX 4' },
 					],
 					default: 1,
-					disableAutoExpression: true,
 				},
 				{
 					type: 'dropdown',
@@ -793,7 +791,6 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 						{ id: 6, label: '6' },
 					],
 					default: 1,
-					disableAutoExpression: true,
 				},
 				{
 					type: 'number',
