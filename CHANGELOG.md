@@ -1,3 +1,25 @@
+# 4.1.0 (2026-07-27)
+
+This release adds two interesting features: VU values are available as value feedbacks that can be written to local variables. New actions and feedback allow processing raw commands and state for advanced usecases.
+
+- feat: add version bumping to release script and rename to prepare-release ([415f69b](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/415f69bcbdcaa7366754d0acbcd5eae1abae4ea3))
+- chore: update yarn config ([49c4fc5](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/49c4fc53fae05ad26e228b7d1fb65b8c17154942))
+- chore: update connection lib to 7.0.1, refactor for changes ([70e9c7c](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/70e9c7cc4ab2d02ab61393a6c6e55351b892c769))
+- refactor: allow arbitrary values in feedback store and add generic getState ([42c3d5b](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/42c3d5b2c6bd809065947724b64234f9c24b3936))
+- feat: add actions and feedback to read/set raw values (SETD/SETS) ([ba5fb67](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/ba5fb6764f154ea2680c4af1eee04f52466b163a))
+- feat: allow expressions for channel, bus, and FX numbers ([e53b5fa](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/e53b5fa3acda1dba0b8de274f5bd520e6276d427))
+- feat: add VU meter value feedbacks ([155f3f2](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/155f3f234f68d643fa102edffd489a0a0ddb7063))
+- chore: fix prettier formatting in config files ([461d6e4](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/461d6e40b76ab1d18fa96de548c68da8f7da284c))
+
+## Dependency updates
+
+- chore(deps): bump tar from 7.5.11 to 7.5.16 (#141) ([0f8a8b5](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/0f8a8b51b45254c3d41bb9b107368d4fdcc874a7))
+- chore(deps): bump js-yaml from 4.1.1 to 4.2.0 ([834aa9d](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/834aa9d6004b399a1d140f91b81431641aad6827))
+- chore(deps): bump brace-expansion from 1.1.11 to 1.1.16 (#144) ([e515c1a](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/e515c1a01781778457f92594e2558c85ade43c0b))
+- chore(deps): bump js-yaml from 4.2.0 to 4.3.0 (#145) ([1c8682e](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/1c8682e98eebe3bedeb7d81a7062cc3b868c4cbb))
+- chore(deps): bump tar from 7.5.16 to 7.5.20 (#146) ([fa36027](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/fa36027fd5f520311efa7fff48bb847c462a4984))
+- chore(deps): update companion packages, eslint 10, soundcraft-ui-connection ([68daabd](https://github.com/bitfocus/companion-module-soundcraft-ui/commit/68daabd14f2af5eb8a6581e8a1a2efb94f270190))
+
 # 4.0.0 (2026-04-01)
 
 This is a large update that migrates the module to the v2 Companion API (`@companion-module/base` v2). It is compatible with Companion >= 4.3.0. Along with the API migration, this release includes new features such as learn callbacks for actions and percent counterparts for all fader value actions. One of the greatest improvements is that expressions are now allowed in feedback and action options.
