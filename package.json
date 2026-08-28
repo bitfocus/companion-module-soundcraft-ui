@@ -40,7 +40,7 @@
 		"soundcraft-ui-connection": "^7.0.2"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^3.0.2",
+		"@companion-module/tools": "^3.1.0",
 		"@types/node": "^22.19.3",
 		"eslint": "^10.2.0",
 		"husky": "^9.1.7",
