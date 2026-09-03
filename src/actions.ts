@@ -65,11 +65,14 @@ export type UiActionSchemas = {
 	changeauxchannelpan: { options: AuxChannelOpts & { value: number } }
 
 	// Matrix Channels
+	mutematrixchannel: { options: MatrixChannelOpts & { mute: number } }
 	setmatrixchannelvalue: { options: MatrixChannelOpts & { value: number } }
 	setmatrixchannelvaluepct: { options: MatrixChannelOpts & { value: number } }
 	changematrixchannelvalue: { options: MatrixChannelOpts & { value: number } }
 	changematrixchannelvaluepct: { options: MatrixChannelOpts & { value: number } }
 	fadematrixchannel: { options: MatrixChannelOpts & FadeOpts }
+	setmatrixchannelpan: { options: MatrixChannelOpts & { value: number } }
+	changematrixchannelpan: { options: MatrixChannelOpts & { value: number } }
 
 	// FX Channels
 	mutefxchannel: { options: FxChannelOpts & { mute: number } }
@@ -582,6 +585,23 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		/**
 		 * Matrix Channels (Ui24R only)
 		 */
+		mutematrixchannel: {
+			name: 'Matrix channels: Mute source',
+			description: 'Set or toggle MUTE for an AUX, subgroup or master source routed to a matrix',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.muteDropdown],
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				switch (action.options.mute) {
+					case 0:
+						return c.unmute()
+					case 1:
+						return c.mute()
+					case 2:
+						return c.toggleMute()
+				}
+			},
+		},
+
 		setmatrixchannelvalue: {
 			name: 'Matrix channels: Set source level (dB)',
 			description: 'Set the level of an AUX, subgroup or master source routed to a matrix',
@@ -637,6 +657,32 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderChangeFieldPct],
 			callback: (action) =>
 				getMatrixChannelFromOptions(action.options, conn).changeFaderLevel(action.options.value / 100),
+		},
+
+		setmatrixchannelpan: {
+			name: 'Matrix channels: Set source PAN',
+			description:
+				'Set PAN for an AUX, subgroup or master source routed to a stereo matrix. Not available for mono matrices.',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.panValueSlider],
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				c.setPan(convertPanToLinearValue(action.options.value))
+			},
+			learn: async (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return { value: convertLinearValueToPan(await firstValueFrom(c.pan$)) }
+			},
+		},
+
+		changematrixchannelpan: {
+			name: 'Matrix channels: Change source PAN (relative)',
+			description:
+				'Relatively change PAN for an AUX, subgroup or master source routed to a stereo matrix. Not available for mono matrices.',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.panChangeField],
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				c.changePan(convertPanOffsetToLinearOffset(action.options.value))
+			},
 		},
 
 		/**
