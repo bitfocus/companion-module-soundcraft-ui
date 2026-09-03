@@ -7,13 +7,14 @@ import {
 	AuxChannel,
 	FxChannel,
 	MasterChannel,
+	MtxChannel,
 	VolumeBus,
 	vuValueToDB,
 } from 'soundcraft-ui-connection'
 import { auditTime, distinctUntilChanged, map, Observable } from 'rxjs'
 
 import { type CompanionOptionValues } from '@companion-module/base'
-import type { AuxChannelOpts, FxChannelOpts, MasterChannelOpts, VuOpts } from './option-types.js'
+import type { AuxChannelOpts, FxChannelOpts, MasterChannelOpts, MatrixChannelOpts, VuOpts } from './option-types.js'
 import { optionToChannelType } from './utils.js'
 
 /** Master Channels */
@@ -98,6 +99,22 @@ export function getFxChannelFromOptions(options: FxChannelOpts, conn: Soundcraft
 /** Unique identifier for an FX bus channel, used to group feedback subscriptions */
 export function getFxChannelId(options: FxChannelOpts): string {
 	return `fx.${options.bus}.${options.channelType}.${options.channel}`
+}
+
+/** Matrix Channels */
+
+export function getMatrixChannelFromOptions(options: MatrixChannelOpts, conn: SoundcraftUI): MtxChannel {
+	const matrix = conn.mtx(options.bus)
+	switch (options.channelType) {
+		case 'a':
+			return matrix.aux(options.channel)
+		case 's':
+			return matrix.sub(options.channel)
+		case 'm':
+			return matrix.master()
+		default:
+			throw new Error(`Unsupported matrix source type: ${options.channelType}`)
+	}
 }
 
 export function getVolumeBusFromOptions(options: CompanionOptionValues, conn: SoundcraftUI): VolumeBus | undefined {

@@ -8,6 +8,7 @@ import {
 	getFxChannelFromOptions,
 	getMasterChannel,
 	getMasterChannelFromOptions,
+	getMatrixChannelFromOptions,
 	getVolumeBusFromOptions,
 } from './utils/channel-selection.js'
 import { patchDestinations, patchSources } from './utils/patch-parameters.js'
@@ -17,7 +18,14 @@ import {
 	convertPanOffsetToLinearOffset,
 	convertPanToLinearValue,
 } from './utils/utils.js'
-import type { AuxChannelOpts, FadeOpts, FxChannelOpts, MasterChannelOpts, NoOpts } from './utils/option-types.js'
+import type {
+	AuxChannelOpts,
+	FadeOpts,
+	FxChannelOpts,
+	MasterChannelOpts,
+	MatrixChannelOpts,
+	NoOpts,
+} from './utils/option-types.js'
 
 export type UiActionSchemas = {
 	// Master
@@ -55,6 +63,13 @@ export type UiActionSchemas = {
 	setauxchannelpostproc: { options: AuxChannelOpts & { postproc: number } }
 	setauxchannelpan: { options: AuxChannelOpts & { value: number } }
 	changeauxchannelpan: { options: AuxChannelOpts & { value: number } }
+
+	// Matrix Channels
+	setmatrixchannelvalue: { options: MatrixChannelOpts & { value: number } }
+	setmatrixchannelvaluepct: { options: MatrixChannelOpts & { value: number } }
+	changematrixchannelvalue: { options: MatrixChannelOpts & { value: number } }
+	changematrixchannelvaluepct: { options: MatrixChannelOpts & { value: number } }
+	fadematrixchannel: { options: MatrixChannelOpts & FadeOpts }
 
 	// FX Channels
 	mutefxchannel: { options: FxChannelOpts & { mute: number } }
@@ -562,6 +577,66 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 				const c = getAuxChannelFromOptions(action.options, conn)
 				c.changePan(convertPanOffsetToLinearOffset(action.options.value))
 			},
+		},
+
+		/**
+		 * Matrix Channels (Ui24R only)
+		 */
+		setmatrixchannelvalue: {
+			name: 'Matrix channels: Set source level (dB)',
+			description: 'Set the level of an AUX, subgroup or master source routed to a matrix',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderValuesSlider],
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return c.setFaderLevelDB(action.options.value)
+			},
+			learn: async (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return { value: await firstValueFrom(c.faderLevelDB$) }
+			},
+		},
+
+		setmatrixchannelvaluepct: {
+			name: 'Matrix channels: Set source level (%)',
+			description: 'Set the level of an AUX, subgroup or master source routed to a matrix',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderValuesSliderPct],
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return c.setFaderLevel(action.options.value / 100)
+			},
+			learn: async (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return { value: convertLinearValueToPercent(await firstValueFrom(c.faderLevel$)) }
+			},
+		},
+
+		fadematrixchannel: {
+			name: 'Matrix channels: Fade transition',
+			description: 'Perform a timed fade for an AUX, subgroup or master source routed to a matrix',
+			options: [...OPTION_SETS.matrixChannel, ...OPTION_SETS.fadeTransition],
+			callback: async (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return c.fadeToDB(action.options.value, action.options.fadeTime, action.options.easing)
+			},
+			learn: async (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return { value: await firstValueFrom(c.faderLevelDB$) }
+			},
+		},
+
+		changematrixchannelvalue: {
+			name: 'Matrix channels: Change source level (dB)',
+			description: 'Relatively change the level of an AUX, subgroup or master source routed to a matrix',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderChangeField],
+			callback: (action) => getMatrixChannelFromOptions(action.options, conn).changeFaderLevelDB(action.options.value),
+		},
+
+		changematrixchannelvaluepct: {
+			name: 'Matrix channels: Change source level (%)',
+			description: 'Relatively change the level of an AUX, subgroup or master source routed to a matrix',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderChangeFieldPct],
+			callback: (action) =>
+				getMatrixChannelFromOptions(action.options, conn).changeFaderLevel(action.options.value / 100),
 		},
 
 		/**
