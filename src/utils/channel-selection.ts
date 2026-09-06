@@ -103,7 +103,7 @@ export function getFxChannelId(options: FxChannelOpts): string {
 
 /** Matrix Channels */
 
-export function getMatrixChannelFromOptions(options: MatrixChannelOpts, conn: SoundcraftUI): MtxChannel {
+export function getMatrixChannelFromOptions(options: MatrixChannelOpts, conn: SoundcraftUI): MtxChannel | undefined {
 	const matrix = conn.mtx(options.bus)
 	switch (options.channelType) {
 		case 'a':
@@ -113,7 +113,7 @@ export function getMatrixChannelFromOptions(options: MatrixChannelOpts, conn: So
 		case 'm':
 			return matrix.master()
 		default:
-			throw new Error(`Unsupported matrix source type: ${options.channelType}`)
+			return
 	}
 }
 

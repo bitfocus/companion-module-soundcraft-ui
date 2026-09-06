@@ -591,6 +591,9 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.muteDropdown],
 			callback: (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
+				if (!c) {
+					return
+				}
 				switch (action.options.mute) {
 					case 0:
 						return c.unmute()
@@ -608,10 +611,13 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderValuesSlider],
 			callback: (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
-				return c.setFaderLevelDB(action.options.value)
+				return c && c.setFaderLevelDB(action.options.value)
 			},
 			learn: async (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
+				if (!c) {
+					return undefined
+				}
 				return { value: await firstValueFrom(c.faderLevelDB$) }
 			},
 		},
@@ -622,10 +628,13 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderValuesSliderPct],
 			callback: (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
-				return c.setFaderLevel(action.options.value / 100)
+				return c && c.setFaderLevel(action.options.value / 100)
 			},
 			learn: async (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
+				if (!c) {
+					return undefined
+				}
 				return { value: convertLinearValueToPercent(await firstValueFrom(c.faderLevel$)) }
 			},
 		},
@@ -636,10 +645,13 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			options: [...OPTION_SETS.matrixChannel, ...OPTION_SETS.fadeTransition],
 			callback: async (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
-				return c.fadeToDB(action.options.value, action.options.fadeTime, action.options.easing)
+				return c && c.fadeToDB(action.options.value, action.options.fadeTime, action.options.easing)
 			},
 			learn: async (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
+				if (!c) {
+					return undefined
+				}
 				return { value: await firstValueFrom(c.faderLevelDB$) }
 			},
 		},
@@ -648,15 +660,20 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			name: 'Matrix channels: Change source level (dB)',
 			description: 'Relatively change the level of an AUX, subgroup or master source routed to a matrix',
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderChangeField],
-			callback: (action) => getMatrixChannelFromOptions(action.options, conn).changeFaderLevelDB(action.options.value),
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return c && c.changeFaderLevelDB(action.options.value)
+			},
 		},
 
 		changematrixchannelvaluepct: {
 			name: 'Matrix channels: Change source level (%)',
 			description: 'Relatively change the level of an AUX, subgroup or master source routed to a matrix',
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderChangeFieldPct],
-			callback: (action) =>
-				getMatrixChannelFromOptions(action.options, conn).changeFaderLevel(action.options.value / 100),
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return c && c.changeFaderLevel(action.options.value / 100)
+			},
 		},
 
 		setmatrixchannelpan: {
@@ -666,10 +683,13 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.panValueSlider],
 			callback: (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
-				c.setPan(convertPanToLinearValue(action.options.value))
+				return c && c.setPan(convertPanToLinearValue(action.options.value))
 			},
 			learn: async (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
+				if (!c) {
+					return undefined
+				}
 				return { value: convertLinearValueToPan(await firstValueFrom(c.pan$)) }
 			},
 		},
@@ -681,7 +701,7 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.panChangeField],
 			callback: (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
-				c.changePan(convertPanOffsetToLinearOffset(action.options.value))
+				return c && c.changePan(convertPanOffsetToLinearOffset(action.options.value))
 			},
 		},
 

@@ -178,6 +178,9 @@ export function GetFeedbacksList(
 			options: [...OPTION_SETS.matrixChannel],
 			callback: (evt) => {
 				const c = getMatrixChannelFromOptions(evt.options, conn)
+				if (!c) {
+					return false
+				}
 				const streamId = getMatrixChannelId(evt.options) + '-mute'
 				store.ensureSubscription(evt.id, c.mute$, streamId)
 				return store.getBooleanState(streamId)
