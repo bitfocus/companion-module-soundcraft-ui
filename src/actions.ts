@@ -8,6 +8,7 @@ import {
 	getFxChannelFromOptions,
 	getMasterChannel,
 	getMasterChannelFromOptions,
+	getMatrixChannelFromOptions,
 	getVolumeBusFromOptions,
 } from './utils/channel-selection.js'
 import { patchDestinations, patchSources } from './utils/patch-parameters.js'
@@ -17,7 +18,14 @@ import {
 	convertPanOffsetToLinearOffset,
 	convertPanToLinearValue,
 } from './utils/utils.js'
-import type { AuxChannelOpts, FadeOpts, FxChannelOpts, MasterChannelOpts, NoOpts } from './utils/option-types.js'
+import type {
+	AuxChannelOpts,
+	FadeOpts,
+	FxChannelOpts,
+	MasterChannelOpts,
+	MatrixChannelOpts,
+	NoOpts,
+} from './utils/option-types.js'
 
 export type UiActionSchemas = {
 	// Master
@@ -55,6 +63,16 @@ export type UiActionSchemas = {
 	setauxchannelpostproc: { options: AuxChannelOpts & { postproc: number } }
 	setauxchannelpan: { options: AuxChannelOpts & { value: number } }
 	changeauxchannelpan: { options: AuxChannelOpts & { value: number } }
+
+	// Matrix Channels
+	mutematrixchannel: { options: MatrixChannelOpts & { mute: number } }
+	setmatrixchannelvalue: { options: MatrixChannelOpts & { value: number } }
+	setmatrixchannelvaluepct: { options: MatrixChannelOpts & { value: number } }
+	changematrixchannelvalue: { options: MatrixChannelOpts & { value: number } }
+	changematrixchannelvaluepct: { options: MatrixChannelOpts & { value: number } }
+	fadematrixchannel: { options: MatrixChannelOpts & FadeOpts }
+	setmatrixchannelpan: { options: MatrixChannelOpts & { value: number } }
+	changematrixchannelpan: { options: MatrixChannelOpts & { value: number } }
 
 	// FX Channels
 	mutefxchannel: { options: FxChannelOpts & { mute: number } }
@@ -561,6 +579,128 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 			callback: (action) => {
 				const c = getAuxChannelFromOptions(action.options, conn)
 				c.changePan(convertPanOffsetToLinearOffset(action.options.value))
+			},
+		},
+
+		/**
+		 * Matrix Sources (Ui24R only)
+		 */
+		mutematrixchannel: {
+			name: 'Matrix sources: Mute',
+			description: 'Set or toggle MUTE for a source on a matrix bus (Ui24R only)',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.muteDropdown],
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				if (!c) {
+					return
+				}
+				switch (action.options.mute) {
+					case 0:
+						return c.unmute()
+					case 1:
+						return c.mute()
+					case 2:
+						return c.toggleMute()
+				}
+			},
+		},
+
+		setmatrixchannelvalue: {
+			name: 'Matrix sources: Set fader value (dB)',
+			description: 'Set the fader value (dB) for a source on a matrix bus (Ui24R only)',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderValuesSlider],
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return c && c.setFaderLevelDB(action.options.value)
+			},
+			learn: async (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				if (!c) {
+					return undefined
+				}
+				return { value: await firstValueFrom(c.faderLevelDB$) }
+			},
+		},
+
+		setmatrixchannelvaluepct: {
+			name: 'Matrix sources: Set fader value (%)',
+			description: 'Set the fader value (%) for a source on a matrix bus (Ui24R only)',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderValuesSliderPct],
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return c && c.setFaderLevel(action.options.value / 100)
+			},
+			learn: async (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				if (!c) {
+					return undefined
+				}
+				return { value: convertLinearValueToPercent(await firstValueFrom(c.faderLevel$)) }
+			},
+		},
+
+		fadematrixchannel: {
+			name: 'Matrix sources: Fade transition',
+			description: 'Perform a timed fade transition for a source on a matrix bus (Ui24R only)',
+			options: [...OPTION_SETS.matrixChannel, ...OPTION_SETS.fadeTransition],
+			callback: async (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return c && c.fadeToDB(action.options.value, action.options.fadeTime, action.options.easing)
+			},
+			learn: async (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				if (!c) {
+					return undefined
+				}
+				return { value: await firstValueFrom(c.faderLevelDB$) }
+			},
+		},
+
+		changematrixchannelvalue: {
+			name: 'Matrix sources: Change fader value (dB)',
+			description: 'Relatively change the fader value (dB) for a source on a matrix bus (Ui24R only)',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderChangeField],
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return c && c.changeFaderLevelDB(action.options.value)
+			},
+		},
+
+		changematrixchannelvaluepct: {
+			name: 'Matrix sources: Change fader value (%)',
+			description: 'Relatively change the fader value (%) for a source on a matrix bus (Ui24R only)',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderChangeFieldPct],
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return c && c.changeFaderLevel(action.options.value / 100)
+			},
+		},
+
+		setmatrixchannelpan: {
+			name: 'Matrix sources: Set PAN',
+			description: 'Set PAN value for a source on a matrix bus (Ui24R only). Not possible for mono matrix!',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.panValueSlider],
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return c && c.setPan(convertPanToLinearValue(action.options.value))
+			},
+			learn: async (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				if (!c) {
+					return undefined
+				}
+				return { value: convertLinearValueToPan(await firstValueFrom(c.pan$)) }
+			},
+		},
+
+		changematrixchannelpan: {
+			name: 'Matrix sources: Change PAN (relative)',
+			description:
+				'Relatively change PAN value for a source on a matrix bus (PAN Range: -100 to 100). Not possible for mono matrix!',
+			options: [...OPTION_SETS.matrixChannel, OPTIONS.panChangeField],
+			callback: (action) => {
+				const c = getMatrixChannelFromOptions(action.options, conn)
+				return c && c.changePan(convertPanOffsetToLinearOffset(action.options.value))
 			},
 		},
 

@@ -1,0 +1,4973 @@
+{
+	"version": 12,
+	"type": "page",
+	"companionBuild": "5.0.2+9665-stable-5eb89669c6",
+	"page": {
+		"id": "xAAngut5foTLMyu_z77j7",
+		"name": "Matrix",
+		"controls": {
+			"0": {
+				"0": {
+					"type": "pageup"
+				},
+				"1": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 AUX 2 MUTE",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [
+						{
+							"id": "JLIDFbzlgE773Ed9NMfqz",
+							"definitionId": "mutematrixchannel",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"bus": {
+									"value": 7,
+									"isExpression": false
+								},
+								"channelType": {
+									"isExpression": false,
+									"value": "a"
+								},
+								"channel": {
+									"value": 2,
+									"isExpression": false
+								}
+							},
+							"upgradeIndex": 2,
+							"type": "feedback",
+							"isInverted": {
+								"value": false,
+								"isExpression": false
+							},
+							"styleOverrides": [
+								{
+									"overrideId": "7dIWXOBYGOjdWhK_b3es-",
+									"elementId": "text0",
+									"elementProperty": "color",
+									"override": {
+										"isExpression": false,
+										"value": 16777215
+									}
+								},
+								{
+									"overrideId": "XGVUYjtO9sl3EavICKBoK",
+									"elementId": "box0",
+									"elementProperty": "color",
+									"override": {
+										"isExpression": false,
+										"value": 16711680
+									}
+								}
+							]
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "QxzO8-jzry8uJHLyNL6EN",
+										"definitionId": "mutematrixchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "a",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 2,
+												"isExpression": false
+											},
+											"mute": {
+												"isExpression": false,
+												"value": 2
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"2": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 AUX 2 60 %",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "9oDjBwRyqGhvSvvAck7jE",
+										"definitionId": "setmatrixchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"channel": {
+												"value": 2,
+												"isExpression": false
+											},
+											"value": {
+												"value": 60,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"3": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 AUX 2 3 dB",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "s78sk4kotc76PRbzIvv3r",
+										"definitionId": "setmatrixchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"channel": {
+												"value": 2,
+												"isExpression": false
+											},
+											"value": {
+												"value": 3,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"4": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 AUX 2 -5 %",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "bSM9veyPzr__-pmHA4QTw",
+										"definitionId": "changematrixchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"channel": {
+												"value": 2,
+												"isExpression": false
+											},
+											"value": {
+												"value": -5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 AUX 2 +3 dB",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "wcD489kgs3svaXQnMH8ws",
+										"definitionId": "changematrixchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"channel": {
+												"value": 2,
+												"isExpression": false
+											},
+											"value": {
+												"isExpression": false,
+												"value": 3
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 AUX 2 Fade 6 dB",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "-NCAouoDVPm3dG0ATQEt9",
+										"definitionId": "fadematrixchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"channel": {
+												"value": 2,
+												"isExpression": false
+											},
+											"value": {
+												"value": 6,
+												"isExpression": false
+											},
+											"fadeTime": {
+												"isExpression": false,
+												"value": 2000
+											},
+											"easing": {
+												"isExpression": false,
+												"value": 0
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"7": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 AUX 2 PAN L",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "YrU_sEK26UhYENlxHNEgN",
+										"definitionId": "setmatrixchannelpan",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"channel": {
+												"value": 2,
+												"isExpression": false
+											},
+											"value": {
+												"value": -100,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"8": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 AUX 2 PAN +5",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "DDqtKgMUrsjyXmXu-wP6_",
+										"definitionId": "changematrixchannelpan",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"isExpression": false,
+												"value": "a"
+											},
+											"channel": {
+												"value": 2,
+												"isExpression": false
+											},
+											"value": {
+												"value": 5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				}
+			},
+			"1": {
+				"0": {
+					"type": "pagenum"
+				},
+				"1": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 SUB 3 MUTE",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [
+						{
+							"id": "JHMZghysqEQjbMy6PvL3c",
+							"definitionId": "mutematrixchannel",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"bus": {
+									"value": 7,
+									"isExpression": false
+								},
+								"channelType": {
+									"value": "s",
+									"isExpression": false
+								},
+								"channel": {
+									"value": 3,
+									"isExpression": false
+								}
+							},
+							"upgradeIndex": 2,
+							"type": "feedback",
+							"isInverted": {
+								"value": false,
+								"isExpression": false
+							},
+							"styleOverrides": [
+								{
+									"overrideId": "7dIWXOBYGOjdWhK_b3es-",
+									"elementId": "text0",
+									"elementProperty": "color",
+									"override": {
+										"isExpression": false,
+										"value": 16777215
+									}
+								},
+								{
+									"overrideId": "XGVUYjtO9sl3EavICKBoK",
+									"elementId": "box0",
+									"elementProperty": "color",
+									"override": {
+										"isExpression": false,
+										"value": 16711680
+									}
+								}
+							]
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "rWTe_pwnQdHmj8zurlQpJ",
+										"definitionId": "mutematrixchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "s",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"mute": {
+												"isExpression": false,
+												"value": 2
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"2": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 SUB 3 60 %",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "5ZTrSGiG29PtLifFeMZn3",
+										"definitionId": "setmatrixchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "s",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"value": 60,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"3": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 SUB 3 3 dB",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "ZF7EQvjPmYKXqgwZQo5VY",
+										"definitionId": "setmatrixchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "s",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"value": 3,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"4": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 SUB 3 -5 %",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "nHfUi5BzKn1ZYmbXEgLyt",
+										"definitionId": "changematrixchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "s",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"value": -5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 SUB 3 +3 dB",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "CNmkSgAJ2GW694PsJPS6p",
+										"definitionId": "changematrixchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "s",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"isExpression": false,
+												"value": 3
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 SUB 3 Fade 6 dB",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "UwwIXrK4cjDqwbRpsAnHQ",
+										"definitionId": "fadematrixchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "s",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"value": 6,
+												"isExpression": false
+											},
+											"fadeTime": {
+												"isExpression": false,
+												"value": 2000
+											},
+											"easing": {
+												"isExpression": false,
+												"value": 0
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"7": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 SUB 3 PAN L",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "qupEkcxkMTGUdCyXJSw_w",
+										"definitionId": "setmatrixchannelpan",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "s",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"value": -100,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"8": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 SUB 3 PAN +5",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 100,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": true,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "RsCTijq7ESnkwhqQiIARQ",
+										"definitionId": "changematrixchannelpan",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "s",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 3,
+												"isExpression": false
+											},
+											"value": {
+												"value": 5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				}
+			},
+			"2": {
+				"0": {
+					"type": "pagedown"
+				},
+				"1": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 MASTER MUTE",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 27,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": false,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [
+						{
+							"id": "faDbenoyxeldzKAOCnxqC",
+							"definitionId": "mutematrixchannel",
+							"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+							"options": {
+								"bus": {
+									"value": 7,
+									"isExpression": false
+								},
+								"channelType": {
+									"value": "m",
+									"isExpression": false
+								},
+								"channel": {
+									"value": 1,
+									"isExpression": false
+								}
+							},
+							"upgradeIndex": 2,
+							"type": "feedback",
+							"isInverted": {
+								"value": false,
+								"isExpression": false
+							},
+							"styleOverrides": [
+								{
+									"overrideId": "7dIWXOBYGOjdWhK_b3es-",
+									"elementId": "text0",
+									"elementProperty": "color",
+									"override": {
+										"isExpression": false,
+										"value": 16777215
+									}
+								},
+								{
+									"overrideId": "XGVUYjtO9sl3EavICKBoK",
+									"elementId": "box0",
+									"elementProperty": "color",
+									"override": {
+										"isExpression": false,
+										"value": 16711680
+									}
+								}
+							]
+						}
+					],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "ClDzxK_I0pj8fIeCD4hNM",
+										"definitionId": "mutematrixchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "m",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 1,
+												"isExpression": false
+											},
+											"mute": {
+												"isExpression": false,
+												"value": 2
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"2": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 MASTER 30 %",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 27,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": false,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "duwNqivD1YH93Rj7mU8l7",
+										"definitionId": "setmatrixchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "m",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 1,
+												"isExpression": false
+											},
+											"value": {
+												"value": 30,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"3": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 MASTER 6 dB",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 27,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": false,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "U70WyDlpuQGSCsGvOqYbs",
+										"definitionId": "setmatrixchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "m",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 1,
+												"isExpression": false
+											},
+											"value": {
+												"value": 6,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"4": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 MASTER -5 %",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 27,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": false,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "RZGcd3aKTYBdIlRRAOyh4",
+										"definitionId": "changematrixchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "m",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 1,
+												"isExpression": false
+											},
+											"value": {
+												"value": -5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"5": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 MASTER +3 dB",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 27,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": false,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "bqTjjIDnBX7Xryg2KCDd_",
+										"definitionId": "changematrixchannelvalue",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "m",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 1,
+												"isExpression": false
+											},
+											"value": {
+												"isExpression": false,
+												"value": 3
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"6": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 MASTER Fade -10 dB",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 20,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": false,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "fWinFclByIV_dCm10Y27k",
+										"definitionId": "fadematrixchannel",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "m",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 1,
+												"isExpression": false
+											},
+											"value": {
+												"value": -10,
+												"isExpression": false
+											},
+											"fadeTime": {
+												"isExpression": false,
+												"value": 2000
+											},
+											"easing": {
+												"isExpression": false,
+												"value": 0
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"7": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 MASTER PAN L",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 27,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": false,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "KlIA1uYsvXwYZTfxJXCcs",
+										"definitionId": "setmatrixchannelpan",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "m",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 1,
+												"isExpression": false
+											},
+											"value": {
+												"value": -100,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"8": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 MASTER PAN +5",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 27,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": false,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "93epCsQe5LM3RgPdDXLSo",
+										"definitionId": "changematrixchannelpan",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"bus": {
+												"value": 7,
+												"isExpression": false
+											},
+											"channelType": {
+												"value": "m",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 1,
+												"isExpression": false
+											},
+											"value": {
+												"value": 5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				}
+			},
+			"4": {
+				"1": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 +5 %",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 34,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": false,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "YTZuD8DsyPN_uH4q_RxmC",
+										"definitionId": "changemasterchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": {
+												"value": "a",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 7,
+												"isExpression": false
+											},
+											"value": {
+												"value": 5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				},
+				"2": {
+					"type": "button-layered",
+					"style": {
+						"layers": [
+							{
+								"id": "canvas",
+								"name": "Canvas",
+								"usage": "auto",
+								"type": "canvas",
+								"decoration": {
+									"value": "default",
+									"isExpression": false
+								},
+								"showStatusIcons": {
+									"value": "default",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "box0",
+								"name": "Background",
+								"usage": "auto",
+								"type": "box",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"color": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderWidth": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderColor": {
+									"value": 0,
+									"isExpression": false
+								},
+								"borderPosition": {
+									"value": "inside",
+									"isExpression": false
+								}
+							},
+							{
+								"id": "text0",
+								"name": "Text",
+								"usage": "auto",
+								"type": "text",
+								"enabled": {
+									"value": true,
+									"isExpression": false
+								},
+								"opacity": {
+									"value": 100,
+									"isExpression": false
+								},
+								"x": {
+									"value": 0,
+									"isExpression": false
+								},
+								"y": {
+									"value": 0,
+									"isExpression": false
+								},
+								"width": {
+									"value": 100,
+									"isExpression": false
+								},
+								"height": {
+									"value": 100,
+									"isExpression": false
+								},
+								"rotation": {
+									"value": 0,
+									"isExpression": false
+								},
+								"text": {
+									"value": "MTX 7 -5 %",
+									"isExpression": false
+								},
+								"color": {
+									"value": 16777215,
+									"isExpression": false
+								},
+								"halign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"valign": {
+									"value": "center",
+									"isExpression": false
+								},
+								"fontsize": {
+									"value": 34,
+									"isExpression": false
+								},
+								"fontsizeAllowShrink": {
+									"value": false,
+									"isExpression": false
+								},
+								"font": {
+									"value": "companion-sans",
+									"isExpression": false
+								},
+								"outlineColor": {
+									"value": 4278190080,
+									"isExpression": false
+								}
+							}
+						]
+					},
+					"options": {
+						"stepProgression": "auto",
+						"stepExpression": "",
+						"rotaryActions": false,
+						"canModifyStyleInApis": false,
+						"notes": ""
+					},
+					"feedbacks": [],
+					"steps": {
+						"0": {
+							"action_sets": {
+								"down": [
+									{
+										"id": "C5jzkfWm23D3lldF0e369",
+										"definitionId": "changemasterchannelvaluepct",
+										"connectionId": "K5mVTsGHIPgqYkyqYxEWS",
+										"options": {
+											"channelType": {
+												"value": "a",
+												"isExpression": false
+											},
+											"channel": {
+												"value": 7,
+												"isExpression": false
+											},
+											"value": {
+												"value": -5,
+												"isExpression": false
+											}
+										},
+										"upgradeIndex": 2,
+										"type": "action"
+									}
+								],
+								"up": []
+							},
+							"options": {
+								"runWhileHeld": []
+							}
+						}
+					},
+					"localVariables": []
+				}
+			}
+		},
+		"gridSize": {
+			"minColumn": 0,
+			"maxColumn": 8,
+			"minRow": 0,
+			"maxRow": 5
+		}
+	},
+	"instances": {
+		"K5mVTsGHIPgqYkyqYxEWS": {
+			"sortOrder": 2,
+			"label": "ui24",
+			"isFirstInit": false,
+			"config": {
+				"product": "UI24",
+				"host": "10.23.23.95",
+				"import_to": "M56cJZPf5-",
+				"disablePanVars": true,
+				"enableFaderLevelVars": true,
+				"enablePanVars": true,
+				"enableFaderLevelVarsPct": true
+			},
+			"enabled": true,
+			"lastUpgradeIndex": 2,
+			"moduleVersionId": "dev",
+			"updatePolicy": "stable",
+			"moduleInstanceType": "connection",
+			"secrets": {},
+			"moduleId": "soundcraft-ui"
+		}
+	},
+	"connectionCollections": [],
+	"oldPageNumber": 46,
+	"imageLibrary": [],
+	"imageLibraryCollections": []
+}

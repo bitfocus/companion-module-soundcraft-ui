@@ -88,6 +88,12 @@ export const CHOICES = {
 		disableAutoExpression: true,
 	},
 
+	matrixChannelTypes: {
+		choices: [FADER_TYPES.a, FADER_TYPES.s, { id: 'm', label: 'Master' }],
+		default: 'a',
+		disableAutoExpression: true,
+	},
+
 	vuChannelTypes: {
 		choices: [
 			FADER_TYPES.i,
@@ -125,6 +131,12 @@ export const OPTIONS = {
 		id: 'channelType',
 		...CHOICES.fxChannelTypes,
 	} satisfies CompanionInputFieldDropdown<'channelType'>,
+	matrixChannelTypeDropdown: {
+		type: 'dropdown',
+		label: 'Source Type',
+		id: 'channelType',
+		...CHOICES.matrixChannelTypes,
+	} satisfies CompanionInputFieldDropdown<'channelType'>,
 	busNumberField: {
 		type: 'number',
 		label: 'Bus number',
@@ -139,6 +151,14 @@ export const OPTIONS = {
 		id: 'channel',
 		min: 1,
 		max: 24,
+		default: 1,
+	} satisfies CompanionInputFieldNumber<'channel'>,
+	matrixSourceNumberField: {
+		type: 'number',
+		label: 'Source number (ignored for Master)',
+		id: 'channel',
+		min: 1,
+		max: 10,
 		default: 1,
 	} satisfies CompanionInputFieldNumber<'channel'>,
 	hwChannelNumberField: {
@@ -342,6 +362,7 @@ export const OPTION_SETS = {
 	masterChannel: [OPTIONS.masterChannelTypeDropdown, OPTIONS.channelNumberField],
 	auxChannel: [OPTIONS.busNumberField, OPTIONS.auxChannelTypeDropdown, OPTIONS.channelNumberField],
 	fxChannel: [OPTIONS.busNumberField, OPTIONS.fxChannelTypeDropdown, OPTIONS.channelNumberField],
+	matrixChannel: [OPTIONS.busNumberField, OPTIONS.matrixChannelTypeDropdown, OPTIONS.matrixSourceNumberField],
 	vuMeter: [OPTIONS.vuChannelTypeDropdown, OPTIONS.channelNumberField, OPTIONS.vuPointDropdown, OPTIONS.vuSideDropdown],
 	fadeTransition: [OPTIONS.faderValuesSlider, OPTIONS.fadeTimeField, OPTIONS.easingsDropdown],
 	delayableMasterChannel: (

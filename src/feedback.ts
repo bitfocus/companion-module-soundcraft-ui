@@ -15,11 +15,20 @@ import {
 	getFxChannelId,
 	getMasterChannelFromOptions,
 	getMasterChannelId,
+	getMatrixChannelFromOptions,
+	getMatrixChannelId,
 	getVuChannelId,
 	getVuValue$,
 } from './utils/channel-selection.js'
 import { patchDestinations, patchSources } from './utils/patch-parameters.js'
-import type { AuxChannelOpts, FxChannelOpts, MasterChannelOpts, NoOpts, VuOpts } from './utils/option-types.js'
+import type {
+	AuxChannelOpts,
+	FxChannelOpts,
+	MasterChannelOpts,
+	MatrixChannelOpts,
+	NoOpts,
+	VuOpts,
+} from './utils/option-types.js'
 
 export type UiFeedbackSchemas = {
 	mutemasterchannel: { type: 'boolean'; options: MasterChannelOpts }
@@ -28,6 +37,7 @@ export type UiFeedbackSchemas = {
 	dimmaster: { type: 'boolean'; options: NoOpts }
 	muteauxchannel: { type: 'boolean'; options: AuxChannelOpts }
 	postauxchannel: { type: 'boolean'; options: AuxChannelOpts }
+	mutematrixchannel: { type: 'boolean'; options: MatrixChannelOpts }
 	mutefxchannel: { type: 'boolean'; options: FxChannelOpts }
 	postfxchannel: { type: 'boolean'; options: FxChannelOpts }
 	mediaplayerstate: { type: 'boolean'; options: { state: number } }
@@ -155,6 +165,24 @@ export function GetFeedbacksList(
 				const c = getAuxChannelFromOptions(evt.options, conn)
 				const streamId = getAuxChannelId(evt.options) + '-post'
 				store.ensureSubscription(evt.id, c.post$, streamId)
+				return store.getBooleanState(streamId)
+			},
+			unsubscribe: (evt) => store.unsubscribe(evt.id),
+		},
+
+		mutematrixchannel: {
+			type: 'boolean',
+			name: 'Matrix bus source: MUTE (Ui24R only)',
+			description: 'If the specified source on the matrix bus is muted',
+			defaultStyle: feedbackDefaultStyles.mute,
+			options: [...OPTION_SETS.matrixChannel],
+			callback: (evt) => {
+				const c = getMatrixChannelFromOptions(evt.options, conn)
+				if (!c) {
+					return false
+				}
+				const streamId = getMatrixChannelId(evt.options) + '-mute'
+				store.ensureSubscription(evt.id, c.mute$, streamId)
 				return store.getBooleanState(streamId)
 			},
 			unsubscribe: (evt) => store.unsubscribe(evt.id),
