@@ -172,7 +172,7 @@ export function GetFeedbacksList(
 
 		mutematrixchannel: {
 			type: 'boolean',
-			name: 'Matrix bus source: MUTE',
+			name: 'Matrix bus source: MUTE (Ui24R only)',
 			description: 'If the specified source on the matrix bus is muted',
 			defaultStyle: feedbackDefaultStyles.mute,
 			options: [...OPTION_SETS.matrixChannel],

@@ -583,11 +583,11 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		/**
-		 * Matrix Channels (Ui24R only)
+		 * Matrix Sources (Ui24R only)
 		 */
 		mutematrixchannel: {
-			name: 'Matrix channels: Mute source',
-			description: 'Set or toggle MUTE for an AUX, subgroup or master source routed to a matrix',
+			name: 'Matrix sources: Mute',
+			description: 'Set or toggle MUTE for a source on a matrix bus (Ui24R only)',
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.muteDropdown],
 			callback: (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
@@ -606,8 +606,8 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		setmatrixchannelvalue: {
-			name: 'Matrix channels: Set source level (dB)',
-			description: 'Set the level of an AUX, subgroup or master source routed to a matrix',
+			name: 'Matrix sources: Set fader value (dB)',
+			description: 'Set the fader value (dB) for a source on a matrix bus (Ui24R only)',
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderValuesSlider],
 			callback: (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
@@ -623,8 +623,8 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		setmatrixchannelvaluepct: {
-			name: 'Matrix channels: Set source level (%)',
-			description: 'Set the level of an AUX, subgroup or master source routed to a matrix',
+			name: 'Matrix sources: Set fader value (%)',
+			description: 'Set the fader value (%) for a source on a matrix bus (Ui24R only)',
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderValuesSliderPct],
 			callback: (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
@@ -640,8 +640,8 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		fadematrixchannel: {
-			name: 'Matrix channels: Fade transition',
-			description: 'Perform a timed fade for an AUX, subgroup or master source routed to a matrix',
+			name: 'Matrix sources: Fade transition',
+			description: 'Perform a timed fade transition for a source on a matrix bus (Ui24R only)',
 			options: [...OPTION_SETS.matrixChannel, ...OPTION_SETS.fadeTransition],
 			callback: async (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
@@ -657,8 +657,8 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		changematrixchannelvalue: {
-			name: 'Matrix channels: Change source level (dB)',
-			description: 'Relatively change the level of an AUX, subgroup or master source routed to a matrix',
+			name: 'Matrix sources: Change fader value (dB)',
+			description: 'Relatively change the fader value (dB) for a source on a matrix bus (Ui24R only)',
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderChangeField],
 			callback: (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
@@ -667,8 +667,8 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		changematrixchannelvaluepct: {
-			name: 'Matrix channels: Change source level (%)',
-			description: 'Relatively change the level of an AUX, subgroup or master source routed to a matrix',
+			name: 'Matrix sources: Change fader value (%)',
+			description: 'Relatively change the fader value (%) for a source on a matrix bus (Ui24R only)',
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.faderChangeFieldPct],
 			callback: (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
@@ -677,9 +677,8 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		setmatrixchannelpan: {
-			name: 'Matrix channels: Set source PAN',
-			description:
-				'Set PAN for an AUX, subgroup or master source routed to a stereo matrix. Not available for mono matrices.',
+			name: 'Matrix sources: Set PAN',
+			description: 'Set PAN value for a source on a matrix bus (Ui24R only). Not possible for mono matrix!',
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.panValueSlider],
 			callback: (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
@@ -695,9 +694,9 @@ export function GetActionsList(conn: SoundcraftUI): CompanionActionDefinitions<U
 		},
 
 		changematrixchannelpan: {
-			name: 'Matrix channels: Change source PAN (relative)',
+			name: 'Matrix sources: Change PAN (relative)',
 			description:
-				'Relatively change PAN for an AUX, subgroup or master source routed to a stereo matrix. Not available for mono matrices.',
+				'Relatively change PAN value for a source on a matrix bus (PAN Range: -100 to 100). Not possible for mono matrix!',
 			options: [...OPTION_SETS.matrixChannel, OPTIONS.panChangeField],
 			callback: (action) => {
 				const c = getMatrixChannelFromOptions(action.options, conn)
