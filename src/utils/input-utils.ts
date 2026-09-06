@@ -359,7 +359,7 @@ export const OPTION_SETS = {
 		OPTIONS.matrixChannelTypeDropdown,
 		{
 			type: 'number',
-			label: 'Source number (AUX: 1–10; subgroup: 1–4; Master: 1)',
+			label: 'Source number (ignored for Master)',
 			id: 'channel',
 			min: 1,
 			max: 10,
