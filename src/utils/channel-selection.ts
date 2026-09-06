@@ -117,6 +117,15 @@ export function getMatrixChannelFromOptions(options: MatrixChannelOpts, conn: So
 	}
 }
 
+/** Unique identifier for a matrix source channel, used to group feedback subscriptions */
+export function getMatrixChannelId(options: MatrixChannelOpts): string {
+	// the master source has no channel index
+	if (options.channelType === 'm') {
+		return `mtx.${options.bus}.m`
+	}
+	return `mtx.${options.bus}.${options.channelType}.${options.channel}`
+}
+
 export function getVolumeBusFromOptions(options: CompanionOptionValues, conn: SoundcraftUI): VolumeBus | undefined {
 	switch (options.bus) {
 		case 'solo':
