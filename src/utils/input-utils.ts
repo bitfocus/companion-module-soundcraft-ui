@@ -153,6 +153,14 @@ export const OPTIONS = {
 		max: 24,
 		default: 1,
 	} satisfies CompanionInputFieldNumber<'channel'>,
+	matrixSourceNumberField: {
+		type: 'number',
+		label: 'Source number (ignored for Master)',
+		id: 'channel',
+		min: 1,
+		max: 10,
+		default: 1,
+	} satisfies CompanionInputFieldNumber<'channel'>,
 	hwChannelNumberField: {
 		type: 'number',
 		label: 'HW Channel number',
@@ -354,18 +362,7 @@ export const OPTION_SETS = {
 	masterChannel: [OPTIONS.masterChannelTypeDropdown, OPTIONS.channelNumberField],
 	auxChannel: [OPTIONS.busNumberField, OPTIONS.auxChannelTypeDropdown, OPTIONS.channelNumberField],
 	fxChannel: [OPTIONS.busNumberField, OPTIONS.fxChannelTypeDropdown, OPTIONS.channelNumberField],
-	matrixChannel: [
-		OPTIONS.busNumberField,
-		OPTIONS.matrixChannelTypeDropdown,
-		{
-			type: 'number',
-			label: 'Source number (ignored for Master)',
-			id: 'channel',
-			min: 1,
-			max: 10,
-			default: 1,
-		} satisfies CompanionInputFieldNumber<'channel'>,
-	],
+	matrixChannel: [OPTIONS.busNumberField, OPTIONS.matrixChannelTypeDropdown, OPTIONS.matrixSourceNumberField],
 	vuMeter: [OPTIONS.vuChannelTypeDropdown, OPTIONS.channelNumberField, OPTIONS.vuPointDropdown, OPTIONS.vuSideDropdown],
 	fadeTransition: [OPTIONS.faderValuesSlider, OPTIONS.fadeTimeField, OPTIONS.easingsDropdown],
 	delayableMasterChannel: (
